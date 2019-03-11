@@ -15,4 +15,4 @@ Original engine credit:
 Gillian Conn,
 James Gauld.
 
-Monogame 3.7
+Monogame 3.6
