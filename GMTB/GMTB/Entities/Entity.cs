@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using GMTB.Interfaces;
+using GMTB.InputSystem;
 
 namespace GMTB.Entities
 {
@@ -18,6 +19,8 @@ namespace GMTB.Entities
         #region Data Members
         //--Key Variables
         protected int mUID;
+        protected IInput_Manager mInputManager;
+        protected IContent_Manager mContentManager;
         
         //--Movement
         protected float mSpeed;    
@@ -52,27 +55,54 @@ namespace GMTB.Entities
         #region Constructor
         public Entity()
         {
+            //mOrigin = new Vector2((mPosition.X + (mTexture.Width / 2)), (mPosition.Y + (mTexture.Height / 2)));
             
         }
         #endregion
 
         #region Methods
-        public virtual void setVars(int _uid)
+        /// <summary>
+        /// Set UID
+        /// </summary>
+        /// <param name="_uid"> Unique ID </param>
+        public virtual void setVars(int _uid, IContent_Manager cm)
         {
             mUID = _uid;
+            mContentManager = cm;
         }
+        /// <summary>
+        /// Set Texture path
+        /// </summary>
+        /// <param name="_path"> Texture Path</param>
         public virtual void setVars(string _path)
         {
             mTexturename = _path;
         }
+        /// <summary>
+        /// Force change position
+        /// </summary>
+        /// <param name="_pos"> Vector2 new position </param>
         public virtual void setPos(Vector2 _pos)
         {
             mPosition = _pos;
         }
+        /// <summary>
+        /// Set Default Position, also calls setPos
+        /// </summary>
+        /// <param name="_pos"> Vector2 default position</param>
         public virtual void setDefaultPos(Vector2 _pos)
         {
             setPos(_pos);
             mDefaultPos = _pos;
+        }
+        /// <summary>
+        /// Method to configure if an entity requires input detection
+        /// Override and specify which events to listen for.
+        /// </summary>
+        /// <param name="im"> Input Manager </param>
+        public virtual void ConfigureInput(IInput_Manager im)
+        {
+            mInputManager = im;
         }
         public virtual void Update(GameTime _gameTime)
         {

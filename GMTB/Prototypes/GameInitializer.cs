@@ -59,7 +59,7 @@ namespace Prototypes
             mLvlPath = "Prototypes.Levels.L";
 
             // Set the content root for this game
-            ContentRoot = "Prototypes.Content";
+            ContentRoot = "Content";
             // Create a new instance of the Kernal, pass Content root and opened levels
             game1 = new Kernel(ContentRoot, GetLevels());
         }

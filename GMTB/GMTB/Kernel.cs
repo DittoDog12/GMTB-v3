@@ -1,9 +1,10 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GMTB.Interfaces;
+using GMTB.Managers;
+using GMTB.InputSystem;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using GMTB.Interfaces;
-using GMTB.Managers;
 
 namespace GMTB
 {
@@ -16,8 +17,14 @@ namespace GMTB
         SpriteBatch mSpriteBatch;
 
         // Managers
-        ISceneManager mSceneManager;
-        IEntityManager mEntityManager;
+        IScene_Manager mSceneManager;
+        IEntity_Manager mEntityManager;
+        IContent_Manager mContentManager;
+        IInput_Manager mInputManager;
+
+        // String to hold the Content Root Directory
+        // to be passed to the Content_Manager
+        string mContentRoot;
 
         // Variable to hold all loaded levels
         private List<ILevel> mLevels;
@@ -26,13 +33,12 @@ namespace GMTB
         {
             graphics = new GraphicsDeviceManager(this);
             //Content.RootDirectory = "Content";
-            
+
         }
 
         public Kernel(string content, List<ILevel> lvls) : this()
         {
-            
-            Content.RootDirectory = content;
+            mContentRoot = content;
             mLevels = lvls;
         }
 
@@ -47,9 +53,10 @@ namespace GMTB
             // TODO: Add your initialization logic here
 
             base.Initialize();
-            mEntityManager = new EntityManager();
-            mSceneManager = new SceneManager(mEntityManager, Content);
-
+            mInputManager = new Input_Manager();
+            mContentManager = new Content_Manager(Content, mContentRoot);
+            mEntityManager = new Entity_Manager(mContentManager, mInputManager);
+            mSceneManager = new Scene_Manager(mEntityManager);
             mLevels[0].Initialise(mSceneManager, mEntityManager);
         }
 
@@ -85,7 +92,8 @@ namespace GMTB
                 Exit();
 
             // TODO: Add your update logic here
-
+            mSceneManager.Update(_gameTime);
+            mInputManager.GetCurrentInput();
             base.Update(_gameTime);
         }
 
@@ -98,7 +106,7 @@ namespace GMTB
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            mSceneManager.Draw(mSpriteBatch);
             base.Draw(_gameTime);
         }
     }

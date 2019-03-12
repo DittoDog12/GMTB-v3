@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GMTB.Managers
 {
-    class CollisionManager
+    class Collision_Manager
     {
     }
 }

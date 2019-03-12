@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GMTB.Interfaces
+{
+    public interface IContent_Manager
+    {
+        void ApplyTexture(string tex, IEntity ent);
+    }
+}

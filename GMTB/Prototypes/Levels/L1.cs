@@ -19,14 +19,13 @@ namespace Prototypes.Levels
         #endregion
 
         #region Methods
-        public override void Initialise(ISceneManager sm, IEntityManager em)
+        public override void Initialise(IScene_Manager sm, IEntity_Manager em)
         {
             if (firstRun == true)
             {
-                createdEntity = em.newEntity<TriangleShape>("trianglel");
+                createdEntity = em.newEntity<TriangleShape>("trianglel", true);
                 sm.newEntity(createdEntity, 100, 400);
-                Removables.Add(createdEntity);
-
+                Removables.Add(createdEntity);               
                 firstRun = false;
             }
         }

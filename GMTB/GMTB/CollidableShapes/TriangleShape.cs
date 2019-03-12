@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using GMTB.InputSystem;
 
 namespace GMTB.CollidableShapes
 {
@@ -13,7 +14,6 @@ namespace GMTB.CollidableShapes
         #region Data Members
         // Indicates the location of the rightangle, 1 = right angle on left, -1 = right angle on right
         private int mFacingDirection;
-        KeyboardState oldState;
         private Rectangle mRectangle;
         #endregion
 
@@ -29,13 +29,23 @@ namespace GMTB.CollidableShapes
             mAxes = 3;
             mFacingDirection = 1;
             mRotation = 0f;
+            
         }
         #endregion
 
         #region Methods
+        public override void setVars(string _path)
+        {
+            base.setVars(_path);
+            mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
+        }
+        public override void ConfigureInput(IInput_Manager im)
+        {
+            base.ConfigureInput(im);
+            mInputManager.Sub_Space(SwapDirection);
+        }
         public override void Update(GameTime gameTime)
         {
-            SwapDirection();
             pointsVertices = GetPointsVertices();
             base.Update(gameTime);
 
@@ -61,21 +71,17 @@ namespace GMTB.CollidableShapes
             return rtnLst;
         }
 
-        private void SwapDirection()
+        private void SwapDirection(object source, InputEvent args)
         {
-            KeyboardState newState = Keyboard.GetState();
-
-            if (newState.IsKeyUp(Keys.Space) == true && oldState.IsKeyDown(Keys.Space) == true)
+            if (args.currentKey == Keybindings.Jump)
                 mFacingDirection *= -1;
 
             if (mFacingDirection == 1)
-                mTexturename = "trianglel";
+                mContentManager.ApplyTexture("trianglel", this);
             else if (mFacingDirection == -1)
-                mTexturename = "triangler";
+                mContentManager.ApplyTexture("triangler", this);
 
-
-            oldState = newState;
         }
-        #endregion
+        #endregion        
     }
 }

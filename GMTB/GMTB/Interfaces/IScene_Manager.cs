@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
-    public interface ISceneManager
+    public interface IScene_Manager
     {
         IDictionary<int, IEntity> Entities { get; }
         IDictionary<int, IEntity> SceneGraph { get; }

@@ -41,7 +41,7 @@ namespace GMTB
         #endregion
 
         #region Methods
-        public abstract void Initialise(ISceneManager sm, IEntityManager em);
+        public abstract void Initialise(IScene_Manager sm, IEntity_Manager em);
         #endregion
     }
 }

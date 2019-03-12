@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GMTB.Interfaces
 {
-    public interface IEntityManager
+    public interface IEntity_Manager
     {
         //IDictionary<int, IEntity> Entities { get; }
 
@@ -14,5 +14,6 @@ namespace GMTB.Interfaces
         int TotalEntities();
         IEntity newEntity<T>() where T : IEntity, new();
         IEntity newEntity<T>(string _path) where T : IEntity, new();
+        IEntity newEntity<T>(string _path, bool inputReq) where T : IEntity, new();
     }
 }

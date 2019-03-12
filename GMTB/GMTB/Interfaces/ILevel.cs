@@ -12,6 +12,6 @@ namespace GMTB.Interfaces
         string LvlID { get; }
         bool FirstRun { set; }
 
-        void Initialise(ISceneManager sm, IEntityManager em);
+        void Initialise(IScene_Manager sm, IEntity_Manager em);
     }
 }
