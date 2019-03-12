@@ -104,10 +104,10 @@ namespace GMTB
             return mTransform;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime _gameTime)
         {
             mPlayerPos = mPlayer.GetPos();
-            var delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            var delta = (float)_gameTime.ElapsedGameTime.TotalSeconds;
 
             mPosition.X += (mPlayerPos.X - mPosition.X) * mSpeed * delta;
             mPosition.Y += (mPlayerPos.Y - mPosition.Y) * mSpeed * delta;

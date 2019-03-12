@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/cheese.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/Maze.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/mouseleft.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/square.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/square2.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/Text.spritefont</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/trianglel.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/triangler.png</File>
+  </SourceFiles>
+</SourceFileCollection>

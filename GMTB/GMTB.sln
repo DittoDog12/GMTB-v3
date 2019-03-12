@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMTB", "GMTB\GMTB.csproj", "{151AC958-279C-4CF7-88B1-62217C95CAFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototypes", "Prototypes\Prototypes.csproj", "{3CA520F3-BE4F-4EC8-BA02-5745D099D0AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{151AC958-279C-4CF7-88B1-62217C95CAFB} = {151AC958-279C-4CF7-88B1-62217C95CAFB}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +20,10 @@ Global
 		{151AC958-279C-4CF7-88B1-62217C95CAFB}.Debug|x86.Build.0 = Debug|x86
 		{151AC958-279C-4CF7-88B1-62217C95CAFB}.Release|x86.ActiveCfg = Release|x86
 		{151AC958-279C-4CF7-88B1-62217C95CAFB}.Release|x86.Build.0 = Release|x86
+		{3CA520F3-BE4F-4EC8-BA02-5745D099D0AC}.Debug|x86.ActiveCfg = Debug|x86
+		{3CA520F3-BE4F-4EC8-BA02-5745D099D0AC}.Debug|x86.Build.0 = Debug|x86
+		{3CA520F3-BE4F-4EC8-BA02-5745D099D0AC}.Release|x86.ActiveCfg = Release|x86
+		{3CA520F3-BE4F-4EC8-BA02-5745D099D0AC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,9 +3,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
-    interface IEntity
+    public interface IEntity
     {
-        void Update(GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch);
+        int UID { get; }
+        string Texturename { get; }
+        Texture2D Texture { set; }
+
+        void setVars(int _uid);
+        void setVars(string _path);
+        void setPos(Vector2 _pos);
+        void setDefaultPos(Vector2 _pos);
+        void Update(GameTime _gameTime);
+        void Draw(SpriteBatch _spriteBatch);
     }
 }
