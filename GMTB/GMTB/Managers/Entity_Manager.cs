@@ -58,14 +58,14 @@ namespace GMTB.Managers
         private void setEntityVars(IEntity _entity)
         {
             // Set the entities UID
-            _entity.setVars(UID, mContentManager);
+            _entity.setVars(UID);
             // Increment the UID
             UID++;
         }
         private void setEntityVars(IPhysicalEntity _entity, string _path)
         {
             // Set the entities Texture Path
-            _entity.setVars(_path);
+            _entity.setVars(_path, mContentManager);
         }
 
         /// <summary>
@@ -93,23 +93,23 @@ namespace GMTB.Managers
         public IEntity newEntity<T>(string _path) where T : IEntity, new()
         {
             // Call parent to create Entity type
-            IEntity createdEntity = newEntity<T>();
+            IEntity _createdEntity = newEntity<T>();
             // Call the Content Manager to apply the entities texture, call the 
-            mContentManager.ApplyTexture(_path, createdEntity);
+            mContentManager.ApplyTexture(_path, _createdEntity as IPhysicalEntity);
             // Set the entities Texture
-            IPhysicalEntity _entity2 = createdEntity as IPhysicalEntity;
-            _entity2.setVars(_path);
+            IPhysicalEntity _entity = _createdEntity as IPhysicalEntity;
+            setEntityVars(_entity, _path);
             // Return Created Entity
-            return createdEntity;
+            return _createdEntity;
         }
         public IEntity newEntity<T>(string _path, bool inputReq) where T : IEntity, new()
         {
             // Call parent to create Entity type
-            IEntity createdEntity = newEntity<T>(_path);
+            IEntity _createdEntity = newEntity<T>(_path);
             // Inform the new entity of the Input Manager
-            createdEntity.ConfigureInput(mInputManager);
+            _createdEntity.ConfigureInput(mInputManager);
             // Return Created Entity
-            return createdEntity;
+            return _createdEntity;
         }
         #endregion
     }

@@ -51,16 +51,21 @@ namespace GMTB.Managers
             //mEntities.Add(createdEntity);
 
             mSceneGraph.Add(_createdEntity.UID, _createdEntity);
-            
+
             // Set the entities initial position
-            _createdEntity.setDefaultPos(new Vector2(_x, _y));
+            var _entity = _createdEntity as IPhysicalEntity;
+            _entity.setDefaultPos(new Vector2(_x, _y));
 
         }
         public void Update(GameTime _gameTime)
         {
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
+            {
+                var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
                 //mEntities[i].Update(_gameTime);
-                mEntityManager.GetEntity(i).Update(_gameTime);
+                _entity.Update(_gameTime);
+            }
+                
 
         }
         public void Draw(SpriteBatch _spriteBatch)
@@ -70,7 +75,11 @@ namespace GMTB.Managers
 
             // Call draw method for each Entity if entity is visible        
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
-                mEntityManager.GetEntity(i).Draw(_spriteBatch);
+            {
+                var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
+                _entity.Draw(_spriteBatch);
+            }
+                
 
             _spriteBatch.End();
         }
@@ -82,7 +91,10 @@ namespace GMTB.Managers
 
             // Call draw method for each Entity if entity is visible
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
-                mEntityManager.GetEntity(i).Draw(_spriteBatch);
+            {
+                var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
+                _entity.Draw(_spriteBatch);
+            }
 
             _spriteBatch.End();
         }

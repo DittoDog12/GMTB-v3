@@ -46,10 +46,9 @@ namespace GMTB.Entities
         /// Set UID
         /// </summary>
         /// <param name="_uid"> Unique ID </param>
-        public virtual void setVars(int _uid, )
+        public virtual void setVars(int _uid)
         {
-            mUID = _uid;
-            
+            mUID = _uid;     
         }
         
         

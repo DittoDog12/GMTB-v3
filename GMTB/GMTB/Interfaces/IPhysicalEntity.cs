@@ -13,9 +13,10 @@ namespace GMTB.Interfaces
         string Texturename { get; }
         Texture2D Texture { set; }
 
-        void setVars(string _path);
+        void setVars(string _path, IContent_Manager cm);
         void setPos(Vector2 _pos);
         void setDefaultPos(Vector2 _pos);
         void Draw(SpriteBatch _spriteBatch);
+        void Update(GameTime _gameTime);
     }
 }

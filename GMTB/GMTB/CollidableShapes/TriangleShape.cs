@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using GMTB.InputSystem;
+using GMTB.Interfaces;
 
 namespace GMTB.CollidableShapes
 {
@@ -35,9 +36,9 @@ namespace GMTB.CollidableShapes
         #endregion
 
         #region Methods
-        public override void setVars(string _path)
+        public override void setVars(string _path, IContent_Manager cm)
         {
-            base.setVars(_path);
+            base.setVars(_path, cm);
             mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
         public override void ConfigureInput(IInput_Manager im)

@@ -526,3 +526,11 @@ $RECYCLE.BIN/
 # BeatPulse healthcheck temp database
 
 # End of https://www.gitignore.io/api/csharp,windows,visualstudio
+
+GMTB/Prototypes/bin/
+
+GMTB/Prototypes/obj/
+
+GMTB/GMTB/bin/
+
+GMTB/GMTB/obj/
