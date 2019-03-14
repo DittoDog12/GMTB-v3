@@ -66,16 +66,26 @@ namespace GMTB.InputSystem
             else if (_newState.IsKeyDown(Keys.S))
                 MovementInput(Keybindings.Down);
 
+            if ((_newState.IsKeyUp(Keys.W) && _oldState.IsKeyDown(Keys.W))
+                || (_newState.IsKeyUp(Keys.S) && _oldState.IsKeyDown(Keys.S)))
+                MovementRelease(Keybindings.Released);
+
             if (_newState.IsKeyDown(Keys.A))
                 MovementInput(Keybindings.Left);
             else if (_newState.IsKeyDown(Keys.D))
                 MovementInput(Keybindings.Right);
+
+            if ((_newState.IsKeyUp(Keys.A) && _oldState.IsKeyDown(Keys.A))
+                || (_newState.IsKeyUp(Keys.D) && _oldState.IsKeyDown(Keys.D)))
+                MovementRelease(Keybindings.Released);
 
             if (_oldState.IsKeyUp(Keys.E) && _newState.IsKeyDown(Keys.E))
                 UseInput(Keybindings.Use);
 
             if (_oldState.IsKeyUp(Keys.Space) && _newState.IsKeyDown(Keys.Space))
                 SpaceInput(Keybindings.Jump);
+
+            
 
             _oldState = _newState;
             //} // Closing bracket for else statement
@@ -111,6 +121,11 @@ namespace GMTB.InputSystem
 
         #region EventTriggers
         protected virtual void MovementInput(Keybindings key)
+        {
+            InputEvent args = new InputEvent(key);
+            Movement(this, args);
+        }
+        protected virtual void MovementRelease(Keybindings key)
         {
             InputEvent args = new InputEvent(key);
             Movement(this, args);

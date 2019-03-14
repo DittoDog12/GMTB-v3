@@ -134,7 +134,7 @@ namespace GMTB.CollidableShapes
         }
         public virtual void Collision(Vector2 mtv)
         {
-            mVelocity += 0.01f * mtv;
+            mVelocity += 0.01f * mtv * mSpeed;
         }
     }
     #endregion

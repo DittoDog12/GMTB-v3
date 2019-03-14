@@ -43,12 +43,14 @@
   <ItemGroup>
     <Compile Include="Camera2D.cs" />
     <Compile Include="CollidableShapes\ConvexShape.cs" />
+    <Compile Include="CollidableShapes\RectangleShape.cs" />
     <Compile Include="CollidableShapes\TriangleShape.cs" />
     <Compile Include="Entities\AI\BasicAI.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
+    <Compile Include="Interfaces\ICollision_Manager.cs" />
     <Compile Include="Interfaces\IContent_Manager.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IEntity_Manager.cs" />

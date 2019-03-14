@@ -29,6 +29,7 @@ namespace GMTB.CollidableShapes
             mAxes = 3;
             mFacingDirection = 1;
             mRotation = 0f;
+            mSpeed = 0f;
             
         }
         #endregion

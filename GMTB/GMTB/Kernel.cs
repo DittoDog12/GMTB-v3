@@ -21,6 +21,7 @@ namespace GMTB
         IEntity_Manager mEntityManager;
         IContent_Manager mContentManager;
         IInput_Manager mInputManager;
+        ICollision_Manager mCollisionMananger;
 
         // String to hold the Content Root Directory
         // to be passed to the Content_Manager
@@ -57,6 +58,7 @@ namespace GMTB
             mContentManager = new Content_Manager(Content, mContentRoot);
             mEntityManager = new Entity_Manager(mContentManager, mInputManager);
             mSceneManager = new Scene_Manager(mEntityManager);
+            mCollisionMananger = new Collision_Manager(mEntityManager);
             mLevels[0].Initialise(mSceneManager, mEntityManager);
         }
 
@@ -94,6 +96,7 @@ namespace GMTB
             // TODO: Add your update logic here
             mSceneManager.Update(_gameTime);
             mInputManager.GetCurrentInput();
+            mCollisionMananger.CollisionDetec();
             base.Update(_gameTime);
         }
 

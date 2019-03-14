@@ -106,7 +106,8 @@ namespace GMTB.Entities
         }
         public virtual void Update(GameTime _gameTime)
         {
-            
+            mPosition += mVelocity;
+            mVelocity = Vector2.Zero;
         }
 
         public virtual void Draw(SpriteBatch _spriteBatch)

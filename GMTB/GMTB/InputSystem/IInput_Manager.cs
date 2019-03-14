@@ -19,7 +19,8 @@ namespace GMTB.InputSystem
         Right,
         Use,
         Jump,
-        Pause
+        Pause,
+        Released
     }
     #endregion
 
