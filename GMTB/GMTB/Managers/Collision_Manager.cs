@@ -12,7 +12,7 @@ namespace GMTB.Managers
     {
         #region Data Members
         private List<Vector2> ObjectABNormals = new List<Vector2>();
-        private IPlayer mPlayer;
+        //private IPlayer mPlayer;
         private IDictionary<int, ICollidable> mCollidables;
         private IEntity_Manager mEntityManager;
 

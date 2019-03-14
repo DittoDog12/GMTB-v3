@@ -56,11 +56,7 @@ namespace GMTB.Entities
             }
         }
 
-        public void ApplyForce(Vector2 force)
-        {
-            // Calculation for acceleration using force
-            mAcceleration += force * mInverseMass;
-        }
+        
         #endregion
     }
 }

@@ -1,32 +1,34 @@
-﻿using System;
+﻿using GMTB.Entities.AI;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GMTB.Interfaces;
-using Microsoft.Xna.Framework;
 
-namespace GMTB.Entities.AI
+namespace GMTB
 {
-    public class BasicAI : PhysicalEntity
+    public abstract class State : IState
     {
         #region Data Members
         protected IMind mMind;
         #endregion
 
         #region Constructor
-        public BasicAI()
+        public State(IMind _mind)
         {
-           
+            mMind = _mind;
         }
         #endregion
 
         #region Methods
-        public override void Update(GameTime _gameTime)
+        public abstract void Update(GameTime _gameTime);
+        public virtual void ChangeState(string _nextState)
         {
-            mMind.Update(_gameTime);
-            base.Update(_gameTime);
+            mMind.ChangeState(_nextState);
         }
         #endregion
     }
+
 }

@@ -4,29 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GMTB.Interfaces;
+using GMTB.Entities.AI;
 using Microsoft.Xna.Framework;
 
-namespace GMTB.Entities.AI
+namespace Prototypes.Characters.Mouse
 {
-    public class BasicAI : PhysicalEntity
+    public class Mouse : BasicAI
     {
         #region Data Members
-        protected IMind mMind;
+
         #endregion
 
         #region Constructor
-        public BasicAI()
+        public Mouse()
         {
-           
+            mMind = new MouseMind(this);
         }
         #endregion
 
         #region Methods
-        public override void Update(GameTime _gameTime)
-        {
-            mMind.Update(_gameTime);
-            base.Update(_gameTime);
-        }
+
         #endregion
     }
 }

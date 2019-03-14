@@ -3,29 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GMTB;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 
-namespace GMTB.Entities.AI
+namespace Prototypes.Characters.Mouse
 {
-    public class BasicAI : PhysicalEntity
+    class PersueState : State
     {
-        #region Data Members
-        protected IMind mMind;
-        #endregion
-
         #region Constructor
-        public BasicAI()
+        public PersueState(IMind _mind): base(_mind)
         {
-           
+
         }
         #endregion
 
         #region Methods
         public override void Update(GameTime _gameTime)
         {
-            mMind.Update(_gameTime);
-            base.Update(_gameTime);
+            // if collected cheese
+            //ChangeState("idle");
+
+            // if cat close
+            //ChangeState("flee");
         }
         #endregion
     }

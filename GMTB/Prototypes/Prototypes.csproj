@@ -41,6 +41,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Characters\Mouse\IdleState.cs" />
+    <Compile Include="Characters\Mouse\Mouse.cs" />
+    <Compile Include="Characters\Mouse\MouseMind.cs" />
+    <Compile Include="Characters\Mouse\PersueState.cs" />
     <Compile Include="GameInitializer.cs" />
     <Compile Include="Levels\L1.cs" />
     <Compile Include="Program.cs" />

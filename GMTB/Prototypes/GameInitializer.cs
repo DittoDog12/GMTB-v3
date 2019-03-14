@@ -49,7 +49,6 @@ namespace Prototypes
 
         Kernel game1;
         string ContentRoot;
-        List<ILevel> mLevels;
         int mLvlCount;
         string mLvlPath;
 

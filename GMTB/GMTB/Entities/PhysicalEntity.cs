@@ -35,20 +35,33 @@ namespace GMTB.Entities
         protected float mRotation;
         #endregion
 
+        #region Accessors
         public string Texturename
         {
             get { return mTexturename; }
         }
         public Texture2D Texture
         {
+            get { return mTexture; }
             set { mTexture = value; }
         }
-
+        public Vector2 Position
+        {
+            get { return mPosition; }
+        }
+        public Vector2 Acceleration
+        {
+            set { mAcceleration = value; }
+        }
+        #endregion
+        #region Constructor
         public PhysicalEntity()
         {
 
         }
+        #endregion
 
+        #region Methods
         /// <summary>
         /// Set Texture path
         /// </summary>
@@ -108,5 +121,11 @@ namespace GMTB.Entities
             // Provide a closing velocity to the entity when a collision occurs
             mVelocity += _closingVelocity * mRestitution;
         }
+        public void ApplyForce(Vector2 force)
+        {
+            // Calculation for acceleration using force
+            mAcceleration += force * mInverseMass;
+        }
+        #endregion
     }
 }
