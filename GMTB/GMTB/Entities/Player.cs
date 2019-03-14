@@ -32,6 +32,8 @@ namespace GMTB.Entities
         }
         public void OnMoveInput(object source, InputEvent args)
         {
+            // Check the current keybinding in the event argument.
+            // Apply force respectiveley
             switch (args.currentKey)
             {
                 case Keybindings.Down:
@@ -46,7 +48,8 @@ namespace GMTB.Entities
                 case Keybindings.Left:
                     mVelocity.X = mSpeed * -1;
                     break;
-                    case Keybindings.Released:
+                // If Keybinding is released, or keybinding is not recognised, stop moving
+                case Keybindings.Released:
                 default:
                     mVelocity = Vector2.Zero;
                     break;

@@ -34,6 +34,11 @@ namespace Prototypes.Levels
                 sm.newEntity(createdEntity, 100, 400);
                 Removables.Add(createdEntity);               
                 firstRun = false;
+
+                createdEntity = em.newEntity<RectangleShape>("squarelorge", true);
+                sm.newEntity(createdEntity, 300, 300);
+                Removables.Add(createdEntity);
+                firstRun = false;
             }
         }
         #endregion

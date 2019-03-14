@@ -33,3 +33,41 @@ E:\Code Projects\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\square2.x
 E:\Code Projects\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\Text.xnb
 E:\Code Projects\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\trianglel.xnb
 E:\Code Projects\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\triangler.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\cheese.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\Maze.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\mouseleft.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\square.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\square2.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\Text.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\trianglel.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\triangler.xnb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Prototypes.exe
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Prototypes.pdb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\GMTB.exe
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\GMTB.pdb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\obj\x86\Debug\Prototypes.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\obj\x86\Debug\Prototypes.csproj.CoreCompileInputs.cache
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\obj\x86\Debug\Prototypes.csproj.CopyComplete
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\obj\x86\Debug\Prototypes.exe
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\obj\x86\Debug\Prototypes.pdb
+C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\Prototypes\bin\Windows\x86\Debug\Content\squarelorge.xnb
