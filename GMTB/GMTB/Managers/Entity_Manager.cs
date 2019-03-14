@@ -62,7 +62,7 @@ namespace GMTB.Managers
             // Increment the UID
             UID++;
         }
-        private void setEntityVars(IEntity _entity, string _path)
+        private void setEntityVars(IPhysicalEntity _entity, string _path)
         {
             // Set the entities Texture Path
             _entity.setVars(_path);
@@ -97,7 +97,8 @@ namespace GMTB.Managers
             // Call the Content Manager to apply the entities texture, call the 
             mContentManager.ApplyTexture(_path, createdEntity);
             // Set the entities Texture
-            createdEntity.setVars(_path);
+            IPhysicalEntity _entity2 = createdEntity as IPhysicalEntity;
+            _entity2.setVars(_path);
             // Return Created Entity
             return createdEntity;
         }

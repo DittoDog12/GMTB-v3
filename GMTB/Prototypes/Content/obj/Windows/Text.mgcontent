@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/Prototypes/Content/Text.spritefont</SourceFile>
   <SourceTime>2019-03-12T13:08:55.8798221+00:00</SourceTime>
   <DestFile>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/Prototypes/Content/bin/Windows/Text.xnb</DestFile>
-  <DestTime>2019-03-14T15:03:50.5092125+00:00</DestTime>
+  <DestTime>2019-03-14T15:39:19.2199678+00:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
@@ -16,23 +15,4 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput />
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/Text.spritefont</SourceFile>
-  <SourceTime>2019-03-14T15:09:03.0262724+00:00</SourceTime>
-  <DestFile>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/bin/Windows/Text.xnb</DestFile>
-  <DestTime>2019-03-14T15:31:43.4019747+00:00</DestTime>
-  <Importer>FontDescriptionImporter</Importer>
-  <ImporterTime>2016-03-30T07:36:08+01:00</ImporterTime>
-  <Processor>FontDescriptionProcessor</Processor>
-  <ProcessorTime>2016-03-30T07:36:08+01:00</ProcessorTime>
-  <Parameters>
-    <Key>TextureFormat</Key>
-    <Value>Compressed</Value>
-  </Parameters>
-  <Dependencies />
-  <BuildAsset />
-  <BuildOutput />
->>>>>>> Stashed changes
 </PipelineBuildEvent>

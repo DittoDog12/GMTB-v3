@@ -88,7 +88,7 @@ namespace GMTB.Managers
                         // Call the main collision test method, pass the reference to the objects Vertices lists
                         // If collision returns true, call the MTV calculation, pass Object A as the target
                         if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
-                            MTVCalc(objA);
+                            MTVCalc(objA, objB);
                     } 
                 }
             }
@@ -179,11 +179,11 @@ namespace GMTB.Managers
             return CollisionFlag;
         }
 
-        public void MTVCalc(ICollidable target)
+        public void MTVCalc(ICollidable _target, ICollidable _otherTarget)
         {
             // MTV calculations
-            Vector2 mtv = mCollisionNormal * mCollisionOverlap;
-            target.Collision(mtv);
+            Vector2 _mtv = mCollisionNormal * mCollisionOverlap;
+            _target.Collision(_mtv, mCollisionNormal, _otherTarget);
         }
 
         #endregion

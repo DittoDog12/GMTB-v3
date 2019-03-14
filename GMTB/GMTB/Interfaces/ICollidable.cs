@@ -7,13 +7,14 @@ using Microsoft.Xna.Framework;
 
 namespace GMTB.Interfaces
 {
-    interface ICollidable
+    public interface ICollidable
     {
         List<Vector2> RectangleNormalize { get; }
         List<Vector2> RectangleVertices { get; }
+        Vector2 Velocity { get; }
 
         int UID { get; }
 
-        void Collision(Vector2 mtv);
+        void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj);
     }
 }

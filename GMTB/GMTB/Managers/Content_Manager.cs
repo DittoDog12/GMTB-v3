@@ -24,7 +24,7 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
-        public void ApplyTexture(string tex, IEntity ent)
+        public void ApplyTexture(string tex, IPhysicalEntity ent)
         {
             ent.Texture = mContent.Load<Texture2D>(tex);
         }

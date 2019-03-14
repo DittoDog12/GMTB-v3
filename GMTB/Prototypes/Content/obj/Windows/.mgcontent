@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <?xml version="1.0" encoding="utf-8"?>
 <SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Profile>Reach</Profile>
@@ -15,21 +14,4 @@
     <File>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/Prototypes/Content/triangler.png</File>
     <File>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/Prototypes/Content/squarelorge.png</File>
   </SourceFiles>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Profile>Reach</Profile>
-  <Platform>Windows</Platform>
-  <Config />
-  <SourceFiles>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/cheese.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/Maze.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/mouseleft.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/square.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/square2.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/Text.spritefont</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/trianglel.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/triangler.png</File>
-  </SourceFiles>
->>>>>>> Stashed changes
 </SourceFileCollection>

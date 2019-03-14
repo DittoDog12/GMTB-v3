@@ -9,18 +9,19 @@ using Microsoft.Xna.Framework;
 
 namespace GMTB.CollidableShapes
 {
-    public class ConvexShape : Entity, ICollidable
+    public class ConvexShape : PhysicalEntity, ICollidable
     {
         #region Data Members
         //private Rectangle mRectangle;
-        protected List<Vector2> pointsVertices;
-        protected List<Vector2> perpRec;
+        protected List<Vector2> pointsVertices; // List of vectors to hold the points
+        protected List<Vector2> perpRec; // List of Normals
         protected int mAxes;
         #endregion
 
         #region Accessors
         public List<Vector2> RectangleNormalize { get; protected set; } = new List<Vector2>();
         public List<Vector2> RectangleVertices { get; protected set; } = new List<Vector2>();
+        public Vector2 Velocity{ get { return mVelocity; } }
         #endregion
 
         #region Constructor
@@ -65,23 +66,23 @@ namespace GMTB.CollidableShapes
         /// <returns>List of faces as vectors</returns>
         private List<Vector2> SubtractVectors()
         {
-            List<Vector2> rtnLst = new List<Vector2>();
+            List<Vector2> _rtnLst = new List<Vector2>();
 
             for (int i = 0; i < mAxes; i++)
             {
                 if (i == mAxes - 1)
                 {
-                    rtnLst.Add(
+                    _rtnLst.Add(
                         Vector2.Subtract(RectangleVertices[0], RectangleVertices[i]));
                 }
                 else
                 {
-                    rtnLst.Add(
+                    _rtnLst.Add(
                         Vector2.Subtract(RectangleVertices[i + 1], RectangleVertices[i]));
                 }
             }
 
-            return rtnLst;
+            return _rtnLst;
         }
         /// <summary>
         /// Get normals of each vertices
@@ -90,15 +91,15 @@ namespace GMTB.CollidableShapes
         /// <returns>List of normals for each face</returns>
         private List<Vector2> GetNormals(List<Vector2> subtractedVectors)
         {
-            List<Vector2> rtnLst = new List<Vector2>();
+            List<Vector2> _rtnLst = new List<Vector2>();
 
             for (int i = 0; i < mAxes; i++)
             {
-                rtnLst.Add(new Vector2(subtractedVectors[i].Y,
+                _rtnLst.Add(new Vector2(subtractedVectors[i].Y,
                                         subtractedVectors[i].X * -1));
             }
 
-            return rtnLst;
+            return _rtnLst;
         }
         /// <summary>
         /// Normalize the normals
@@ -120,7 +121,7 @@ namespace GMTB.CollidableShapes
         /// <returns>Vector accounting for rotations</returns>
         private Vector2 RotatePoint(Vector2 Point, Vector2 Origin, float rotation)
         {
-            Vector2 rtnVal = new Vector2()
+            Vector2 _rtnVal = new Vector2()
             {
                 X = (float)(Origin.X + (Point.X - Origin.X)
                 * Math.Cos(rotation) - (Point.Y - Origin.Y)
@@ -130,11 +131,20 @@ namespace GMTB.CollidableShapes
                 * Math.Cos(rotation) + (Point.X - Origin.X)
                 * Math.Sin(rotation))
             };
-            return rtnVal;
+            return _rtnVal;
         }
-        public virtual void Collision(Vector2 mtv)
+        public virtual void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
-            ApplyImpulse(mtv);
+            mPosition += 0.02f * _mtv;
+            CalculateBounce(_cNormal, _otherObj);
+            
+        }
+        public virtual void CalculateBounce(Vector2 _cNormal, ICollidable _otherObj)
+        {
+            Vector2 _difference = mVelocity - _otherObj.Velocity;
+            float _dot = Vector2.Dot(_cNormal, _difference);
+            Vector2 _ClosingVelocity = _dot * _cNormal;
+            ApplyImpulse(_ClosingVelocity);
         }
     }
     #endregion

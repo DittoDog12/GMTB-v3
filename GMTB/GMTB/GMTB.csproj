@@ -47,6 +47,7 @@
     <Compile Include="CollidableShapes\TriangleShape.cs" />
     <Compile Include="Entities\AI\BasicAI.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\PhysicalEntity.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Interfaces\ICollidable.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Interfaces\IEntity_Manager.cs" />
     <Compile Include="InputSystem\IInput_Manager.cs" />
     <Compile Include="Interfaces\ILevel.cs" />
+    <Compile Include="Interfaces\IPhysicalEntity.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IScene_Manager.cs" />
     <Compile Include="Kernel.cs" />
