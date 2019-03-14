@@ -37,16 +37,16 @@ namespace GMTB.Entities
             switch (args.currentKey)
             {
                 case Keybindings.Down:
-                    mVelocity.Y = mSpeed * 1;
+                    ApplyForce(new Vector2(0, 3));
                     break;
                 case Keybindings.Up:
-                    mVelocity.Y = mSpeed * -1;
+                    ApplyForce(new Vector2(0, -3));
                     break;
                 case Keybindings.Right:
-                    mVelocity.X = mSpeed * 1;
+                    ApplyForce(new Vector2(3, 0));
                     break;
                 case Keybindings.Left:
-                    mVelocity.X = mSpeed * -1;
+                    ApplyForce(new Vector2(-3, 0));
                     break;
                 // If Keybinding is released, or keybinding is not recognised, stop moving
                 case Keybindings.Released:
@@ -54,6 +54,12 @@ namespace GMTB.Entities
                     mVelocity = Vector2.Zero;
                     break;
             }
+        }
+
+        public void ApplyForce(Vector2 force)
+        {
+            // Calculation for acceleration using force
+            mAcceleration += force * mInverseMass;
         }
         #endregion
     }

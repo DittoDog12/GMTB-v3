@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\GMTB.exe
 E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\GMTB.pdb
 E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -50,3 +51,57 @@ C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csproj.Core
 C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csproj.CopyComplete
 C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.exe
 C:\Users\James\Documents\GitHub\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.pdb
+=======
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\GMTB.exe
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\GMTB.pdb
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\MonoGame.Framework.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XInput.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\MonoGame.Framework.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XInput.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+E:\Code Projects\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csprojAssemblyReference.cache
+E:\Code Projects\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csproj.CoreCompileInputs.cache
+E:\Code Projects\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csproj.CopyComplete
+E:\Code Projects\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.exe
+E:\Code Projects\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.pdb
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\GMTB.exe
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\GMTB.pdb
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.RawInput.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.RawInput.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csprojAssemblyReference.cache
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csproj.CoreCompileInputs.cache
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.csproj.CopyComplete
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.exe
+C:\Users\Scott\source\repos\GMTB-v3\GMTB\GMTB\obj\x86\Debug\GMTB.pdb
+>>>>>>> Stashed changes

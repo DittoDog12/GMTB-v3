@@ -25,6 +25,13 @@ namespace GMTB.Entities
         //--Movement
         protected float mSpeed;    
         protected Vector2 mVelocity;
+        protected Vector2 mAcceleration;
+
+        // Entity Physic Modifier Properties
+        protected float mRestitution = 0.1f;
+        protected float mDamping = 0.5f;
+        protected float mInverseMass = 1f;
+        protected Vector2 mGravity = new Vector2(0, 0);
 
         //--Texture
         protected Texture2D mTexture;
@@ -106,6 +113,7 @@ namespace GMTB.Entities
         }
         public virtual void Update(GameTime _gameTime)
         {
+            UpdatePhysics();
             mPosition += mVelocity;
             mVelocity = Vector2.Zero;
         }
@@ -117,6 +125,24 @@ namespace GMTB.Entities
         public virtual void Collision()
         {
 
+        }
+
+        private void UpdatePhysics()
+        {
+            // Scale velocity with Damping
+            mVelocity *= mDamping;
+            // Apply acceleration
+            mVelocity += mAcceleration;
+            // Update position
+            mPosition += mVelocity;
+            // Reset Acceleration
+            mAcceleration = mGravity;
+        }
+
+        public void ApplyImpulse(Vector2 closingVelocity)
+        {
+            // Provide a closing velocity to the entity when a collision occurs
+            mVelocity += closingVelocity * mRestitution * mSpeed;
         }
         #endregion
     }
