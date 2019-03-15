@@ -1,10 +1,11 @@
-﻿using System;
+﻿using GMTB.Interfaces;
+using GMTB.Pathfinding;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GMTB.Interfaces;
-using Microsoft.Xna.Framework;
 
 namespace GMTB.Entities.AI
 {
@@ -14,6 +15,19 @@ namespace GMTB.Entities.AI
         protected IState mCurrentState;
         protected IDictionary<string, IState> mStates;
         protected IPhysicalEntity mSelf;
+        protected IPathfinder mPathfinder;
+        protected byte[,] mMap =     {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                                    { 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                                    { 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
+                                    { 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
+                                    { 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0},
+                                    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
+                                    { 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+                                    { 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1},
+                                    { 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
+                                    { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1},
+                                    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
+                                    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1}};
         #endregion
 
         #region Accessors
@@ -22,6 +36,11 @@ namespace GMTB.Entities.AI
             get { return mSelf; }
             set { mSelf = value; }
         }
+        public IPathfinder Pathfinder
+        {
+            get { return mPathfinder; }
+            set { mPathfinder = value; }
+        }
         #endregion
 
         #region Constructor
@@ -29,6 +48,7 @@ namespace GMTB.Entities.AI
         {
             mStates = new Dictionary<string, IState>();
             mSelf = _self;
+            mPathfinder = new Pathfinder(800, 600, mMap);
         }
         #endregion
 

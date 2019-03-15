@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GMTB
+namespace GMTB.Abstracts
 {
     public abstract class Level : ILevel
     {
@@ -41,7 +41,7 @@ namespace GMTB
         #endregion
 
         #region Methods
-        public abstract void Initialise(IScene_Manager sm, IEntity_Manager em);
+        public abstract void Initialise(IScene_Manager _sm, IEntity_Manager _em, IBackground_Manager _bm);
         #endregion
     }
 }

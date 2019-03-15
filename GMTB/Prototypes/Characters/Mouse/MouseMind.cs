@@ -17,6 +17,7 @@ namespace Prototypes.Characters.Mouse
             mStates.Add("persue", new PersueState(this));
 
             mCurrentState = mStates["idle"];
+            
         }
         #endregion
     }

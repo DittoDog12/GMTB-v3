@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GMTB;
+﻿using GMTB.Abstracts;
 using GMTB.Entities;
 using GMTB.Interfaces;
 using GMTB.CollidableShapes;
@@ -21,31 +16,31 @@ namespace Prototypes.Levels
         #endregion
 
         #region Methods
-        public override void Initialise(IScene_Manager sm, IEntity_Manager em)
+        public override void Initialise(IScene_Manager _sm, IEntity_Manager _em, IBackground_Manager _bm)
         {
             if (firstRun == true)
             {
-                createdEntity = em.newEntity<Player>("square", true);
-                sm.newEntity(createdEntity, 100, 100);
+                _bm.ChangeBackground("Maze");
+
+                // Create Player
+                createdEntity = _em.newEntity<Player>("square", true);
+                _sm.newEntity(createdEntity, 100, 100);
                 Removables.Add(createdEntity);
-                
 
-
-                createdEntity = em.newEntity<TriangleShape>("trianglel", true);
-                sm.newEntity(createdEntity, 100, 400);
+                // Create Triangle
+                createdEntity = _em.newEntity<TriangleShape>("trianglel", true);
+                _sm.newEntity(createdEntity, 100, 400);
                 Removables.Add(createdEntity);               
               
-
-                createdEntity = em.newEntity<RectangleShape>("squarelorge", true);
-                sm.newEntity(createdEntity, 300, 300);
+                // Create large square
+                createdEntity = _em.newEntity<RectangleShape>("squarelorge", true);
+                _sm.newEntity(createdEntity, 300, 300);
                 Removables.Add(createdEntity);
                
-
-                createdEntity = em.newEntity<Mouse>("mouseleft", true);
-                sm.newEntity(createdEntity, 300, 300);
+                // Create mouse
+                createdEntity = _em.newEntity<Mouse>("mouseleft", true);
+                _sm.newEntity(createdEntity, 700, 500);
                 Removables.Add(createdEntity);
-
-
 
                 firstRun = false;
             }

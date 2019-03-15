@@ -17,6 +17,7 @@ namespace GMTB.Managers
         private IDictionary<int, IEntity> mSceneGraph;
 
         private IEntity_Manager mEntityManager;
+        private IBackground_Manager mBackgroundManager;
 
         //StorageDevice device;
         //string containerName = "GMTBSaveData";
@@ -36,11 +37,12 @@ namespace GMTB.Managers
         #endregion
 
         #region Constructor      
-        public Scene_Manager(IEntity_Manager em)
+        public Scene_Manager(IEntity_Manager _em, IBackground_Manager _bm)
         {
             // Initialise Entity List
             //mEntities = em.Entities;
-            mEntityManager = em;
+            mEntityManager = _em;
+            mBackgroundManager = _bm;
             mSceneGraph = new Dictionary<int, IEntity>();
         }
         #endregion
@@ -71,7 +73,7 @@ namespace GMTB.Managers
         public void Draw(SpriteBatch _spriteBatch)
         {
             _spriteBatch.Begin();
-            //RoomManager.getInstance.Draw(_spriteBatch);
+            mBackgroundManager.Draw(_spriteBatch);
 
             // Call draw method for each Entity if entity is visible        
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
@@ -88,6 +90,8 @@ namespace GMTB.Managers
         {
             _spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend,
                 null, null, null, null, cam.GetTransform(graDev));
+
+            mBackgroundManager.Draw(_spriteBatch);
 
             // Call draw method for each Entity if entity is visible
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)

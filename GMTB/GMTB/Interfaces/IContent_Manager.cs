@@ -9,5 +9,6 @@ namespace GMTB.Interfaces
     public interface IContent_Manager
     {
         void ApplyTexture(string tex, IPhysicalEntity ent);
+        void ApplyTexture(string _tex, IBackground_Manager _man);
     }
 }

@@ -22,6 +22,7 @@ namespace GMTB
         IContent_Manager mContentManager;
         IInput_Manager mInputManager;
         ICollision_Manager mCollisionMananger;
+        IBackground_Manager mBackgroundManager;
 
         // String to hold the Content Root Directory
         // to be passed to the Content_Manager
@@ -56,10 +57,11 @@ namespace GMTB
             base.Initialize();
             mInputManager = new Input_Manager();
             mContentManager = new Content_Manager(Content, mContentRoot);
+            mBackgroundManager = new Background_Manager(mContentManager);
             mEntityManager = new Entity_Manager(mContentManager, mInputManager);
-            mSceneManager = new Scene_Manager(mEntityManager);
+            mSceneManager = new Scene_Manager(mEntityManager, mBackgroundManager);
             mCollisionMananger = new Collision_Manager(mEntityManager);
-            mLevels[0].Initialise(mSceneManager, mEntityManager);
+            mLevels[0].Initialise(mSceneManager, mEntityManager, mBackgroundManager);
         }
 
         /// <summary>
@@ -110,6 +112,7 @@ namespace GMTB
 
             // TODO: Add your drawing code here
             mSceneManager.Draw(mSpriteBatch);
+            
             base.Draw(_gameTime);
         }
     }
