@@ -32,15 +32,15 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Methods
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime _gameTime)
         {
-            base.Update(gameTime);
+            base.Update(_gameTime);
             RectangleNormalize = new List<Vector2>();
             RectangleVertices = new List<Vector2>();
 
             UpdateVertices(pointsVertices);
-            List<Vector2> subtractedVectors = SubtractVectors();
-            perpRec = GetNormals(subtractedVectors);
+            List<Vector2> _subtractedVectors = SubtractVectors();
+            perpRec = GetNormals(_subtractedVectors);
             Normalize(perpRec);
             //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
             //Normalize(perpendicularRectangles);
@@ -50,14 +50,14 @@ namespace GMTB.CollisionSystem
         /// Add the current location of the vertices to the main list
         /// Correct for rotation
         /// </summary>
-        /// <param name="pointsVertices">List of Vertices</param>
-        private void UpdateVertices(List<Vector2> pointsVertices)
+        /// <param name="_pointsVertices">List of Vertices</param>
+        private void UpdateVertices(List<Vector2> _pointsVertices)
         {
-            foreach (Vector2 vec2 in pointsVertices)
+            foreach (Vector2 _vec2 in _pointsVertices)
             {
-                float originX = mPosition.X + mOrigin.X;
-                float originY = mPosition.Y + mOrigin.Y;
-                RectangleVertices.Add(RotatePoint(vec2, new Vector2(originX, originY), mRotation));
+                float _originX = mPosition.X + mOrigin.X;
+                float _originY = mPosition.Y + mOrigin.Y;
+                RectangleVertices.Add(RotatePoint(_vec2, new Vector2(_originX, _originY), mRotation));
             }
         }
         /// <summary>
@@ -89,14 +89,14 @@ namespace GMTB.CollisionSystem
         /// </summary>
         /// <param name="subtractedVectors">List faces</param>
         /// <returns>List of normals for each face</returns>
-        private List<Vector2> GetNormals(List<Vector2> subtractedVectors)
+        private List<Vector2> GetNormals(List<Vector2> _subtractedVectors)
         {
             List<Vector2> _rtnLst = new List<Vector2>();
 
             for (int i = 0; i < mAxes; i++)
             {
-                _rtnLst.Add(new Vector2(subtractedVectors[i].Y,
-                                        subtractedVectors[i].X * -1));
+                _rtnLst.Add(new Vector2(_subtractedVectors[i].Y,
+                                        _subtractedVectors[i].X * -1));
             }
 
             return _rtnLst;
@@ -105,11 +105,11 @@ namespace GMTB.CollisionSystem
         /// Normalize the normals
         /// </summary>
         /// <param name="perpendicularRectangles">List of normals</param>
-        private void Normalize(List<Vector2> perpendicularRectangles)
+        private void Normalize(List<Vector2> _perpendicularRectangles)
         {
             for (int i = 0; i < mAxes; i++)
             {
-                RectangleNormalize.Add(Vector2.Normalize(perpendicularRectangles[i]));
+                RectangleNormalize.Add(Vector2.Normalize(_perpendicularRectangles[i]));
             }
         }
         /// <summary>
@@ -119,17 +119,17 @@ namespace GMTB.CollisionSystem
         /// <param name="Origin">Original position of point</param>
         /// <param name="rotation">Rotation to account for</param>
         /// <returns>Vector accounting for rotations</returns>
-        private Vector2 RotatePoint(Vector2 Point, Vector2 Origin, float rotation)
+        private Vector2 RotatePoint(Vector2 _Point, Vector2 _Origin, float _Rotation)
         {
             Vector2 _rtnVal = new Vector2()
             {
-                X = (float)(Origin.X + (Point.X - Origin.X)
-                * Math.Cos(rotation) - (Point.Y - Origin.Y)
-                * Math.Sin(rotation)),
+                X = (float)(_Origin.X + (_Point.X - _Origin.X)
+                * Math.Cos(_Rotation) - (_Point.Y - _Origin.Y)
+                * Math.Sin(_Rotation)),
 
-                Y = (float)(Origin.Y + (Point.Y - Origin.Y)
-                * Math.Cos(rotation) + (Point.X - Origin.X)
-                * Math.Sin(rotation))
+                Y = (float)(_Origin.Y + (_Point.Y - _Origin.Y)
+                * Math.Cos(_Rotation) + (_Point.X - _Origin.X)
+                * Math.Sin(_Rotation))
             };
             return _rtnVal;
         }

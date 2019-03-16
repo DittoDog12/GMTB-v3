@@ -20,9 +20,9 @@ namespace GMTB.Entities
         }
         #endregion
         #region Methods
-        public override void ConfigureInput(IInput_Manager im)
+        public override void ConfigureInput(IInput_Manager _im)
         {
-            base.ConfigureInput(im);
+            base.ConfigureInput(_im);
             mInputManager.Sub_Move(OnMoveInput);
 
         }
@@ -30,11 +30,11 @@ namespace GMTB.Entities
         {
             return mPosition;
         }
-        public void OnMoveInput(object source, InputEvent args)
+        public void OnMoveInput(object _source, InputEvent _args)
         {
             // Check the current keybinding in the event argument.
             // Apply force respectiveley
-            switch (args.currentKey)
+            switch (_args.currentKey)
             {
                 case Keybindings.Down:
                     ApplyForce(new Vector2(0, 3));

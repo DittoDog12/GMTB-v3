@@ -50,12 +50,17 @@ namespace GMTB.CollisionSystem
             // Iterate through all the current Entities
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
             {
+                // Reset the Quadtree
+                mQuadtree.Clear();
+
                 // try cast the current Dictionary entry as a collidable
                 var asInterface = mEntityManager.GetEntity(i) as ICollidable;
                 // If successful, add it to the local list
                 if (asInterface != null)
                 {
-                    mCollidables.Add(asInterface.UID, asInterface); 
+                    mCollidables.Add(asInterface.UID, asInterface);
+                    
+                    // Add to the 
                     mQuadtree.Insert(asInterface); 
                 }
                     
@@ -74,6 +79,7 @@ namespace GMTB.CollisionSystem
             {
                 // Initialize a second list
                 List<ICollidable> _nearbyObjs = new List<ICollidable>();
+                
                 // Get all the objects in the same quadtree as this object
                 _nearbyObjs = mQuadtree.Retrieve(_nearbyObjs, mCollidables[i]);
 

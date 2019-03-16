@@ -41,9 +41,9 @@ namespace GMTB.CollisionSystem
             base.setVars(_path, cm);
             mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
-        public override void ConfigureInput(IInput_Manager im)
+        public override void ConfigureInput(IInput_Manager _im)
         {
-            base.ConfigureInput(im);
+            base.ConfigureInput(_im);
             mInputManager.Sub_Space(SwapDirection);
         }
         public override void Update(GameTime gameTime)

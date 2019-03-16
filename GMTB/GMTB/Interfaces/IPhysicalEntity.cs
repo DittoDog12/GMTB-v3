@@ -15,7 +15,7 @@ namespace GMTB.Interfaces
         Vector2 Position { get; }
         Vector2 Acceleration { set; }
 
-        void setVars(string _path, IContent_Manager cm);
+        void setVars(string _path, IContent_Manager _cm);
         void setPos(Vector2 _pos);
         void setDefaultPos(Vector2 _pos);
         void Draw(SpriteBatch _spriteBatch);

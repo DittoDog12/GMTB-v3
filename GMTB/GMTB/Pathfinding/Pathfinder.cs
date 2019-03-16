@@ -11,8 +11,8 @@ namespace GMTB.Pathfinding
     public class Pathfinder : IPathfinder
     {
         #region Data Members
-        List<Point> mOpenList;
-        List<Point> mClosedList;
+        private List<Point> mOpenList;
+        private List<Point> mClosedList;
 
         private Rectangle mSize;
 
@@ -27,7 +27,7 @@ namespace GMTB.Pathfinding
         public byte[,] Weight
         {
             get { return mWeight; }
-            set { Weight = value; }
+            set { mWeight = value; }
         }
         #endregion
 

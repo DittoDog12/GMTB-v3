@@ -12,7 +12,7 @@ namespace GMTB.Managers
     public class Content_Manager : IContent_Manager
     {
         #region Data Members
-        ContentManager mContent;
+        private ContentManager mContent;
         #endregion
 
         #region Constructor

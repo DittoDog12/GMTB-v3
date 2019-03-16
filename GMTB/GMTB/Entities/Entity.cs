@@ -57,9 +57,9 @@ namespace GMTB.Entities
         /// Override and specify which events to listen for.
         /// </summary>
         /// <param name="im"> Input Manager </param>
-        public virtual void ConfigureInput(IInput_Manager im)
+        public virtual void ConfigureInput(IInput_Manager _im)
         {
-            mInputManager = im;
+            mInputManager = _im;
         }
         public virtual void Update(GameTime _gameTime)
         {

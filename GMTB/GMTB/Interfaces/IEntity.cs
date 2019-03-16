@@ -10,6 +10,6 @@ namespace GMTB.Interfaces
 
         void setVars(int _uid);      
         void Update(GameTime _gameTime);     
-        void ConfigureInput(IInput_Manager im);
+        void ConfigureInput(IInput_Manager _im);
     }
 }

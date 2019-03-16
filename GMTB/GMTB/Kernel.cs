@@ -18,16 +18,16 @@ namespace GMTB
         SpriteBatch mSpriteBatch;
 
         // Managers
-        IScene_Manager mSceneManager;
-        IEntity_Manager mEntityManager;
-        IContent_Manager mContentManager;
-        IInput_Manager mInputManager;
-        ICollision_Manager mCollisionMananger;
-        IBackground_Manager mBackgroundManager;
+        private IScene_Manager mSceneManager;
+        private IEntity_Manager mEntityManager;
+        private IContent_Manager mContentManager;
+        private IInput_Manager mInputManager;
+        private ICollision_Manager mCollisionMananger;
+        private IBackground_Manager mBackgroundManager;
 
         // String to hold the Content Root Directory
         // to be passed to the Content_Manager
-        string mContentRoot;
+        private string mContentRoot;
 
         // Variable to hold all loaded levels
         private List<ILevel> mLevels;

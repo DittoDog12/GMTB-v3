@@ -102,7 +102,7 @@ namespace GMTB.Managers
             // Return Created Entity
             return _createdEntity;
         }
-        public IEntity newEntity<T>(string _path, bool inputReq) where T : IEntity, new()
+        public IEntity newEntity<T>(string _path, bool _inputReq) where T : IEntity, new()
         {
             // Call parent to create Entity type
             IEntity _createdEntity = newEntity<T>(_path);

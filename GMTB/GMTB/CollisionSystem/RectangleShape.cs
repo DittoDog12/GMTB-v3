@@ -30,16 +30,16 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Methods
-        public override void setVars(string _path, IContent_Manager cm)
+        public override void setVars(string _path, IContent_Manager _cm)
         {
-            base.setVars(_path, cm);
+            base.setVars(_path, _cm);
             mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime _gameTime)
         {
             pointsVertices = GetPointsVertices();
-            base.Update(gameTime);
+            base.Update(_gameTime);
             //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
             //Normalize(perpendicularRectangles);
         }

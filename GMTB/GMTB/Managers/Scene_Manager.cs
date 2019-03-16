@@ -25,15 +25,15 @@ namespace GMTB.Managers
         #endregion
 
         #region Accessors
-        public IDictionary<int, IEntity> Entities
-        {
-            get { return mEntities; }
-        }
+        //public IDictionary<int, IEntity> Entities
+        //{
+        //    get { return mEntities; }
+        //}
 
-        public IDictionary<int, IEntity> SceneGraph
-        {
-            get { return mSceneGraph; }
-        }
+        //public IDictionary<int, IEntity> SceneGraph
+        //{
+        //    get { return mSceneGraph; }
+        //}
         #endregion
 
         #region Constructor      
@@ -86,10 +86,10 @@ namespace GMTB.Managers
             _spriteBatch.End();
         }
         // For use if camera is to follow player
-        public void Draw(SpriteBatch _spriteBatch, Camera2D cam, GraphicsDevice graDev)
+        public void Draw(SpriteBatch _spriteBatch, Camera2D _cam, GraphicsDevice _graDev)
         {
             _spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend,
-                null, null, null, null, cam.GetTransform(graDev));
+                null, null, null, null, _cam.GetTransform(_graDev));
 
             mBackgroundManager.Draw(_spriteBatch);
 

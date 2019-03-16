@@ -14,6 +14,6 @@ namespace GMTB.Interfaces
         int TotalEntities();
         IEntity newEntity<T>() where T : IEntity, new();
         IEntity newEntity<T>(string _path) where T : IEntity, new();
-        IEntity newEntity<T>(string _path, bool inputReq) where T : IEntity, new();
+        IEntity newEntity<T>(string _path, bool _inputReq) where T : IEntity, new();
     }
 }

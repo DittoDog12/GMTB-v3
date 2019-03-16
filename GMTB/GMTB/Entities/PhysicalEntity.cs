@@ -66,10 +66,10 @@ namespace GMTB.Entities
         /// Set Texture path
         /// </summary>
         /// <param name="_path"> Texture Path</param>
-        public virtual void setVars(string _path, IContent_Manager cm)
+        public virtual void setVars(string _path, IContent_Manager _cm)
         {
             mTexturename = _path;
-            mContentManager = cm;
+            mContentManager = _cm;
         }
         /// <summary>
         /// Force change position
@@ -121,10 +121,10 @@ namespace GMTB.Entities
             // Provide a closing velocity to the entity when a collision occurs
             mVelocity += _closingVelocity * mRestitution;
         }
-        public void ApplyForce(Vector2 force)
+        public void ApplyForce(Vector2 _force)
         {
             // Calculation for acceleration using force
-            mAcceleration += force * mInverseMass;
+            mAcceleration += _force * mInverseMass;
         }
         #endregion
     }

@@ -10,8 +10,8 @@ namespace GMTB.Interfaces
 {
     public interface IScene_Manager
     {
-        IDictionary<int, IEntity> Entities { get; }
-        IDictionary<int, IEntity> SceneGraph { get; }
+        //IDictionary<int, IEntity> Entities { get; }
+        //IDictionary<int, IEntity> SceneGraph { get; }
 
         void newEntity(IEntity _createdEntity, int _x, int _y);
         void Update(GameTime _gameTime);
