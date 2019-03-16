@@ -19,12 +19,12 @@ namespace GMTB.Entities
             mSpeed = 5f;
         }
         #endregion
+
         #region Methods
         public override void ConfigureInput(IInput_Manager _im)
         {
             base.ConfigureInput(_im);
             mInputManager.Sub_Move(OnMoveInput);
-
         }
         public Vector2 GetPos()
         {
@@ -56,7 +56,7 @@ namespace GMTB.Entities
             }
         }
 
-        
+
         #endregion
     }
 }

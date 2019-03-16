@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GMTB.InputSystem;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -53,7 +54,9 @@ namespace GMTB.Entities
         {
             set { mAcceleration = value; }
         }
+
         #endregion
+
         #region Constructor
         public PhysicalEntity()
         {
@@ -62,6 +65,11 @@ namespace GMTB.Entities
         #endregion
 
         #region Methods
+        public override void ConfigureInput(IInput_Manager im)
+        {
+            base.ConfigureInput(im);
+            mInputManager.Sub_Space(OnSpaceInput);
+        }
         /// <summary>
         /// Set Texture path
         /// </summary>
@@ -125,6 +133,22 @@ namespace GMTB.Entities
         {
             // Calculation for acceleration using force
             mAcceleration += _force * mInverseMass;
+        }
+
+        private void OnSpaceInput(object source, InputEvent args)
+        {
+            if (args.currentKey == Keybindings.Jump)
+            {
+                ToggleGravity();
+            }
+        }
+
+        public void ToggleGravity()
+        {
+            if (mGravity == new Vector2(0, 1))
+                mGravity = new Vector2(0, 0);
+            else
+                mGravity = new Vector2(0, 1);
         }
         #endregion
     }
