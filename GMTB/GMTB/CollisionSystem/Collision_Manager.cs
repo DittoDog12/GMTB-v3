@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using GMTB.Interfaces;
 
-namespace GMTB.Managers
+namespace GMTB.CollisionSystem
 {
     class Collision_Manager : ICollision_Manager
     {
@@ -19,6 +19,8 @@ namespace GMTB.Managers
         private Vector2 mCollisionNormal;
         private float mCollisionOverlap;
 
+        private IQuadtree mQuadtree;
+
         #endregion
 
         #region Constructor
@@ -27,13 +29,11 @@ namespace GMTB.Managers
         /// </summary>
         /// <param name="c">List of entities to check collisions on</param>
         /// <param name="p">Player entity</param>
-        public Collision_Manager(IEntity_Manager em)
+        public Collision_Manager(IEntity_Manager _em, Point _screenSize)
         {
             mCollidables = new Dictionary<int, ICollidable>();
-            mEntityManager = em;
-
-            
-
+            mEntityManager = _em;
+            mQuadtree = new Quadtree(0, new Rectangle(new Point(0, 0), _screenSize));
         }
         #endregion
 
@@ -54,7 +54,11 @@ namespace GMTB.Managers
                 var asInterface = mEntityManager.GetEntity(i) as ICollidable;
                 // If successful, add it to the local list
                 if (asInterface != null)
-                    mCollidables.Add(asInterface.UID, asInterface);
+                {
+                    mCollidables.Add(asInterface.UID, asInterface); 
+                    mQuadtree.Insert(asInterface); 
+                }
+                    
                 // If needed un comment to store the player seperately
                 //else
                 //{
@@ -68,29 +72,55 @@ namespace GMTB.Managers
             // Iterate through all objects in the collidable list
             for (int i = 1; i <= mCollidables.Count; i++)
             {
-                // Second iterate, ie compare all obejcts against all other objects
-                for (int j = 1; j <= mCollidables.Count; j++)
+                // Initialize a second list
+                List<ICollidable> _nearbyObjs = new List<ICollidable>();
+                // Get all the objects in the same quadtree as this object
+                _nearbyObjs = mQuadtree.Retrieve(_nearbyObjs, mCollidables[i]);
+
+                foreach(ICollidable _obj in _nearbyObjs)
                 {
-                    // Skip if current list entry is same object
-                    if (mCollidables[i].UID != mCollidables[j].UID)
+                    ICollidable objA = mCollidables[i];
+                    ICollidable objB = _obj;
+                    ObjectABNormals.Clear();
+                    foreach (Vector2 vec in objA.RectangleNormalize)
                     {
-                        ICollidable objA = mCollidables[i];
-                        ICollidable objB = mCollidables[j];
-                        ObjectABNormals.Clear();
-                        foreach (Vector2 vec in objA.RectangleNormalize)
-                        {
-                            ObjectABNormals.Add(vec);
-                        }
-                        foreach (Vector2 vec in objB.RectangleNormalize)
-                        {
-                            ObjectABNormals.Add(vec);
-                        }
-                        // Call the main collision test method, pass the reference to the objects Vertices lists
-                        // If collision returns true, call the MTV calculation, pass Object A as the target
-                        if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
-                            MTVCalc(objA, objB);
-                    } 
+                        ObjectABNormals.Add(vec);
+                    }
+                    foreach (Vector2 vec in objB.RectangleNormalize)
+                    {
+                        ObjectABNormals.Add(vec);
+                    }
+                    // Call the main collision test method, pass the reference to the objects Vertices lists
+                    // If collision returns true, call the MTV calculation, pass Object A as the target
+                    if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
+                        MTVCalc(objA, objB);
                 }
+
+                #region OLD
+                //// Second iterate, ie compare all objects against all other objects
+                //for (int j = 1; j <= mCollidables.Count; j++)
+                //{
+                //    // Skip if current list entry is same object
+                //    if (mCollidables[i].UID != mCollidables[j].UID)
+                //    {
+                //        ICollidable objA = mCollidables[i];
+                //        ICollidable objB = mCollidables[j];
+                //        ObjectABNormals.Clear();
+                //        foreach (Vector2 vec in objA.RectangleNormalize)
+                //        {
+                //            ObjectABNormals.Add(vec);
+                //        }
+                //        foreach (Vector2 vec in objB.RectangleNormalize)
+                //        {
+                //            ObjectABNormals.Add(vec);
+                //        }
+                //        // Call the main collision test method, pass the reference to the objects Vertices lists
+                //        // If collision returns true, call the MTV calculation, pass Object A as the target
+                //        if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
+                //            MTVCalc(objA, objB);
+                //    } 
+                //}
+                #endregion
             }
             mCollidables.Clear();
         }

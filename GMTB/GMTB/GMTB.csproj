@@ -42,22 +42,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Camera2D.cs" />
+    <Compile Include="CollisionSystem\IQuadtree.cs" />
+    <Compile Include="CollisionSystem\Quadtree.cs" />
     <Compile Include="Interfaces\IBackground_Manager.cs" />
     <Compile Include="Interfaces\IPathfinder.cs" />
     <Compile Include="Managers\Background_Manager.cs" />
     <Compile Include="Pathfinding\Pathfinder.cs" />
     <Compile Include="Abstracts\State.cs" />
-    <Compile Include="CollidableShapes\ConvexShape.cs" />
-    <Compile Include="CollidableShapes\RectangleShape.cs" />
-    <Compile Include="CollidableShapes\TriangleShape.cs" />
+    <Compile Include="CollisionSystem\ConvexShape.cs" />
+    <Compile Include="CollisionSystem\RectangleShape.cs" />
+    <Compile Include="CollisionSystem\TriangleShape.cs" />
     <Compile Include="Entities\AI\BasicAI.cs" />
     <Compile Include="Entities\AI\Mind.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\PhysicalEntity.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="Interfaces\ICollidable.cs" />
-    <Compile Include="Interfaces\ICollision_Manager.cs" />
+    <Compile Include="CollisionSystem\ICollidable.cs" />
+    <Compile Include="CollisionSystem\ICollision_Manager.cs" />
     <Compile Include="Interfaces\IContent_Manager.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IEntity_Manager.cs" />
@@ -70,7 +72,7 @@
     <Compile Include="Interfaces\IState.cs" />
     <Compile Include="Kernel.cs" />
     <Compile Include="Abstracts\Level.cs" />
-    <Compile Include="Managers\Collision_Manager.cs" />
+    <Compile Include="CollisionSystem\Collision_Manager.cs" />
     <Compile Include="Managers\Content_Manager.cs" />
     <Compile Include="Managers\Entity_Manager.cs" />
     <Compile Include="InputSystem\Input_Manager.cs" />

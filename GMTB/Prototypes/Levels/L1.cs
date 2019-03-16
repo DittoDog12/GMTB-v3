@@ -1,7 +1,7 @@
 ﻿using GMTB.Abstracts;
 using GMTB.Entities;
 using GMTB.Interfaces;
-using GMTB.CollidableShapes;
+using GMTB.CollisionSystem;
 using Prototypes.Characters.Mouse;
 
 namespace Prototypes.Levels
@@ -30,8 +30,28 @@ namespace Prototypes.Levels
                 // Create Triangle
                 createdEntity = _em.newEntity<TriangleShape>("trianglel", true);
                 _sm.newEntity(createdEntity, 100, 400);
-                Removables.Add(createdEntity);               
-              
+                Removables.Add(createdEntity);
+
+                // Create Triangle
+                createdEntity = _em.newEntity<TriangleShape>("trianglel", true);
+                _sm.newEntity(createdEntity, 200, 400);
+                Removables.Add(createdEntity);
+
+                // Create Triangle
+                createdEntity = _em.newEntity<TriangleShape>("trianglel", true);
+                _sm.newEntity(createdEntity, 300, 100);
+                Removables.Add(createdEntity);
+
+                // Create Triangle
+                createdEntity = _em.newEntity<TriangleShape>("trianglel", true);
+                _sm.newEntity(createdEntity, 300, 250);
+                Removables.Add(createdEntity);
+
+                // Create Triangle
+                createdEntity = _em.newEntity<TriangleShape>("trianglel", true);
+                _sm.newEntity(createdEntity, 600, 50);
+                Removables.Add(createdEntity);
+
                 // Create large square
                 createdEntity = _em.newEntity<RectangleShape>("squarelorge", true);
                 _sm.newEntity(createdEntity, 300, 300);

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using GMTB.Interfaces;
 using GMTB.InputSystem;
-using GMTB.CollidableShapes;
+using GMTB.CollisionSystem;
 
 namespace GMTB.Entities
 {

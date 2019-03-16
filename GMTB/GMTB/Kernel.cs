@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using GMTB.CollisionSystem;
 
 namespace GMTB
 {
@@ -55,12 +56,19 @@ namespace GMTB
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            // Create Input Manager
             mInputManager = new Input_Manager();
+            // Create Content Manager, pass Monogame Content Manager and Path to Content Root
             mContentManager = new Content_Manager(Content, mContentRoot);
+            // Create Background Manager, pass Content Manager
             mBackgroundManager = new Background_Manager(mContentManager);
+            // Create Entity Manager, pass Content and Input Managers
             mEntityManager = new Entity_Manager(mContentManager, mInputManager);
+            // Create Scene Manager, pass Entity and Background Managers
             mSceneManager = new Scene_Manager(mEntityManager, mBackgroundManager);
-            mCollisionMananger = new Collision_Manager(mEntityManager);
+            // Create Collision Manager, pass Entity Manager and Screen Size variables
+            mCollisionMananger = new Collision_Manager(mEntityManager, new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
+            // Initialise first Level, pass Scene, Entity and Background Managers
             mLevels[0].Initialise(mSceneManager, mEntityManager, mBackgroundManager);
         }
 

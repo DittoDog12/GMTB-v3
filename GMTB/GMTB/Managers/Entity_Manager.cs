@@ -1,4 +1,4 @@
-﻿using GMTB.CollidableShapes;
+﻿using GMTB.CollisionSystem;
 using GMTB.Interfaces;
 using GMTB.InputSystem;
 using System;

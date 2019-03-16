@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using GMTB.Interfaces;
 
-namespace GMTB.CollidableShapes
+namespace GMTB.CollisionSystem
 {
     public class RectangleShape : ConvexShape
     {

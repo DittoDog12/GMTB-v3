@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using GMTB.InputSystem;
 using GMTB.Interfaces;
 
-namespace GMTB.CollidableShapes
+namespace GMTB.CollisionSystem
 {
     public class TriangleShape : ConvexShape
     {

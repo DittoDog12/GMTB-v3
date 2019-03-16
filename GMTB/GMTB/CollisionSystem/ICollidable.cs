@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace GMTB.Interfaces
+namespace GMTB.CollisionSystem
 {
     public interface ICollidable
     {
