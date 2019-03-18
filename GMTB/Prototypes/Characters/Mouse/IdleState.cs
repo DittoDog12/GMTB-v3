@@ -56,10 +56,12 @@ namespace Prototypes.Characters.Mouse
             mMind.MySelf.ApplyForce(BackandForth());
 
             //mMind.MySelf.ApplyForce(Wander());
-            // if cheese exists
-            //ChangeState("persue");
-            //mFirstRun = true;
-
+            if (mMind.Target != null)
+            {
+                ChangeState("persue");
+                mFirstRun = true;
+            }
+            
             // if cat close
             //ChangeState("Flee");
         }

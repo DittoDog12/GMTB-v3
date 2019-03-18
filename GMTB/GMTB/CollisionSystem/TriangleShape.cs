@@ -47,16 +47,14 @@ namespace GMTB.CollisionSystem
             mInputManager.Sub_Space(SwapDirection);
         }
         public override void Update(GameTime gameTime)
-        {
-            pointsVertices = GetPointsVertices();
+        { 
             base.Update(gameTime);
-
         }
         /// <summary>
         /// Calculate the location of each vertex
         /// </summary>
         /// <returns>List of vertices</returns>
-        private List<Vector2> GetPointsVertices()
+        protected override List<Vector2> GetPointsVertices()
         {
             Vector2 hypotenuse = new Vector2(0);
             if (mFacingDirection == 1)

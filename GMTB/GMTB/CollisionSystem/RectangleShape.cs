@@ -38,7 +38,7 @@ namespace GMTB.CollisionSystem
 
         public override void Update(GameTime _gameTime)
         {
-            pointsVertices = GetPointsVertices();
+            
             base.Update(_gameTime);
             //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
             //Normalize(perpendicularRectangles);
@@ -48,7 +48,7 @@ namespace GMTB.CollisionSystem
         /// Get the points of each vertices of the rectangle
         /// </summary>
         /// <returns>List of Points</returns>
-        private List<Vector2> GetPointsVertices()
+        protected override List<Vector2> GetPointsVertices()
         {
             List<Vector2> rtnLst = new List<Vector2>
             {

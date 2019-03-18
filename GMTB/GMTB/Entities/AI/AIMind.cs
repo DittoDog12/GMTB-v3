@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GMTB.Entities.AI
 {
-    public abstract class Mind : IMind
+    public abstract class AIMind : IMind
     {
         #region Data Members
         protected IState mCurrentState;
         protected IDictionary<string, IState> mStates;
-        protected IPhysicalEntity mSelf;
+        protected IBasicAI mSelf;
         protected IPathfinder mPathfinder;
         protected byte[,] mMap =     {{ 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                                     { 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -31,7 +32,7 @@ namespace GMTB.Entities.AI
         #endregion
 
         #region Accessors
-        public IPhysicalEntity MySelf
+        public IBasicAI MySelf
         {
             get { return mSelf; }
             set { mSelf = value; }
@@ -41,10 +42,14 @@ namespace GMTB.Entities.AI
             get { return mPathfinder; }
             set { mPathfinder = value; }
         }
+        public AITarget Target
+        {
+            get { return mSelf.Target; }
+        }
         #endregion
 
         #region Constructor
-        public Mind(IPhysicalEntity _self)
+        public AIMind(IBasicAI _self)
         {
             mStates = new Dictionary<string, IState>();
             mSelf = _self;
@@ -61,6 +66,7 @@ namespace GMTB.Entities.AI
         {
             mCurrentState = mStates[_newState];
         }
+        
         #endregion
     }
 }

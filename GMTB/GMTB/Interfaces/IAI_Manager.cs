@@ -7,12 +7,8 @@ using Microsoft.Xna.Framework;
 
 namespace GMTB.Interfaces
 {
-    public interface IMind
+    public interface IAI_Manager
     {
-        IBasicAI MySelf { get; set; }
-        IPathfinder Pathfinder { get; set; }
-        AITarget Target { get; }
         void Update(GameTime _gameTime);
-        void ChangeState(string _newState);
     }
 }

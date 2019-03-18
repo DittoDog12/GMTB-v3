@@ -62,6 +62,14 @@ namespace Prototypes.Levels
                 _sm.newEntity(createdEntity, 700, 500);
                 Removables.Add(createdEntity);
 
+                // Create Cheese Spawner
+                createdEntity = _em.newEntity<CheeseSpawner>(true);
+                var asInterface = createdEntity as IUtility_Entity;
+                asInterface.setVars(_sm);
+                asInterface.Initialize();
+                _sm.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity);
+
                 firstRun = false;
             }
         }

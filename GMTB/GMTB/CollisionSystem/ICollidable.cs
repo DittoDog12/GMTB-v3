@@ -9,12 +9,13 @@ namespace GMTB.CollisionSystem
 {
     public interface ICollidable
     {
-        List<Vector2> RectangleNormalize { get; }
+        //List<Vector2> RectangleNormalize { get; }
         List<Vector2> RectangleVertices { get; }
         Vector2 Velocity { get; }
 
         int UID { get; }
 
+        List<Vector2> UpdateCollisionMesh();
         void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj);
     }
 }

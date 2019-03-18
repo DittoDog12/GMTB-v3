@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GMTB.Managers;
+using Microsoft.Xna.Framework;
 
 namespace GMTB.InputSystem
 {
@@ -20,12 +21,24 @@ namespace GMTB.InputSystem
         Use,
         Jump,
         Pause,
-        Released
+        Released,
+        Click,
+        AltClick
     }
     #endregion
 
     public interface IInput_Manager
     {
+        /// <summary>
+        /// Mouse Event Subscriber
+        /// </summary>
+        /// <param name="handler"> Entity to receive Mouse Events </param>
+        void Sub_Mouse(EventHandler<MouseEvent> handler);
+        /// <summary>
+        /// Mouse Event unsubscriber
+        /// </summary>
+        /// <param name="handler"> Entity to stop receiving Mouse events </param>
+        void Un_Mouse(EventHandler<MouseEvent> handler);
         /// <summary>
         /// Main Input checking routine
         /// </summary>

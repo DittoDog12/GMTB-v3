@@ -14,6 +14,7 @@ namespace Prototypes.Characters.Mouse
         #region Constructor
         public PersueState(IMind _mind): base(_mind)
         {
+            mPath = new Queue<Point>();
 
         }
         #endregion
@@ -21,11 +22,54 @@ namespace Prototypes.Characters.Mouse
         #region Methods
         public override void Update(GameTime _gameTime)
         {
-            // if collected cheese
-            //ChangeState("idle");
+            mMind.MySelf.ApplyForce(Persue());
+
+            if (mMind.Target == null)
+                ChangeState("idle");
 
             // if cat close
             //ChangeState("flee");
+        }
+        private Vector2 Persue()
+        {
+            Vector2 _rtnval;
+
+            // COnvert mouse and cheese position into locations on the grid.
+            // Divide the Vector2 pixel position by the texture width.
+            // then -1 to account for grid starting at 0.
+            Point _mousepos = new Point(((int)mMind.MySelf.Position.Y / 50), ((int)mMind.MySelf.Position.X / 50));
+            Point _activedest = new Point(((int)mMind.Target.Position.Y / 50), ((int)mMind.Target.Position.X / 50));
+
+            // Check if the path exists
+            if (mPath.Count > 0)
+            {
+                mCurrentDest.Y = mPath.Peek().X * 50;
+                mCurrentDest.X = mPath.Peek().Y * 50;
+                mPath.Dequeue();
+
+                // Check if the mouse is at the lastest position
+                // If yes then load the next desitination from the queue
+                if (mMind.MySelf.Position == mCurrentDest)
+                {
+                    mCurrentDest.Y = mPath.Peek().X * 50;
+                    mCurrentDest.X = mPath.Peek().Y * 50;
+                    mPath.Dequeue();
+                }
+            }
+            else
+            {
+                // If not the load the path into a queue
+                foreach (Point p in mMind.Pathfinder.FindPath(_mousepos, _activedest))
+                {
+                    mPath.Enqueue(p);
+                }
+            }
+
+            // Calcualte the vector to get to the current destination
+            _rtnval = mCurrentDest - mMind.MySelf.Position;
+            _rtnval.Normalize();
+
+            return _rtnval;
         }
         #endregion
     }

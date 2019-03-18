@@ -23,6 +23,7 @@ namespace GMTB
         private IContent_Manager mContentManager;
         private IInput_Manager mInputManager;
         private ICollision_Manager mCollisionMananger;
+        private IAI_Manager mAIManager;
         private IBackground_Manager mBackgroundManager;
 
         // String to hold the Content Root Directory
@@ -68,6 +69,8 @@ namespace GMTB
             mSceneManager = new Scene_Manager(mEntityManager, mBackgroundManager);
             // Create Collision Manager, pass Entity Manager and Screen Size variables
             mCollisionMananger = new Collision_Manager(mEntityManager, new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
+            // Create AI Manager, Pass the Entity Manager
+            mAIManager = new AI_Manager(mEntityManager);
             // Initialise first Level, pass Scene, Entity and Background Managers
             mLevels[0].Initialise(mSceneManager, mEntityManager, mBackgroundManager);
         }
@@ -107,6 +110,7 @@ namespace GMTB
             mSceneManager.Update(_gameTime);
             mInputManager.GetCurrentInput();
             mCollisionMananger.CollisionDetec();
+            mAIManager.Update(_gameTime);
             base.Update(_gameTime);
         }
 

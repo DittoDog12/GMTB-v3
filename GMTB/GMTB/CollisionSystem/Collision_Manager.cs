@@ -1,10 +1,10 @@
-﻿using System;
+﻿using GMTB.Interfaces;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using GMTB.Interfaces;
 
 namespace GMTB.CollisionSystem
 {
@@ -48,51 +48,47 @@ namespace GMTB.CollisionSystem
         public void CollisionDetec()
         {
             // Iterate through all the current Entities
-            for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
-            {
-                // Reset the Quadtree
-                mQuadtree.Clear();
-
+            foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
+            {                
                 // try cast the current Dictionary entry as a collidable
-                var asInterface = mEntityManager.GetEntity(i) as ICollidable;
+                var asInterface = _keypair.Value as ICollidable;
                 // If successful, add it to the local list
                 if (asInterface != null)
                 {
                     mCollidables.Add(asInterface.UID, asInterface);
-                    
                     // Add to the 
-                    mQuadtree.Insert(asInterface); 
+                    mQuadtree.Insert(asInterface);
                 }
-                    
-                // If needed un comment to store the player seperately
+
+                // If needed uncomment to store the player seperately
                 //else
                 //{
-                //    var asInterface = mEntityManager.GetEntity(i) as IPlayer;
+                //    var asInterface = _keypair.Value as IPlayer;
                 //    if (asInterface != null)
                 //        mPlayer = asInterface
                 //}
-
             }
 
             // Iterate through all objects in the collidable list
-            for (int i = 1; i <= mCollidables.Count; i++)
+            foreach (KeyValuePair<int, ICollidable> _keypair in mCollidables)
             {
                 // Initialize a second list
                 List<ICollidable> _nearbyObjs = new List<ICollidable>();
-                
-                // Get all the objects in the same quadtree as this object
-                _nearbyObjs = mQuadtree.Retrieve(_nearbyObjs, mCollidables[i]);
 
-                foreach(ICollidable _obj in _nearbyObjs)
+                // Get all the objects in the same quadtree as this object
+                _nearbyObjs = mQuadtree.Retrieve(_nearbyObjs, _keypair.Value);
+
+                foreach (ICollidable _obj in _nearbyObjs)
                 {
-                    ICollidable objA = mCollidables[i];
+                    ICollidable objA = _keypair.Value;
                     ICollidable objB = _obj;
                     ObjectABNormals.Clear();
-                    foreach (Vector2 vec in objA.RectangleNormalize)
+                    foreach (Vector2 vec in objA.UpdateCollisionMesh())
                     {
                         ObjectABNormals.Add(vec);
                     }
-                    foreach (Vector2 vec in objB.RectangleNormalize)
+                    //foreach (Vector2 vec in objB.RectangleNormalize)
+                    foreach (Vector2 vec in objB.UpdateCollisionMesh())
                     {
                         ObjectABNormals.Add(vec);
                     }
@@ -129,6 +125,7 @@ namespace GMTB.CollisionSystem
                 #endregion
             }
             mCollidables.Clear();
+            mQuadtree.Clear();
         }
 
         /// <summary>

@@ -20,7 +20,7 @@ namespace GMTB.Entities
         //--Key Variables
         protected int mUID;
         protected IInput_Manager mInputManager;
-        
+        private IEntity_Manager mEntityManger;
         
         
         #endregion
@@ -46,9 +46,10 @@ namespace GMTB.Entities
         /// Set UID
         /// </summary>
         /// <param name="_uid"> Unique ID </param>
-        public virtual void setVars(int _uid)
+        public virtual void setVars(int _uid, IEntity_Manager _em)
         {
-            mUID = _uid;     
+            mUID = _uid;
+            mEntityManger = _em;
         }
         
         
@@ -65,7 +66,10 @@ namespace GMTB.Entities
         {
 
         }
-
+        public virtual void Destroy()
+        {
+            mEntityManger.DestroyEntity(UID);
+        }
         
         
         #endregion

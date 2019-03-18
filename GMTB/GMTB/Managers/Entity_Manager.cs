@@ -1,6 +1,6 @@
 ﻿using GMTB.CollisionSystem;
-using GMTB.Interfaces;
 using GMTB.InputSystem;
+using GMTB.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +32,18 @@ namespace GMTB.Managers
         //}
         public IEntity GetEntity(int _index)
         {
-            return mEntities[_index];
+            try
+            {
+                return mEntities[_index];
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public IDictionary<int, IEntity> AllEntities
+        {
+            get { return mEntities; }
         }
         public int TotalEntities()
         {
@@ -58,7 +69,7 @@ namespace GMTB.Managers
         private void setEntityVars(IEntity _entity)
         {
             // Set the entities UID
-            _entity.setVars(UID);
+            _entity.setVars(UID, this);
             // Increment the UID
             UID++;
         }
@@ -110,6 +121,21 @@ namespace GMTB.Managers
             _createdEntity.ConfigureInput(mInputManager);
             // Return Created Entity
             return _createdEntity;
+        }
+        public IEntity newEntity<T>(bool _util) where T : IEntity, new()
+        {
+            // Call parent to create entity type
+            IEntity _createdEntity = newEntity<T>();
+            // Cast entity to Utility Class
+            var asInterface = _createdEntity as IUtility_Entity;
+            // Pass other managers to the new utility
+            asInterface.setVars(this, mInputManager);
+            // Return Created Entity
+            return _createdEntity;
+        }
+        public void DestroyEntity(int _uid)
+        {
+            mEntities.Remove(_uid);
         }
         #endregion
     }

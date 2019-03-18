@@ -45,6 +45,8 @@
     <Compile Include="Characters\Mouse\Mouse.cs" />
     <Compile Include="Characters\Mouse\MouseMind.cs" />
     <Compile Include="Characters\Mouse\PersueState.cs" />
+    <Compile Include="Cheese.cs" />
+    <Compile Include="CheeseSpawner.cs" />
     <Compile Include="GameInitializer.cs" />
     <Compile Include="Levels\L1.cs" />
     <Compile Include="Program.cs" />

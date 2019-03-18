@@ -13,9 +13,20 @@ namespace GMTB.InputSystem
     {
         public Keybindings currentKey;
 
-        public InputEvent(Keybindings key)
+        public InputEvent(Keybindings _key)
         {
-            currentKey = key;
+            currentKey = _key;
+        }
+    }
+    public class MouseEvent : EventArgs
+    {
+        public Keybindings currentKey;
+        public Vector2 currentPos;
+
+        public MouseEvent(Keybindings _key, Vector2 _pos)
+        {
+            currentKey = _key;
+            currentPos = _pos;
         }
     }
     #endregion
@@ -25,10 +36,12 @@ namespace GMTB.InputSystem
         #region Data Members
         private KeyboardState _oldState;
         private GamePadState _oldGState;
+        private MouseState _oldMState;
         public event EventHandler<InputEvent> Movement;
         public event EventHandler<InputEvent> Space;
         public event EventHandler<InputEvent> Esc;
         public event EventHandler<InputEvent> Use;
+        public event EventHandler<MouseEvent> MouseUsers;
         #endregion
 
         #region Constructor
@@ -55,10 +68,25 @@ namespace GMTB.InputSystem
         /// </summary>
         public void GetCurrentInput()
         {
+            // Get Mouse Input
+            MouseInput();
             // Check if a controller is connected, detect input from that if true
             if (CheckController())
                 GamePadInput();
-            // else {//Enable this top stop keyboard detection if controller detected
+            // else //Enable this top stop keyboard detection if controller detected
+            // Get Keyboard Input
+            KeyboardInput();
+        }
+        private void MouseInput()
+        {
+            MouseState _mouseState = Mouse.GetState();
+            if (_oldMState.LeftButton == ButtonState.Pressed && _mouseState.LeftButton == ButtonState.Released)
+                MouseInput(Keybindings.Click, new Vector2(_mouseState.X, _mouseState.Y));
+
+            _oldMState = _mouseState;
+        }
+        private void KeyboardInput()
+        {
             KeyboardState _newState = Keyboard.GetState();
 
             if (_newState.IsKeyDown(Keys.W))
@@ -85,12 +113,10 @@ namespace GMTB.InputSystem
             if (_oldState.IsKeyUp(Keys.Space) && _newState.IsKeyDown(Keys.Space))
                 SpaceInput(Keybindings.Jump);
 
-            
+
 
             _oldState = _newState;
-            //} // Closing bracket for else statement
         }
-
         /// <summary>
         /// Second method to check for gamepad input
         /// </summary>
@@ -117,9 +143,15 @@ namespace GMTB.InputSystem
             _oldGState = _newGState;
 
         }
+        
         #endregion
 
         #region EventTriggers
+        protected virtual void MouseInput(Keybindings key, Vector2 pos)
+        {
+            MouseEvent args = new MouseEvent(key, pos);
+            MouseUsers(this, args);
+        }
         protected virtual void MovementInput(Keybindings key)
         {
             InputEvent args = new InputEvent(key);
@@ -148,6 +180,22 @@ namespace GMTB.InputSystem
         #endregion
 
         #region Subscribers
+        /// <summary>
+        /// Mouse Event Subscriber
+        /// </summary>
+        /// <param name="handler"> Entity to receive Mouse Events </param>
+        public void Sub_Mouse(EventHandler<MouseEvent> handler)
+        {
+            MouseUsers += handler;
+        }
+        /// <summary>
+        /// Mouse Event unsubscriber
+        /// </summary>
+        /// <param name="handler"> Entity to stop receiving Mouse events </param>
+        public void Un_Mouse(EventHandler<MouseEvent> handler)
+        {
+            MouseUsers -= handler;
+        }
         /// <summary>
         /// Movement input subscriber
         /// </summary>

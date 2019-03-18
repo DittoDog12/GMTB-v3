@@ -13,7 +13,8 @@ namespace GMTB.Interfaces
         //IDictionary<int, IEntity> Entities { get; }
         //IDictionary<int, IEntity> SceneGraph { get; }
 
-        void newEntity(IEntity _createdEntity, int _x, int _y);
+        void newEntity(IEntity _createdEntity, float _x, float _y);
+        void newEntity(IEntity _createdEntity, Vector2 _pos);
         void Update(GameTime _gameTime);
         void Draw(SpriteBatch _spriteBatch);
         void Draw(SpriteBatch _spriteBatch, Camera2D cam, GraphicsDevice graDev);

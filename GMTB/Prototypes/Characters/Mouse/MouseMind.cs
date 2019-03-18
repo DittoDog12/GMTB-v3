@@ -8,10 +8,10 @@ using GMTB.Interfaces;
 
 namespace Prototypes.Characters.Mouse
 {
-    public class MouseMind : Mind
+    public class MouseMind : AIMind
     {
         #region Constructor
-        public MouseMind(IPhysicalEntity _self) : base(_self)
+        public MouseMind(IBasicAI _self) : base(_self)
         {
             mStates.Add("idle", new IdleState(this));
             mStates.Add("persue", new PersueState(this));

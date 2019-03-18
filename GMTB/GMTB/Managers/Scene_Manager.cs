@@ -47,7 +47,7 @@ namespace GMTB.Managers
         }
         #endregion
 
-        public void newEntity(IEntity _createdEntity, int _x, int _y)
+        public void newEntity(IEntity _createdEntity, float _x, float _y)
         {
             // Add the new entity to the SceneManagers entity list
             //mEntities.Add(createdEntity);
@@ -56,16 +56,21 @@ namespace GMTB.Managers
 
             // Set the entities initial position
             var _entity = _createdEntity as IPhysicalEntity;
-            _entity.setDefaultPos(new Vector2(_x, _y));
+            if (_entity != null)
+                _entity.setDefaultPos(new Vector2(_x, _y));
 
+        }
+        public void newEntity(IEntity _createdEntity, Vector2 _pos)
+        {
+            newEntity(_createdEntity, _pos.X, _pos.Y);
         }
         public void Update(GameTime _gameTime)
         {
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
             {
-                var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-                //mEntities[i].Update(_gameTime);
-                _entity.Update(_gameTime);
+                //var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
+                mEntityManager.GetEntity(i).Update(_gameTime);
+                //_entity.Update(_gameTime);
             }
                 
 
@@ -79,10 +84,9 @@ namespace GMTB.Managers
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
             {
                 var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-                _entity.Draw(_spriteBatch);
+                if (_entity != null)
+                    _entity.Draw(_spriteBatch);
             }
-                
-
             _spriteBatch.End();
         }
         // For use if camera is to follow player
@@ -97,7 +101,8 @@ namespace GMTB.Managers
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
             {
                 var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-                _entity.Draw(_spriteBatch);
+                if (_entity != null)
+                    _entity.Draw(_spriteBatch);
             }
 
             _spriteBatch.End();

@@ -61,6 +61,7 @@ namespace Prototypes
             ContentRoot = "Content";
             // Create a new instance of the Kernal, pass Content root and opened levels
             game1 = new Kernel(ContentRoot, GetLevels());
+            game1.IsMouseVisible = true;
         }
 
         public void Run()

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace GMTB.CollisionSystem
 {
-    public class ConvexShape : PhysicalEntity, ICollidable
+    public abstract class ConvexShape : PhysicalEntity, ICollidable
     {
         #region Data Members
         //private Rectangle mRectangle;
@@ -34,18 +34,32 @@ namespace GMTB.CollisionSystem
         #region Methods
         public override void Update(GameTime _gameTime)
         {
-            base.Update(_gameTime);
+            base.Update(_gameTime);           
+        }
+        /// <summary>
+        /// Updates the variables requried for collision detection
+        /// </summary>
+        /// <returns> List of Normals </returns>
+        public virtual List<Vector2> UpdateCollisionMesh()
+        {
             RectangleNormalize = new List<Vector2>();
             RectangleVertices = new List<Vector2>();
 
+            pointsVertices = GetPointsVertices();
             UpdateVertices(pointsVertices);
             List<Vector2> _subtractedVectors = SubtractVectors();
             perpRec = GetNormals(_subtractedVectors);
             Normalize(perpRec);
             //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
             //Normalize(perpendicularRectangles);
+            return RectangleNormalize;
         }
-
+        /// <summary>
+        /// Get the points of each vertices of the shape
+        /// Overriden by actual shape
+        /// </summary>
+        /// <returns>List of Points</returns>
+        protected abstract List<Vector2> GetPointsVertices();      
         /// <summary>
         /// Add the current location of the vertices to the main list
         /// Correct for rotation
