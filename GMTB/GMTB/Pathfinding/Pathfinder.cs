@@ -168,7 +168,7 @@ namespace GMTB.Pathfinding
 
             // Down Node
             //
-            if (_node.Y + 1 <= 15)
+            if (_node.Y + 1 <= 28)
                 if (mWeight[_node.X, _node.Y + 1] > 0)
                     _nodes.Add(new Point(_node.X, _node.Y + 1));
 
@@ -178,7 +178,7 @@ namespace GMTB.Pathfinding
                     _nodes.Add(new Point(_node.X - 1, _node.Y));
 
             // Right Node
-            if (_node.X + 1 <= 11)
+            if (_node.X + 1 <= 17)
                 if (mWeight[_node.X + 1, _node.Y] > 0)
                     _nodes.Add(new Point(_node.X + 1, _node.Y));
 

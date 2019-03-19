@@ -75,6 +75,7 @@ namespace GMTB.CollisionSystem
                 // Initialize a second list
                 List<ICollidable> _nearbyObjs = new List<ICollidable>();
 
+                // Broad phase collision detection - Quadtree
                 // Get all the objects in the same quadtree as this object
                 _nearbyObjs = mQuadtree.Retrieve(_nearbyObjs, _keypair.Value);
 
@@ -82,22 +83,26 @@ namespace GMTB.CollisionSystem
                 {
                     ICollidable objA = _keypair.Value;
                     ICollidable objB = _obj;
-                    ObjectABNormals.Clear();
-                    foreach (Vector2 vec in objA.UpdateCollisionMesh())
+                    // Mid phase collision detection - Intersecting rectangles
+                    if (objA.Hitbox.Intersects(objB.Hitbox))
                     {
-                        ObjectABNormals.Add(vec);
-                    }
-                    //foreach (Vector2 vec in objB.RectangleNormalize)
-                    foreach (Vector2 vec in objB.UpdateCollisionMesh())
-                    {
-                        ObjectABNormals.Add(vec);
-                    }
-                    // Call the main collision test method, pass the reference to the objects Vertices lists
-                    // If collision returns true, call the MTV calculation, pass Object A as the target
-                    if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
-                        MTVCalc(objA, objB);
+                        // Narrow phase collision detection - SAT
+                        ObjectABNormals.Clear();
+                        foreach (Vector2 vec in objA.UpdateCollisionMesh())
+                        {
+                            ObjectABNormals.Add(vec);
+                        }
+                        //foreach (Vector2 vec in objB.RectangleNormalize)
+                        foreach (Vector2 vec in objB.UpdateCollisionMesh())
+                        {
+                            ObjectABNormals.Add(vec);
+                        }
+                        // Call the main collision test method, pass the reference to the objects Vertices lists
+                        // If collision returns true, call the MTV calculation, pass Object A as the target
+                        if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
+                            MTVCalc(objA, objB);
+                    }                    
                 }
-
                 #region OLD
                 //// Second iterate, ie compare all objects against all other objects
                 //for (int j = 1; j <= mCollidables.Count; j++)

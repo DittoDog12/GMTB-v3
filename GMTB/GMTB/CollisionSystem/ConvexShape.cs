@@ -16,25 +16,33 @@ namespace GMTB.CollisionSystem
         protected List<Vector2> pointsVertices; // List of vectors to hold the points
         protected List<Vector2> perpRec; // List of Normals
         protected int mAxes;
+        protected Rectangle mHitbox;
         #endregion
 
         #region Accessors
         public List<Vector2> RectangleNormalize { get; protected set; } = new List<Vector2>();
         public List<Vector2> RectangleVertices { get; protected set; } = new List<Vector2>();
         public Vector2 Velocity{ get { return mVelocity; } }
+        public Rectangle Hitbox { get { return mHitbox; } }
         #endregion
 
         #region Constructor
         public ConvexShape()
         {
-
+            
         }
         #endregion
 
         #region Methods
+        public override void setDefaultPos(Vector2 _pos)
+        {
+            base.setDefaultPos(_pos);
+            mHitbox = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
+        }
         public override void Update(GameTime _gameTime)
         {
-            base.Update(_gameTime);           
+            base.Update(_gameTime);
+            mHitbox.Location = mPosition.ToPoint();
         }
         /// <summary>
         /// Updates the variables requried for collision detection
