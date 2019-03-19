@@ -36,6 +36,12 @@ namespace GMTB
         public Kernel()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 900;
+            graphics.PreferredBackBufferWidth = 1440;
+            graphics.ApplyChanges();
+
+            Global.ScreenSize = new Vector2 (graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+
             //Content.RootDirectory = "Content";
 
         }

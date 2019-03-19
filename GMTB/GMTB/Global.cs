@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace GMTB
 {
@@ -29,5 +30,7 @@ namespace GMTB
         /// Static availGameStates to hold the current GameState
         /// </summary>
         public static availGameStates GameState { get; set; }
+
+        public static Vector2 ScreenSize { get; set; }
     }
 }

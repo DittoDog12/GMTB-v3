@@ -33,7 +33,7 @@ namespace GMTB.Managers
         #region Methods
         public void Draw(SpriteBatch _spriteBatch)
         {
-            _spriteBatch.Draw(mBackground, new Rectangle(0, 0, 800, 480), Color.White);
+            _spriteBatch.Draw(mBackground, new Rectangle(0, 0, (int)Global.ScreenSize.X, (int)Global.ScreenSize.Y), Color.White);
         }
         public void ChangeBackground(string _newBackground)
         {

@@ -26,7 +26,7 @@ namespace Prototypes.Characters.Mouse
 
 
 
-        private Vector2 mDestination1 = new Vector2(700, 50);
+        private Vector2 mDestination1 = new Vector2(10, 10);
         private Vector2 mDestination2;
         private Vector2 mActiveDestination;
 
@@ -72,8 +72,8 @@ namespace Prototypes.Characters.Mouse
             // COnvert mouse and cheese position into locations on the grid.
             // Divide the Vector2 pixel position by the texture width.
             // then -1 to account for grid starting at 0.
-            Point _mousepos = new Point(((int)mMind.MySelf.Position.Y / 50), ((int)mMind.MySelf.Position.X / 50));
-            Point _activedest = new Point(((int)mActiveDestination.Y / 50), ((int)mActiveDestination.X / 50));
+            Point _mousepos = new Point(((int)mMind.MySelf.Position.X / 50), ((int)mMind.MySelf.Position.Y / 50));
+            Point _activedest = new Point(((int)mActiveDestination.X / 50), ((int)mActiveDestination.Y / 50));
 
             // Check if the path exists
             if (mPath.Count > 0)
@@ -86,8 +86,8 @@ namespace Prototypes.Characters.Mouse
                 // If yes then load the next desitination from the queue
                 if (mMind.MySelf.Position == mCurrentDest)
                 {
-                    mCurrentDest.Y = mPath.Peek().X * 50;
-                    mCurrentDest.X = mPath.Peek().Y * 50;
+                    mCurrentDest.Y = mPath.Peek().Y * 50;
+                    mCurrentDest.X = mPath.Peek().X * 50;
                     mPath.Dequeue();
                 }
             }

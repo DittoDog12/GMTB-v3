@@ -34,8 +34,8 @@ namespace GMTB.Pathfinding
         #region Constructor
         public Pathfinder()
         {
-            int x = 800;
-            int y = 600;
+            int x = (int)Global.ScreenSize.X;
+            int y = (int)Global.ScreenSize.Y;
             mSize = new Rectangle(0, 0, x, y);
 
         }

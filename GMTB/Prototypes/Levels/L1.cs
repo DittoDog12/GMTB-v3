@@ -59,7 +59,7 @@ namespace Prototypes.Levels
                
                 // Create mouse
                 createdEntity = _em.newEntity<Mouse>("mouseleft", true);
-                _sm.newEntity(createdEntity, 700, 500);
+                _sm.newEntity(createdEntity, 1200, 700);
                 Removables.Add(createdEntity);
 
                 // Create Cheese Spawner
