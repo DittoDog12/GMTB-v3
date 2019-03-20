@@ -32,11 +32,11 @@ namespace Prototypes.Characters
                 case Keybindings.Up:
                     break;
                 case Keybindings.Right:
-                    mContentManager.ApplyTexture("playerR", this);
-                    mMoving = true;
+                    mTexturename = "playerR";
+                    mMoving = true; 
                     break;
                 case Keybindings.Left:
-                    mContentManager.ApplyTexture("playerL", this);
+                    mTexturename = "playerL";
                     mMoving = true;
                     break;
                 // If Keybinding is released, or keybinding is not recognised, stop moving
@@ -54,6 +54,9 @@ namespace Prototypes.Characters
             if (mMoving)
                 IncrementFrame(_gameTime);
             base.Draw(_spriteBatch,  _gameTime);
+
+            if (mTexturename != mTexture.Name)
+                    mContentManager.ApplyTexture(mTexturename, this);
 
         }
         #endregion

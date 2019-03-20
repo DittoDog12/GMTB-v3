@@ -15,7 +15,7 @@ namespace GMTB.CollisionSystem
         #region Data Members
         // Indicates the location of the rightangle, 1 = right angle on left, -1 = right angle on right
         private int mFacingDirection;
-        private Rectangle mRectangle;
+        protected Rectangle mRectangle;
         #endregion
 
         #region Constructor

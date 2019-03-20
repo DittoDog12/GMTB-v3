@@ -12,7 +12,7 @@ namespace GMTB.CollisionSystem
     public class RectangleShape : ConvexShape
     {
         #region Data Members
-        private Rectangle mRectangle;
+        protected Rectangle mRectangle;
         #endregion
 
         #region Constructor

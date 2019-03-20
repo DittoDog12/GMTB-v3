@@ -45,11 +45,15 @@ namespace GMTB.Entities
         }
         #endregion
         #region Methods
+        // Override SAT shape with alterante texture size
         // Override hitbox with alternate texture size values
         public override void setDefaultPos(Vector2 _pos)
         {
             base.setDefaultPos(_pos);
+            mWidth = mTexture.Width / mColumns;
+            mHeight = mTexture.Height / mRows;
             mHitbox = new Rectangle((int)mPosition.X, (int)mPosition.Y, mWidth, mHeight);
+            mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mWidth, mHeight);
         }
         public virtual void FrameReset()
         {
