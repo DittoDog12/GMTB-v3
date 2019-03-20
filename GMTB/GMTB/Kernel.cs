@@ -33,6 +33,10 @@ namespace GMTB
         // Variable to hold all loaded levels
         private List<ILevel> mLevels;
 
+        // Variables to hold the texture refresh rate and the timer
+        private float mRefreshRate = 5f;
+        private float mRefreshTimer = 0f;
+
         public Kernel()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -127,10 +131,15 @@ namespace GMTB
         protected override void Draw(GameTime _gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            mRefreshTimer += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            // TODO: Add your drawing code here
-            mSceneManager.Draw(mSpriteBatch);
-            
+            if (mRefreshTimer >= mRefreshRate)
+            {
+                // TODO: Add your drawing code here
+                mSceneManager.Draw(mSpriteBatch, _gameTime);
+                mRefreshTimer = 0f;
+            }
+      
             base.Draw(_gameTime);
         }
     }

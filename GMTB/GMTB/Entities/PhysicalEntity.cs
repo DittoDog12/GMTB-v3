@@ -103,7 +103,7 @@ namespace GMTB.Entities
             //mPosition += mVelocity;
             mVelocity = Vector2.Zero;
         }
-        public virtual void Draw(SpriteBatch _spriteBatch)
+        public virtual void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
             _spriteBatch.Draw(mTexture, mPosition, Color.AntiqueWhite);
         }

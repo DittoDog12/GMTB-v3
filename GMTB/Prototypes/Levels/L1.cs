@@ -23,7 +23,7 @@ namespace Prototypes.Levels
                 _bm.ChangeBackground("Maze");
 
                 // Create Player
-                createdEntity = _em.newEntity<Player>("square", true);
+                createdEntity = _em.newEntity<Characters.Player>("playerR", true);
                 _sm.newEntity(createdEntity, 100, 100);
                 Removables.Add(createdEntity);
 

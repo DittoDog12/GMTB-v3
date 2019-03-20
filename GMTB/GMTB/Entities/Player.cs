@@ -11,7 +11,7 @@ using GMTB.CollisionSystem;
 
 namespace GMTB.Entities
 {
-    public class Player : RectangleShape, IPlayer
+    public class Player : AnimatingEntity, IPlayer
     {
         #region Constructor
         public Player()
@@ -30,7 +30,7 @@ namespace GMTB.Entities
         {
             return mPosition;
         }
-        public void OnMoveInput(object _source, InputEvent _args)
+        public virtual void OnMoveInput(object _source, InputEvent _args)
         {
             // Check the current keybinding in the event argument.
             // Apply force respectiveley

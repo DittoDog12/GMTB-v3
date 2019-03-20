@@ -18,7 +18,7 @@ namespace GMTB.Interfaces
         void setVars(string _path, IContent_Manager _cm);
         void setPos(Vector2 _pos);
         void setDefaultPos(Vector2 _pos);
-        void Draw(SpriteBatch _spriteBatch);
+        void Draw(SpriteBatch _spriteBatch, GameTime _gameTime);
         void Update(GameTime _gameTime);
         void ApplyForce(Vector2 force);
     }

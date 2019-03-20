@@ -75,34 +75,34 @@ namespace GMTB.Managers
                 
 
         }
-        public void Draw(SpriteBatch _spriteBatch)
+        public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
             _spriteBatch.Begin();
-            mBackgroundManager.Draw(_spriteBatch);
+            mBackgroundManager.Draw(_spriteBatch,  _gameTime);
 
             // Call draw method for each Entity if entity is visible        
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
             {
                 var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
                 if (_entity != null)
-                    _entity.Draw(_spriteBatch);
+                    _entity.Draw(_spriteBatch,  _gameTime);
             }
             _spriteBatch.End();
         }
         // For use if camera is to follow player
-        public void Draw(SpriteBatch _spriteBatch, Camera2D _cam, GraphicsDevice _graDev)
+        public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime, Camera2D _cam, GraphicsDevice _graDev)
         {
             _spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend,
                 null, null, null, null, _cam.GetTransform(_graDev));
 
-            mBackgroundManager.Draw(_spriteBatch);
+            mBackgroundManager.Draw(_spriteBatch,  _gameTime);
 
             // Call draw method for each Entity if entity is visible
             for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
             {
                 var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
                 if (_entity != null)
-                    _entity.Draw(_spriteBatch);
+                    _entity.Draw(_spriteBatch,  _gameTime);
             }
 
             _spriteBatch.End();

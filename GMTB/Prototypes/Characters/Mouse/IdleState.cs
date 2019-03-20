@@ -98,8 +98,8 @@ namespace Prototypes.Characters.Mouse
             }
 
             // Calcualte the vector to get to the current destination
-            //_rtnval = mCurrentDest - mMind.MySelf.Position;
-            _rtnval = Vector2.Distance(mCurrentDest, mMind.MySelf.Position);
+            _rtnval = mCurrentDest - mMind.MySelf.Position;
+            //_rtnval = Vector2.Distance(mCurrentDest, mMind.MySelf.Position);
             _rtnval.Normalize();
 
             // If the current destination has been reached, swap the current destinations

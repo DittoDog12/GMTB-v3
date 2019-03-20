@@ -8,6 +8,7 @@ using GMTB.Interfaces;
 using GMTB.Entities;
 using GMTB.Managers;
 using Microsoft.Xna.Framework;
+using GMTB;
 
 namespace Prototypes
 {
@@ -36,8 +37,13 @@ namespace Prototypes
         }
         public void OnMouseClick(object source, MouseEvent args)
         {
-            IEntity createdEntity = mEntityManager.newEntity<Cheese>("cheese");
-            mSceneManager.newEntity(createdEntity, args.currentPos);
+            // Verify the mouse click is not off the screen
+            if ((args.currentPos.X < Global.ScreenSize.X && args.currentPos.X > 0)
+               && (args.currentPos.Y < Global.ScreenSize.Y && args.currentPos.Y > 0))
+            {
+                IEntity createdEntity = mEntityManager.newEntity<Cheese>("cheese");
+                mSceneManager.newEntity(createdEntity, args.currentPos);
+            }     
         }
         #endregion
     }

@@ -31,7 +31,7 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
-        public void Draw(SpriteBatch _spriteBatch)
+        public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
             _spriteBatch.Draw(mBackground, new Rectangle(0, 0, (int)Global.ScreenSize.X, (int)Global.ScreenSize.Y), Color.White);
         }

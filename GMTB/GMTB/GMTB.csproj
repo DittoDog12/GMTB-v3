@@ -44,6 +44,7 @@
     <Compile Include="Camera2D.cs" />
     <Compile Include="CollisionSystem\IQuadtree.cs" />
     <Compile Include="CollisionSystem\Quadtree.cs" />
+    <Compile Include="Entities\AnimatingEntity.cs" />
     <Compile Include="Interfaces\AITarget.cs" />
     <Compile Include="Interfaces\IBasicAI.cs" />
     <Compile Include="Interfaces\IAI_Manager.cs" />

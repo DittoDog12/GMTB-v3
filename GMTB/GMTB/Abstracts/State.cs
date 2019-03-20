@@ -31,6 +31,7 @@ namespace GMTB.Abstracts
         {
             mMind.ChangeState(_nextState);
         }
+        
         #endregion
     }
 

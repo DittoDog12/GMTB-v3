@@ -16,7 +16,7 @@ namespace GMTB.Interfaces
         void newEntity(IEntity _createdEntity, float _x, float _y);
         void newEntity(IEntity _createdEntity, Vector2 _pos);
         void Update(GameTime _gameTime);
-        void Draw(SpriteBatch _spriteBatch);
-        void Draw(SpriteBatch _spriteBatch, Camera2D cam, GraphicsDevice graDev);
+        void Draw(SpriteBatch _spriteBatch, GameTime _gameTime);
+        void Draw(SpriteBatch _spriteBatch, GameTime _gameTime, Camera2D cam, GraphicsDevice graDev);
     }
 }

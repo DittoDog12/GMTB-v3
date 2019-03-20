@@ -11,7 +11,7 @@ namespace GMTB.Interfaces
     public interface IBackground_Manager
     {
         Texture2D Texture {set;}
-        void Draw(SpriteBatch _spriteBatch);
+        void Draw(SpriteBatch _spriteBatch, GameTime _gameTime);
         void ChangeBackground(string _newBackground);
     }
 }
