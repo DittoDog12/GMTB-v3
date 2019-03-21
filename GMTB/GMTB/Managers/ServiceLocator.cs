@@ -13,7 +13,7 @@ namespace GMTB.Managers
     {
         #region Data Members
         // Dictionary of Managers and their Interfaces
-        IDictionary<object, object> mServices;
+        private IDictionary<object, object> mServices;
         #endregion
 
         #region Constructor
