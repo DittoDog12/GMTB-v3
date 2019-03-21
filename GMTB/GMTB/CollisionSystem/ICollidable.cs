@@ -19,6 +19,7 @@ namespace GMTB.CollisionSystem
 
 
         List<Vector2> UpdateCollisionMesh();
+        void Collision();
         void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj);
     }
 }

@@ -227,7 +227,7 @@ namespace GMTB.CollisionSystem
             // MTV calculations
             Vector2 _mtv = mCollisionNormal * mCollisionOverlap;
             _target.Collision(_mtv, mCollisionNormal, _otherTarget);
-            _otherTarget.Collision(_mtv, mCollisionNormal, _target);
+            _otherTarget.Collision();
         }
 
         #endregion
