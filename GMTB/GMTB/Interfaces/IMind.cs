@@ -14,5 +14,6 @@ namespace GMTB.Interfaces
         AITarget Target { get; }
         void Update(GameTime _gameTime);
         void ChangeState(string _newState);
+        void Initialize();
     }
 }

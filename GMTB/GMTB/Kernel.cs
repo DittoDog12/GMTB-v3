@@ -21,6 +21,7 @@ namespace GMTB
         private IScene_Manager mSceneManager;
         private IEntity_Manager mEntityManager;
         private IContent_Manager mContentManager;
+        private IServiceLocator mServiceLocator;
         private IInput_Manager mInputManager;
         private ICollision_Manager mCollisionMananger;
         private IAI_Manager mAIManager;
@@ -69,12 +70,16 @@ namespace GMTB
             base.Initialize();
             // Create Input Manager
             mInputManager = new Input_Manager();
+            // Create Service Locator
+            mServiceLocator = new ServiceLocator();
             // Create Content Manager, pass Monogame Content Manager and Path to Content Root
-            mContentManager = new Content_Manager(Content, mContentRoot);
+            //mContentManager = new Content_Manager(Content, mContentRoot);
+            mContentManager = mServiceLocator.GetService<IContent_Manager>();
+            mContentManager.Setup(Content, mContentRoot);
             // Create Background Manager, pass Content Manager
             mBackgroundManager = new Background_Manager(mContentManager);
             // Create Entity Manager, pass Content and Input Managers
-            mEntityManager = new Entity_Manager(mContentManager, mInputManager);
+            mEntityManager = new Entity_Manager(mServiceLocator, mContentManager, mInputManager);
             // Create Scene Manager, pass Entity and Background Managers
             mSceneManager = new Scene_Manager(mEntityManager, mBackgroundManager);
             // Create Collision Manager, pass Entity Manager and Screen Size variables

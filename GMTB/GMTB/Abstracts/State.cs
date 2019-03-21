@@ -26,6 +26,7 @@ namespace GMTB.Abstracts
         #endregion
 
         #region Methods
+        public virtual void Initialize() { }
         public abstract void Update(GameTime _gameTime);
         public virtual void ChangeState(string _nextState)
         {

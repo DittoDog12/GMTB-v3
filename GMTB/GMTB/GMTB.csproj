@@ -50,9 +50,11 @@
     <Compile Include="Interfaces\IAI_Manager.cs" />
     <Compile Include="Interfaces\IBackground_Manager.cs" />
     <Compile Include="Interfaces\IPathfinder.cs" />
+    <Compile Include="Interfaces\IServiceLocator.cs" />
     <Compile Include="Interfaces\IUtility_Entity.cs" />
     <Compile Include="Managers\AI_Manager.cs" />
     <Compile Include="Managers\Background_Manager.cs" />
+    <Compile Include="Managers\ServiceLocator.cs" />
     <Compile Include="Managers\UtilityEntity.cs" />
     <Compile Include="Pathfinding\Pathfinder.cs" />
     <Compile Include="Abstracts\State.cs" />

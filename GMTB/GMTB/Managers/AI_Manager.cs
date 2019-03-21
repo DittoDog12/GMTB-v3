@@ -44,6 +44,7 @@ namespace GMTB.Managers
                 if (mTarget != null)
                     _keyPair.Value.LocateTarget(mTarget);
             }
+            mTarget = null;
         }
         #endregion
     }

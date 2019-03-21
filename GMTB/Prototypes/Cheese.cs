@@ -16,9 +16,9 @@ namespace Prototypes
         {
             base.Update(_gameTime);
         }
-        public override void Collision()
+        public override void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
-            base.Collision();
+            //base.Collision(_mtv, _cNormal, _otherObj);
             Destroy();
         }
     }

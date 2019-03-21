@@ -140,3 +140,9 @@
 /processorParam:TextureFormat=Color
 /build:playerR.png
 
+#begin cheese_vendor.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:cheese_vendor.wav
+

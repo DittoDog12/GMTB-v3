@@ -65,6 +65,14 @@ namespace GMTB.Entities.AI
         #endregion
 
         #region Methods
+        public virtual void Initialize()
+        {
+            foreach (KeyValuePair<string, IState> _keypair in mStates)
+            {
+                _keypair.Value.Initialize();
+            }
+
+        }
         public virtual void Update(GameTime _gameTime)
         {
             mCurrentState.Update(_gameTime);

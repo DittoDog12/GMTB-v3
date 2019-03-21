@@ -21,7 +21,7 @@ namespace GMTB.Entities
         protected int mUID;
         protected IInput_Manager mInputManager;
         private IEntity_Manager mEntityManger;
-        
+        protected IServiceLocator mServiceLocator;
         
         #endregion
 
@@ -46,10 +46,11 @@ namespace GMTB.Entities
         /// Set UID
         /// </summary>
         /// <param name="_uid"> Unique ID </param>
-        public virtual void setVars(int _uid, IEntity_Manager _em)
+        public virtual void setVars(int _uid, IEntity_Manager _em, IServiceLocator _sl)
         {
             mUID = _uid;
             mEntityManger = _em;
+            mServiceLocator = _sl;
         }
         
         

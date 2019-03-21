@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GMTB.Interfaces;
 
 namespace GMTB.Interfaces
 {
     public interface IBasicAI
     {
+        IServiceLocator ServiceLocator { get; }
         Texture2D Texture { get; }
         Vector2 Position { get; }
         Vector2 Acceleration { set; }

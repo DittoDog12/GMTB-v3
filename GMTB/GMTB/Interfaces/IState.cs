@@ -9,6 +9,7 @@ namespace GMTB
 {
     public interface IState
     {
+        void Initialize();
         void Update(GameTime _gameTime);
     }
 }

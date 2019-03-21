@@ -4,16 +4,17 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/cheese.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/Maze.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/mouseleft.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/square.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/square2.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/Text.spritefont</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/trianglel.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/triangler.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/squarelorge.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/playerL.png</File>
-    <File>C:/Users/Scott/source/repos/GMTB-v3/GMTB/Prototypes/Content/playerR.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/cheese.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/Maze.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/mouseleft.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/square.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/square2.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/Text.spritefont</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/trianglel.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/triangler.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/squarelorge.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/playerL.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/playerR.png</File>
+    <File>E:/Code Projects/GMTB-v3/GMTB/Prototypes/Content/cheese_vendor.wav</File>
   </SourceFiles>
 </SourceFileCollection>

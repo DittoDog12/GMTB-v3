@@ -23,6 +23,7 @@ namespace GMTB.Managers
 
         private IContent_Manager mContentManager;
         private IInput_Manager mInputManager;
+        private IServiceLocator mServiceLocator;
         #endregion
 
         #region Accessors
@@ -52,15 +53,15 @@ namespace GMTB.Managers
         #endregion
 
         #region Constructor
-        public Entity_Manager(IContent_Manager cm, IInput_Manager im)
+        public Entity_Manager(IServiceLocator _sl, IContent_Manager _cm, IInput_Manager _im)
         {
             // Set UID counter to 0 for first object
             UID = 1;
             // Initialise Deletion List
             mDeletions = new Dictionary<int, IEntity>();
-
-            mContentManager = cm;
-            mInputManager = im;
+            mServiceLocator = _sl;
+            mContentManager = _cm;
+            mInputManager = _im;
         }
         #endregion
 
@@ -69,7 +70,7 @@ namespace GMTB.Managers
         private void setEntityVars(IEntity _entity)
         {
             // Set the entities UID
-            _entity.setVars(UID, this);
+            _entity.setVars(UID, this, mServiceLocator);
             // Increment the UID
             UID++;
         }

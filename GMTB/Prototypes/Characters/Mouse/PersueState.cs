@@ -6,25 +6,36 @@ using System.Threading.Tasks;
 using GMTB.Abstracts;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Prototypes.Characters.Mouse
 {
     class PersueState : State
     {
+        #region Data Members
+        private SoundEffect mCheeseCollection;
+        private IContent_Manager mContentManager;
+        #endregion
         #region Constructor
         public PersueState(IMind _mind): base(_mind)
-        {
-            mPath = new Queue<Point>();
-
+        {           
+            mPath = new Queue<Point>(); 
         }
         #endregion
 
         #region Methods
+        public override void Initialize()
+        {
+            base.Initialize();
+            mContentManager = mMind.MySelf.ServiceLocator.GetService<IContent_Manager>();
+            mCheeseCollection = mContentManager.LoadSound("cheese_vendor");
+        }
         public override void Update(GameTime _gameTime)
         {
-            mMind.MySelf.ApplyForce(Persue());
+            if (mMind.Target != null)
+                mMind.MySelf.ApplyForce(Persue());
 
-            if (mMind.Target == null)
+            else if (mMind.Target == null)
                 ChangeState("idle");
 
             // if cat close
@@ -70,6 +81,11 @@ namespace Prototypes.Characters.Mouse
             _rtnval.Normalize();
 
             return _rtnval;
+        }
+        public override void ChangeState(string _nextState)
+        {
+            mCheeseCollection.Play();
+            base.ChangeState(_nextState);
         }
         #endregion
     }

@@ -14,7 +14,11 @@ namespace GMTB.Entities.AI
         #region Data Members
         protected IMind mMind;
         protected AITarget mTarget;
-
+        
+        public IServiceLocator ServiceLocator
+        {
+            get { return mServiceLocator; }
+        }
         public AITarget Target
         {
             get { return mTarget; }
@@ -29,10 +33,16 @@ namespace GMTB.Entities.AI
         #endregion
 
         #region Methods
+        public override void setVars(int _uid, IEntity_Manager _em, IServiceLocator _sl)
+        {
+            base.setVars(_uid, _em, _sl);
+            mMind.Initialize();
+        }
         public override void Update(GameTime _gameTime)
         {
             mMind.Update(_gameTime);
             base.Update(_gameTime);
+            mTarget = null;
         }
         public virtual void LocateTarget(AITarget _target)
         {

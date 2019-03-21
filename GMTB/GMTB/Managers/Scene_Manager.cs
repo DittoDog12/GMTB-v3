@@ -14,7 +14,7 @@ namespace GMTB.Managers
     {
         #region Data Members
         private IDictionary<int, IEntity> mEntities;
-        private IDictionary<int, IEntity> mSceneGraph;
+        private IDictionary<int, IPhysicalEntity> mSceneGraph;
 
         private IEntity_Manager mEntityManager;
         private IBackground_Manager mBackgroundManager;
@@ -43,7 +43,8 @@ namespace GMTB.Managers
             //mEntities = em.Entities;
             mEntityManager = _em;
             mBackgroundManager = _bm;
-            mSceneGraph = new Dictionary<int, IEntity>();
+            mSceneGraph = new Dictionary<int, IPhysicalEntity>();
+            mEntities = new Dictionary<int, IEntity>();
         }
         #endregion
 
@@ -52,7 +53,7 @@ namespace GMTB.Managers
             // Add the new entity to the SceneManagers entity list
             //mEntities.Add(createdEntity);
 
-            mSceneGraph.Add(_createdEntity.UID, _createdEntity);
+            //mSceneGraph.Add(_createdEntity.UID, _createdEntity);
 
             // Set the entities initial position
             var _entity = _createdEntity as IPhysicalEntity;
@@ -66,45 +67,83 @@ namespace GMTB.Managers
         }
         public void Update(GameTime _gameTime)
         {
-            for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
+            foreach(KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
             {
-                //var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-                mEntityManager.GetEntity(i).Update(_gameTime);
-                //_entity.Update(_gameTime);
+                mEntities.Add(_keypair.Key, _keypair.Value);
+
             }
+            foreach(KeyValuePair<int, IEntity> _keypair in mEntities)
+            {
+                _keypair.Value.Update(_gameTime);
+            }
+            mEntities.Clear();
+            //for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
+            //{
+
+            //    //var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
+            //    mEntityManager.GetEntity(i).Update(_gameTime);
+            //    //_entity.Update(_gameTime);
+            //}
                 
 
         }
         public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
+            foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
+            {
+                var _entity = _keypair.Value as IPhysicalEntity;
+                if (_entity != null)
+                    mSceneGraph.Add(_keypair.Key, _entity);
+            }
+           
             _spriteBatch.Begin();
             mBackgroundManager.Draw(_spriteBatch,  _gameTime);
 
-            // Call draw method for each Entity if entity is visible        
-            for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
+            // Call draw method for each Entity if entity is visible   
+            foreach (KeyValuePair<int, IPhysicalEntity> _keypair in mSceneGraph)
             {
-                var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-                if (_entity != null)
-                    _entity.Draw(_spriteBatch,  _gameTime);
+
+                _keypair.Value.Draw(_spriteBatch, _gameTime);
             }
+
+            //for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
+            //{
+            //    var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
+            //    if (_entity != null)
+            //        _entity.Draw(_spriteBatch,  _gameTime);
+            //}
+
+            mSceneGraph.Clear();
             _spriteBatch.End();
         }
         // For use if camera is to follow player
         public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime, Camera2D _cam, GraphicsDevice _graDev)
         {
+            foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
+            {
+                var _entity = _keypair.Value as IPhysicalEntity;
+                if (_entity != null)
+                    mSceneGraph.Add(_keypair.Key, _entity);
+            }
+
             _spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend,
                 null, null, null, null, _cam.GetTransform(_graDev));
 
             mBackgroundManager.Draw(_spriteBatch,  _gameTime);
 
             // Call draw method for each Entity if entity is visible
-            for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
-            {
-                var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-                if (_entity != null)
-                    _entity.Draw(_spriteBatch,  _gameTime);
+            foreach (KeyValuePair<int, IPhysicalEntity> _keypair in mSceneGraph)
+            {    
+                    _keypair.Value.Draw(_spriteBatch, _gameTime);
             }
+            //for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
+            //{
+            //    var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
+            //    if (_entity != null)
+            //        _entity.Draw(_spriteBatch,  _gameTime);
+            //}
 
+            mSceneGraph.Clear();
             _spriteBatch.End();
         }
     }

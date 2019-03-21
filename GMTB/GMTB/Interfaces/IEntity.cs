@@ -8,7 +8,7 @@ namespace GMTB.Interfaces
         int UID { get; }
        
 
-        void setVars(int _uid, IEntity_Manager _em);      
+        void setVars(int _uid, IEntity_Manager _em, IServiceLocator _sl);      
         void Update(GameTime _gameTime);     
         void ConfigureInput(IInput_Manager _im);
     }
