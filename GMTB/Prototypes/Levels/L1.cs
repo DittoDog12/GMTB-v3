@@ -3,6 +3,7 @@ using GMTB.Entities;
 using GMTB.Interfaces;
 using GMTB.CollisionSystem;
 using Prototypes.Characters.Mouse;
+using Prototypes.Characters.Triangle;
 
 namespace Prototypes.Levels
 {
@@ -24,7 +25,7 @@ namespace Prototypes.Levels
 
                 // Create Player
                 createdEntity = _em.newEntity<Characters.Player>("playerR", true);
-                _sm.newEntity(createdEntity, 100, 100);
+                _sm.newEntity(createdEntity, 700, 150);
                 Removables.Add(createdEntity);
 
                 // Create Triangle
@@ -71,6 +72,11 @@ namespace Prototypes.Levels
                 Removables.Add(createdEntity);
 
                 firstRun = false;
+
+                // Create Moving Triangle
+                createdEntity = _em.newEntity<Triangle>("trianglel", true);
+                _sm.newEntity(createdEntity, 1000, 150);
+                Removables.Add(createdEntity);
             }
         }
         #endregion

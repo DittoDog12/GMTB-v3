@@ -11,6 +11,7 @@ namespace GMTB.CollisionSystem
     {
         //List<Vector2> RectangleNormalize { get; }
         List<Vector2> RectangleVertices { get; }
+        Vector2 Position { get; set; }
         Vector2 Velocity { get; }
         Rectangle Hitbox { get; }
 

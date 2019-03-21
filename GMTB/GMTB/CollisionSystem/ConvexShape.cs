@@ -24,6 +24,12 @@ namespace GMTB.CollisionSystem
         public List<Vector2> RectangleVertices { get; protected set; } = new List<Vector2>();
         public Vector2 Velocity{ get { return mVelocity; } }
         public Rectangle Hitbox { get { return mHitbox; } }
+
+        Vector2 ICollidable.Position
+        {
+            get => mPosition;
+            set => mPosition = value;
+        }
         #endregion
 
         #region Constructor
@@ -158,6 +164,7 @@ namespace GMTB.CollisionSystem
         public virtual void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
             mPosition += 0.02f * _mtv;
+            _otherObj.Position -= 0.02f * _mtv;
             CalculateBounce(_cNormal, _otherObj);
             
         }
