@@ -56,7 +56,7 @@ namespace Prototypes.Characters
             base.Draw(_spriteBatch,  _gameTime);
 
             if (mTexturename != mTexture.Name)
-                    mContentManager.ApplyTexture(mTexturename, this);
+                    mTexture = mContentManager.ApplyTexture(mTexturename);
 
         }
         #endregion

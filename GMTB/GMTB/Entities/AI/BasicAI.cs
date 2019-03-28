@@ -33,9 +33,9 @@ namespace GMTB.Entities.AI
         #endregion
 
         #region Methods
-        public override void setVars(int _uid, IEntity_Manager _em, IServiceLocator _sl)
+        public override void setVars(int _uid, IServiceLocator _sl)
         {
-            base.setVars(_uid, _em, _sl);
+            base.setVars(_uid, _sl);
             mMind.Initialize();
         }
         public override void Update(GameTime _gameTime)

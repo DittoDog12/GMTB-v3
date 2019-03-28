@@ -22,7 +22,6 @@ namespace GMTB.Managers
         private IDictionary<int, IEntity> mDeletions;
 
         private IContent_Manager mContentManager;
-        private IInput_Manager mInputManager;
         private IServiceLocator mServiceLocator;
         #endregion
 
@@ -53,7 +52,7 @@ namespace GMTB.Managers
         #endregion
 
         #region Constructor
-        public Entity_Manager(IServiceLocator _sl, IContent_Manager _cm, IInput_Manager _im)
+        public Entity_Manager(IServiceLocator _sl, IContent_Manager _cm)
         {
             // Set UID counter to 0 for first object
             UID = 1;
@@ -61,7 +60,6 @@ namespace GMTB.Managers
             mDeletions = new Dictionary<int, IEntity>();
             mServiceLocator = _sl;
             mContentManager = _cm;
-            mInputManager = _im;
         }
         #endregion
 
@@ -70,7 +68,7 @@ namespace GMTB.Managers
         private void setEntityVars(IEntity _entity)
         {
             // Set the entities UID
-            _entity.setVars(UID, this, mServiceLocator);
+            _entity.setVars(UID, mServiceLocator);
             // Increment the UID
             UID++;
         }
@@ -106,10 +104,10 @@ namespace GMTB.Managers
         {
             // Call parent to create Entity type
             IEntity _createdEntity = newEntity<T>();
-            // Call the Content Manager to apply the entities texture, call the 
-            mContentManager.ApplyTexture(_path, _createdEntity as IPhysicalEntity);
-            // Set the entities Texture
+            // Change the Entity to a PhysicalEntity
             IPhysicalEntity _entity = _createdEntity as IPhysicalEntity;
+            // Call the Content Manager to apply the entities texture
+            _entity.Texture = mContentManager.ApplyTexture(_path);
             setEntityVars(_entity, _path);
             // Return Created Entity
             return _createdEntity;
@@ -119,7 +117,7 @@ namespace GMTB.Managers
             // Call parent to create Entity type
             IEntity _createdEntity = newEntity<T>(_path);
             // Inform the new entity of the Input Manager
-            _createdEntity.ConfigureInput(mInputManager);
+            _createdEntity.ConfigureInput();
             // Return Created Entity
             return _createdEntity;
         }
@@ -130,7 +128,7 @@ namespace GMTB.Managers
             // Cast entity to Utility Class
             var asInterface = _createdEntity as IUtility_Entity;
             // Pass other managers to the new utility
-            asInterface.setVars(this, mInputManager);
+            asInterface.setVars(mServiceLocator);
             // Return Created Entity
             return _createdEntity;
         }

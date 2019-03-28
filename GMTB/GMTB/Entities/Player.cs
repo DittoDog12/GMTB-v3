@@ -21,9 +21,9 @@ namespace GMTB.Entities
         #endregion
 
         #region Methods
-        public override void ConfigureInput(IInput_Manager _im)
+        public override void ConfigureInput()
         {
-            base.ConfigureInput(_im);
+            base.ConfigureInput();
             mInputManager.Sub_Move(OnMoveInput);
         }
         public Vector2 GetPos()

@@ -19,20 +19,24 @@ namespace GMTB
 
         // Managers
         private IScene_Manager mSceneManager;
-        private IEntity_Manager mEntityManager;
-        private IContent_Manager mContentManager;
+        //private IEntity_Manager mEntityManager;
+        //private IContent_Manager mContentManager;
         private IServiceLocator mServiceLocator;
         private IInput_Manager mInputManager;
-        private ICollision_Manager mCollisionMananger;
+        private ICollision_Manager mCollisionManager;
         private IAI_Manager mAIManager;
-        private IBackground_Manager mBackgroundManager;
+        //private IBackground_Manager mBackgroundManager;
+        private IMenu_Manager mMenuManager;
 
         // String to hold the Content Root Directory
         // to be passed to the Content_Manager
         private string mContentRoot;
 
         // Variable to hold all loaded levels
-        private List<ILevel> mLevels;
+        private IDictionary<string, ILevel> mLevels;
+
+        // variable to hold all the menus
+        private IDictionary<string, IMenu> mMenus;
 
         // Variables to hold the texture refresh rate and the timer
         private float mRefreshRate = 5f;
@@ -51,10 +55,11 @@ namespace GMTB
 
         }
 
-        public Kernel(string content, List<ILevel> lvls) : this()
+        public Kernel(string content, IDictionary<string, ILevel> lvls, IDictionary<string, IMenu> _menus) : this()
         {
             mContentRoot = content;
             mLevels = lvls;
+            mMenus = _menus;
         }
 
         /// <summary>
@@ -69,25 +74,37 @@ namespace GMTB
 
             base.Initialize();
             // Create Input Manager
-            mInputManager = new Input_Manager();
-            // Create Service Locator
-            mServiceLocator = new ServiceLocator();
+            //mInputManager = new Input_Manager();
+            // Create Service Locator and all Managers
+            mServiceLocator = new ServiceLocator(Content, mContentRoot, mLevels, mMenus, 
+                new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
+
+            // Retrive Managers required
+            mSceneManager = mServiceLocator.GetService<IScene_Manager>();
+            mCollisionManager = mServiceLocator.GetService<ICollision_Manager>();
+            mInputManager = mServiceLocator.GetService<IInput_Manager>();
+            mAIManager = mServiceLocator.GetService<IAI_Manager>();
+            mMenuManager = mServiceLocator.GetService<IMenu_Manager>();
+
             // Create Content Manager, pass Monogame Content Manager and Path to Content Root
             //mContentManager = new Content_Manager(Content, mContentRoot);
-            mContentManager = mServiceLocator.GetService<IContent_Manager>();
-            mContentManager.Setup(Content, mContentRoot);
+            //mContentManager = mServiceLocator.GetService<IContent_Manager>();
+
             // Create Background Manager, pass Content Manager
-            mBackgroundManager = new Background_Manager(mContentManager);
+            //mBackgroundManager = new Background_Manager(mContentManager);
             // Create Entity Manager, pass Content and Input Managers
-            mEntityManager = new Entity_Manager(mServiceLocator, mContentManager, mInputManager);
+            //mEntityManager = new Entity_Manager(mServiceLocator, mContentManager, mInputManager);
             // Create Scene Manager, pass Entity and Background Managers
-            mSceneManager = new Scene_Manager(mEntityManager, mBackgroundManager);
+            //mSceneManager = new Scene_Manager(mEntityManager, mBackgroundManager);
             // Create Collision Manager, pass Entity Manager and Screen Size variables
-            mCollisionMananger = new Collision_Manager(mEntityManager, new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
+            //mCollisionMananger = new Collision_Manager(mEntityManager, new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
             // Create AI Manager, Pass the Entity Manager
-            mAIManager = new AI_Manager(mEntityManager);
+            //mAIManager = new AI_Manager(mEntityManager);
+
             // Initialise first Level, pass Scene, Entity and Background Managers
-            mLevels[0].Initialise(mSceneManager, mEntityManager, mBackgroundManager);
+            // mLevels[0].Initialise(mSceneManager, mEntityManager, mBackgroundManager);
+            mLevels["L1"].Initialise(mServiceLocator);
+            Global.GameState = Global.availGameStates.Playing;
         }
 
         /// <summary>
@@ -118,14 +135,28 @@ namespace GMTB
         /// <param name="_gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime _gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            //    Global.GameState = Global.availGameStates.Exiting;
+
+            mInputManager.GetCurrentInput();
 
             // TODO: Add your update logic here
-            mSceneManager.Update(_gameTime);
-            mInputManager.GetCurrentInput();
-            mCollisionMananger.CollisionDetec();
-            mAIManager.Update(_gameTime);
+            switch (Global.GameState)
+            {
+                case Global.availGameStates.Playing:
+                    mSceneManager.Update(_gameTime);
+                    mCollisionManager.CollisionDetec();
+                    mAIManager.Update(_gameTime);
+                    break;
+                case Global.availGameStates.Menu:
+                    break;
+                case Global.availGameStates.Exiting:
+                    Exit();
+                    break;
+            }
+            
+            
+            
             base.Update(_gameTime);
         }
 

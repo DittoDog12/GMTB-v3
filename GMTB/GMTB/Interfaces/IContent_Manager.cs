@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
     public interface IContent_Manager
     {
-        void ApplyTexture(string tex, IPhysicalEntity ent);
-        void ApplyTexture(string _tex, IBackground_Manager _man);
-        void Setup(ContentManager _content, string _Root);
+        Texture2D ApplyTexture(string tex);
         SoundEffect LoadSound(string _file);
     }
 }

@@ -37,7 +37,7 @@ namespace GMTB.Managers
         }
         public void ChangeBackground(string _newBackground)
         {
-            mContentManager.ApplyTexture(_newBackground, this);
+            mBackground = mContentManager.ApplyTexture(_newBackground);
         }
 
         #endregion

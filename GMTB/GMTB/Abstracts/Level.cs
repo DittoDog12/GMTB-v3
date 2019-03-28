@@ -15,6 +15,11 @@ namespace GMTB.Abstracts
         protected IEntity createdEntity;
         protected List<IEntity> Removables;
         protected bool firstRun = true;
+
+        protected IEntity_Manager mEntityManager;
+        protected IScene_Manager mSceneManager;
+        protected IBackground_Manager mBackgroundManager;
+        protected IServiceLocator mServiceLocator;
         #endregion
 
         #region Accessors
@@ -41,7 +46,13 @@ namespace GMTB.Abstracts
         #endregion
 
         #region Methods
-        public abstract void Initialise(IScene_Manager _sm, IEntity_Manager _em, IBackground_Manager _bm);
+        public virtual void Initialise(IServiceLocator _sl)
+        {
+            mServiceLocator = _sl;
+            mEntityManager = mServiceLocator.GetService<IEntity_Manager>();
+            mSceneManager = mServiceLocator.GetService<IScene_Manager>();
+            mBackgroundManager = mServiceLocator.GetService<IBackground_Manager>();
+    }
         #endregion
     }
 }

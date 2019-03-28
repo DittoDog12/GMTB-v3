@@ -17,25 +17,17 @@ namespace GMTB.Managers
         #endregion
 
         #region Constructor
-        public Content_Manager()
-        {
-            
-        }
-        #endregion
-
-        #region Methods
-        public void Setup(ContentManager _content, string _Root)
+        public Content_Manager(ContentManager _content, string _Root)
         {
             mContent = _content;
             mContent.RootDirectory = _Root;
         }
-        public void ApplyTexture(string _tex, IPhysicalEntity _ent)
+        #endregion
+
+        #region Methods
+        public Texture2D ApplyTexture(string _tex)
         {
-            _ent.Texture = mContent.Load<Texture2D>(_tex);
-        }
-        public void ApplyTexture(string _tex, IBackground_Manager _man)
-        {
-            _man.Texture = mContent.Load<Texture2D>(_tex);
+           return mContent.Load<Texture2D>(_tex);
         }
         public SoundEffect LoadSound(string _file)
         {

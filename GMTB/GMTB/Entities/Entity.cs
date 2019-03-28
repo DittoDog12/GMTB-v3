@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using GMTB.Interfaces;
 using GMTB.InputSystem;
+using GMTB.Managers;
 
 namespace GMTB.Entities
 {
@@ -46,11 +47,11 @@ namespace GMTB.Entities
         /// Set UID
         /// </summary>
         /// <param name="_uid"> Unique ID </param>
-        public virtual void setVars(int _uid, IEntity_Manager _em, IServiceLocator _sl)
+        public virtual void setVars(int _uid, IServiceLocator _sl)
         {
             mUID = _uid;
-            mEntityManger = _em;
             mServiceLocator = _sl;
+            mEntityManger = mServiceLocator.GetService<IEntity_Manager>();
         }
         
         
@@ -59,9 +60,9 @@ namespace GMTB.Entities
         /// Override and specify which events to listen for.
         /// </summary>
         /// <param name="im"> Input Manager </param>
-        public virtual void ConfigureInput(IInput_Manager _im)
+        public virtual void ConfigureInput()
         {
-            mInputManager = _im;
+            mInputManager = mServiceLocator.GetService<IInput_Manager>();
         }
         public virtual void Update(GameTime _gameTime)
         {

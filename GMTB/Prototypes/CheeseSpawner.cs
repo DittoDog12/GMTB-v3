@@ -29,6 +29,7 @@ namespace Prototypes
         public override void Initialize()
         {
             base.Initialize();
+            mInputManager = mServiceLocator.GetService<IInput_Manager>();
             mInputManager.Sub_Mouse(OnMouseClick);
         }
         public override void Update(GameTime _gameTime)

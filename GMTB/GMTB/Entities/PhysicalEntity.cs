@@ -65,9 +65,9 @@ namespace GMTB.Entities
         #endregion
 
         #region Methods
-        public override void ConfigureInput(IInput_Manager im)
+        public override void ConfigureInput()
         {
-            base.ConfigureInput(im);
+            base.ConfigureInput();
             mInputManager.Sub_Space(OnSpaceInput);
         }
         /// <summary>

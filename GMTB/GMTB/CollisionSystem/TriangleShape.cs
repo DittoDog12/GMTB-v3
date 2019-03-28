@@ -41,9 +41,9 @@ namespace GMTB.CollisionSystem
             base.setVars(_path, cm);
             mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
-        public override void ConfigureInput(IInput_Manager _im)
+        public override void ConfigureInput()
         {
-            base.ConfigureInput(_im);
+            base.ConfigureInput();
             mInputManager.Sub_Space(SwapDirection);
         }
         public override void Update(GameTime gameTime)
@@ -77,9 +77,9 @@ namespace GMTB.CollisionSystem
                 mFacingDirection *= -1;
 
             if (mFacingDirection == 1)
-                mContentManager.ApplyTexture("trianglel", this);
+                mTexture = mContentManager.ApplyTexture("trianglel");
             else if (mFacingDirection == -1)
-                mContentManager.ApplyTexture("triangler", this);
+                mTexture = mContentManager.ApplyTexture("triangler");
 
         }
         #endregion        

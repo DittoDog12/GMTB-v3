@@ -60,7 +60,7 @@ namespace Prototypes
             // Set the content root for this game
             ContentRoot = "Content";
             // Create a new instance of the Kernal, pass Content root and opened levels
-            game1 = new Kernel(ContentRoot, GetLevels());
+            game1 = new Kernel(ContentRoot, GetLevels(), GetMenus());
             game1.IsMouseVisible = true;
         }
 
@@ -73,9 +73,9 @@ namespace Prototypes
         /// Get all level files in the specified directory
         /// </summary>
         /// <returns> List of Levels </returns>
-        private List<ILevel> GetLevels()
+        private IDictionary<string, ILevel> GetLevels()
         {
-            List<ILevel> _lvls = new List<ILevel>();
+            IDictionary<string, ILevel> _lvls = new Dictionary<string, ILevel>();
 
             for (int i = 0; i < mLvlCount; i++)
             {
@@ -83,9 +83,17 @@ namespace Prototypes
                 string LeveltoOpen = mLvlPath + lvlid;
                 Type t = Type.GetType(LeveltoOpen, true);
                 ILevel lvl = Activator.CreateInstance(t) as ILevel;
-                _lvls.Add(lvl);
+                _lvls.Add(lvl.LvlID, lvl);
             }
             return _lvls;
+        }
+        private IDictionary<string, IMenu> GetMenus()
+        {
+            IDictionary<string, IMenu> _menus = new Dictionary<string, IMenu>();
+
+
+            return _menus;
+
         }
     }
 }

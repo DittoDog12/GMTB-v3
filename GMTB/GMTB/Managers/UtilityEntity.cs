@@ -29,15 +29,12 @@ namespace GMTB.Managers
         {
 
         }
-        public void setVars(IEntity_Manager _em, IInput_Manager _im)
+        public void setVars(IServiceLocator _sl)
         {
-            mEntityManager = _em;
-            mInputManager = _im;
+            mEntityManager = _sl.GetService<IEntity_Manager>();
+            mSceneManager = _sl.GetService<IScene_Manager>();
         }
-        public void setVars(IScene_Manager _sm)
-        {
-            mSceneManager = _sm;
-        }
+
         #endregion
     }
 }
