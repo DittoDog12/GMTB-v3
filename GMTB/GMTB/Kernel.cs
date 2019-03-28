@@ -149,6 +149,7 @@ namespace GMTB
                     mAIManager.Update(_gameTime);
                     break;
                 case Global.availGameStates.Menu:
+                    mMenuManager.Update(_gameTime);
                     break;
                 case Global.availGameStates.Exiting:
                     Exit();
@@ -171,8 +172,17 @@ namespace GMTB
 
             if (mRefreshTimer >= mRefreshRate)
             {
+                switch (Global.GameState)
+                {
+                    case Global.availGameStates.Playing:
+                        mSceneManager.Draw(mSpriteBatch, _gameTime);
+                        break;
+                    case Global.availGameStates.Menu:
+                        mMenuManager.Draw(mSpriteBatch);
+                        break;
+                }
                 // TODO: Add your drawing code here
-                mSceneManager.Draw(mSpriteBatch, _gameTime);
+                
                 mRefreshTimer = 0f;
             }
       
