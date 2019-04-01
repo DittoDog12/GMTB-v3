@@ -113,6 +113,8 @@ namespace GMTB.InputSystem
             if (_oldState.IsKeyUp(Keys.Space) && _newState.IsKeyDown(Keys.Space))
                 SpaceInput(Keybindings.Jump);
 
+            if (_oldState.IsKeyUp(Keys.Escape) && _newState.IsKeyDown(Keys.Escape))
+                EscapeInput(Keybindings.Pause);
 
 
             _oldState = _newState;

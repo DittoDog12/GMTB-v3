@@ -50,6 +50,7 @@
     <Compile Include="Interfaces\IBasicAI.cs" />
     <Compile Include="Interfaces\IAI_Manager.cs" />
     <Compile Include="Interfaces\IBackground_Manager.cs" />
+    <Compile Include="Interfaces\ILevel_Manager.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IMenu_Manager.cs" />
     <Compile Include="Interfaces\IPathfinder.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Interfaces\IUtility_Entity.cs" />
     <Compile Include="Managers\AI_Manager.cs" />
     <Compile Include="Managers\Background_Manager.cs" />
+    <Compile Include="Managers\Level_Manager.cs" />
     <Compile Include="Managers\Menu_Manager.cs" />
     <Compile Include="Managers\ServiceLocator.cs" />
     <Compile Include="Managers\UtilityEntity.cs" />

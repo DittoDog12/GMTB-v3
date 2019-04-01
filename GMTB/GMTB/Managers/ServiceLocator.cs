@@ -39,8 +39,10 @@ namespace GMTB.Managers
             mServices.Add(typeof(ICollision_Manager), new Collision_Manager(GetService<IEntity_Manager>(), _viewport));
             // AI Manager - Requires Entity Manager
             mServices.Add(typeof(IAI_Manager), new AI_Manager(GetService<IEntity_Manager>()));
-            // Menu Manager - Requires Input Manager and List of Menus
-            mServices.Add(typeof(IMenu_Manager), new Menu_Manager(GetService<IInput_Manager>(), _menus));
+            // Menu Manager - Requires Service Locator and List of Menus
+            mServices.Add(typeof(IMenu_Manager), new Menu_Manager(this, _menus));
+            // Level Manager - Requires Service Locator and Entity Manager
+            mServices.Add(typeof(ILevel_Manager), new Level_Manager(this, GetService<IEntity_Manager>(), _levels));
         }
         #endregion
 

@@ -27,6 +27,7 @@ namespace GMTB
         private IAI_Manager mAIManager;
         //private IBackground_Manager mBackgroundManager;
         private IMenu_Manager mMenuManager;
+        private ILevel_Manager mLevelManager;
 
         // String to hold the Content Root Directory
         // to be passed to the Content_Manager
@@ -85,6 +86,7 @@ namespace GMTB
             mInputManager = mServiceLocator.GetService<IInput_Manager>();
             mAIManager = mServiceLocator.GetService<IAI_Manager>();
             mMenuManager = mServiceLocator.GetService<IMenu_Manager>();
+            mLevelManager = mServiceLocator.GetService<ILevel_Manager>();
 
             // Create Content Manager, pass Monogame Content Manager and Path to Content Root
             //mContentManager = new Content_Manager(Content, mContentRoot);
@@ -103,8 +105,9 @@ namespace GMTB
 
             // Initialise first Level, pass Scene, Entity and Background Managers
             // mLevels[0].Initialise(mSceneManager, mEntityManager, mBackgroundManager);
-            mLevels["L1"].Initialise(mServiceLocator);
-            Global.GameState = Global.availGameStates.Playing;
+            mMenuManager.InitializeMenus();
+            mMenuManager.ActivateMenu("main");
+            Global.GameState = Global.availGameStates.Menu;
         }
 
         /// <summary>
@@ -153,6 +156,10 @@ namespace GMTB
                     break;
                 case Global.availGameStates.Exiting:
                     Exit();
+                    break;
+                case Global.availGameStates.Resuming:
+                    // IsMouseVisible = false;
+                    Global.GameState = Global.availGameStates.Playing;
                     break;
             }
             

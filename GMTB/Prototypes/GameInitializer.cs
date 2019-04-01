@@ -90,7 +90,11 @@ namespace Prototypes
         private IDictionary<string, IMenu> GetMenus()
         {
             IDictionary<string, IMenu> _menus = new Dictionary<string, IMenu>();
+            IMenu _newMenu = new Menus.MainMenu("main");
+            _menus.Add(_newMenu.Name, _newMenu);
 
+            _newMenu = new Menus.PauseMenu("pause");
+            _menus.Add(_newMenu.Name, _newMenu);
 
             return _menus;
 

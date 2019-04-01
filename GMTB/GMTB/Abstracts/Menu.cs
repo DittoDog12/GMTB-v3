@@ -18,12 +18,16 @@ namespace GMTB.Abstracts
         protected IInput_Manager mInputManager;
         protected IBackground_Manager mBackgroundManager;
         protected IEntity_Manager mEntityManager;
+        protected IContent_Manager mContentManager;
+        protected ILevel_Manager mLevelManger;
 
         protected Texture2D mBackgroundTexture;
 
         protected Vector2 mMousePos;
 
         protected IDictionary<int, IPhysicalEntity> mButtons;
+
+        protected string mName;
         #endregion
 
         #region Accessors
@@ -31,30 +35,39 @@ namespace GMTB.Abstracts
         {
             get { return mBackgroundTexture; }
         }
+        public string Name
+        {
+            get { return mName; }
+        }
         #endregion
 
         #region Constructor
-        public Menu(IServiceLocator _sl, IInput_Manager _im, IBackground_Manager _bm, IEntity_Manager _em)
+        public Menu(string _name)
         {
-            mServiceLocator = _sl;
-            mInputManager = _im;
-            mBackgroundManager = _bm;
-            mEntityManager = _em;
-
-            mInputManager.Sub_Mouse(OnClick);
-            mInputManager.Sub_Esc(OnEsc);
+            mName = _name;
         }
         #endregion
 
         #region Methods
+        public virtual void Initialize(IServiceLocator _sl)
+        {
+            mServiceLocator = _sl;
+            mInputManager = mServiceLocator.GetService<IInput_Manager>();
+            mBackgroundManager = mServiceLocator.GetService<IBackground_Manager>();
+            mEntityManager = mServiceLocator.GetService<IEntity_Manager>();
+            mContentManager = mServiceLocator.GetService<IContent_Manager>();
+            mLevelManger = mServiceLocator.GetService<ILevel_Manager>();
+
+            //Subscribe();
+        }
         public abstract void Update(GameTime _gameTime);
         public abstract void Draw(SpriteBatch _spriteBatch);
         protected virtual void CloseMenu()
         {
             mInputManager.Un_Mouse(OnClick);
             mInputManager.Un_Esc(OnEsc);
-            foreach (KeyValuePair<int, IPhysicalEntity> _keyPair in mButtons)
-                mEntityManager.DestroyEntity(_keyPair.Key);
+            //foreach (KeyValuePair<int, IPhysicalEntity> _keyPair in mButtons)
+            //    mEntityManager.DestroyEntity(_keyPair.Key);
         }
         public virtual void OnClick(object source, MouseEvent args)
         {
@@ -65,6 +78,11 @@ namespace GMTB.Abstracts
         {
             if (args.currentKey == Keybindings.Pause)
                 CloseMenu();
+        }
+        public virtual void Subscribe()
+        {
+            mInputManager.Sub_Mouse(OnClick);
+            mInputManager.Sub_Esc(OnEsc);
         }
         #endregion
     }

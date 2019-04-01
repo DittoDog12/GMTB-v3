@@ -18,6 +18,6 @@ namespace GMTB.Interfaces
         IEntity newEntity<T>(string _path, bool _inputReq) where T : IEntity, new();
         IEntity newEntity<T>(bool _util) where T : IEntity, new();
         void DestroyEntity(int uid);
-
+        void ClearAll();
     }
 }

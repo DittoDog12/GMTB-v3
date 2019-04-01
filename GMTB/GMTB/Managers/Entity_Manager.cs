@@ -136,6 +136,10 @@ namespace GMTB.Managers
         {
             mEntities.Remove(_uid);
         }
+        public void ClearAll()
+        {
+            mEntities.Clear();
+        }
         #endregion
     }
 

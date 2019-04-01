@@ -12,5 +12,7 @@ namespace GMTB.Interfaces
     {
         void Update(GameTime _gameTime);
         void Draw(SpriteBatch _spriteBatch);
+        void ActivateMenu(string _targetMenu);
+        void InitializeMenus();
     }
 }

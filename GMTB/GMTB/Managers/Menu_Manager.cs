@@ -16,16 +16,30 @@ namespace GMTB.Managers
         private IDictionary<string, IMenu> mMenus;
         private IMenu mActiveMenu;
         private IInput_Manager mInputManager;
+        private IServiceLocator mServiceLocator;
         #endregion
         #region Constructor
-        public Menu_Manager(IInput_Manager _im, IDictionary<string, IMenu> _menus)
+        public Menu_Manager(IServiceLocator _sl, IDictionary<string, IMenu> _menus)
         {
-            mInputManager = _im;
+            mServiceLocator = _sl;
+            mInputManager = mServiceLocator.GetService<IInput_Manager>();
             mInputManager.Sub_Esc(OnEsc);
             mMenus = _menus;
         }
         #endregion
         #region Methods
+        public void InitializeMenus()
+        {
+            foreach (KeyValuePair<string, IMenu> _menu in mMenus)
+            {
+                _menu.Value.Initialize(mServiceLocator);
+            }
+        }
+        public void ActivateMenu(string _targetMenu)
+        {
+            mActiveMenu = mMenus[_targetMenu];
+            mActiveMenu.Subscribe();
+        }
         public void Update(GameTime _gameTime)
         {
             mActiveMenu.Update(_gameTime);
@@ -41,10 +55,10 @@ namespace GMTB.Managers
             {
                 if (Global.GameState == Global.availGameStates.Playing)
                 {
-                    mActiveMenu = mMenus["pause"];
-                    Global.GameState = Global.availGameStates.Paused;
+                    ActivateMenu("pause");
+                    Global.GameState = Global.availGameStates.Menu;
                 }
-                else if (Global.GameState == Global.availGameStates.Paused)
+                else if (Global.GameState == Global.availGameStates.Menu)
                     Global.GameState = Global.availGameStates.Resuming;
             }
         }
