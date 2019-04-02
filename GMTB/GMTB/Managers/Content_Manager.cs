@@ -33,6 +33,10 @@ namespace GMTB.Managers
         {
             return mContent.Load<SoundEffect>(_file);
         }
+        public SpriteFont LoadFont(string _font)
+        {
+            return mContent.Load<SpriteFont>(_font);
+        }
         #endregion
     }
 }

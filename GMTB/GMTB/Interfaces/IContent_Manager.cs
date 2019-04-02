@@ -13,5 +13,6 @@ namespace GMTB.Interfaces
     {
         Texture2D ApplyTexture(string tex);
         SoundEffect LoadSound(string _file);
+        SpriteFont LoadFont(string _font);
     }
 }
