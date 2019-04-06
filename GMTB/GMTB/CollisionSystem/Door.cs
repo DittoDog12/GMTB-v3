@@ -84,6 +84,9 @@ namespace GMTB.CollisionSystem
         public override void Collision()
         {
             base.Collision();
+
+            // VALIDATION: Include validation which ensures the next level is only loaded if a player collides with the door
+
             mLevelManager.LoadLevel(mTargetLevel);
         }
         #endregion
