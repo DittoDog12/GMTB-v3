@@ -54,7 +54,7 @@ namespace Prototypes
 
         public GameInitializer()
         {
-            mLvlCount = 1;
+            mLvlCount = 3;
             mLvlPath = "Prototypes.Levels.L";
 
             // Set the content root for this game

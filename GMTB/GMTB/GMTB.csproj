@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Abstracts\Menu.cs" />
     <Compile Include="Camera2D.cs" />
+    <Compile Include="CollisionSystem\Door.cs" />
     <Compile Include="CollisionSystem\IQuadtree.cs" />
     <Compile Include="CollisionSystem\Quadtree.cs" />
     <Compile Include="Dialogue\DialogueBox.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Interfaces\IBasicAI.cs" />
     <Compile Include="Interfaces\IAI_Manager.cs" />
     <Compile Include="Interfaces\IBackground_Manager.cs" />
+    <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\ILevel_Manager.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IMenu_Manager.cs" />

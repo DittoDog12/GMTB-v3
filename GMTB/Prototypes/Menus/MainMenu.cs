@@ -22,6 +22,7 @@ namespace Prototypes.Menus
         private Vector2 exitPosition;
 
         #endregion
+
         #region Constructor
         public MainMenu(string _name) : base(_name)
         {

@@ -51,6 +51,8 @@
     <Compile Include="CheeseSpawner.cs" />
     <Compile Include="GameInitializer.cs" />
     <Compile Include="Levels\L1.cs" />
+    <Compile Include="Levels\L2.cs" />
+    <Compile Include="Levels\L3.cs" />
     <Compile Include="Menus\PauseMenu.cs" />
     <Compile Include="Menus\MainMenu.cs" />
     <Compile Include="Program.cs" />
