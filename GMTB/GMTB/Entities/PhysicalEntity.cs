@@ -7,6 +7,7 @@ using GMTB.InputSystem;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GMTB.CollisionSystem;
 
 namespace GMTB.Entities
 {
@@ -108,14 +109,14 @@ namespace GMTB.Entities
             if (mTexture != null)
                 _spriteBatch.Draw(mTexture, mPosition, Color.AntiqueWhite);
         }
-        public virtual void Collision()
+        public virtual void Collision(ICollidable _obj)
         {
 
         }
 
         private void UpdatePhysics()
         {
-            // Scale velocity with Damping
+            // Scale velocity with Damp
             mVelocity *= mDamping;
             // Apply acceleration
             mVelocity += mAcceleration;

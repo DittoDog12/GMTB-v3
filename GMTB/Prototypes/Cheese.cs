@@ -16,9 +16,9 @@ namespace Prototypes
         {
             base.Update(_gameTime);
         }
-        public override void Collision()
+        public override void Collision(ICollidable _obj)
         {
-            base.Collision();
+            base.Collision(ICollidable _obj);
             Destroy();
         }
     }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GMTB.Interfaces;
 using GMTB.Managers;
 using Microsoft.Xna.Framework;
+using GMTB.InputSystem;
 
 namespace GMTB.CollisionSystem
 {
@@ -16,6 +17,7 @@ namespace GMTB.CollisionSystem
         protected Rectangle mDoor;
         protected string mTargetLevel;
         protected ILevel_Manager mLevelManager;
+        protected bool mColliding = false;
         #endregion
 
         #region Constructor
@@ -42,7 +44,7 @@ namespace GMTB.CollisionSystem
 
         public override void Update(GameTime _gameTime)
         {
-
+            mColliding = false;
             base.Update(_gameTime);
             //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
             //Normalize(perpendicularRectangles);
@@ -81,13 +83,21 @@ namespace GMTB.CollisionSystem
             // Figure out where / how to move player pos
         }
 
-        public override void Collision()
+        public override void Collision(ICollidable _obj)
         {
-            base.Collision();
+            base.Collision(_obj);
 
-            // VALIDATION: Include validation which ensures the next level is only loaded if a player collides with the door
+            // VALIDATION: Cast the object to an IPlayer, if it casts succesfully, allow level switching
+            var asInterface = _obj as IPlayer;
+            if (asInterface != null)
+                mColliding = true;
 
-            mLevelManager.LoadLevel(mTargetLevel);
+        }
+        public void OnUse(object source, InputEvent args)
+        {
+            if (mColliding && args.currentKey == Keybindings.Use)
+                mLevelManager.LoadLevel(mTargetLevel);
+
         }
         #endregion
     }
