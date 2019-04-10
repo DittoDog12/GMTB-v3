@@ -86,16 +86,16 @@ namespace GMTB.Managers
         public IEntity newEntity<T>() where T : IEntity, new()
         {
             // Create an entity of the type specifed by the Kernel
-            IEntity createdEntity = new T();
+            IEntity _createdEntity = new T();
             // Store in the list
-            mEntities.Add(UID, createdEntity);
+            mEntities.Add(UID, _createdEntity);
             // Set the entities variables
-            setEntityVars(createdEntity);
+            setEntityVars(_createdEntity);
             // Return the new entity to the kernel
-            return createdEntity;
+            return _createdEntity;
         }
         /// <summary>
-        /// Main Entity creation method
+        /// Create Textured Entity
         /// </summary>
         /// <typeparam name="T"> Type of IEntity to create </typeparam>
         /// <param name="_path"> Texture Path for the new entity</param>
@@ -112,6 +112,13 @@ namespace GMTB.Managers
             // Return Created Entity
             return _createdEntity;
         }
+        /// <summary>
+        /// Create Textured Entity with Input
+        /// </summary>
+        /// <typeparam name="T"> Type of IEntity to create </typeparam>
+        /// <param name="_path"> Texture Path </param>
+        /// <param name="_inputReq"> Set true to enable input in new entity </param>
+        /// <returns> IEntity of the new entity </returns>
         public IEntity newEntity<T>(string _path, bool _inputReq) where T : IEntity, new()
         {
             // Call parent to create Entity type
@@ -121,6 +128,12 @@ namespace GMTB.Managers
             // Return Created Entity
             return _createdEntity;
         }
+        /// <summary>
+        /// Create Utility Entity
+        /// </summary>
+        /// <typeparam name="T"> Type of IEntity to create </typeparam>
+        /// <param name="_util"> Set true to configure as a Utility Entity</param>
+        /// <returns> IEntity of the new Entity </returns>
         public IEntity newEntity<T>(bool _util) where T : IEntity, new()
         {
             // Call parent to create entity type
@@ -132,10 +145,39 @@ namespace GMTB.Managers
             // Return Created Entity
             return _createdEntity;
         }
+        /// <summary>
+        /// Create Sound entity
+        /// </summary>
+        /// <typeparam name="T"> Type of IEntity to create </typeparam>
+        /// <param name="_path"> Path to sound file </param>
+        /// <param name="_interval"> Interval to trigger sound </param>
+        /// <param name="_oneshot"> Set true if sound should only trigger once </param>
+        /// <returns> The new IEntity </returns>
+        public IEntity newEntity<T>(string _path, float _interval, bool _oneshot) where T: IEntity, new()
+        {
+            // Call parent to create entity type
+            IEntity _createdEntity = newEntity<T>();
+            // Set the entities variables
+            setEntityVars(_createdEntity);
+            // Cast entity to ISound
+            var asInterface = _createdEntity as ISound;
+            // Pass Sound specific settings
+            asInterface.setVars(_path, _interval, _oneshot);
+            // Return Created Entity
+            return _createdEntity;
+
+        }
+        /// <summary>
+        /// Delete specific Entity
+        /// </summary>
+        /// <param name="_uid"> UID of Entity to be destroyed </param>
         public void DestroyEntity(int _uid)
         {
             mEntities.Remove(_uid);
         }
+        /// <summary>
+        /// Clear all Entities from the engine
+        /// </summary>
         public void ClearAll()
         {
             mEntities.Clear();

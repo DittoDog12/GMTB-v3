@@ -51,6 +51,7 @@
     <Compile Include="Dialogue\IDialogue.cs" />
     <Compile Include="Dialogue\IDialogueBox.cs" />
     <Compile Include="Entities\AnimatingEntity.cs" />
+    <Compile Include="Entities\SoundEntity.cs" />
     <Compile Include="Interfaces\AITarget.cs" />
     <Compile Include="Interfaces\IBasicAI.cs" />
     <Compile Include="Interfaces\IAI_Manager.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Interfaces\IMenu_Manager.cs" />
     <Compile Include="Interfaces\IPathfinder.cs" />
     <Compile Include="Interfaces\IServiceLocator.cs" />
+    <Compile Include="Interfaces\ISound.cs" />
     <Compile Include="Interfaces\IUtility_Entity.cs" />
     <Compile Include="Managers\AI_Manager.cs" />
     <Compile Include="Managers\Background_Manager.cs" />
