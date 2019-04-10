@@ -11,6 +11,6 @@ namespace GMTB.Interfaces
     {
         void setVars(IServiceLocator _sl);
         void Initialize(string _target);
-        void InitializeWithPlayerPos(string _target, Vector2 _playerPos);
+        void Initialize(string _target, Vector2 _playerPos);
     }
 }

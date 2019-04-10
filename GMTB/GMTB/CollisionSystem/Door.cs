@@ -75,9 +75,9 @@ namespace GMTB.CollisionSystem
             mTargetLevel = _target;
         }
 
-        public void InitializeWithPlayerPos(string _target, Vector2 _playerPos)
+        public void Initialize(string _target, Vector2 _playerPos)
         {
-            mTargetLevel = _target;
+            Initialize(_target);
             // Figure out where / how to move player pos
         }
 
