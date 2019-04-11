@@ -38,17 +38,35 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Characters\Doctor\Doctor.cs" />
+    <Compile Include="Characters\Doctor\DoctorMind.cs" />
+    <Compile Include="Characters\Doctor\Idle.cs" />
+    <Compile Include="Characters\Doctor\Walk.cs" />
+    <Compile Include="Characters\Matron\Idle.cs" />
+    <Compile Include="Characters\Matron\Matron.cs" />
+    <Compile Include="Characters\Matron\MatronMind.cs" />
+    <Compile Include="Characters\Matron\Persue.cs" />
+    <Compile Include="Characters\Nurse\Idle.cs" />
+    <Compile Include="Characters\Nurse\Nurse.cs" />
+    <Compile Include="Characters\Nurse\NurseMind.cs" />
+    <Compile Include="Characters\Nurse\Persue.cs" />
+    <Compile Include="Characters\OldMan\Idle.cs" />
+    <Compile Include="Characters\OldMan\OldMan.cs" />
+    <Compile Include="Characters\OldMan\OldManMind.cs" />
+    <Compile Include="Characters\OldMan\Talk.cs" />
+    <Compile Include="Characters\OldMan\Yeet.cs" />
     <Compile Include="GameInitializer.cs" />
     <Compile Include="Levels\L1.cs" />
-    <Compile Include="Levels\L10.cs" />
-    <Compile Include="Levels\L11.cs" />
-    <Compile Include="Levels\L12.cs" />
-    <Compile Include="Levels\L13.cs" />
+    <Compile Include="Levels\L7.cs" />
+    <Compile Include="Levels\L8.cs" />
+    <Compile Include="Levels\L9.cs" />
     <Compile Include="Levels\L2.cs" />
     <Compile Include="Levels\L3.cs" />
+    <Compile Include="Levels\L4.cs" />
     <Compile Include="Levels\L5.cs" />
-    <Compile Include="Levels\L7.cs" />
-    <Compile Include="Levels\L9.cs" />
+    <Compile Include="Levels\L6.cs" />
+    <Compile Include="Menus\Main.cs" />
+    <Compile Include="Menus\Pause.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,12 +90,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Characters\Doctor\" />
-    <Folder Include="Characters\Matron\" />
-    <Folder Include="Characters\Nurse\" />
-    <Folder Include="Characters\OldMan\" />
     <Folder Include="Characters\Player\" />
-    <Folder Include="Menus\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

@@ -54,7 +54,7 @@ namespace The_Infirmary
 
         public GameInitializer()
         {
-            mLvlCount = 13;
+            mLvlCount = 9;
             mLvlPath = "The_Infirmary.Levels.L";
 
             // Set the content root for this game
@@ -90,14 +90,16 @@ namespace The_Infirmary
         private IDictionary<string, IMenu> GetMenus()
         {
             IDictionary<string, IMenu> _menus = new Dictionary<string, IMenu>();
-            IMenu _newMenu = new Menus.MainMenu("main");
+            IMenu _newMenu = new Menus.Main("main");
             _menus.Add(_newMenu.Name, _newMenu);
 
-            _newMenu = new Menus.PauseMenu("pause");
+            _newMenu = new Menus.Pause("pause");
             _menus.Add(_newMenu.Name, _newMenu);
 
             return _menus;
 
         }
+
+
     }
 }

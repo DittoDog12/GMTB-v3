@@ -1,18 +1,25 @@
-﻿using GMTB.Abstracts;
+using GMTB.Abstracts;
 using GMTB.Entities;
 using GMTB.Interfaces;
 using GMTB.CollisionSystem;
-using Prototypes.Characters.Mouse;
-using Prototypes.Characters.Triangle;
+using System;
 
 namespace The_Infirmary.Levels
 {
-    public class L1 : Level
+    public class L5 : Level
     {
+		#region Data Members
+		private Random rand;
+		private int mBeds;
+		private int mTables;
+		#endregion
         #region Constructor
-        public L1() : base()
+        public L5() : base()
         {
             bg = null;
+            rand = new Random(); 
+			mBeds = 6;
+			mTables = 6;
         }
         #endregion
 
@@ -23,68 +30,34 @@ namespace The_Infirmary.Levels
 
             if (firstRun == true)
             {
-                mBackgroundManager.ChangeBackground("FirstFloor");
+                mBackgroundManager.ChangeBackground("Surgery");
 
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
-                createdEntity = mEntityManager.newEntity<Characters.Player>("playerR", true);
+                createdEntity = mEntityManager.newEntity<Player>("playerR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150);
                 Removables.Add(createdEntity);
+				
+				// Exit Door
+				createdEntity = mEntityManager.newEntity<Door>("ExitDoor");
+				var asInterface = createdEntity as IDoor;
+				//asInterface.Initialize("L5", vector 2); //coordinates of players previous location
+               // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                Removables.Add(createdEntity);
 
-
-				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Nurse1");
+				//Surgery Table
+				createdEntity = mEntityManager.newEntity<RectangleShape>("SurgeryTable");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
 				
-				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Nurse2");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
-				
-				// Doctor
-				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Doctor");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
-				
-				// Door
-				createdEntity = mEntityManager.newEntity<Door>("Door");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L6")
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
-				
-				// Door
-				createdEntity = mEntityManager.newEntity<Door>("Door");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L7")
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
-				
-				// Door
-				createdEntity = mEntityManager.newEntity<Door>("Door");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L8")
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
-				
-				// Stairs
-				createdEntity = mEntityManager.newEntity<Door>("Stair");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L9")
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
-				
-				
-                firstRun = false;
+				////Collectable Object
+				//createdEntity = mEntityManager.newEntity<Collectable>("Item");
+    //           // X, Y coordinates
+    //            mSceneManager.newEntity(createdEntity, 170, 150); //Change coordinates
+    //            Removables.Add(createdEntity);
 
             }
         }

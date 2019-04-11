@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using GMTB.CollisionSystem;
+using System;
 
 namespace GMTB
 {
@@ -88,6 +89,7 @@ namespace GMTB
             mMenuManager = mServiceLocator.GetService<IMenu_Manager>();
             mLevelManager = mServiceLocator.GetService<ILevel_Manager>();
 
+            Console.WriteLine("Max Texture Size: " + CalculateMaxTextureSize());
             // Create Content Manager, pass Monogame Content Manager and Path to Content Root
             //mContentManager = new Content_Manager(Content, mContentRoot);
             //mContentManager = mServiceLocator.GetService<IContent_Manager>();
@@ -194,6 +196,44 @@ namespace GMTB
             }
       
             base.Draw(_gameTime);
+        }
+
+        /// <summary>
+        /// Max texture size supported by the current device.
+        /// </summary>
+        public int MaxTextureSize
+        {
+            get
+            {
+                if (maxTextureSize == 0)
+                    maxTextureSize = CalculateMaxTextureSize();
+                return maxTextureSize;
+            }
+        }
+        private int maxTextureSize;
+        private int CalculateMaxTextureSize()
+        {
+            var maxSize = 0;
+            var i = 8;
+            while (i < 20)
+            {
+                try
+                {
+                    var size = (int)Math.Pow(2, i);
+                    new Texture2D(mSpriteBatch.GraphicsDevice, size, 1);
+                    maxSize = size;
+
+                    size++;
+                    new Texture2D(mSpriteBatch.GraphicsDevice, size, 1);
+                    maxSize = size;
+                }
+                catch (Exception e)
+                {
+                    break;
+                }
+                i++;
+            }
+            return maxSize;
         }
     }
 }

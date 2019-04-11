@@ -2,8 +2,6 @@
 using GMTB.Entities;
 using GMTB.Interfaces;
 using GMTB.CollisionSystem;
-using Prototypes.Characters.Mouse;
-using Prototypes.Characters.Triangle;
 
 namespace The_Infirmary.Levels
 {
@@ -23,23 +21,23 @@ namespace The_Infirmary.Levels
 
             if (firstRun == true)
             {
-                mBackgroundManager.ChangeBackground("topfloor");
+                mBackgroundManager.ChangeBackground("Levels/2ndFloor");
 
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
-                createdEntity = mEntityManager.newEntity<Characters.Player>("playerR", true);
+                createdEntity = mEntityManager.newEntity<Player>("Characters/Player/playerR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150);
                 Removables.Add(createdEntity);
 
 				// Old Man
-				createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("OldMan");
+				createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("Characters/OldMan/Front");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
 
 				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Nurse1");
+				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/Right");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
@@ -47,31 +45,31 @@ namespace The_Infirmary.Levels
 				// Door
 				createdEntity = mEntityManager.newEntity<Door>("Door");
 				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L2")
+                asInterface.Initialize("L2");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
 				
 				// Door
 				createdEntity = mEntityManager.newEntity<Door>("Door");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L3")
+				asInterface = createdEntity as IDoor;
+                asInterface.Initialize("L3");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
 				
 				// Door
 				createdEntity = mEntityManager.newEntity<Door>("Door");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L2")
+				asInterface = createdEntity as IDoor;
+                asInterface.Initialize("L2");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
 				
 				// Stairs
 				createdEntity = mEntityManager.newEntity<Door>("Stair");
-				var asInterface = createdEntity as IDoor;
-				asInterface.initialise("L2")
+				asInterface = createdEntity as IDoor;
+                asInterface.Initialize("L2");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity);
