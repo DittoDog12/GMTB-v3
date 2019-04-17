@@ -9,8 +9,8 @@ namespace GMTB.Interfaces
 {
     public interface IDoor
     {
-        void setVars(IServiceLocator _sl);
-        void Initialize(string _target);
-        void Initialize(string _target, Vector2 _playerPos);
+        void Subscribe();
+        void Initialize(string _target, bool _suspend);
+        void Initialize(string _target, Vector2 _playerPos, bool _suspend);
     }
 }

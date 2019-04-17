@@ -30,42 +30,42 @@ namespace Prototypes.Levels
                 createdEntity = mEntityManager.newEntity<Characters.Player>("playerR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Triangle
                 createdEntity = mEntityManager.newEntity<TriangleShape>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 100, 400);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Triangle
                 createdEntity = mEntityManager.newEntity<TriangleShape>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 200, 400);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Triangle
                 createdEntity = mEntityManager.newEntity<TriangleShape>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 300, 100);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Triangle
                 createdEntity = mEntityManager.newEntity<TriangleShape>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 300, 250);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Triangle
                 createdEntity = mEntityManager.newEntity<TriangleShape>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 600, 50);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create large square
                 createdEntity = mEntityManager.newEntity<RectangleShape>("squarelorge", true);
                 mSceneManager.newEntity(createdEntity, 300, 300);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
                
                 // Create mouse
                 createdEntity = mEntityManager.newEntity<Mouse>("mouseleft", true);
                 mSceneManager.newEntity(createdEntity, 1200, 700);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Cheese Spawner
                 createdEntity = mEntityManager.newEntity<CheeseSpawner>(true);
@@ -73,12 +73,12 @@ namespace Prototypes.Levels
                 asInterface.setVars(_sl);
                 asInterface.Initialize();
                 mSceneManager.newEntity(createdEntity, 0, 0);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create Moving Triangle
                 createdEntity = mEntityManager.newEntity<Triangle>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 1000, 150);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create door
                 createdEntity = mEntityManager.newEntity<Door>("door");
@@ -86,7 +86,7 @@ namespace Prototypes.Levels
                 door1.setVars(_sl);
                 door1.Initialize("L2");
                 mSceneManager.newEntity(createdEntity, 1100, 250); //Change coordinates
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create door
                 createdEntity = mEntityManager.newEntity<Door>("door");
@@ -94,7 +94,7 @@ namespace Prototypes.Levels
                 door2.setVars(_sl);
                 door2.Initialize("L3");
                 mSceneManager.newEntity(createdEntity, 1100, 550); //Change coordinates
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
             }
         }
         #endregion

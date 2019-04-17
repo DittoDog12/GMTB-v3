@@ -44,6 +44,9 @@ namespace GMTB
         private float mRefreshRate = 5f;
         private float mRefreshTimer = 0f;
 
+        // Hold the 2D Camera if needed
+        private Camera2D mCamera;
+
         public Kernel()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -89,6 +92,8 @@ namespace GMTB
             mMenuManager = mServiceLocator.GetService<IMenu_Manager>();
             mLevelManager = mServiceLocator.GetService<ILevel_Manager>();
 
+            if (mCamera != null) mCamera.Intialize(mServiceLocator);
+
             Console.WriteLine("Max Texture Size: " + CalculateMaxTextureSize());
             // Create Content Manager, pass Monogame Content Manager and Path to Content Root
             //mContentManager = new Content_Manager(Content, mContentRoot);
@@ -110,6 +115,10 @@ namespace GMTB
             mMenuManager.InitializeMenus();
             mMenuManager.ActivateMenu("main");
             Global.GameState = Global.availGameStates.Menu;
+        }
+        public void Need2DCamera()
+        {
+            mCamera = new Camera2D(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
         }
 
         /// <summary>
@@ -152,6 +161,7 @@ namespace GMTB
                     mSceneManager.Update(_gameTime);
                     mCollisionManager.CollisionDetec();
                     mAIManager.Update(_gameTime);
+                    if (mCamera != null) mCamera.Update(_gameTime);
                     break;
                 case Global.availGameStates.Menu:
                     mMenuManager.Update(_gameTime);
@@ -176,15 +186,16 @@ namespace GMTB
         /// <param name="_gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime _gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             mRefreshTimer += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
 
             if (mRefreshTimer >= mRefreshRate)
             {
                 switch (Global.GameState)
                 {
-                    case Global.availGameStates.Playing:
-                        mSceneManager.Draw(mSpriteBatch, _gameTime);
+                    case Global.availGameStates.Playing:  
+                        if (mCamera != null) mSceneManager.Draw(mSpriteBatch, _gameTime, mCamera, GraphicsDevice);
+                        else mSceneManager.Draw(mSpriteBatch, _gameTime);
                         break;
                     case Global.availGameStates.Menu:
                         mMenuManager.Draw(mSpriteBatch);

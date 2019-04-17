@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
-    interface IPlayer
+    public interface IPlayer
     {
         Vector2 GetPos();
     }

@@ -18,7 +18,7 @@ namespace Prototypes
         }
         public override void Collision(ICollidable _obj)
         {
-            base.Collision(ICollidable _obj);
+            base.Collision(_obj);
             Destroy();
         }
     }

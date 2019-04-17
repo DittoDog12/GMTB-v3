@@ -61,6 +61,7 @@ namespace The_Infirmary
             ContentRoot = "Content";
             // Create a new instance of the Kernal, pass Content root and opened levels
             game1 = new Kernel(ContentRoot, GetLevels(), GetMenus());
+            game1.Need2DCamera();
             game1.IsMouseVisible = true;
         }
 

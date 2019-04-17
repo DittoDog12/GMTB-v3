@@ -30,13 +30,13 @@ namespace Prototypes.Levels
                 createdEntity = mEntityManager.newEntity<Characters.Player>("playerR", true);
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
 
                 // Create Moving Triangle
                 createdEntity = mEntityManager.newEntity<Triangle>("trianglel", true);
                 mSceneManager.newEntity(createdEntity, 1000, 150);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create door
                 createdEntity = mEntityManager.newEntity<Door>("door");
@@ -44,7 +44,7 @@ namespace Prototypes.Levels
                 door1.setVars(_sl);
                 door1.Initialize("L1");
                 mSceneManager.newEntity(createdEntity, 1100, 250); //Change coordinates
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
             }
         }
         #endregion

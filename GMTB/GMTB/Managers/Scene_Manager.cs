@@ -67,10 +67,11 @@ namespace GMTB.Managers
         }
         public void Update(GameTime _gameTime)
         {
+            // Add each entity to a second list, check if the Entity is active or not
             foreach(KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
             {
-                mEntities.Add(_keypair.Key, _keypair.Value);
-
+                if (_keypair.Value.Active)
+                    mEntities.Add(_keypair.Key, _keypair.Value);
             }
             foreach(KeyValuePair<int, IEntity> _keypair in mEntities)
             {
@@ -89,6 +90,7 @@ namespace GMTB.Managers
         }
         public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
+            // Add all entities to the SceneGraph, check that they are capable of being drawn first.
             foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
             {
                 var _entity = _keypair.Value as IPhysicalEntity;

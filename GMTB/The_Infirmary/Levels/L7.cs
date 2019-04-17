@@ -35,7 +35,7 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<Player>("playerR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150);
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Exit Door
 				createdEntity = mEntityManager.newEntity<Door>("ExitDoor");
@@ -43,26 +43,26 @@ namespace The_Infirmary.Levels
 				//asInterface.Initialize("L9", vector 2); //coordinates of players previous location
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 				
 				// 
 				for (int i = 1; i <= mChair; i++){
 				createdEntity = mEntityManager.newEntity<RectangleShape>("Chair");
                // X, Y coordinates
                 //mSceneManager.newEntity(createdEntity, rand.Next(min, max), 150); //Change coordinates
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 				}
 
 				createdEntity = mEntityManager.newEntity<RectangleShape>("Table");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 150, 150); //Change coordinates
-                Removables.Add(createdEntity);
+                Removables.Add(createdEntity.UID, createdEntity);
 				
 				////Collectable Object
 				//createdEntity = mEntityManager.newEntity<Collectable>("Item");
     //           // X, Y coordinates
     //            mSceneManager.newEntity(createdEntity, 170, 150); //Change coordinates
-    //            Removables.Add(createdEntity);
+    //            Removables.Add(createdEntity.UID, createdEntity);
             }
         }
         #endregion

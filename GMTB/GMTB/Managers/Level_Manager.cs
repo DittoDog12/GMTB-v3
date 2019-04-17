@@ -1,9 +1,9 @@
-﻿using System;
+﻿using GMTB.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GMTB.Interfaces;
 
 namespace GMTB.Managers
 {
@@ -13,6 +13,7 @@ namespace GMTB.Managers
         private IDictionary<string, ILevel> mLevels;
         private IServiceLocator mServiceLocator;
         private IEntity_Manager mEntityManager;
+        private ILevel mCurrentLevel;
         #endregion
 
         #region Constructor
@@ -25,10 +26,16 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
-        public void LoadLevel(string _target)
+        public void LoadLevel(string _target, bool _suspend)
         {
-            mEntityManager.ClearAll();
-            mLevels[_target].Initialise(mServiceLocator);
+            // If _suspend, then assume player may revisit previous level, set all entities on that level to not active, resume them later.
+            if (_suspend)
+                mCurrentLevel.Suspend();
+            else
+                mEntityManager.ClearAll();
+
+            mCurrentLevel = mLevels[_target];
+            mLevels[_target].Initialise(mServiceLocator);           
         }
         #endregion
     }

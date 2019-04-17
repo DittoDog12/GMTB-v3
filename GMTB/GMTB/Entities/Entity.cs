@@ -23,7 +23,7 @@ namespace GMTB.Entities
         protected IInput_Manager mInputManager;
         private IEntity_Manager mEntityManger;
         protected IServiceLocator mServiceLocator;
-        
+        protected bool mActive;
         #endregion
 
         #region Accessors
@@ -31,14 +31,18 @@ namespace GMTB.Entities
         {
             get { return mUID; }
         }
-        
+        public bool Active
+        {
+            get { return mActive; }
+            set { mActive = value; }
+        }
         #endregion
 
         #region Constructor
         public Entity()
         {
             //mOrigin = new Vector2((mPosition.X + (mTexture.Width / 2)), (mPosition.Y + (mTexture.Height / 2)));
-            
+            mActive = true;
         }
         #endregion
 

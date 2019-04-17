@@ -18,6 +18,7 @@ namespace GMTB.CollisionSystem
         protected string mTargetLevel;
         protected ILevel_Manager mLevelManager;
         protected bool mColliding = false;
+        protected bool mSuspendPrevLvl;
         #endregion
 
         #region Constructor
@@ -41,7 +42,6 @@ namespace GMTB.CollisionSystem
             base.setVars(_path, _cm);
             mDoor = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
-
         public override void Update(GameTime _gameTime)
         {
             mColliding = false;
@@ -66,21 +66,27 @@ namespace GMTB.CollisionSystem
 
             return rtnLst;
         }
-
-        public void setVars(IServiceLocator _sl)
+        public override void setVars(int _uid, IServiceLocator _sl)
         {
-            mLevelManager = _sl.GetService<ILevel_Manager>();
+            base.setVars(_uid, _sl);
+            mInputManager = _sl.GetService<IInput_Manager>();
         }
 
-        public void Initialize(string _target)
+        public void Initialize(string _target, bool _suspend)
         {
             mTargetLevel = _target;
+            Subscribe();
+        }
+        // Depreciated - Use the Level suspension system instead of trying to move the player
+        public void Initialize(string _target, Vector2 _playerPos, bool _suspend)
+        {
+            Initialize(_target, _suspend);            
+            // Figure out where / how to move player pos
         }
 
-        public void Initialize(string _target, Vector2 _playerPos)
+        public virtual void Subscribe()
         {
-            Initialize(_target);
-            // Figure out where / how to move player pos
+            mInputManager.Sub_Use(OnUse);
         }
 
         public override void Collision(ICollidable _obj)
@@ -96,7 +102,12 @@ namespace GMTB.CollisionSystem
         public void OnUse(object source, InputEvent args)
         {
             if (mColliding && args.currentKey == Keybindings.Use)
-                mLevelManager.LoadLevel(mTargetLevel);
+            {
+                mLevelManager.LoadLevel(mTargetLevel, mSuspendPrevLvl);
+                mInputManager.Un_Move(OnUse);
+
+            }
+                
 
         }
         #endregion

@@ -62,7 +62,7 @@ namespace The_Infirmary.Menus
 
             if (_mousePos.Intersects(_startPos))
             {
-                mLevelManger.LoadLevel("L1");
+                mLevelManger.LoadLevel("L1", false);
                 base.CloseMenu();
                 Global.GameState = Global.availGameStates.Playing;
             }

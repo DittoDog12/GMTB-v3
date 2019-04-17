@@ -13,7 +13,7 @@ namespace GMTB.Abstracts
         protected string lvlID;
         protected string bg;
         protected IEntity createdEntity;
-        protected List<IEntity> Removables;
+        protected IDictionary<int, IEntity> Removables;
         protected bool firstRun = true;
 
         protected IEntity_Manager mEntityManager;
@@ -40,7 +40,7 @@ namespace GMTB.Abstracts
         #region Constructor
         public Level()
         {
-            Removables = new List<IEntity>();
+            Removables = new Dictionary<int, IEntity>();
             lvlID = GetType().Name.ToString();
         }
         #endregion
@@ -52,7 +52,28 @@ namespace GMTB.Abstracts
             mEntityManager = mServiceLocator.GetService<IEntity_Manager>();
             mSceneManager = mServiceLocator.GetService<IScene_Manager>();
             mBackgroundManager = mServiceLocator.GetService<IBackground_Manager>();
-    }
+
+            if (!firstRun)
+                Resume();
+        }
+        public virtual void Suspend()
+        {
+            foreach (KeyValuePair<int, IEntity> _keypair in Removables)
+            {
+                _keypair.Value.Active = false;
+            }
+        }
+        public virtual void Resume()
+        {
+            foreach (KeyValuePair<int, IEntity> _keypair in Removables)
+            {
+                _keypair.Value.Active = true;
+                // Cast all entities to IDoor and resubscribe them to the Input Manager when resuming a level
+                IDoor asInterface = _keypair.Value as IDoor;
+                if (asInterface != null)
+                    asInterface.Subscribe();
+            }
+        }
         #endregion
     }
 }

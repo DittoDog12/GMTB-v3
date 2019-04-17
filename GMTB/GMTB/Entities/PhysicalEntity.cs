@@ -106,7 +106,7 @@ namespace GMTB.Entities
         }
         public virtual void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-            if (mTexture != null)
+            if (mTexture != null && mActive)
                 _spriteBatch.Draw(mTexture, mPosition, Color.AntiqueWhite);
         }
         public virtual void Collision(ICollidable _obj)
