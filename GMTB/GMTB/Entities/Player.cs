@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using GMTB.Interfaces;
 using GMTB.InputSystem;
 using GMTB.CollisionSystem;
+using System.Diagnostics;
 
 namespace GMTB.Entities
 {
@@ -54,6 +55,11 @@ namespace GMTB.Entities
                     mVelocity = Vector2.Zero;
                     break;
             }
+        }
+        public override void Update(GameTime _gameTime)
+        {
+            base.Update(_gameTime);
+            Debug.WriteLine(mPosition);
         }
 
 

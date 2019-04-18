@@ -57,6 +57,7 @@
     <Compile Include="Interfaces\IAI_Manager.cs" />
     <Compile Include="Interfaces\IBackground_Manager.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
+    <Compile Include="CollisionSystem\IisTrigger.cs" />
     <Compile Include="Interfaces\ILevel_Manager.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IMenu_Manager.cs" />

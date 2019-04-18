@@ -103,7 +103,7 @@ namespace GMTB.CollisionSystem
                             // Call the main collision test method, pass the reference to the objects Vertices lists
                             // If collision returns true, call the MTV calculation, pass Object A as the target
                             if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
-                                MTVCalc(objA, objB);
+                                DetermineCollisionType(objA, objB);
                         }
                     }
                                        
@@ -221,13 +221,37 @@ namespace GMTB.CollisionSystem
             }
             return CollisionFlag;
         }
-
-        public void MTVCalc(ICollidable _target, ICollidable _otherTarget)
+        /// <summary>
+        /// Figures out if a physical collision has occured or a trigger collision
+        /// Runs MTV calculations if physical
+        /// </summary>
+        /// <param name="_target"> First object involved </param>
+        /// <param name="_otherTarget"> Second object involved </param>
+        public void DetermineCollisionType(ICollidable _target, ICollidable _otherTarget)
         {
-            // MTV calculations
-            Vector2 _mtv = mCollisionNormal * mCollisionOverlap;
-            _target.Collision(_mtv, mCollisionNormal, _otherTarget);
-            _otherTarget.Collision(_otherTarget);
+            // First cast the two objects to IisTriggers
+            IisTrigger _ObjA = _target as IisTrigger;
+            IisTrigger _ObjB = _otherTarget as IisTrigger;
+
+            // Check if either object is a trigger, call Object A's OnTrigger 
+            // passing it the other object it collided with as an IColliadble
+            if (_ObjA != null || _ObjB != null)
+            {
+                // Double check that we are currently working with Object A
+                // This is to prevent a non Trigger entity acting as if it is colliding with a physical entity
+                if (_ObjA != null)
+                    _ObjA.OnTrigger(_otherTarget);
+            }
+                
+            else
+            {
+                // Assume Physical Collision,
+                // Perform MTV calculations and call main Collision Method
+                Vector2 _mtv = mCollisionNormal * mCollisionOverlap;
+                _target.Collision(_mtv, mCollisionNormal, _otherTarget);
+                _otherTarget.Collision(_otherTarget);
+            }
+            
         }
 
         #endregion

@@ -12,7 +12,6 @@ namespace GMTB.InputSystem
     public class InputEvent : EventArgs
     {
         public Keybindings currentKey;
-
         public InputEvent(Keybindings _key)
         {
             currentKey = _key;
@@ -151,8 +150,12 @@ namespace GMTB.InputSystem
         #region EventTriggers
         protected virtual void MouseInput(Keybindings key, Vector2 pos)
         {
-            MouseEvent args = new MouseEvent(key, pos);
-            MouseUsers(this, args);
+            if (MouseUsers != null)
+            {
+                MouseEvent args = new MouseEvent(key, pos);
+                MouseUsers(this, args);
+            }
+            
         }
         protected virtual void MovementInput(Keybindings key)
         {

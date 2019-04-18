@@ -105,33 +105,29 @@ namespace GMTB
             mTransform = Matrix.CreateTranslation(new Vector3(-mPosition.X, -mPosition.Y, 0)) *
                 Matrix.CreateRotationZ(Rotation) *
                 Matrix.CreateScale(new Vector3(mZoom, mZoom, 1)) *
-                //Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, graphicsDevice.Viewport.Height * 0.5f, 0));
-                Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, 150, 0));
+                Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, graphicsDevice.Viewport.Height * 0.5f, 0));
+                //Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, 150, 0));
 
             return mTransform;
         }
 
         public void Update(GameTime _gameTime)
         {
-            // If the player is null, ie new level has been loaded
-            if (mPlayer == null)
+            // Use the service Locator to access the Entity Manager to identify the player via casting
+            // Also check if the player is active
+            foreach (KeyValuePair<int, IEntity> _keyPair in mServiceLocator.GetService<IEntity_Manager>().AllEntities)
             {
-                // Use the service Locator to access the Entity Manager to identify the player via casting
-                // Also check if the player is active
-                foreach (KeyValuePair<int, IEntity> _keyPair in mServiceLocator.GetService<IEntity_Manager>().AllEntities)
-                {
-                    IPlayer asInterface = _keyPair.Value as IPlayer;
-                    if (asInterface != null)
-                        if (_keyPair.Value.Active)
-                            mPlayer = asInterface;
-                }
+                IPlayer asInterface = _keyPair.Value as IPlayer;
+                if (asInterface != null)
+                    if (_keyPair.Value.Active)
+                        mPlayer = asInterface;
             }
 
             mPlayerPos = mPlayer.GetPos();
             var delta = (float)_gameTime.ElapsedGameTime.TotalSeconds;
 
             mPosition.X += (mPlayerPos.X - mPosition.X) * mSpeed * delta;
-            //mPosition.Y += (mPlayerPos.Y - mPosition.Y) * mSpeed * delta;
+            mPosition.Y += (mPlayerPos.Y - mPosition.Y) * mSpeed * delta;
 
             // Based on AI tracking system - Kinda Janky also glitches out
             //mDistanceToDest = mPlayerPos - mPosition;

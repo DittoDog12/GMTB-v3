@@ -10,7 +10,7 @@ using GMTB.InputSystem;
 
 namespace GMTB.CollisionSystem
 {
-    public class Door : RectangleShape, IDoor
+    public class Door : RectangleShape, IDoor, IisTrigger
     {
         #region Data Members
 
@@ -70,11 +70,13 @@ namespace GMTB.CollisionSystem
         {
             base.setVars(_uid, _sl);
             mInputManager = _sl.GetService<IInput_Manager>();
+            mLevelManager = _sl.GetService<ILevel_Manager>();
         }
 
         public void Initialize(string _target, bool _suspend)
         {
             mTargetLevel = _target;
+            mSuspendPrevLvl = _suspend;
             Subscribe();
         }
         // Depreciated - Use the Level suspension system instead of trying to move the player
@@ -92,12 +94,13 @@ namespace GMTB.CollisionSystem
         public override void Collision(ICollidable _obj)
         {
             base.Collision(_obj);
-
+        }
+        public void OnTrigger(ICollidable _obj)
+        {
             // VALIDATION: Cast the object to an IPlayer, if it casts succesfully, allow level switching
             var asInterface = _obj as IPlayer;
             if (asInterface != null)
                 mColliding = true;
-
         }
         public void OnUse(object source, InputEvent args)
         {
@@ -105,10 +108,7 @@ namespace GMTB.CollisionSystem
             {
                 mLevelManager.LoadLevel(mTargetLevel, mSuspendPrevLvl);
                 mInputManager.Un_Move(OnUse);
-
             }
-                
-
         }
         #endregion
     }

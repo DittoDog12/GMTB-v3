@@ -11,10 +11,7 @@ namespace The_Infirmary.Levels
     public class L9 : Level
     {
         #region Constructor
-        public L9() : base()
-        {
-            bg = null;
-        }
+        public L9() : base() { }
         #endregion
 
         #region Methods
@@ -22,11 +19,11 @@ namespace The_Infirmary.Levels
         {
             base.Initialise(_sl);
 
+            mBackgroundManager.ChangeBackground("Basement");
+            mBackgroundManager.ChangePosition(0, 0);
+
             if (firstRun == true)
             {
-                mBackgroundManager.ChangeBackground("Basement");
-                mBackgroundManager.ChangePosition(0,0);
-
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Player>("Characters/Player/playerL", true);

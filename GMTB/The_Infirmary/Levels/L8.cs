@@ -8,13 +8,8 @@ namespace The_Infirmary.Levels
 {
     public class L8 : Level
     {
-		#region Data Members
-		#endregion
         #region Constructor
-        public L8() : base()
-        {
-            bg = null;	
-        }
+        public L8() : base() { }
         #endregion
 
         #region Methods
@@ -22,10 +17,10 @@ namespace The_Infirmary.Levels
         {
             base.Initialise(_sl);
 
+            mBackgroundManager.ChangeBackground("MatronsOffice");
+
             if (firstRun == true)
             {
-                mBackgroundManager.ChangeBackground("MatronsOffice");
-
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Player>("playerR", true);

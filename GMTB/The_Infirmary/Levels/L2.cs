@@ -14,10 +14,10 @@ namespace The_Infirmary.Levels
 		private int mBeds;
 		private int mTables;
 		#endregion
+
         #region Constructor
         public L2() : base()
         {
-            bg = null;
 			rand = new Random(); 
 			mBeds = 6;
 			mTables = 6;
@@ -29,10 +29,12 @@ namespace The_Infirmary.Levels
         {
             base.Initialise(_sl);
 
+            mBackgroundManager.ChangeBackground("Levels/Ward");
+            mBackgroundManager.ChangePosition(0, 2000);
+
             if (firstRun == true)
             {
-                mBackgroundManager.ChangeBackground("Levels/Ward");
-                mBackgroundManager.ChangePosition(0, 2000);
+                
 
                 // Create Player
 				// <Entity Type>("Texture", needs input?)

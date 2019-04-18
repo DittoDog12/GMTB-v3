@@ -12,10 +12,10 @@ namespace The_Infirmary.Levels
 		private Random rand;
 		private int mChair;
 		#endregion
+
         #region Constructor
         public L7() : base()
         {
-            bg = null;
 			rand = new Random(); 
 			mChair = 8;
         }
@@ -26,10 +26,10 @@ namespace The_Infirmary.Levels
         {
             base.Initialise(_sl);
 
+            mBackgroundManager.ChangeBackground("BoardRoom");
+
             if (firstRun == true)
             {
-                mBackgroundManager.ChangeBackground("BoardRoom");
-
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Player>("playerR", true);
