@@ -1,4 +1,5 @@
 ﻿using GMTB.Interfaces;
+using GMTB.CollisionSystem;
 using GMTB.Pathfinding;
 using Microsoft.Xna.Framework;
 using System;
@@ -56,10 +57,11 @@ namespace GMTB.Entities.AI
         #endregion
 
         #region Constructor
-        public AIMind(IBasicAI _self)
+        public AIMind(IBasicAI _self, byte[,] _map)
         {
             mStates = new Dictionary<string, IState>();
             mSelf = _self;
+            mMap = _map;
             mPathfinder = new Pathfinder((int)Global.ScreenSize.X, (int)Global.ScreenSize.Y, mMap);
         }
         #endregion
@@ -81,7 +83,10 @@ namespace GMTB.Entities.AI
         {
             mCurrentState = mStates[_newState];
         }
+        public virtual void OnTrigger(ICollidable _obj)
+        {
 
+        }
         #endregion
     }
 }

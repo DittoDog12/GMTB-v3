@@ -17,7 +17,7 @@ namespace GMTB.Entities
         #region Constructor
         public Player()
         {
-            mSpeed = 5f;
+            mSpeed = 3f;
         }
         #endregion
 
@@ -37,17 +37,14 @@ namespace GMTB.Entities
             // Apply force respectiveley
             switch (_args.currentKey)
             {
-                case Keybindings.Down:
-                    ApplyForce(new Vector2(0, 3));
-                    break;
-                case Keybindings.Up:
-                    ApplyForce(new Vector2(0, -3));
+                case Keybindings.Down:                    
+                case Keybindings.Up:           
                     break;
                 case Keybindings.Right:
-                    ApplyForce(new Vector2(3, 0));
+                    ApplyForce(new Vector2(mSpeed, 0));
                     break;
                 case Keybindings.Left:
-                    ApplyForce(new Vector2(-3, 0));
+                    ApplyForce(new Vector2(-mSpeed, 0));
                     break;
                 // If Keybinding is released, or keybinding is not recognised, stop moving
                 case Keybindings.Released:

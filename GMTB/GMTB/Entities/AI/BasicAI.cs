@@ -9,7 +9,7 @@ using GMTB.CollisionSystem;
 
 namespace GMTB.Entities.AI
 {
-    public class BasicAI : RectangleShape, IBasicAI
+    public class BasicAI : RectangleShape, IBasicAI, IisTrigger
     {
         #region Data Members
         protected IMind mMind;
@@ -47,6 +47,10 @@ namespace GMTB.Entities.AI
         public virtual void LocateTarget(AITarget _target)
         {
             mTarget = _target;
+        }
+        public virtual void OnTrigger(ICollidable _obj)
+        {
+            mMind.OnTrigger(_obj);
         }
         #endregion
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using GMTB.CollisionSystem;
 
 namespace GMTB.Interfaces
 {
@@ -15,5 +16,6 @@ namespace GMTB.Interfaces
         void Update(GameTime _gameTime);
         void ChangeState(string _newState);
         void Initialize();
+        void OnTrigger(ICollidable _obj);
     }
 }
