@@ -114,7 +114,7 @@ namespace GMTB.Entities
 
         }
 
-        private void UpdatePhysics()
+        protected virtual void UpdatePhysics()
         {
             // Scale velocity with Damp
             mVelocity *= mDamping;

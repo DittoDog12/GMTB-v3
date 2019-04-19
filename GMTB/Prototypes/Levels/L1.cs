@@ -83,16 +83,16 @@ namespace Prototypes.Levels
                 // Create door
                 createdEntity = mEntityManager.newEntity<Door>("door");
                 var door1 = createdEntity as IDoor;
-                door1.setVars(_sl);
-                door1.Initialize("L2");
+                //door1.setVars(_sl);
+                //door1.Initialize("L2");
                 mSceneManager.newEntity(createdEntity, 1100, 250); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Create door
                 createdEntity = mEntityManager.newEntity<Door>("door");
                 var door2 = createdEntity as IDoor;
-                door2.setVars(_sl);
-                door2.Initialize("L3");
+                //door2.setVars(_sl);
+                //door2.Initialize("L3");
                 mSceneManager.newEntity(createdEntity, 1100, 550); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
             }

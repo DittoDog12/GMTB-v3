@@ -164,7 +164,18 @@ namespace GMTB.CollisionSystem
         public virtual void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
             mPosition += 0.02f * _mtv;
-            _otherObj.Position -= 0.02f * _mtv;
+
+            IFloor asInterface = _otherObj as IFloor;
+
+            if (asInterface != null)
+            {
+
+            }
+            else
+            {
+                _otherObj.Position -= 0.02f * _mtv;
+            }
+
             CalculateBounce(_cNormal, _otherObj);
             
         }
