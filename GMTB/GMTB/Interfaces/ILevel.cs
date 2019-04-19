@@ -13,6 +13,7 @@ namespace GMTB.Interfaces
         bool FirstRun { set; }
 
         void Initialise(IServiceLocator _sl);
+        void Initialise(IServiceLocator _sl, bool _overrideResume);
         void Suspend();
     }
 }

@@ -45,7 +45,10 @@ namespace GMTB.Managers
         }
         public void RestartLevel()
         {
-            LoadLevel(mCurrentLevel.LvlID, false);
+            mEntityManager.ClearAll();
+
+            mCurrentLevel = mLevels[mCurrentLevel.LvlID];
+            mLevels[mCurrentLevel.LvlID].Initialise(mServiceLocator, true);
         }
         #endregion
     }

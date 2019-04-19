@@ -56,6 +56,11 @@ namespace GMTB.Abstracts
             if (!firstRun)
                 Resume();
         }
+        public virtual void Initialise(IServiceLocator _sl, bool _overrideResume)
+        {
+            firstRun = _overrideResume;
+            Initialise(_sl);
+        }
         public virtual void Suspend()
         {
             foreach (KeyValuePair<int, IEntity> _keypair in Removables)

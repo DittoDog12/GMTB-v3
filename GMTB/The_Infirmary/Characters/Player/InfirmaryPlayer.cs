@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace The_Infirmary.Characters.Player
 {
-    class InfirmaryPlayer : GMTB.Entities.Player
+    class InfirmaryPlayer : GMTB.Entities.Player, AITarget
     {
         #region Data Members
         private string mFacingDirection;
