@@ -8,6 +8,7 @@ namespace GMTB.Interfaces
 {
     public interface ILevel_Manager
     {
+        void RestartLevel();
         void LoadLevel(string _target, bool _suspend);
     }
 }

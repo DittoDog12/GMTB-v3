@@ -57,16 +57,19 @@ namespace GMTB.Entities.AI
         #endregion
 
         #region Constructor
-        public AIMind(IBasicAI _self, byte[,] _map)
+        public AIMind(IBasicAI _self)
         {
             mStates = new Dictionary<string, IState>();
             mSelf = _self;
-            mMap = _map;
             mPathfinder = new Pathfinder((int)Global.ScreenSize.X, (int)Global.ScreenSize.Y, mMap);
         }
         #endregion
 
         #region Methods
+        protected void SetMap(byte[,] _map)
+        {
+            mMap = _map;
+        }
         public virtual void Initialize()
         {
             foreach (KeyValuePair<string, IState> _keypair in mStates)

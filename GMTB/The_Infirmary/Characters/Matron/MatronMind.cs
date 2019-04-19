@@ -1,5 +1,7 @@
-﻿using GMTB.Entities.AI;
+﻿using GMTB.CollisionSystem;
+using GMTB.Entities.AI;
 using GMTB.Interfaces;
+using GMTB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,13 @@ namespace The_Infirmary.Characters.Matron
             mStates.Add("persue", new Persue(this));
 
             mCurrentState = mStates["idle"];
+        }
+        public override void OnTrigger(ICollidable _obj)
+        {
+            // If collision with player, trigger game over
+            IPlayer asInterface = _obj as IPlayer;
+            if (asInterface != null)
+                Global.GameState = Global.availGameStates.GameOver;
         }
     }
 }

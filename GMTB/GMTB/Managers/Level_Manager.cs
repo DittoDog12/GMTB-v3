@@ -16,6 +16,12 @@ namespace GMTB.Managers
         private ILevel mCurrentLevel;
         #endregion
 
+        #region Accessors
+        public string CurrentLevel
+        {
+            get { return mCurrentLevel.LvlID; }
+        }
+        #endregion
         #region Constructor
         public Level_Manager(IServiceLocator _sl, IEntity_Manager _em, IDictionary<string, ILevel> _levels)
         {
@@ -36,6 +42,10 @@ namespace GMTB.Managers
 
             mCurrentLevel = mLevels[_target];
             mLevels[_target].Initialise(mServiceLocator);           
+        }
+        public void RestartLevel()
+        {
+            LoadLevel(mCurrentLevel.LvlID, false);
         }
         #endregion
     }
