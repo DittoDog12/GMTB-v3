@@ -76,6 +76,14 @@ namespace GMTB.Managers
             mXPos = _x;
             mYPos = _y;
         }
+        /// <summary>
+        /// Clear both backgrounds
+        /// </summary>
+        public void BlankBackgrounds()
+        {
+            mBackground = null;
+            mBackground2 = null;
+        }
         #endregion
     }
 }

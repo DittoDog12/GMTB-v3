@@ -16,7 +16,7 @@ namespace The_Infirmary.Levels
         public override void Initialise(IServiceLocator _sl)
         {
             base.Initialise(_sl);
-
+            mBackgroundManager.BlankBackgrounds();
             mBackgroundManager.ChangeBackground("Levels/Ward");
             mBackgroundManager.ChangePosition(0, 4000);
 

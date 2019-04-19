@@ -58,10 +58,11 @@ namespace GMTB.Managers
                     ActivateMenu("pause");
                     Global.GameState = Global.availGameStates.Menu;
                 }
-                //else if (Global.GameState == Global.availGameStates.Menu)
-                //    Global.GameState = Global.availGameStates.Resuming;
+                else if (Global.GameState == Global.availGameStates.Menu)
+                    Global.GameState = Global.availGameStates.Resuming;
             }
         }
+        
         #endregion
     }
 }

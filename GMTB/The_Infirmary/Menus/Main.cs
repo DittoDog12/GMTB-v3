@@ -69,6 +69,11 @@ namespace The_Infirmary.Menus
             else if (_mousePos.Intersects(_exitPos))
                 Global.GameState = Global.availGameStates.Exiting;
         }
+        public override void OnEsc(object source, InputEvent args)
+        {
+            if (args.currentKey == Keybindings.Pause)
+                Global.GameState = Global.availGameStates.Exiting;
+        }
         #endregion
     }
 }

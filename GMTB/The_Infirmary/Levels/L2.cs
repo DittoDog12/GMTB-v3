@@ -28,14 +28,12 @@ namespace The_Infirmary.Levels
         public override void Initialise(IServiceLocator _sl)
         {
             base.Initialise(_sl);
-
+            mBackgroundManager.BlankBackgrounds();
             mBackgroundManager.ChangeBackground("Levels/Ward");
             mBackgroundManager.ChangePosition(0, 2000);
 
             if (firstRun == true)
             {
-                
-
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Player>("Characters/Player/playerR", true);

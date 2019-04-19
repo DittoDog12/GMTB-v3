@@ -77,9 +77,7 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
-
                 firstRun = false;
-
             }            
         }
         #endregion

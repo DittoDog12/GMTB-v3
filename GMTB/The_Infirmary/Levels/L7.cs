@@ -25,7 +25,7 @@ namespace The_Infirmary.Levels
         public override void Initialise(IServiceLocator _sl)
         {
             base.Initialise(_sl);
-
+            mBackgroundManager.BlankBackgrounds();
             mBackgroundManager.ChangeBackground("BoardRoom");
 
             if (firstRun == true)

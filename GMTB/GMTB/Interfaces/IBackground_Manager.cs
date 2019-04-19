@@ -15,5 +15,6 @@ namespace GMTB.Interfaces
         void ChangeBackground(string _newBG);
         void ChangeBackground(string _newBG1, string _newBG2);
         void ChangePosition(int _x, int _y);
+        void BlankBackgrounds();
     }
 }
