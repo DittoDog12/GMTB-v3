@@ -32,7 +32,7 @@ namespace The_Infirmary.Levels
                 //// Exit Door
                 createdEntity = mEntityManager.newEntity<Door>("door");
                 var asInterface = createdEntity as IDoor;
-                asInterface.Initialize("L9", true); //coordinates of players previous location
+                asInterface.Initialize("L9", true); 
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 4260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
