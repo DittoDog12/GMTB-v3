@@ -158,10 +158,11 @@ namespace GMTB
             switch (Global.GameState)
             {
                 case Global.availGameStates.Playing:
+                    mSceneManager.Update(_gameTime);
                     mAIManager.Update(_gameTime);
                     if (mCamera != null) mCamera.Update(_gameTime);
                     mCollisionManager.CollisionDetec();
-                    mSceneManager.Update(_gameTime);   
+                     
                     break;
                 case Global.availGameStates.Menu:
                     mMenuManager.Update(_gameTime);

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace GMTB.CollisionSystem
 {
-    public class Floor : RectangleShape, IFloor
+    public class StaticObject : RectangleShape, IStaticObject
     {
         public override void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GMTB.Interfaces
 {
-    public interface IFloor
+    public interface IStaticObject
     {
 
     }

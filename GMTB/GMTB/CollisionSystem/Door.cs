@@ -110,6 +110,15 @@ namespace GMTB.CollisionSystem
                 mInputManager.Un_Move(OnUse);
             }
         }
+        public override void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
+        {
+            // Empty override
+        }
+
+        protected override void UpdatePhysics()
+        {
+            // Empty override
+        }
         #endregion
     }
 }

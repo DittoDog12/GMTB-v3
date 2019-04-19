@@ -165,7 +165,7 @@ namespace GMTB.CollisionSystem
         {
             mPosition += 0.02f * _mtv;
 
-            IFloor asInterface = _otherObj as IFloor;
+            IStaticObject asInterface = _otherObj as IStaticObject;
 
             if (asInterface != null)
             {

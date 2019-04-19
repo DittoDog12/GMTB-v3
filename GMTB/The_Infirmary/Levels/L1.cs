@@ -34,11 +34,11 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
-                // Nurse
-                createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/Right");
-                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
-                Removables.Add(createdEntity.UID, createdEntity);
+                //// Nurse
+                //createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/Right");
+                //// X, Y coordinates
+                //mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
+                //Removables.Add(createdEntity.UID, createdEntity);
 
                 // Door
                 createdEntity = mEntityManager.newEntity<Door>("blank");
@@ -73,7 +73,7 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Floor
-                createdEntity = mEntityManager.newEntity<Floor>("floor");
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
                 mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 

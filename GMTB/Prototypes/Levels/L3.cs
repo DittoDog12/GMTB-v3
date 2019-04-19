@@ -38,15 +38,6 @@ namespace Prototypes.Levels
                 mSceneManager.newEntity(createdEntity, 1000, 150);
                 Removables.Add(createdEntity.UID, createdEntity);
 
-<<<<<<< Updated upstream
-                // Create door
-                createdEntity = mEntityManager.newEntity<Door>("door");
-                var door1 = createdEntity as IDoor;
-                //door1.setVars(_sl);
-                //door1.Initialize("L1");
-                mSceneManager.newEntity(createdEntity, 1100, 250); //Change coordinates
-                Removables.Add(createdEntity.UID, createdEntity);
-=======
                 //// Create door
                 //createdEntity = mEntityManager.newEntity<Door>("door");
                 //var door1 = createdEntity as IDoor;
@@ -54,7 +45,6 @@ namespace Prototypes.Levels
                 //door1.Initialize("L1");
                 //mSceneManager.newEntity(createdEntity, 1100, 250); //Change coordinates
                 //Removables.Add(createdEntity.UID, createdEntity);
->>>>>>> Stashed changes
             }
         }
         #endregion

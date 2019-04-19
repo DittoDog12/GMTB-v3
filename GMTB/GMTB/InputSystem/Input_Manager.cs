@@ -159,28 +159,43 @@ namespace GMTB.InputSystem
         }
         protected virtual void MovementInput(Keybindings key)
         {
-            InputEvent args = new InputEvent(key);
-            Movement(this, args);
+            if (Movement != null)
+            {
+                InputEvent args = new InputEvent(key);
+                Movement(this, args);
+            }
         }
         protected virtual void MovementRelease(Keybindings key)
         {
-            InputEvent args = new InputEvent(key);
-            Movement(this, args);
+            if (Movement != null)
+            {
+                InputEvent args = new InputEvent(key);
+                Movement(this, args);
+            }
         }
         protected virtual void SpaceInput(Keybindings key)
         {
-            InputEvent args = new InputEvent(key);
-            Space(this, args);
+            if (Space != null)
+            {
+                InputEvent args = new InputEvent(key);
+                Space(this, args);
+            }
         }
         protected virtual void UseInput(Keybindings key)
         {
-            InputEvent args = new InputEvent(key);
-            Use(this, args);
+            if (Use != null)
+            {
+                InputEvent args = new InputEvent(key);
+                Use(this, args);
+            }
         }
         protected virtual void EscapeInput(Keybindings key)
         {
-            InputEvent args = new InputEvent(key);
-            Esc(this, args);
+            if (Esc != null)
+            {
+                InputEvent args = new InputEvent(key);
+                Esc(this, args);
+            }
         }
         #endregion
 

@@ -54,7 +54,7 @@ namespace The_Infirmary.Levels
                 //// Beds
                 for (int i = 1; i <= mBeds; i++)
                 {
-                    createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bed");
+                    createdEntity = mEntityManager.newEntity<StaticObject>("Objects/bed");
                     // X, Y coordinates
                     mSceneManager.newEntity(createdEntity, rand.Next(100, 2000), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
@@ -63,7 +63,7 @@ namespace The_Infirmary.Levels
                 //Tables
                 for (int i = 1; i <= mTables; i++)
                 {
-                    createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bedsidetable");
+                    createdEntity = mEntityManager.newEntity<StaticObject>("Objects/bedsidetable");
                     // X, Y coordinates
                     mSceneManager.newEntity(createdEntity, rand.Next(100, 2000), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
