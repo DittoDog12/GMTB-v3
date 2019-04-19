@@ -34,14 +34,14 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
-				// Nurse
-				//createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/Right");
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
-    //            Removables.Add(createdEntity.UID, createdEntity);
-				
-				// Door
-				createdEntity = mEntityManager.newEntity<Door>("blank");
+                // Nurse
+                createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/Right");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Door
+                createdEntity = mEntityManager.newEntity<Door>("blank");
 				var asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L2", true);
                // X, Y coordinates
