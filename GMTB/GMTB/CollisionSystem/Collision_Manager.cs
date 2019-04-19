@@ -201,9 +201,9 @@ namespace GMTB.CollisionSystem
                 {
                     // Check which side is overlapping
                     if (obj1Max > obj2Max)
-                        currentOverlap = obj1Max - obj2Min;
+                        currentOverlap = obj1Max - obj2Max;
                     else if (obj2Max > obj1Max)
-                        currentOverlap = obj1Min - obj2Max;
+                        currentOverlap = obj1Min - obj2Min;
                     // Check for shorter overlap
                     if (currentOverlap < mOverlap)
                     {
