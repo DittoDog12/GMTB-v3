@@ -65,9 +65,9 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Stairs
-				createdEntity = mEntityManager.newEntity<Door>("blank");
+				createdEntity = mEntityManager.newEntity<LockedDoor>("Objects/lock_closed");
 				asInterface = createdEntity as IDoor;
-                asInterface.Initialize("L5", false);
+                asInterface.Initialize("L4", false);               
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 4666, 280); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);

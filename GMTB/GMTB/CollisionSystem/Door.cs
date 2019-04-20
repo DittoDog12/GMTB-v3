@@ -102,7 +102,7 @@ namespace GMTB.CollisionSystem
             if (asInterface != null)
                 mColliding = true;
         }
-        public void OnUse(object source, InputEvent args)
+        public virtual void OnUse(object source, InputEvent args)
         {
             if (mColliding && args.currentKey == Keybindings.Use)
             {

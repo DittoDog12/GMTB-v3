@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Abstracts\Menu.cs" />
     <Compile Include="Camera2D.cs" />
+    <Compile Include="CollisionSystem\LockedDoor.cs" />
     <Compile Include="CollisionSystem\Door.cs" />
     <Compile Include="CollisionSystem\StaticObject.cs" />
     <Compile Include="CollisionSystem\IQuadtree.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="Dialogue\IDialogue.cs" />
     <Compile Include="Dialogue\IDialogueBox.cs" />
     <Compile Include="Entities\AnimatingEntity.cs" />
+    <Compile Include="Entities\CollectableItem.cs" />
+    <Compile Include="Interfaces\ICollectableItem.cs" />
     <Compile Include="Entities\SoundEntity.cs" />
     <Compile Include="Interfaces\AITarget.cs" />
     <Compile Include="Interfaces\IBasicAI.cs" />
@@ -59,6 +62,7 @@
     <Compile Include="Interfaces\IBackground_Manager.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="CollisionSystem\IisTrigger.cs" />
+    <Compile Include="Interfaces\ILockedDoor.cs" />
     <Compile Include="Interfaces\IStaticObject.cs" />
     <Compile Include="Interfaces\ILevel_Manager.cs" />
     <Compile Include="Interfaces\IMenu.cs" />

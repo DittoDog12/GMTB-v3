@@ -3,6 +3,7 @@ using GMTB.CollisionSystem;
 using GMTB.Entities;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace The_Infirmary.Levels
 {
@@ -30,9 +31,9 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Exit Door
-                createdEntity = mEntityManager.newEntity<Door>("door");
+                createdEntity = mEntityManager.newEntity<Door>("blank");
                 var asInterface = createdEntity as IDoor;
-                asInterface.Initialize("L9", true); 
+                asInterface.Initialize("L1", true); 
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 4260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
@@ -53,14 +54,24 @@ namespace The_Infirmary.Levels
                 // Bedside Table
                 createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bedsidetable");
                 // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 1000, 2260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 1000, 4260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
-                ////Collectable Object
-                //createdEntity = mEntityManager.newEntity<Collectable>("Item");
-                //           // X, Y coordinates
-                //            mSceneManager.newEntity(createdEntity, 170, 150); //Change coordinates
-                //            Removables.Add(createdEntity.UID, createdEntity);
+                //Collectable Object
+                createdEntity = mEntityManager.newEntity<CollectableItem>("Objects/key");
+                ICollectableItem _item = createdEntity as ICollectableItem;
+                foreach (KeyValuePair<int, IEntity> _keyPair in mEntityManager.AllEntities)
+                {
+                    ILockedDoor _door = _keyPair.Value as ILockedDoor;
+                    if (_door != null)
+                    {
+                        _item.SetTarget(_door);
+                        break;
+                    }
+                }
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 300, 4270); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
 
 
             }
