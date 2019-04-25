@@ -26,7 +26,7 @@ namespace The_Infirmary.Levels
             {
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
-                createdEntity = mEntityManager.newEntity<Player>("Characters/Player/playerL", true);
+                createdEntity = mEntityManager.newEntity<Player>("Characters/Player/playerLwalk", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 4700, 260);
                 Removables.Add(createdEntity.UID, createdEntity);

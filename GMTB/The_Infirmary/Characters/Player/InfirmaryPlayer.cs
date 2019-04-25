@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace The_Infirmary.Characters.Player
 {
@@ -19,7 +21,9 @@ namespace The_Infirmary.Characters.Player
         #region Constructor
         public InfirmaryPlayer()
         {
-            
+            mFrames = 8;
+            mColumns = 8;
+            mInterval = 75f;
         }
         #endregion
 
@@ -27,11 +31,10 @@ namespace The_Infirmary.Characters.Player
         public override void setVars(string _path, IContent_Manager _cm)
         {
             base.setVars(_path, _cm);
-            if (_path == "Characters/Player/playerR")
+            if (_path == "Characters/Player/playerRwalk")
                 mFacingDirection = "right";
-            else if (_path == "Characters/Player/playerL")
+            else if (_path == "Characters/Player/playerLwalk")
                 mFacingDirection = "left";
-            ChangeTexture();
         }
         public override void OnMoveInput(object _source, InputEvent _args)
         {
@@ -42,33 +45,35 @@ namespace The_Infirmary.Characters.Player
                     if (mFacingDirection == "left")
                     {
                         mFacingDirection = "right";
-                        ChangeTexture();
+                        mTexturename = "Characters/Player/playerRwalk";
+
                     }
+                    mMoving = true;
                     break;
                 case Keybindings.Left:
                     if (mFacingDirection == "right")
                     {
                         mFacingDirection = "left";
-                        ChangeTexture();
+                        mTexturename = "Characters/Player/playerLwalk";
                     }
+                    mMoving = true;
                     break;
+                case Keybindings.Released:
                 default:
+                    mCurrentFrame = 0;
+                    mMoving = false;
                     break;
             }
         }
-        public void ChangeTexture()
+        public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-            switch (mFacingDirection)
-            {
-                case "right":
-                    mTexture = mContentManager.ApplyTexture("Characters/Player/playerR");
-                    break;
-                case "left":
-                    mTexture = mContentManager.ApplyTexture("Characters/Player/playerL");
-                    break;
-                default:
-                    break;
-            }
+            if (mMoving)
+                IncrementFrame(_gameTime);
+            base.Draw(_spriteBatch, _gameTime);
+
+            if (mTexturename != mTexture.Name)
+                mTexture = mContentManager.ApplyTexture(mTexturename);
+
         }
         #endregion
     }
