@@ -15,11 +15,13 @@ namespace The_Infirmary.Menus
     public class Pause : Menu
     {
         #region Data Members
-        private Texture2D resumeButton;
-        private Vector2 resumePosition;
+        //private Texture2D resumeButton;
+        //private Vector2 resumePosition;
 
-        private Texture2D exitButton;
-        private Vector2 exitPosition;
+        //private Texture2D exitButton;
+        //private Vector2 exitPosition;
+
+        private Texture2D mPauseScreen;
 
         #endregion
         #region Constructor
@@ -30,21 +32,23 @@ namespace The_Infirmary.Menus
         #endregion
 
         #region Methods
-        public override void Initialize(IServiceLocator _sl)
+        public override void Initialize(IServiceLocator _sl, Camera2D _cam)
         {
-            base.Initialize(_sl);
-            resumePosition = new Vector2(Global.ScreenSize.X / 4, Global.ScreenSize.Y - 75);
-            resumeButton = mContentManager.ApplyTexture("resume");
-            exitPosition = new Vector2(Global.ScreenSize.X - (Global.ScreenSize.X / 4), Global.ScreenSize.Y - 75);
-            exitButton = mContentManager.ApplyTexture("exit");
+            base.Initialize(_sl, _cam);
+            //resumePosition = new Vector2(Global.ScreenSize.X / 4, Global.ScreenSize.Y - 75);
+            //resumeButton = mContentManager.ApplyTexture("resume");
+            //exitPosition = new Vector2(Global.ScreenSize.X - (Global.ScreenSize.X / 4), Global.ScreenSize.Y - 75);
+            //exitButton = mContentManager.ApplyTexture("exit");
             //mBackgroundManager.ChangeBackground("MainMenu");
+            mPauseScreen = mContentManager.ApplyTexture("Menus/paused");
         }
         public override void Draw(SpriteBatch _spriteBatch)
         {
-            _spriteBatch.Begin();
-            _spriteBatch.Draw(resumeButton, resumePosition, Color.White);
-            _spriteBatch.Draw(exitButton, exitPosition, Color.White);
-            _spriteBatch.End();
+            //_spriteBatch.Draw(resumeButton, resumePosition, Color.White);
+            //_spriteBatch.Draw(exitButton, exitPosition, Color.White);
+            // Render the pause text over the main game, positioned center with the cameras present location
+            _spriteBatch.Draw(mPauseScreen, new Rectangle((int)(mCam.Position.X - Global.ScreenSize.X /2), 
+                (int)(mCam.Position.Y - Global.ScreenSize.Y / 2), (int)Global.ScreenSize.X, (int)Global.ScreenSize.Y), Color.White);
         }
         public override void Update(GameTime _gameTime)
         {
@@ -52,17 +56,17 @@ namespace The_Infirmary.Menus
         }
         public override void OnClick(object source, MouseEvent args)
         {
-            base.OnClick(source, args);
+            //base.OnClick(source, args);
 
-            Rectangle _mousePos = new Rectangle(args.currentPos.ToPoint(), new Point(10));
+            //Rectangle _mousePos = new Rectangle(args.currentPos.ToPoint(), new Point(10));
 
-            Rectangle _resumePos = new Rectangle(resumePosition.ToPoint(), new Point(resumeButton.Width, resumeButton.Height));
-            Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(exitButton.Width, exitButton.Height));
+            //Rectangle _resumePos = new Rectangle(resumePosition.ToPoint(), new Point(resumeButton.Width, resumeButton.Height));
+            //Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(exitButton.Width, exitButton.Height));
 
-            if (_mousePos.Intersects(_resumePos))
-                Global.GameState = Global.availGameStates.Resuming;
-            else if (_mousePos.Intersects(_exitPos))
-                Global.GameState = Global.availGameStates.Exiting;
+            //if (_mousePos.Intersects(_resumePos))
+            //    Global.GameState = Global.availGameStates.Resuming;
+            //else if (_mousePos.Intersects(_exitPos))
+            //    Global.GameState = Global.availGameStates.Exiting;
         }
 
         #endregion

@@ -1,12 +1,12 @@
-﻿using GMTB.Interfaces;
-using GMTB.Managers;
+﻿using GMTB.CollisionSystem;
 using GMTB.InputSystem;
+using GMTB.Interfaces;
+using GMTB.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using GMTB.CollisionSystem;
 using System;
+using System.Collections.Generic;
 
 namespace GMTB
 {
@@ -26,7 +26,7 @@ namespace GMTB
         private IInput_Manager mInputManager;
         private ICollision_Manager mCollisionManager;
         private IAI_Manager mAIManager;
-        //private IBackground_Manager mBackgroundManager;
+        private IBackground_Manager mBackgroundManager;
         private IMenu_Manager mMenuManager;
         private ILevel_Manager mLevelManager;
 
@@ -54,7 +54,7 @@ namespace GMTB
             graphics.PreferredBackBufferWidth = 1440;
             graphics.ApplyChanges();
 
-            Global.ScreenSize = new Vector2 (graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            Global.ScreenSize = new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
 
             //Content.RootDirectory = "Content";
 
@@ -81,7 +81,7 @@ namespace GMTB
             // Create Input Manager
             //mInputManager = new Input_Manager();
             // Create Service Locator and all Managers
-            mServiceLocator = new ServiceLocator(Content, mContentRoot, mLevels, mMenus, 
+            mServiceLocator = new ServiceLocator(Content, mContentRoot, mLevels, mMenus,
                 new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
 
             // Retrive Managers required
@@ -91,8 +91,13 @@ namespace GMTB
             mAIManager = mServiceLocator.GetService<IAI_Manager>();
             mMenuManager = mServiceLocator.GetService<IMenu_Manager>();
             mLevelManager = mServiceLocator.GetService<ILevel_Manager>();
+            mBackgroundManager = mServiceLocator.GetService<IBackground_Manager>();
 
-            if (mCamera != null) mCamera.Intialize(mServiceLocator);
+            if (mCamera != null)
+            {
+                mCamera.Intialize(mServiceLocator);
+                mMenuManager.ConfigureCamera(mCamera);
+            }
 
             Console.WriteLine("Max Texture Size: " + CalculateMaxTextureSize());
             // Create Content Manager, pass Monogame Content Manager and Path to Content Root
@@ -152,7 +157,7 @@ namespace GMTB
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             //    Global.GameState = Global.availGameStates.Exiting;
 
-            mInputManager.GetCurrentInput();
+            mInputManager.GetCurrentInput(_gameTime);
 
             // TODO: Add your update logic here
             switch (Global.GameState)
@@ -161,7 +166,7 @@ namespace GMTB
                     mSceneManager.Update(_gameTime);
                     mAIManager.Update(_gameTime);
                     if (mCamera != null) mCamera.Update(_gameTime);
-                    mCollisionManager.CollisionDetec();                     
+                    mCollisionManager.CollisionDetec();
                     break;
                 case Global.availGameStates.Menu:
                     mMenuManager.Update(_gameTime);
@@ -174,9 +179,9 @@ namespace GMTB
                     Global.GameState = Global.availGameStates.Playing;
                     break;
             }
-            
-            
-            
+
+
+
             base.Update(_gameTime);
         }
 
@@ -189,23 +194,23 @@ namespace GMTB
             GraphicsDevice.Clear(Color.Black);
             mRefreshTimer += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            // Check if a 2D camera exists, configure spritebatch accordingly
+            if (mCamera != null)
+                mSpriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend,
+                null, null, null, null, mCamera.GetTransform(GraphicsDevice));
+            else mSpriteBatch.Begin();
+
+            mBackgroundManager.Draw(mSpriteBatch, _gameTime);
+
             if (mRefreshTimer >= mRefreshRate)
             {
-                switch (Global.GameState)
-                {
-                    case Global.availGameStates.Playing:  
-                        if (mCamera != null) mSceneManager.Draw(mSpriteBatch, _gameTime, mCamera, GraphicsDevice);
-                        else mSceneManager.Draw(mSpriteBatch, _gameTime);
-                        break;
-                    case Global.availGameStates.Menu:
-                        mMenuManager.Draw(mSpriteBatch);
-                        break;
-                }
+                mSceneManager.Draw(mSpriteBatch, _gameTime);
+                if (Global.GameState == Global.availGameStates.Menu)
+                    mMenuManager.Draw(mSpriteBatch);
                 // TODO: Add your drawing code here
-                
                 mRefreshTimer = 0f;
             }
-      
+            mSpriteBatch.End();
             base.Draw(_gameTime);
         }
 

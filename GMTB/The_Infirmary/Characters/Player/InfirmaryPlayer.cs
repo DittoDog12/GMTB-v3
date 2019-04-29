@@ -31,9 +31,9 @@ namespace The_Infirmary.Characters.Player
         public override void setVars(string _path, IContent_Manager _cm)
         {
             base.setVars(_path, _cm);
-            if (_path == "Characters/Player/playerRwalk")
+            if (_path == "Characters/Player/walkR")
                 mFacingDirection = "right";
-            else if (_path == "Characters/Player/playerLwalk")
+            else if (_path == "Characters/Player/walkL")
                 mFacingDirection = "left";
         }
         public override void OnMoveInput(object _source, InputEvent _args)
@@ -45,7 +45,7 @@ namespace The_Infirmary.Characters.Player
                     if (mFacingDirection == "left")
                     {
                         mFacingDirection = "right";
-                        mTexturename = "Characters/Player/playerRwalk";
+                        mTexturename = "Characters/Player/walkR";
 
                     }
                     mMoving = true;
@@ -54,7 +54,7 @@ namespace The_Infirmary.Characters.Player
                     if (mFacingDirection == "right")
                     {
                         mFacingDirection = "left";
-                        mTexturename = "Characters/Player/playerLwalk";
+                        mTexturename = "Characters/Player/walkL";
                     }
                     mMoving = true;
                     break;

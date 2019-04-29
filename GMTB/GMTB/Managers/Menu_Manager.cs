@@ -17,6 +17,7 @@ namespace GMTB.Managers
         private IMenu mActiveMenu;
         private IInput_Manager mInputManager;
         private IServiceLocator mServiceLocator;
+        private Camera2D mCam;
         #endregion
         #region Constructor
         public Menu_Manager(IServiceLocator _sl, IDictionary<string, IMenu> _menus)
@@ -28,11 +29,15 @@ namespace GMTB.Managers
         }
         #endregion
         #region Methods
+        public void ConfigureCamera(Camera2D _cam)
+        {
+            mCam = _cam;
+        }
         public void InitializeMenus()
         {
             foreach (KeyValuePair<string, IMenu> _menu in mMenus)
             {
-                _menu.Value.Initialize(mServiceLocator);
+                _menu.Value.Initialize(mServiceLocator, mCam);
             }
         }
         public void ActivateMenu(string _targetMenu)
@@ -42,7 +47,7 @@ namespace GMTB.Managers
         }
         public void Update(GameTime _gameTime)
         {
-            mActiveMenu.Update(_gameTime);
+            mActiveMenu.Update(_gameTime);       
         }
         public void Draw(SpriteBatch _spriteBatch)
         {

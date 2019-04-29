@@ -22,26 +22,26 @@ namespace The_Infirmary.Levels
             {
                 // Create Player
                 // <Entity Type>("Texture", needs input?)
-                createdEntity = mEntityManager.newEntity<Player>("Characters/Player/playerRwalk", true);
+                createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/walkR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 260);
                 Removables.Add(createdEntity.UID, createdEntity);
 
 
 				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Nurse1");
+				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Doctor
-				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Doctor");
+				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkR");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Matron
-				createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Matron");
+				createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/walkR");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
@@ -55,7 +55,7 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Door - Matrons office
-                createdEntity = mEntityManager.newEntity<Door>("Door");
+                createdEntity = mEntityManager.newEntity<Door>("blank");
                 asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L8", true);
                 // X, Y coordinates

@@ -42,7 +42,7 @@ namespace GMTB.InputSystem
         /// <summary>
         /// Main Input checking routine
         /// </summary>
-        void GetCurrentInput();
+        void GetCurrentInput(GameTime _gameTime);
         /// <summary>
         /// Movement input subscriber
         /// </summary>

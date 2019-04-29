@@ -6,10 +6,12 @@ namespace GMTB.Interfaces
     public interface IEntity
     {
         int UID { get; }
-        bool Active { get; set; }
 
         void setVars(int _uid, IServiceLocator _sl);      
         void Update(GameTime _gameTime);     
         void ConfigureInput();
+        void Suspend();
+        void Resume();
+        bool GetState();
     }
 }

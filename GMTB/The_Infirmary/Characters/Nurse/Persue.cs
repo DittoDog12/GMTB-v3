@@ -14,10 +14,12 @@ namespace The_Infirmary.Characters.Nurse
         public Persue(IMind _mind) : base(_mind)
         {
             mPath = new Queue<Point>();
+            
         }
 
         public override void Update(GameTime _gameTime)
         {
+            mMind.MySelf.Moving = true;
             mMind.MySelf.ApplyForce(PlotPath());
         }
 

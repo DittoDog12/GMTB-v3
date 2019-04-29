@@ -32,13 +32,13 @@ namespace The_Infirmary.Levels
             {
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
-                createdEntity = mEntityManager.newEntity<Player>("playerR", true);
+                createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/walkR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150);
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Exit Door
-				createdEntity = mEntityManager.newEntity<Door>("ExitDoor");
+				createdEntity = mEntityManager.newEntity<Door>("blank");
 				var asInterface = createdEntity as IDoor;
 				//asInterface.Initialize("L9", vector 2); //coordinates of players previous location
                // X, Y coordinates

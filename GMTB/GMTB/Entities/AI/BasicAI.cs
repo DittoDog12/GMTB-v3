@@ -9,12 +9,14 @@ using GMTB.CollisionSystem;
 
 namespace GMTB.Entities.AI
 {
-    public class BasicAI : RectangleShape, IBasicAI, IisTrigger
+    public class BasicAI : AnimatingEntity, IBasicAI, IisTrigger
     {
         #region Data Members
         protected IMind mMind;
         protected AITarget mTarget;
-        
+        #endregion
+
+        #region Accessors
         public IServiceLocator ServiceLocator
         {
             get { return mServiceLocator; }
@@ -22,6 +24,10 @@ namespace GMTB.Entities.AI
         public AITarget Target
         {
             get { return mTarget; }
+        }
+        public bool Moving
+        {
+            set { mMoving = value; }
         }
         #endregion
 

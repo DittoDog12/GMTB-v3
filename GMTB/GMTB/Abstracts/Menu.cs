@@ -28,6 +28,8 @@ namespace GMTB.Abstracts
         protected IDictionary<int, IPhysicalEntity> mButtons;
 
         protected string mName;
+
+        protected Camera2D mCam;
         #endregion
 
         #region Accessors
@@ -49,7 +51,7 @@ namespace GMTB.Abstracts
         #endregion
 
         #region Methods
-        public virtual void Initialize(IServiceLocator _sl)
+        public virtual void Initialize(IServiceLocator _sl, Camera2D _cam)
         {
             mServiceLocator = _sl;
             mInputManager = mServiceLocator.GetService<IInput_Manager>();
@@ -57,7 +59,7 @@ namespace GMTB.Abstracts
             mEntityManager = mServiceLocator.GetService<IEntity_Manager>();
             mContentManager = mServiceLocator.GetService<IContent_Manager>();
             mLevelManger = mServiceLocator.GetService<ILevel_Manager>();
-
+            mCam = _cam;
             //Subscribe();
         }
         public abstract void Update(GameTime _gameTime);

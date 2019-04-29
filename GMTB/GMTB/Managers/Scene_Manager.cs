@@ -70,7 +70,7 @@ namespace GMTB.Managers
             // Add each entity to a second list, check if the Entity is active or not
             foreach(KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
             {
-                if (_keypair.Value.Active)
+                if (_keypair.Value.GetState())
                     mEntities.Add(_keypair.Key, _keypair.Value);
             }
             foreach(KeyValuePair<int, IEntity> _keypair in mEntities)
@@ -97,10 +97,7 @@ namespace GMTB.Managers
                 if (_entity != null)
                     mSceneGraph.Add(_keypair.Key, _entity);
             }
-           
-            _spriteBatch.Begin();
-            mBackgroundManager.Draw(_spriteBatch,  _gameTime);
-
+          
             // Call draw method for each Entity if entity is visible   
             foreach (KeyValuePair<int, IPhysicalEntity> _keypair in mSceneGraph)
             {
@@ -116,37 +113,6 @@ namespace GMTB.Managers
             //}
 
             mSceneGraph.Clear();
-            _spriteBatch.End();
-        }
-        // For use if camera is to follow player
-        public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime, Camera2D _cam, GraphicsDevice _graDev)
-        {
-            foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
-            {
-                var _entity = _keypair.Value as IPhysicalEntity;
-                if (_entity != null && _keypair.Value.Active)
-                    mSceneGraph.Add(_keypair.Key, _entity);
-            }
-
-            _spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend,
-                null, null, null, null, _cam.GetTransform(_graDev));
-
-            mBackgroundManager.Draw(_spriteBatch,  _gameTime);
-
-            // Call draw method for each Entity if entity is visible
-            foreach (KeyValuePair<int, IPhysicalEntity> _keypair in mSceneGraph)
-            {    
-                    _keypair.Value.Draw(_spriteBatch, _gameTime);
-            }
-            //for (int i = 1; i <= mEntityManager.TotalEntities(); i++)
-            //{
-            //    var _entity = mEntityManager.GetEntity(i) as IPhysicalEntity;
-            //    if (_entity != null)
-            //        _entity.Draw(_spriteBatch,  _gameTime);
-            //}
-
-            mSceneGraph.Clear();
-            _spriteBatch.End();
         }
     }
 }

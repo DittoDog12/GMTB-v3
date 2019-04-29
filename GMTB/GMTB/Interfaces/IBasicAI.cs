@@ -12,6 +12,7 @@ namespace GMTB.Interfaces
     public interface IBasicAI
     {
         IServiceLocator ServiceLocator { get; }
+        bool Moving { set; }
         Texture2D Texture { get; }
         Vector2 Position { get; }
         Vector2 Acceleration { set; }

@@ -23,19 +23,19 @@ namespace The_Infirmary.Levels
             {
                 // Create Player
 				// <Entity Type>("Texture", needs input?)
-                createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/playerRwalk", true);
+                createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/walkR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 280);
                 Removables.Add(createdEntity.UID, createdEntity);
 
 				// Old Man
-				createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("Characters/OldMan/Front");
+				createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("Characters/OldMan/walkL");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Nurse
-                //createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/Right");
+                //createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkL");
                 //// X, Y coordinates
                 //mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
                 //Removables.Add(createdEntity.UID, createdEntity);

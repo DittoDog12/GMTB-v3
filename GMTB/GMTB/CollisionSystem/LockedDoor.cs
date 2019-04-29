@@ -27,7 +27,7 @@ namespace GMTB.CollisionSystem
         #region Methods
         public void Unlock()
         {
-            mLocked = true;
+            mLocked = false;
             mTexture = mContentManager.ApplyTexture("Objects/lock_open");
         }
         public override void OnUse(object source, InputEvent args)

@@ -15,7 +15,7 @@ namespace GMTB.Interfaces
         Texture2D Texture { get; }
         string Name { get; }
 
-        void Initialize(IServiceLocator _sl);
+        void Initialize(IServiceLocator _sl, Camera2D _cam);
         void Update(GameTime _gameTime);
         void Draw(SpriteBatch _spriteBatch);
         void Subscribe();

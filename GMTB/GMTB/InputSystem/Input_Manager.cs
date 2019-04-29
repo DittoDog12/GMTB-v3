@@ -33,7 +33,8 @@ namespace GMTB.InputSystem
     class Input_Manager : IInput_Manager
     {
         #region Data Members
-        private KeyboardState _oldState;
+        private KeyboardState _oldKState;
+        private KeyboardState _oldPKState;
         private GamePadState _oldGState;
         private MouseState _oldMState;
         public event EventHandler<InputEvent> Movement;
@@ -41,12 +42,18 @@ namespace GMTB.InputSystem
         public event EventHandler<InputEvent> Esc;
         public event EventHandler<InputEvent> Use;
         public event EventHandler<MouseEvent> MouseUsers;
+
+        private float mInterval;
+        private float mTimer;
         #endregion
 
         #region Constructor
         public Input_Manager()
         {
-            _oldState = Keyboard.GetState();
+            _oldKState = Keyboard.GetState();
+            _oldPKState = Keyboard.GetState();
+            mTimer = 0f;
+            mInterval = 100f;
         }
         #endregion
 
@@ -65,17 +72,29 @@ namespace GMTB.InputSystem
         /// <summary>
         /// Main input detection method
         /// </summary>
-        public void GetCurrentInput()
+        public void GetCurrentInput(GameTime _gameTime)
         {
-            // Get Mouse Input
-            MouseInput();
-            // Check if a controller is connected, detect input from that if true
-            if (CheckController())
-                GamePadInput();
-            // else //Enable this top stop keyboard detection if controller detected
-            // Get Keyboard Input
-            KeyboardInput();
+            // Check for persistant keypresses every update
+            PersistantKeyboardInput();
+
+            // Only check for other input if not on cool down.
+            mTimer -= _gameTime.ElapsedGameTime.Milliseconds;
+            if (mTimer <= 0f)
+            {
+                // Get Mouse Input
+                MouseInput();
+                // Check if a controller is connected, detect input from that if true
+                if (CheckController())
+                    GamePadInput();
+                // else //Enable this top stop keyboard detection if controller detected
+                // Get Keyboard Input
+                KeyboardInput();
+           }
+
         }
+        /// <summary>
+        /// Check for mouse button presses, and where the mouse was clicked.
+        /// </summary>
         private void MouseInput()
         {
             MouseState _mouseState = Mouse.GetState();
@@ -84,39 +103,52 @@ namespace GMTB.InputSystem
 
             _oldMState = _mouseState;
         }
-        private void KeyboardInput()
+        /// <summary>
+        /// Check for Keypresses that should be persistant, IE movement keys held down 
+        /// </summary>
+        private void PersistantKeyboardInput()
         {
-            KeyboardState _newState = Keyboard.GetState();
+            KeyboardState _newPKState = Keyboard.GetState();
 
-            if (_newState.IsKeyDown(Keys.W))
+            if (_newPKState.IsKeyDown(Keys.W))
                 MovementInput(Keybindings.Up);
-            else if (_newState.IsKeyDown(Keys.S))
+            else if (_newPKState.IsKeyDown(Keys.S))
                 MovementInput(Keybindings.Down);
 
-            if ((_newState.IsKeyUp(Keys.W) && _oldState.IsKeyDown(Keys.W))
-                || (_newState.IsKeyUp(Keys.S) && _oldState.IsKeyDown(Keys.S)))
-                MovementRelease(Keybindings.Released);
-
-            if (_newState.IsKeyDown(Keys.A))
+            if (_newPKState.IsKeyDown(Keys.A))
                 MovementInput(Keybindings.Left);
-            else if (_newState.IsKeyDown(Keys.D))
+            else if (_newPKState.IsKeyDown(Keys.D))
                 MovementInput(Keybindings.Right);
 
-            if ((_newState.IsKeyUp(Keys.A) && _oldState.IsKeyDown(Keys.A))
-                || (_newState.IsKeyUp(Keys.D) && _oldState.IsKeyDown(Keys.D)))
+            if ((_newPKState.IsKeyUp(Keys.W) && _oldPKState.IsKeyDown(Keys.W))
+                || (_newPKState.IsKeyUp(Keys.S) && _oldPKState.IsKeyDown(Keys.S)))
                 MovementRelease(Keybindings.Released);
 
-            if (_oldState.IsKeyUp(Keys.E) && _newState.IsKeyDown(Keys.E))
+            if ((_newPKState.IsKeyUp(Keys.A) && _oldPKState.IsKeyDown(Keys.A))
+                || (_newPKState.IsKeyUp(Keys.D) && _oldPKState.IsKeyDown(Keys.D)))
+                MovementRelease(Keybindings.Released);
+
+            _oldPKState = _newPKState;
+
+        }
+        /// <summary>
+        /// Check for all other inputs that should only trigger once.
+        /// </summary>
+        private void KeyboardInput()
+        {
+
+            KeyboardState _newKState = Keyboard.GetState();
+
+            if (_oldKState.IsKeyUp(Keys.E) && _newKState.IsKeyDown(Keys.E))
                 UseInput(Keybindings.Use);
 
-            if (_oldState.IsKeyUp(Keys.Space) && _newState.IsKeyDown(Keys.Space))
+            if (_oldKState.IsKeyUp(Keys.Space) && _newKState.IsKeyDown(Keys.Space))
                 SpaceInput(Keybindings.Jump);
 
-            if (_oldState.IsKeyUp(Keys.Escape) && _newState.IsKeyDown(Keys.Escape))
+            if (_oldKState.IsKeyUp(Keys.Escape) && _newKState.IsKeyDown(Keys.Escape))
                 EscapeInput(Keybindings.Pause);
 
-
-            _oldState = _newState;
+            _oldKState = _newKState;
         }
         /// <summary>
         /// Second method to check for gamepad input
@@ -144,7 +176,14 @@ namespace GMTB.InputSystem
             _oldGState = _newGState;
 
         }
-        
+        /// <summary>
+        /// Begin input cooldown
+        /// IE wait for interval specifed above before allowing checking again
+        /// </summary>
+        private void SingleInputTriggered()
+        {
+            mTimer = mInterval;
+        }
         #endregion
 
         #region EventTriggers
@@ -155,7 +194,7 @@ namespace GMTB.InputSystem
                 MouseEvent args = new MouseEvent(key, pos);
                 MouseUsers(this, args);
             }
-            
+
         }
         protected virtual void MovementInput(Keybindings key)
         {
@@ -179,6 +218,7 @@ namespace GMTB.InputSystem
             {
                 InputEvent args = new InputEvent(key);
                 Space(this, args);
+                SingleInputTriggered();
             }
         }
         protected virtual void UseInput(Keybindings key)
@@ -187,6 +227,8 @@ namespace GMTB.InputSystem
             {
                 InputEvent args = new InputEvent(key);
                 Use(this, args);
+                SingleInputTriggered();
+
             }
         }
         protected virtual void EscapeInput(Keybindings key)
@@ -195,6 +237,8 @@ namespace GMTB.InputSystem
             {
                 InputEvent args = new InputEvent(key);
                 Esc(this, args);
+                SingleInputTriggered();
+
             }
         }
         #endregion

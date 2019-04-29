@@ -31,11 +31,6 @@ namespace GMTB.Entities
         {
             get { return mUID; }
         }
-        public bool Active
-        {
-            get { return mActive; }
-            set { mActive = value; }
-        }
         #endregion
 
         #region Constructor
@@ -76,8 +71,18 @@ namespace GMTB.Entities
         {
             mEntityManger.DestroyEntity(UID);
         }
-        
-        
+        public virtual void Suspend()
+        {
+            mActive = false;
+        }
+        public virtual void Resume()
+        {
+            mActive = true;
+        }
+        public virtual bool GetState()
+        {
+            return mActive;
+        }
         #endregion
     }
 }

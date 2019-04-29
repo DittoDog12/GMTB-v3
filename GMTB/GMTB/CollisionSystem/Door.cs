@@ -19,6 +19,7 @@ namespace GMTB.CollisionSystem
         protected ILevel_Manager mLevelManager;
         protected bool mColliding = false;
         protected bool mSuspendPrevLvl;
+        protected bool mTriggered;
         #endregion
 
         #region Constructor
@@ -104,10 +105,11 @@ namespace GMTB.CollisionSystem
         }
         public virtual void OnUse(object source, InputEvent args)
         {
-            if (mColliding && args.currentKey == Keybindings.Use)
+            if (mColliding && args.currentKey == Keybindings.Use && !mTriggered)
             {
+                mTriggered = true;
                 mLevelManager.LoadLevel(mTargetLevel, mSuspendPrevLvl);
-                mInputManager.Un_Move(OnUse);
+                mInputManager.Un_Use(OnUse);
             }
         }
         public override void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
@@ -118,6 +120,16 @@ namespace GMTB.CollisionSystem
         protected override void UpdatePhysics()
         {
             // Empty override
+        }
+        public override void Suspend()
+        {
+            base.Suspend();
+            mColliding = false;
+        }
+        public override void Resume()
+        {
+            base.Resume();
+            mTriggered = false;
         }
         #endregion
     }

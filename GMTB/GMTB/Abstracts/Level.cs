@@ -65,14 +65,14 @@ namespace GMTB.Abstracts
         {
             foreach (KeyValuePair<int, IEntity> _keypair in Removables)
             {
-                _keypair.Value.Active = false;
+                _keypair.Value.Suspend();
             }
         }
         public virtual void Resume()
         {
             foreach (KeyValuePair<int, IEntity> _keypair in Removables)
             {
-                _keypair.Value.Active = true;
+                _keypair.Value.Resume();
                 // Cast all entities to IDoor and resubscribe them to the Input Manager when resuming a level
                 IDoor asInterface = _keypair.Value as IDoor;
                 if (asInterface != null)

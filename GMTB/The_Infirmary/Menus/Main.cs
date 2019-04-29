@@ -31,25 +31,25 @@ namespace The_Infirmary.Menus
         #endregion
 
         #region Methods
-        public override void Initialize(IServiceLocator _sl)
+        public override void Initialize(IServiceLocator _sl, Camera2D _cam)
         {
-            base.Initialize(_sl);
-            startPosition = new Vector2(Global.ScreenSize.X / 4, Global.ScreenSize.Y - 75);
-            startButton = mContentManager.ApplyTexture("start");
-            exitPosition = new Vector2(Global.ScreenSize.X - (Global.ScreenSize.X / 4), Global.ScreenSize.Y - 75);
-            exitButton = mContentManager.ApplyTexture("exit");
-            //mBackgroundManager.ChangeBackground("MainMenu");
+            base.Initialize(_sl, _cam);
+            startPosition = new Vector2(900, 345);
+            //startButton = mContentManager.ApplyTexture("start");
+            exitPosition = new Vector2(910, 500);
+            //exitButton = mContentManager.ApplyTexture("exit");
+            mBackgroundManager.ChangeBackground("Menus/title");
+            mBackgroundManager.ChangePosition(240, 180);
         }
         public override void Draw(SpriteBatch _spriteBatch)
         {
-            _spriteBatch.Begin();
-            _spriteBatch.Draw(startButton, startPosition, Color.White);
-            _spriteBatch.Draw(exitButton, exitPosition, Color.White);
-            _spriteBatch.End();
+            //_spriteBatch.Draw(startButton, startPosition, Color.White);
+            //_spriteBatch.Draw(exitButton, exitPosition, Color.White);
         }
         public override void Update(GameTime _gameTime)
         {
             //throw new NotImplementedException();
+            mCam.Position = new Vector2(680, 500);
         }
         public override void OnClick(object source, MouseEvent args)
         {
@@ -57,8 +57,8 @@ namespace The_Infirmary.Menus
 
             Rectangle _mousePos = new Rectangle(args.currentPos.ToPoint(), new Point(10));
 
-            Rectangle _startPos = new Rectangle(startPosition.ToPoint(), new Point(startButton.Width, startButton.Height));
-            Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(exitButton.Width, exitButton.Height));
+            Rectangle _startPos = new Rectangle(startPosition.ToPoint(), new Point(135, 40));
+            Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(100, 40));
 
             if (_mousePos.Intersects(_startPos))
             {

@@ -53,7 +53,7 @@ namespace GMTB.CollisionSystem
                 // try cast the current Dictionary entry as a collidable
                 var asInterface = _keypair.Value as ICollidable;
                 // If successful, add it to the local list
-                if (asInterface != null && _keypair.Value.Active)
+                if (asInterface != null && _keypair.Value.GetState())
                 {
                     mCollidables.Add(asInterface.UID, asInterface);
                     // Add to the 

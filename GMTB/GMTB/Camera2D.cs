@@ -119,7 +119,7 @@ namespace GMTB
             {
                 IPlayer asInterface = _keyPair.Value as IPlayer;
                 if (asInterface != null)
-                    if (_keyPair.Value.Active)
+                    if (_keyPair.Value.GetState())
                         mPlayer = asInterface;
             }
 
