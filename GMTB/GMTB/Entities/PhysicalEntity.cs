@@ -61,7 +61,7 @@ namespace GMTB.Entities
         #region Constructor
         public PhysicalEntity()
         {
-
+            mGravity = new Vector2(0, 1);
         }
         #endregion
 
@@ -69,7 +69,7 @@ namespace GMTB.Entities
         public override void ConfigureInput()
         {
             base.ConfigureInput();
-            mInputManager.Sub_Space(OnSpaceInput);
+            //mInputManager.Sub_Space(OnSpaceInput);
         }
         /// <summary>
         /// Set Texture path

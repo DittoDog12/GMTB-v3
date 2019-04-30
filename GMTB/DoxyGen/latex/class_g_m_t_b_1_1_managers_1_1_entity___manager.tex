@@ -1,0 +1,233 @@
+\hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager}{}\section{G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager Class Reference}
+\label{class_g_m_t_b_1_1_managers_1_1_entity___manager}\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+Inheritance diagram for G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_m_t_b_1_1_managers_1_1_entity___manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a9203b59e57355460b8a0de499b68b668}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a9203b59e57355460b8a0de499b68b668}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} {\bfseries Get\+Entity} (int \+\_\+index)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a62926f9bc4730b167d3f22d1acf9dcc8}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a62926f9bc4730b167d3f22d1acf9dcc8}} 
+int {\bfseries Total\+Entities} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a690275ff3e8793641778cd1df808f678}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a690275ff3e8793641778cd1df808f678}} 
+{\bfseries Entity\+\_\+\+Manager} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}} \+\_\+cm)
+\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_a996b960a3e3755a9e2a90501aa961715}{new\+Entity$<$ T $>$}} ()
+\begin{DoxyCompactList}\small\item\em Main Entity creation method \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_a3898b03d89ea4b3c735866bbe81040b9}{new\+Entity$<$ T $>$}} (string \+\_\+path)
+\begin{DoxyCompactList}\small\item\em Create Textured Entity \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_a994d6ed32e14c2deb0b11a95e1edba7a}{new\+Entity$<$ T $>$}} (string \+\_\+path, bool \+\_\+input\+Req)
+\begin{DoxyCompactList}\small\item\em Create Textured Entity with Input \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_af5d50cb66d7a19322eb28029218d8cc9}{new\+Entity$<$ T $>$}} (bool \+\_\+util)
+\begin{DoxyCompactList}\small\item\em Create Utility Entity \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_a20f8a9eedc3a9d9295b037d9a477cd98}{new\+Entity$<$ T $>$}} (string \+\_\+path, float \+\_\+interval, bool \+\_\+oneshot)
+\begin{DoxyCompactList}\small\item\em Create Sound entity \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_ab8b0bb504faeca844a504b33b08a31ee}{Destroy\+Entity}} (int \+\_\+uid)
+\begin{DoxyCompactList}\small\item\em Delete specific Entity \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_entity___manager_a9175e841b277d7773d4ee40f71b3a3fd}{Clear\+All}} ()
+\begin{DoxyCompactList}\small\item\em Clear all \mbox{\hyperlink{namespace_g_m_t_b_1_1_entities}{Entities}} from the engine \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a7139bcd7e0e13d529532efa665dfec05}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a7139bcd7e0e13d529532efa665dfec05}} 
+I\+Dictionary$<$ int, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} $>$ {\bfseries All\+Entities}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a9175e841b277d7773d4ee40f71b3a3fd}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a9175e841b277d7773d4ee40f71b3a3fd}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!ClearAll@{ClearAll}}
+\index{ClearAll@{ClearAll}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{ClearAll()}{ClearAll()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+Clear\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear all \mbox{\hyperlink{namespace_g_m_t_b_1_1_entities}{Entities}} from the engine 
+
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Entity\+\_\+\+Manager}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_ab8b0bb504faeca844a504b33b08a31ee}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_ab8b0bb504faeca844a504b33b08a31ee}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!DestroyEntity@{DestroyEntity}}
+\index{DestroyEntity@{DestroyEntity}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{DestroyEntity()}{DestroyEntity()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+Destroy\+Entity (\begin{DoxyParamCaption}\item[{int}]{\+\_\+uid }\end{DoxyParamCaption})}
+
+
+
+Delete specific Entity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+uid} & U\+ID of Entity to be destroyed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Entity\+\_\+\+Manager}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a996b960a3e3755a9e2a90501aa961715}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a996b960a3e3755a9e2a90501aa961715}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!newEntity$<$ T $>$@{newEntity$<$ T $>$}}
+\index{newEntity$<$ T $>$@{newEntity$<$ T $>$}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{newEntity$<$ T $>$()}{newEntity< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+new\+Entity$<$ T $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main Entity creation method 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of I\+Entity to create \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+I\+Entity of new entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Entity\+\_\+\+Manager}}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Entity}]\item[{\em T} : {\em new()}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a3898b03d89ea4b3c735866bbe81040b9}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a3898b03d89ea4b3c735866bbe81040b9}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!newEntity$<$ T $>$@{newEntity$<$ T $>$}}
+\index{newEntity$<$ T $>$@{newEntity$<$ T $>$}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{newEntity$<$ T $>$()}{newEntity< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+new\+Entity$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Create Textured Entity 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of I\+Entity to create \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Texture Path for the new entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Entity of new entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Entity\+\_\+\+Manager}}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Entity}]\item[{\em T} : {\em new()}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a994d6ed32e14c2deb0b11a95e1edba7a}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a994d6ed32e14c2deb0b11a95e1edba7a}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!newEntity$<$ T $>$@{newEntity$<$ T $>$}}
+\index{newEntity$<$ T $>$@{newEntity$<$ T $>$}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{newEntity$<$ T $>$()}{newEntity< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+new\+Entity$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{\+\_\+path,  }\item[{bool}]{\+\_\+input\+Req }\end{DoxyParamCaption})}
+
+
+
+Create Textured Entity with Input 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of I\+Entity to create \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Texture Path \\
+\hline
+{\em \+\_\+input\+Req} & Set true to enable input in new entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Entity of the new entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Entity\+\_\+\+Manager}}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Entity}]\item[{\em T} : {\em new()}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_af5d50cb66d7a19322eb28029218d8cc9}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_af5d50cb66d7a19322eb28029218d8cc9}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!newEntity$<$ T $>$@{newEntity$<$ T $>$}}
+\index{newEntity$<$ T $>$@{newEntity$<$ T $>$}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{newEntity$<$ T $>$()}{newEntity< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+new\+Entity$<$ T $>$ (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+util }\end{DoxyParamCaption})}
+
+
+
+Create Utility Entity 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of I\+Entity to create \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+util} & Set true to configure as a Utility Entity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Entity of the new Entity 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Entity\+\_\+\+Manager}}.
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Entity}]\item[{\em T} : {\em new()}]\end{description}
+\end{Desc}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_entity___manager_a20f8a9eedc3a9d9295b037d9a477cd98}\label{class_g_m_t_b_1_1_managers_1_1_entity___manager_a20f8a9eedc3a9d9295b037d9a477cd98}} 
+\index{GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}!newEntity$<$ T $>$@{newEntity$<$ T $>$}}
+\index{newEntity$<$ T $>$@{newEntity$<$ T $>$}!GMTB.Managers.Entity\_Manager@{GMTB.Managers.Entity\_Manager}}
+\subsubsection{\texorpdfstring{newEntity$<$ T $>$()}{newEntity< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} G\+M\+T\+B.\+Managers.\+Entity\+\_\+\+Manager.\+new\+Entity$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{\+\_\+path,  }\item[{float}]{\+\_\+interval,  }\item[{bool}]{\+\_\+oneshot }\end{DoxyParamCaption})}
+
+
+
+Create Sound entity 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of I\+Entity to create \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Path to sound file \\
+\hline
+{\em \+\_\+interval} & Interval to trigger sound \\
+\hline
+{\em \+\_\+oneshot} & Set true if sound should only trigger once \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new I\+Entity 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Entity}]\item[{\em T} : {\em new()}]\end{description}
+\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Managers/Entity\+\_\+\+Manager.\+cs\end{DoxyCompactItemize}

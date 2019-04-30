@@ -1,0 +1,199 @@
+\hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity}{}\section{G\+M\+T\+B.\+Entities.\+Physical\+Entity Class Reference}
+\label{class_g_m_t_b_1_1_entities_1_1_physical_entity}\index{GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}}
+Inheritance diagram for G\+M\+T\+B.\+Entities.\+Physical\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.885522cm]{class_g_m_t_b_1_1_entities_1_1_physical_entity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac8ffd1ce4e40a17980f70b97e941451c}{Configure\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Method to configure if an entity requires input detection Override and specify which events to listen for. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_physical_entity_add277bab26367c3364210b3577f6d7cd}{set\+Vars}} (string \+\_\+path, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}} \+\_\+cm)
+\begin{DoxyCompactList}\small\item\em Set Texture path \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_physical_entity_af0d908be428b69c35e3d8707cf25e298}{set\+Pos}} (Vector2 \+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Force change position \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_physical_entity_a385d1513107094da5ca2955e91a44bb6}{set\+Default\+Pos}} (Vector2 \+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Set Default Position, also calls set\+Pos \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac93eb5a13167dedd3260903c96ff73d0}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac93eb5a13167dedd3260903c96ff73d0}} 
+override void {\bfseries Update} (Game\+Time \+\_\+game\+Time)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a61103ba37b0152438728b0919604bfd8}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a61103ba37b0152438728b0919604bfd8}} 
+virtual void {\bfseries Draw} (Sprite\+Batch \+\_\+sprite\+Batch, Game\+Time \+\_\+game\+Time)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_aa053042bf8b8f5080d77bef888e30f75}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_aa053042bf8b8f5080d77bef888e30f75}} 
+virtual void {\bfseries Collision} (\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} \+\_\+obj)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad5d62af7d64dfa5dd47347c9bc6344ad}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad5d62af7d64dfa5dd47347c9bc6344ad}} 
+void {\bfseries Apply\+Impulse} (Vector2 \+\_\+closing\+Velocity)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_aef1dd12726500fbfa72640b5a56ed820}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_aef1dd12726500fbfa72640b5a56ed820}} 
+void {\bfseries Apply\+Force} (Vector2 \+\_\+force)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a8614447a3094d15c37c4f8c39f2a4e8e}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a8614447a3094d15c37c4f8c39f2a4e8e}} 
+void {\bfseries Toggle\+Gravity} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a3f4a79aa5675adec8bf3036d05618226}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a3f4a79aa5675adec8bf3036d05618226}} 
+virtual void {\bfseries Update\+Physics} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad550ce553b19b4c8fee60d5f7a196103}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad550ce553b19b4c8fee60d5f7a196103}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}} {\bfseries m\+Content\+Manager}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac75f4c008d6a9b36b9dcc38d9a497dcf}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac75f4c008d6a9b36b9dcc38d9a497dcf}} 
+float {\bfseries m\+Speed}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac9b5722e80619f4ec12a5f381da2c071}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac9b5722e80619f4ec12a5f381da2c071}} 
+Vector2 {\bfseries m\+Velocity}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad70349810c9995558b9f788e7edbb47e}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad70349810c9995558b9f788e7edbb47e}} 
+Vector2 {\bfseries m\+Acceleration}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a7e4474b2422655095c2a8a9abd54447a}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a7e4474b2422655095c2a8a9abd54447a}} 
+float {\bfseries m\+Restitution} = 0.\+6f
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ae01366f87860699b716329868f88a4b4}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ae01366f87860699b716329868f88a4b4}} 
+float {\bfseries m\+Damping} = 0.\+5f
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_aaf65befdf92e799faaf50fc9a7a35ed2}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_aaf65befdf92e799faaf50fc9a7a35ed2}} 
+float {\bfseries m\+Inverse\+Mass} = 1f
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a9c4c325d2be75436b87e4fb5cde06fea}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a9c4c325d2be75436b87e4fb5cde06fea}} 
+Vector2 {\bfseries m\+Gravity} = new Vector2(0, 0)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a32b572010e154ffb1f08599b292a0ce7}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a32b572010e154ffb1f08599b292a0ce7}} 
+Texture2D {\bfseries m\+Texture}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_add93e2d98c73c8b722989a03a005d69c}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_add93e2d98c73c8b722989a03a005d69c}} 
+string {\bfseries m\+Texturename}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_aa7ea977555c165fc87db8828e3bd41da}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_aa7ea977555c165fc87db8828e3bd41da}} 
+Vector2 {\bfseries m\+Position}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a6437aca0cde33aa9a851f96ade08a835}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a6437aca0cde33aa9a851f96ade08a835}} 
+Vector2 {\bfseries m\+Default\+Pos}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a53cbbb567b40b7bb816daee563f67ee7}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a53cbbb567b40b7bb816daee563f67ee7}} 
+Vector2 {\bfseries m\+Origin}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a0e621cb1b6d1430873f203c5dd1d22dc}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a0e621cb1b6d1430873f203c5dd1d22dc}} 
+float {\bfseries m\+Rotation}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_aeac9da2c5c6a8e12a83456c94ffa5ab9}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_aeac9da2c5c6a8e12a83456c94ffa5ab9}} 
+string {\bfseries Texturename}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad0a964893bdef5928726eb7af82f6863}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ad0a964893bdef5928726eb7af82f6863}} 
+Texture2D {\bfseries Texture}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a81bd691d08fab5e84b64e01f289af752}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a81bd691d08fab5e84b64e01f289af752}} 
+Vector2 {\bfseries Position}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ae76dea649a0c77fe1a4769c41388c271}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ae76dea649a0c77fe1a4769c41388c271}} 
+Vector2 {\bfseries Acceleration}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac8ffd1ce4e40a17980f70b97e941451c}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac8ffd1ce4e40a17980f70b97e941451c}} 
+\index{GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}!ConfigureInput@{ConfigureInput}}
+\index{ConfigureInput@{ConfigureInput}!GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}}
+\subsubsection{\texorpdfstring{ConfigureInput()}{ConfigureInput()}}
+{\footnotesize\ttfamily override void G\+M\+T\+B.\+Entities.\+Physical\+Entity.\+Configure\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method to configure if an entity requires input detection Override and specify which events to listen for. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & Input Manager \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_entity_a73f4529a619029861fe443f95d13455c}{G\+M\+T\+B.\+Entities.\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_player_af7c91590f66efe071a0dec4853c30265}{G\+M\+T\+B.\+Entities.\+Player}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_a385d1513107094da5ca2955e91a44bb6}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_a385d1513107094da5ca2955e91a44bb6}} 
+\index{GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}!setDefaultPos@{setDefaultPos}}
+\index{setDefaultPos@{setDefaultPos}!GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}}
+\subsubsection{\texorpdfstring{setDefaultPos()}{setDefaultPos()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Entities.\+Physical\+Entity.\+set\+Default\+Pos (\begin{DoxyParamCaption}\item[{Vector2}]{\+\_\+pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set Default Position, also calls set\+Pos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos} & Vector2 default position\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_physical_entity}{G\+M\+T\+B.\+Interfaces.\+I\+Physical\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_animating_entity_a34e8160516927afb278915c3211b38c5}{G\+M\+T\+B.\+Entities.\+Animating\+Entity}}, and \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_convex_shape_ab31e50bc6e7ae58970eb512355608184}{G\+M\+T\+B.\+Collision\+System.\+Convex\+Shape}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_af0d908be428b69c35e3d8707cf25e298}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_af0d908be428b69c35e3d8707cf25e298}} 
+\index{GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}!setPos@{setPos}}
+\index{setPos@{setPos}!GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}}
+\subsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Entities.\+Physical\+Entity.\+set\+Pos (\begin{DoxyParamCaption}\item[{Vector2}]{\+\_\+pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Force change position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+pos} & Vector2 new position \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_physical_entity}{G\+M\+T\+B.\+Interfaces.\+I\+Physical\+Entity}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_physical_entity_add277bab26367c3364210b3577f6d7cd}\label{class_g_m_t_b_1_1_entities_1_1_physical_entity_add277bab26367c3364210b3577f6d7cd}} 
+\index{GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}!setVars@{setVars}}
+\index{setVars@{setVars}!GMTB.Entities.PhysicalEntity@{GMTB.Entities.PhysicalEntity}}
+\subsubsection{\texorpdfstring{setVars()}{setVars()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Entities.\+Physical\+Entity.\+set\+Vars (\begin{DoxyParamCaption}\item[{string}]{\+\_\+path,  }\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}}}]{\+\_\+cm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set Texture path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Texture Path\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_physical_entity}{G\+M\+T\+B.\+Interfaces.\+I\+Physical\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_door_a45583194dab8dc4b35266644b94d3c40}{G\+M\+T\+B.\+Collision\+System.\+Door}}, \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a4389017110af14cca74a2a26475eccd6}{G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape}}, \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_rectangle_shape_aeb763e34b0be4dff6f0e67fb623bb246}{G\+M\+T\+B.\+Collision\+System.\+Rectangle\+Shape}}, and \mbox{\hyperlink{class_the___infirmary_1_1_characters_1_1_player_1_1_infirmary_player_a0833a307f7cb4ef7f1dd99f10e8db6e9}{The\+\_\+\+Infirmary.\+Characters.\+Player.\+Infirmary\+Player}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Entities/Physical\+Entity.\+cs\end{DoxyCompactItemize}

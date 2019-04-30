@@ -1,0 +1,114 @@
+\hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager}{}\section{G\+M\+T\+B.\+Managers.\+Background\+\_\+\+Manager Class Reference}
+\label{class_g_m_t_b_1_1_managers_1_1_background___manager}\index{GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}}
+Inheritance diagram for G\+M\+T\+B.\+Managers.\+Background\+\_\+\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_m_t_b_1_1_managers_1_1_background___manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_a7342c354f06f76a74acb9334cd5b2003}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_a7342c354f06f76a74acb9334cd5b2003}} 
+{\bfseries Background\+\_\+\+Manager} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}} \+\_\+cm)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_ae238607ebb44c74b7094784c5d21e5a5}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_ae238607ebb44c74b7094784c5d21e5a5}} 
+void {\bfseries Draw} (Sprite\+Batch \+\_\+sprite\+Batch, Game\+Time \+\_\+game\+Time)
+\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_background___manager_adf1fcea640b47d024d4d9f1de60ec263}{Change\+Background}} (string \+\_\+new\+BG)
+\begin{DoxyCompactList}\small\item\em Apply a new background \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_background___manager_a71e24c2d23e5a495178ffb5b5dd27a41}{Change\+Background}} (string \+\_\+new\+B\+G1, string \+\_\+new\+B\+G2)
+\begin{DoxyCompactList}\small\item\em Apply multiple backgrounds, ie if the main background is too big \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_background___manager_a3e050e37529783f5fea2fb2f8a0e893c}{Change\+Position}} (int \+\_\+x, int \+\_\+y)
+\begin{DoxyCompactList}\small\item\em Change the background position, used to render two backgrounds at once \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_managers_1_1_background___manager_a1fe95031054d5acc37513eac1204215a}{Blank\+Backgrounds}} ()
+\begin{DoxyCompactList}\small\item\em Clear both backgrounds \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_aecca58581bd1202e72481c3e0416b69a}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_aecca58581bd1202e72481c3e0416b69a}} 
+Texture2D {\bfseries Texture}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_a1fe95031054d5acc37513eac1204215a}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_a1fe95031054d5acc37513eac1204215a}} 
+\index{GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}!BlankBackgrounds@{BlankBackgrounds}}
+\index{BlankBackgrounds@{BlankBackgrounds}!GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}}
+\subsubsection{\texorpdfstring{BlankBackgrounds()}{BlankBackgrounds()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Managers.\+Background\+\_\+\+Manager.\+Blank\+Backgrounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear both backgrounds 
+
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Background\+\_\+\+Manager}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_adf1fcea640b47d024d4d9f1de60ec263}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_adf1fcea640b47d024d4d9f1de60ec263}} 
+\index{GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}!ChangeBackground@{ChangeBackground}}
+\index{ChangeBackground@{ChangeBackground}!GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}}
+\subsubsection{\texorpdfstring{ChangeBackground()}{ChangeBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Managers.\+Background\+\_\+\+Manager.\+Change\+Background (\begin{DoxyParamCaption}\item[{string}]{\+\_\+new\+BG }\end{DoxyParamCaption})}
+
+
+
+Apply a new background 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+new\+BG} & Content path to the new background \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Background\+\_\+\+Manager}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_a71e24c2d23e5a495178ffb5b5dd27a41}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_a71e24c2d23e5a495178ffb5b5dd27a41}} 
+\index{GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}!ChangeBackground@{ChangeBackground}}
+\index{ChangeBackground@{ChangeBackground}!GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}}
+\subsubsection{\texorpdfstring{ChangeBackground()}{ChangeBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Managers.\+Background\+\_\+\+Manager.\+Change\+Background (\begin{DoxyParamCaption}\item[{string}]{\+\_\+new\+B\+G1,  }\item[{string}]{\+\_\+new\+B\+G2 }\end{DoxyParamCaption})}
+
+
+
+Apply multiple backgrounds, ie if the main background is too big 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+new\+B\+G1} & Content path to left part of background \\
+\hline
+{\em \+\_\+new\+B\+G2} & Content path to right part of background \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Background\+\_\+\+Manager}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_managers_1_1_background___manager_a3e050e37529783f5fea2fb2f8a0e893c}\label{class_g_m_t_b_1_1_managers_1_1_background___manager_a3e050e37529783f5fea2fb2f8a0e893c}} 
+\index{GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}!ChangePosition@{ChangePosition}}
+\index{ChangePosition@{ChangePosition}!GMTB.Managers.Background\_Manager@{GMTB.Managers.Background\_Manager}}
+\subsubsection{\texorpdfstring{ChangePosition()}{ChangePosition()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Managers.\+Background\+\_\+\+Manager.\+Change\+Position (\begin{DoxyParamCaption}\item[{int}]{\+\_\+x,  }\item[{int}]{\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Change the background position, used to render two backgrounds at once 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & New X cooridinate \\
+\hline
+{\em \+\_\+y} & New Y Cooridinate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{G\+M\+T\+B.\+Interfaces.\+I\+Background\+\_\+\+Manager}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Managers/Background\+\_\+\+Manager.\+cs\end{DoxyCompactItemize}

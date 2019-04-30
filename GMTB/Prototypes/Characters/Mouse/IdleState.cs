@@ -30,7 +30,7 @@ namespace Prototypes.Characters.Mouse
         #endregion
 
         #region Constructor
-        public IdleState(IMind _mind) : base(_mind)
+        public IdleState(IAIMind _mind) : base(_mind)
         {
             mRandom = new Random();
             mMind.MySelf.Acceleration = new Vector2(1, 1) * 3f;

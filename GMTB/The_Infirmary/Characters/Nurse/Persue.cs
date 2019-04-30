@@ -11,7 +11,7 @@ namespace The_Infirmary.Characters.Nurse
 {
     public class Persue : State
     {
-        public Persue(IMind _mind) : base(_mind)
+        public Persue(IAIMind _mind) : base(_mind)
         {
             mPath = new Queue<Point>();
             

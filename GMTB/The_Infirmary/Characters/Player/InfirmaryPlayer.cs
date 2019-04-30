@@ -15,6 +15,7 @@ namespace The_Infirmary.Characters.Player
     {
         #region Data Members
         private string mFacingDirection;
+        private IPlayerMind mMind;
         #endregion
 
 

@@ -13,7 +13,7 @@ namespace The_Infirmary.Characters.Nurse
     {
         private float mTriggerDistance = 300f;
 
-        public Idle(IMind _mind) : base(_mind)
+        public Idle(IAIMind _mind) : base(_mind)
         {
         }
 

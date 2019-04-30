@@ -11,7 +11,7 @@ namespace The_Infirmary.Characters.Doctor
 {
     public class Walk : State
     {
-        public Walk(IMind _mind) : base(_mind)
+        public Walk(IAIMind _mind) : base(_mind)
         {
 
         }

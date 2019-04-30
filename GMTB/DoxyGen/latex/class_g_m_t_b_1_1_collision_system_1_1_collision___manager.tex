@@ -1,0 +1,79 @@
+\hypertarget{class_g_m_t_b_1_1_collision_system_1_1_collision___manager}{}\section{G\+M\+T\+B.\+Collision\+System.\+Collision\+\_\+\+Manager Class Reference}
+\label{class_g_m_t_b_1_1_collision_system_1_1_collision___manager}\index{GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}}
+Inheritance diagram for G\+M\+T\+B.\+Collision\+System.\+Collision\+\_\+\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_m_t_b_1_1_collision_system_1_1_collision___manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_aaaf93f4dcb6c695477622b09ed6f559a}{Collision\+\_\+\+Manager}} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{I\+Entity\+\_\+\+Manager}} \+\_\+em, Point \+\_\+screen\+Size)
+\begin{DoxyCompactList}\small\item\em Collision Manager \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_ad8099362db997b483df87f5f168f3bce}{Collision\+Detec}} ()
+\begin{DoxyCompactList}\small\item\em Collision Detection -\/ Setup subroutine First compile a list of all normalized Normals of each object to test Runs through all entities in the list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_a04b8c27025aeb3d32f12e23dc294f607}{Determine\+Collision\+Type}} (\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} \+\_\+target, \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} \+\_\+other\+Target)
+\begin{DoxyCompactList}\small\item\em Figures out if a physical collision has occured or a trigger collision Runs M\+TV calculations if physical \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_aaaf93f4dcb6c695477622b09ed6f559a}\label{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_aaaf93f4dcb6c695477622b09ed6f559a}} 
+\index{GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}!Collision\_Manager@{Collision\_Manager}}
+\index{Collision\_Manager@{Collision\_Manager}!GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}}
+\subsubsection{\texorpdfstring{Collision\_Manager()}{Collision\_Manager()}}
+{\footnotesize\ttfamily G\+M\+T\+B.\+Collision\+System.\+Collision\+\_\+\+Manager.\+Collision\+\_\+\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{I\+Entity\+\_\+\+Manager}}}]{\+\_\+em,  }\item[{Point}]{\+\_\+screen\+Size }\end{DoxyParamCaption})}
+
+
+
+Collision Manager 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & List of entities to check collisions on\\
+\hline
+{\em p} & Player entity\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_ad8099362db997b483df87f5f168f3bce}\label{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_ad8099362db997b483df87f5f168f3bce}} 
+\index{GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}!CollisionDetec@{CollisionDetec}}
+\index{CollisionDetec@{CollisionDetec}!GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}}
+\subsubsection{\texorpdfstring{CollisionDetec()}{CollisionDetec()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Collision\+System.\+Collision\+\_\+\+Manager.\+Collision\+Detec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collision Detection -\/ Setup subroutine First compile a list of all normalized Normals of each object to test Runs through all entities in the list 
+
+\begin{DoxyReturn}{Returns}
+Collision Occured boolean
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collision___manager}{G\+M\+T\+B.\+Collision\+System.\+I\+Collision\+\_\+\+Manager}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_a04b8c27025aeb3d32f12e23dc294f607}\label{class_g_m_t_b_1_1_collision_system_1_1_collision___manager_a04b8c27025aeb3d32f12e23dc294f607}} 
+\index{GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}!DetermineCollisionType@{DetermineCollisionType}}
+\index{DetermineCollisionType@{DetermineCollisionType}!GMTB.CollisionSystem.Collision\_Manager@{GMTB.CollisionSystem.Collision\_Manager}}
+\subsubsection{\texorpdfstring{DetermineCollisionType()}{DetermineCollisionType()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Collision\+System.\+Collision\+\_\+\+Manager.\+Determine\+Collision\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}}}]{\+\_\+target,  }\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}}}]{\+\_\+other\+Target }\end{DoxyParamCaption})}
+
+
+
+Figures out if a physical collision has occured or a trigger collision Runs M\+TV calculations if physical 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+target} & First object involved \\
+\hline
+{\em \+\_\+other\+Target} & Second object involved \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Collision\+System/Collision\+\_\+\+Manager.\+cs\end{DoxyCompactItemize}

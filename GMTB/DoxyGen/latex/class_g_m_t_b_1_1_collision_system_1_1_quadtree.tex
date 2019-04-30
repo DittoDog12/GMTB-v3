@@ -1,0 +1,85 @@
+\hypertarget{class_g_m_t_b_1_1_collision_system_1_1_quadtree}{}\section{G\+M\+T\+B.\+Collision\+System.\+Quadtree Class Reference}
+\label{class_g_m_t_b_1_1_collision_system_1_1_quadtree}\index{GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}}
+Inheritance diagram for G\+M\+T\+B.\+Collision\+System.\+Quadtree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_m_t_b_1_1_collision_system_1_1_quadtree}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a1be54f5c6efca9f9ed78206849472c8c}\label{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a1be54f5c6efca9f9ed78206849472c8c}} 
+{\bfseries Quadtree} (int \+\_\+\+Level, Rectangle \+\_\+\+Bounds)
+\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a7bfe7e80821c425da16ba1bcabfac9ac}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_quadtree}{Quadtree}} and all subquadtrees \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a31faf1269f7048a71c59db80f8e6c375}{Insert}} (\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} \+\_\+obj)
+\begin{DoxyCompactList}\small\item\em Main process for inserting objects to the quad trees Splits the tree if the maximum objects is exceeded \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} $>$ \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_quadtree_aefeacbfba0320ea7e23c15658179c2c6}{Retrieve}} (List$<$ \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} $>$ \+\_\+objects, \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} \+\_\+target)
+\begin{DoxyCompactList}\small\item\em Main Method for accessing the quadtree process \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a7bfe7e80821c425da16ba1bcabfac9ac}\label{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a7bfe7e80821c425da16ba1bcabfac9ac}} 
+\index{GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}!Clear@{Clear}}
+\index{Clear@{Clear}!GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}}
+\subsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Collision\+System.\+Quadtree.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_quadtree}{Quadtree}} and all subquadtrees 
+
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_quadtree_a1c8e400a9e317fe0152b81e567823443}{G\+M\+T\+B.\+Collision\+System.\+I\+Quadtree}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a31faf1269f7048a71c59db80f8e6c375}\label{class_g_m_t_b_1_1_collision_system_1_1_quadtree_a31faf1269f7048a71c59db80f8e6c375}} 
+\index{GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}!Insert@{Insert}}
+\index{Insert@{Insert}!GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}}
+\subsubsection{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily void G\+M\+T\+B.\+Collision\+System.\+Quadtree.\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}}}]{\+\_\+obj }\end{DoxyParamCaption})}
+
+
+
+Main process for inserting objects to the quad trees Splits the tree if the maximum objects is exceeded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+obj} & Collidable object to add to the tree \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_quadtree_a22a84d4c7495fdb318cdd1d359c3591b}{G\+M\+T\+B.\+Collision\+System.\+I\+Quadtree}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_quadtree_aefeacbfba0320ea7e23c15658179c2c6}\label{class_g_m_t_b_1_1_collision_system_1_1_quadtree_aefeacbfba0320ea7e23c15658179c2c6}} 
+\index{GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}!Retrieve@{Retrieve}}
+\index{Retrieve@{Retrieve}!GMTB.CollisionSystem.Quadtree@{GMTB.CollisionSystem.Quadtree}}
+\subsubsection{\texorpdfstring{Retrieve()}{Retrieve()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}}$>$ G\+M\+T\+B.\+Collision\+System.\+Quadtree.\+Retrieve (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} $>$}]{\+\_\+objects,  }\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}}}]{\+\_\+target }\end{DoxyParamCaption})}
+
+
+
+Main Method for accessing the quadtree process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+objects} & List of objects, either from the Collision Manager as new, or from the previous layer \\
+\hline
+{\em \+\_\+target} & Target object to check against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of all objects in the same tree as the specified target object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_quadtree_a1d7564249805855fa89288bde1a673a9}{G\+M\+T\+B.\+Collision\+System.\+I\+Quadtree}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Collision\+System/Quadtree.\+cs\end{DoxyCompactItemize}

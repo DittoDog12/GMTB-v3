@@ -11,7 +11,7 @@ namespace The_Infirmary.Characters.OldMan
 {
     public class Yeet : State
     {
-        public Yeet(IMind _mind): base(_mind)
+        public Yeet(IAIMind _mind): base(_mind)
         {
 
         }

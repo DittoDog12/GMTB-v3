@@ -1,0 +1,117 @@
+\hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape}{}\section{G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape Class Reference}
+\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape}\index{GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}}
+Inheritance diagram for G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.534413cm]{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_aaba9290967fc804a9d1f7b8c5a05bbba}{Triangle\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Collidable class for Triangluar objects \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a4389017110af14cca74a2a26475eccd6}{set\+Vars}} (string \+\_\+path, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}} cm)
+\begin{DoxyCompactList}\small\item\em Set Texture path \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a418c3ebbaa4187f74e922ccbea1520ef}{Configure\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Method to configure if an entity requires input detection Override and specify which events to listen for. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a1b0a6c49bc7be9d3cf901f6f6106f318}\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a1b0a6c49bc7be9d3cf901f6f6106f318}} 
+override void {\bfseries Update} (Game\+Time game\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override List$<$ Vector2 $>$ \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_afe82a9ab85c8bf9404319a3465cbb286}{Get\+Points\+Vertices}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the location of each vertex \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a0a8745bba205d49fdf98c16cb8d215aa}\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a0a8745bba205d49fdf98c16cb8d215aa}} 
+Rectangle {\bfseries m\+Rectangle}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_aaba9290967fc804a9d1f7b8c5a05bbba}\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_aaba9290967fc804a9d1f7b8c5a05bbba}} 
+\index{GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}!TriangleShape@{TriangleShape}}
+\index{TriangleShape@{TriangleShape}!GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}}
+\subsubsection{\texorpdfstring{TriangleShape()}{TriangleShape()}}
+{\footnotesize\ttfamily G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape.\+Triangle\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collidable class for Triangluar objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Pos} & Starting position vector\\
+\hline
+{\em tex} & Texture\\
+\hline
+{\em content} & Reference to the Content Manager\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a418c3ebbaa4187f74e922ccbea1520ef}\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a418c3ebbaa4187f74e922ccbea1520ef}} 
+\index{GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}!ConfigureInput@{ConfigureInput}}
+\index{ConfigureInput@{ConfigureInput}!GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}}
+\subsubsection{\texorpdfstring{ConfigureInput()}{ConfigureInput()}}
+{\footnotesize\ttfamily override void G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape.\+Configure\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method to configure if an entity requires input detection Override and specify which events to listen for. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & Input Manager \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_entity_a73f4529a619029861fe443f95d13455c}{G\+M\+T\+B.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_afe82a9ab85c8bf9404319a3465cbb286}\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_afe82a9ab85c8bf9404319a3465cbb286}} 
+\index{GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}!GetPointsVertices@{GetPointsVertices}}
+\index{GetPointsVertices@{GetPointsVertices}!GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}}
+\subsubsection{\texorpdfstring{GetPointsVertices()}{GetPointsVertices()}}
+{\footnotesize\ttfamily override List$<$Vector2$>$ G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape.\+Get\+Points\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Calculate the location of each vertex 
+
+\begin{DoxyReturn}{Returns}
+List of vertices
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_convex_shape_a7748beb90c69edb0403c1c46ff99ac05}{G\+M\+T\+B.\+Collision\+System.\+Convex\+Shape}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a4389017110af14cca74a2a26475eccd6}\label{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a4389017110af14cca74a2a26475eccd6}} 
+\index{GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}!setVars@{setVars}}
+\index{setVars@{setVars}!GMTB.CollisionSystem.TriangleShape@{GMTB.CollisionSystem.TriangleShape}}
+\subsubsection{\texorpdfstring{setVars()}{setVars()}}
+{\footnotesize\ttfamily override void G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape.\+set\+Vars (\begin{DoxyParamCaption}\item[{string}]{\+\_\+path,  }\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager}{I\+Content\+\_\+\+Manager}}}]{\+\_\+cm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set Texture path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+path} & Texture Path\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_physical_entity_add277bab26367c3364210b3577f6d7cd}{G\+M\+T\+B.\+Entities.\+Physical\+Entity}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Collision\+System/Triangle\+Shape.\+cs\end{DoxyCompactItemize}

@@ -11,7 +11,7 @@ namespace The_Infirmary.Characters.OldMan
 {
     public class Idle: State
     {
-        public Idle(IMind _mind): base (_mind)
+        public Idle(IAIMind _mind): base (_mind)
         {
 
         }

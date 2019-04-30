@@ -1,0 +1,70 @@
+\hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level}{}\section{G\+M\+T\+B.\+Abstracts.\+Level Class Reference}
+\label{class_g_m_t_b_1_1_abstracts_1_1_level}\index{GMTB.Abstracts.Level@{GMTB.Abstracts.Level}}
+Inheritance diagram for G\+M\+T\+B.\+Abstracts.\+Level\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_g_m_t_b_1_1_abstracts_1_1_level}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}} 
+virtual void {\bfseries Initialise} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}} 
+virtual void {\bfseries Initialise} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl, bool \+\_\+override\+Resume)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}} 
+virtual void {\bfseries Suspend} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}} 
+virtual void {\bfseries Resume} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a937018a2b93ea28578b94ba4ec4cedd1}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a937018a2b93ea28578b94ba4ec4cedd1}} 
+string {\bfseries lvl\+ID}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a5e9885c94894c66fa434475a98b24a17}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a5e9885c94894c66fa434475a98b24a17}} 
+string {\bfseries bg}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_ad0bf6dbc3a312fd2a2f36a568a8bf764}\label{class_g_m_t_b_1_1_abstracts_1_1_level_ad0bf6dbc3a312fd2a2f36a568a8bf764}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} {\bfseries created\+Entity}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a8ec95ddca3b52d5d168b98ead74cf34a}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a8ec95ddca3b52d5d168b98ead74cf34a}} 
+I\+Dictionary$<$ int, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} $>$ {\bfseries Removables}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_ab97787325af12a39105e088a5aac1043}\label{class_g_m_t_b_1_1_abstracts_1_1_level_ab97787325af12a39105e088a5aac1043}} 
+bool {\bfseries first\+Run} = true
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_aa554339eb5f0d582d0980ae5a9dcb083}\label{class_g_m_t_b_1_1_abstracts_1_1_level_aa554339eb5f0d582d0980ae5a9dcb083}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{I\+Entity\+\_\+\+Manager}} {\bfseries m\+Entity\+Manager}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a02b437b7b6c283cf47b6f9c66ef1a5dd}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a02b437b7b6c283cf47b6f9c66ef1a5dd}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_scene___manager}{I\+Scene\+\_\+\+Manager}} {\bfseries m\+Scene\+Manager}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_ab6ed6a9ccb015e1590403cecfe4392ca}\label{class_g_m_t_b_1_1_abstracts_1_1_level_ab6ed6a9ccb015e1590403cecfe4392ca}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{I\+Background\+\_\+\+Manager}} {\bfseries m\+Background\+Manager}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a1b358ab73ef23c5fbe8702232005e876}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a1b358ab73ef23c5fbe8702232005e876}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} {\bfseries m\+Service\+Locator}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a439001226a15ab69595def2ee288f3ce}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a439001226a15ab69595def2ee288f3ce}} 
+string {\bfseries Background}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_adbba7ac00e5ff29172bc648ab6b37f2c}\label{class_g_m_t_b_1_1_abstracts_1_1_level_adbba7ac00e5ff29172bc648ab6b37f2c}} 
+string {\bfseries Lvl\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a270766fed7ba35f331507d1e2ce61e40}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a270766fed7ba35f331507d1e2ce61e40}} 
+bool {\bfseries First\+Run}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Abstracts/Level.\+cs\end{DoxyCompactItemize}

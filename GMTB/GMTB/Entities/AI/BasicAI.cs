@@ -12,7 +12,7 @@ namespace GMTB.Entities.AI
     public class BasicAI : AnimatingEntity, IBasicAI, IisTrigger
     {
         #region Data Members
-        protected IMind mMind;
+        protected IAIMind mMind;
         protected AITarget mTarget;
         #endregion
 

@@ -56,6 +56,9 @@
     <Compile Include="Characters\OldMan\Talk.cs" />
     <Compile Include="Characters\OldMan\Yeet.cs" />
     <Compile Include="Characters\Player\InfirmaryPlayer.cs" />
+    <Compile Include="Characters\Player\Jump.cs" />
+    <Compile Include="Characters\Player\PlayerMind.cs" />
+    <Compile Include="Characters\Player\Walk.cs" />
     <Compile Include="GameInitializer.cs" />
     <Compile Include="Levels\L1.cs" />
     <Compile Include="Levels\L7.cs" />

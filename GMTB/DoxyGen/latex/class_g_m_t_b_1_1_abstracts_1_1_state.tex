@@ -1,0 +1,52 @@
+\hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state}{}\section{G\+M\+T\+B.\+Abstracts.\+State Class Reference}
+\label{class_g_m_t_b_1_1_abstracts_1_1_state}\index{GMTB.Abstracts.State@{GMTB.Abstracts.State}}
+Inheritance diagram for G\+M\+T\+B.\+Abstracts.\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_g_m_t_b_1_1_abstracts_1_1_state}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a8a4360e3e744c97f4d206c662bfb53b1}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a8a4360e3e744c97f4d206c662bfb53b1}} 
+{\bfseries State} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind}{I\+A\+I\+Mind}} \+\_\+mind)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a20f5915a413a9f4884c3cb87611bb42a}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a20f5915a413a9f4884c3cb87611bb42a}} 
+{\bfseries State} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind}{I\+Player\+Mind}} \+\_\+mind)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_ae3dc2eb66c8feaa55e4ed914eed7bc15}\label{class_g_m_t_b_1_1_abstracts_1_1_state_ae3dc2eb66c8feaa55e4ed914eed7bc15}} 
+virtual void {\bfseries Initialize} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_af46c23851486462bcbc16a379dbaa5c2}\label{class_g_m_t_b_1_1_abstracts_1_1_state_af46c23851486462bcbc16a379dbaa5c2}} 
+abstract void {\bfseries Update} (Game\+Time \+\_\+game\+Time)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_aa55dfe848beddde77396a93712a673fa}\label{class_g_m_t_b_1_1_abstracts_1_1_state_aa55dfe848beddde77396a93712a673fa}} 
+virtual void {\bfseries Change\+State} (string \+\_\+next\+State)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a73fe72b09e57481cf3d885802560c921}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a73fe72b09e57481cf3d885802560c921}} 
+virtual void {\bfseries Reactivate} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a741353ddb34cf91a77de5ef2e49bb5b1}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a741353ddb34cf91a77de5ef2e49bb5b1}} 
+virtual void {\bfseries Collision} (\mbox{\hyperlink{interface_g_m_t_b_1_1_collision_system_1_1_i_collidable}{I\+Collidable}} \+\_\+obj)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a872a34a99a93997bf5e037b2dd7970aa}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a872a34a99a93997bf5e037b2dd7970aa}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind}{I\+A\+I\+Mind}} {\bfseries m\+Mind}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a4da4ec0eb8ab8819c92f86a251ed42af}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a4da4ec0eb8ab8819c92f86a251ed42af}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind}{I\+Player\+Mind}} {\bfseries m\+P\+Mind}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a41ea8bb4a207c7395895bafdd006e511}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a41ea8bb4a207c7395895bafdd006e511}} 
+Queue$<$ Point $>$ {\bfseries m\+Path}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_state_a31402b05fb616b02e7466cdba5a325c5}\label{class_g_m_t_b_1_1_abstracts_1_1_state_a31402b05fb616b02e7466cdba5a325c5}} 
+Vector2 {\bfseries m\+Current\+Dest}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Abstracts/State.\+cs\end{DoxyCompactItemize}

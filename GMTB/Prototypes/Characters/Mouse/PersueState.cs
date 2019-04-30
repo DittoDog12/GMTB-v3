@@ -17,7 +17,7 @@ namespace Prototypes.Characters.Mouse
         private IContent_Manager mContentManager;
         #endregion
         #region Constructor
-        public PersueState(IMind _mind): base(_mind)
+        public PersueState(IAIMind _mind): base(_mind)
         {           
             mPath = new Queue<Point>(); 
         }

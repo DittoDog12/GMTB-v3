@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Abstracts\Menu.cs" />
+    <Compile Include="Abstracts\Mind.cs" />
     <Compile Include="Camera2D.cs" />
     <Compile Include="CollisionSystem\LockedDoor.cs" />
     <Compile Include="CollisionSystem\Door.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="CollisionSystem\IisTrigger.cs" />
     <Compile Include="Interfaces\ILockedDoor.cs" />
+    <Compile Include="Interfaces\IPlayerMind.cs" />
     <Compile Include="Interfaces\IStaticObject.cs" />
     <Compile Include="Interfaces\ILevel_Manager.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
@@ -95,7 +97,7 @@
     <Compile Include="Interfaces\IEntity_Manager.cs" />
     <Compile Include="InputSystem\IInput_Manager.cs" />
     <Compile Include="Interfaces\ILevel.cs" />
-    <Compile Include="Interfaces\IMind.cs" />
+    <Compile Include="Interfaces\IAIMind.cs" />
     <Compile Include="Interfaces\IPhysicalEntity.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IScene_Manager.cs" />

@@ -11,7 +11,7 @@ namespace The_Infirmary.Characters.OldMan
 {
     public class Talk : State
     {
-        public Talk(IMind _mind): base(_mind)
+        public Talk(IAIMind _mind): base(_mind)
         {
 
         }

@@ -1,0 +1,115 @@
+\hypertarget{class_g_m_t_b_1_1_entities_1_1_entity}{}\section{G\+M\+T\+B.\+Entities.\+Entity Class Reference}
+\label{class_g_m_t_b_1_1_entities_1_1_entity}\index{GMTB.Entities.Entity@{GMTB.Entities.Entity}}
+
+
+Main \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_entity}{Entity}} public class, everything that has a physical presence in the world inherits from this public class  
+
+
+Inheritance diagram for G\+M\+T\+B.\+Entities.\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.676020cm]{class_g_m_t_b_1_1_entities_1_1_entity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_entity_ae6d69c22b16436ec6df3b79099e1e81b}{set\+Vars}} (int \+\_\+uid, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl)
+\begin{DoxyCompactList}\small\item\em Set U\+ID \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_entity_a73f4529a619029861fe443f95d13455c}{Configure\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Method to configure if an entity requires input detection Override and specify which events to listen for. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_ae60f8e246681666b514ac7f56f61c1ce}\label{class_g_m_t_b_1_1_entities_1_1_entity_ae60f8e246681666b514ac7f56f61c1ce}} 
+virtual void {\bfseries Update} (Game\+Time \+\_\+game\+Time)
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a48152c5bdd638aae00c961b1ed6da91e}\label{class_g_m_t_b_1_1_entities_1_1_entity_a48152c5bdd638aae00c961b1ed6da91e}} 
+virtual void {\bfseries Destroy} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a516b3499690b30f9b4469b387713ad92}\label{class_g_m_t_b_1_1_entities_1_1_entity_a516b3499690b30f9b4469b387713ad92}} 
+virtual void {\bfseries Suspend} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a1f210094037d5c461432abb0c0e07ab1}\label{class_g_m_t_b_1_1_entities_1_1_entity_a1f210094037d5c461432abb0c0e07ab1}} 
+virtual void {\bfseries Resume} ()
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a1267b231b54f569a6f7e03d62e41ef7d}\label{class_g_m_t_b_1_1_entities_1_1_entity_a1267b231b54f569a6f7e03d62e41ef7d}} 
+virtual bool {\bfseries Get\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a6f13d14f6592db3fafeab8bc3428fbf0}\label{class_g_m_t_b_1_1_entities_1_1_entity_a6f13d14f6592db3fafeab8bc3428fbf0}} 
+int {\bfseries m\+U\+ID}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a3f391408dbc4a562f920ea63008021b8}\label{class_g_m_t_b_1_1_entities_1_1_entity_a3f391408dbc4a562f920ea63008021b8}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_input_system_1_1_i_input___manager}{I\+Input\+\_\+\+Manager}} {\bfseries m\+Input\+Manager}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a56f05d5883150e76b1369e7c16e0e47e}\label{class_g_m_t_b_1_1_entities_1_1_entity_a56f05d5883150e76b1369e7c16e0e47e}} 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} {\bfseries m\+Service\+Locator}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a18b80164984558c5b463abd6bf151bfe}\label{class_g_m_t_b_1_1_entities_1_1_entity_a18b80164984558c5b463abd6bf151bfe}} 
+bool {\bfseries m\+Active}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a97f2859b9841495b499b77753edcea64}\label{class_g_m_t_b_1_1_entities_1_1_entity_a97f2859b9841495b499b77753edcea64}} 
+int {\bfseries U\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_entity}{Entity}} public class, everything that has a physical presence in the world inherits from this public class 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_a73f4529a619029861fe443f95d13455c}\label{class_g_m_t_b_1_1_entities_1_1_entity_a73f4529a619029861fe443f95d13455c}} 
+\index{GMTB.Entities.Entity@{GMTB.Entities.Entity}!ConfigureInput@{ConfigureInput}}
+\index{ConfigureInput@{ConfigureInput}!GMTB.Entities.Entity@{GMTB.Entities.Entity}}
+\subsubsection{\texorpdfstring{ConfigureInput()}{ConfigureInput()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Entities.\+Entity.\+Configure\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method to configure if an entity requires input detection Override and specify which events to listen for. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em im} & Input Manager \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{G\+M\+T\+B.\+Interfaces.\+I\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_physical_entity_ac8ffd1ce4e40a17980f70b97e941451c}{G\+M\+T\+B.\+Entities.\+Physical\+Entity}}, \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_triangle_shape_a418c3ebbaa4187f74e922ccbea1520ef}{G\+M\+T\+B.\+Collision\+System.\+Triangle\+Shape}}, and \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_player_af7c91590f66efe071a0dec4853c30265}{G\+M\+T\+B.\+Entities.\+Player}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_entities_1_1_entity_ae6d69c22b16436ec6df3b79099e1e81b}\label{class_g_m_t_b_1_1_entities_1_1_entity_ae6d69c22b16436ec6df3b79099e1e81b}} 
+\index{GMTB.Entities.Entity@{GMTB.Entities.Entity}!setVars@{setVars}}
+\index{setVars@{setVars}!GMTB.Entities.Entity@{GMTB.Entities.Entity}}
+\subsubsection{\texorpdfstring{setVars()}{setVars()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Entities.\+Entity.\+set\+Vars (\begin{DoxyParamCaption}\item[{int}]{\+\_\+uid,  }\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}}}]{\+\_\+sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set U\+ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+uid} & Unique ID \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{G\+M\+T\+B.\+Interfaces.\+I\+Entity}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_g_m_t_b_1_1_collision_system_1_1_door_a31faede8cd554e4cfea2a012a1c4928e}{G\+M\+T\+B.\+Collision\+System.\+Door}}, and \mbox{\hyperlink{class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i_a848c08ffa4f9f575c970308a65144f52}{G\+M\+T\+B.\+Entities.\+A\+I.\+Basic\+AI}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+G\+M\+T\+B/\+Entities/Entity.\+cs\end{DoxyCompactItemize}

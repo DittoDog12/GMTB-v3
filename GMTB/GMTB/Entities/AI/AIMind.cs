@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GMTB.Entities.AI
 {
-    public abstract class AIMind : IMind
+    public abstract class AIMind : IAIMind
     {
         #region Data Members
         protected IState mCurrentState;
