@@ -424,7 +424,6 @@
 #begin Text.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Text.spritefont
 
@@ -679,4 +678,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Characters/OldMan/fullart.png
+
+#begin Audio/Footsteps.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Footsteps.wav
+
+#begin Audio/hospital-busy.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/hospital-busy.wav
+
+#begin Audio/rain-and-thunder-heart-beat.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/rain-and-thunder-heart-beat.wav
+
+#begin Audio/steady-heart-monitor.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/steady-heart-monitor.wav
 

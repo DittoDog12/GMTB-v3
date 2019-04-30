@@ -31,9 +31,9 @@ namespace Prototypes.Menus
         #endregion
 
         #region Methods
-        public override void Initialize(IServiceLocator _sl)
+        public override void Initialize(IServiceLocator _sl, Camera2D _cam)
         {
-            base.Initialize(_sl);
+            base.Initialize(_sl, _cam);
             startPosition = new Vector2(Global.ScreenSize.X / 4, Global.ScreenSize.Y - 75);
             startButton = mContentManager.ApplyTexture("start");
             exitPosition = new Vector2(Global.ScreenSize.X - (Global.ScreenSize.X / 4), Global.ScreenSize.Y - 75);
