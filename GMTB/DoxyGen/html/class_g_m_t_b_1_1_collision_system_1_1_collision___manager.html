@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GMTB The Infirmary
    </div>
+   <div id="projectbrief">Team GMTB 3rd Year games project, The Infirmary musem game</div>
   </td>
  </tr>
  </tbody>
@@ -72,20 +74,23 @@ $(function() {
 <div class="title">GMTB.CollisionSystem.Collision_Manager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main Collision mananger  
+ <a href="class_g_m_t_b_1_1_collision_system_1_1_collision___manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.CollisionSystem.Collision_Manager:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_g_m_t_b_1_1_collision_system_1_1_collision___manager.png" usemap="#GMTB.CollisionSystem.Collision_5FManager_map" alt=""/>
   <map id="GMTB.CollisionSystem.Collision_5FManager_map" name="GMTB.CollisionSystem.Collision_5FManager_map">
-<area href="interface_g_m_t_b_1_1_collision_system_1_1_i_collision___manager.html" alt="GMTB.CollisionSystem.ICollision_Manager" shape="rect" coords="0,0,252,24"/>
+<area href="interface_g_m_t_b_1_1_collision_system_1_1_i_collision___manager.html" title="Collision Manager Interface" alt="GMTB.CollisionSystem.ICollision_Manager" shape="rect" coords="0,0,252,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaaf93f4dcb6c695477622b09ed6f559a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_collision___manager.html#aaaf93f4dcb6c695477622b09ed6f559a">Collision_Manager</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a> _em, Point _screenSize)</td></tr>
-<tr class="memdesc:aaaf93f4dcb6c695477622b09ed6f559a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collision Manager  <a href="#aaaf93f4dcb6c695477622b09ed6f559a">More...</a><br /></td></tr>
+<tr class="memdesc:aaaf93f4dcb6c695477622b09ed6f559a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collision Detector  <a href="#aaaf93f4dcb6c695477622b09ed6f559a">More...</a><br /></td></tr>
 <tr class="separator:aaaf93f4dcb6c695477622b09ed6f559a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8099362db997b483df87f5f168f3bce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_collision___manager.html#ad8099362db997b483df87f5f168f3bce">CollisionDetec</a> ()</td></tr>
 <tr class="memdesc:ad8099362db997b483df87f5f168f3bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collision Detection - Setup subroutine First compile a list of all normalized Normals of each object to test Runs through all entities in the list  <a href="#ad8099362db997b483df87f5f168f3bce">More...</a><br /></td></tr>
@@ -94,7 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a04b8c27025aeb3d32f12e23dc294f607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Figures out if a physical collision has occured or a trigger collision Runs MTV calculations if physical  <a href="#a04b8c27025aeb3d32f12e23dc294f607">More...</a><br /></td></tr>
 <tr class="separator:a04b8c27025aeb3d32f12e23dc294f607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main Collision mananger </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaaf93f4dcb6c695477622b09ed6f559a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaaf93f4dcb6c695477622b09ed6f559a">&#9670;&nbsp;</a></span>Collision_Manager()</h2>
 
@@ -121,11 +128,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Collision Manager </p>
+<p>Collision Detector </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>List of entities to check collisions on</td></tr>
-    <tr><td class="paramname">p</td><td>Player entity</td></tr>
+    <tr><td class="paramname">_em</td><td>Reference to Entity Manager</td></tr>
+    <tr><td class="paramname">_screenSize</td><td>Size of game viewport</td></tr>
   </table>
   </dd>
 </dl>
@@ -149,9 +156,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Collision Detection - Setup subroutine First compile a list of all normalized Normals of each object to test Runs through all entities in the list </p>
-<dl class="section return"><dt>Returns</dt><dd>Collision Occured boolean</dd></dl>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collision___manager.html">GMTB.CollisionSystem.ICollision_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collision___manager.html#a021c9b4603086879e76b1a98cb239171">GMTB.CollisionSystem.ICollision_Manager</a>.</p>
 
 </div>
 </div>

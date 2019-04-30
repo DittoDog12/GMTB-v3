@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxtexturesize',['MaxTextureSize',['../class_g_m_t_b_1_1_kernel.html#ad813862f6f7e2ba706af02b7b3b42da8',1,'GMTB::Kernel']]]
+  ['lvlid',['LvlID',['../class_g_m_t_b_1_1_abstracts_1_1_level.html#adbba7ac00e5ff29172bc648ab6b37f2c',1,'GMTB::Abstracts::Level']]]
 ];

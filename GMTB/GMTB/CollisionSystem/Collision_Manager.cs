@@ -8,27 +8,42 @@ using System.Threading.Tasks;
 
 namespace GMTB.CollisionSystem
 {
+    /// <summary>
+    /// Main Collision mananger
+    /// </summary>
     class Collision_Manager : ICollision_Manager
     {
         #region Data Members
+        /// List of All normals in current detection cycle
         private List<Vector2> ObjectABNormals = new List<Vector2>();
         //private IPlayer mPlayer;
+        /// Dictionary of all Collidable
         private IDictionary<int, ICollidable> mCollidables;
+        /// Reference to Entity Manager
         private IEntity_Manager mEntityManager;
 
+        /// <summary>
+        /// Current Collision Normal being tested
+        /// Used for Calculating Minimum Translation Vector
+        /// </summary>
         private Vector2 mCollisionNormal;
+        /// <summary>
+        /// Current length of overlap
+        /// Used for calculating Minimum Translation Vector
+        /// </summary>
         private float mCollisionOverlap;
 
+        /// Quadtree object for broadphase detection
         private IQuadtree mQuadtree;
 
         #endregion
 
         #region Constructor
         /// <summary>
-        /// Collision Manager
+        /// Collision Detector
         /// </summary>
-        /// <param name="c">List of entities to check collisions on</param>
-        /// <param name="p">Player entity</param>
+        /// <param name="_em">Reference to Entity Manager</param>
+        /// <param name="_screenSize">Size of game viewport</param>
         public Collision_Manager(IEntity_Manager _em, Point _screenSize)
         {
             mCollidables = new Dictionary<int, ICollidable>();
@@ -44,7 +59,6 @@ namespace GMTB.CollisionSystem
         /// First compile a list of all normalized Normals of each object to test
         /// Runs through all entities in the list
         /// </summary>
-        /// <returns>Collision Occured boolean</returns>
         public void CollisionDetec()
         {
             // Iterate through all the current Entities
@@ -56,7 +70,7 @@ namespace GMTB.CollisionSystem
                 if (asInterface != null && _keypair.Value.GetState())
                 {
                     mCollidables.Add(asInterface.UID, asInterface);
-                    // Add to the 
+                    // Add to the quadtree
                     mQuadtree.Insert(asInterface);
                 }
 
@@ -134,6 +148,7 @@ namespace GMTB.CollisionSystem
                 //}
                 #endregion
             }
+            // Clear all Collidables and Quadtree for next update
             mCollidables.Clear();
             mQuadtree.Clear();
         }
@@ -147,7 +162,7 @@ namespace GMTB.CollisionSystem
         /// <param name="recAVerts">First Objects Vertices</param>
         /// <param name="recBVerts">Second Objects Vertices</param>
         /// <param name="CollisionFlag">Collision Boolean</param>
-        /// <returns></returns>
+        /// <returns>Collsion True or False</returns>
         private bool CalculateDot(List<Vector2> objAVerts, List<Vector2> objBVerts)
         {
             bool CollisionFlag = true;

@@ -10,11 +10,15 @@ using GMTB.Interfaces;
 
 namespace GMTB.CollisionSystem
 {
+    /// <summary>
+    /// Triangular Shape
+    /// </summary>
     public class TriangleShape : ConvexShape
     {
         #region Data Members
-        // Indicates the location of the rightangle, 1 = right angle on left, -1 = right angle on right
+        /// Indicates the location of the rightangle, 1 = right angle on left, -1 = right angle on right
         private int mFacingDirection;
+        /// Rectangle for Vector position calculation
         protected Rectangle mRectangle;
         #endregion
 
@@ -22,9 +26,6 @@ namespace GMTB.CollisionSystem
         /// <summary>
         /// Collidable class for Triangluar objects
         /// </summary>
-        /// <param name="startPos">Starting position vector</param>
-        /// <param name="tex">Texture</param>
-        /// <param name="content">Reference to the Content Manager</param>
         public TriangleShape()
         {
             mAxes = 3;
@@ -36,19 +37,23 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Set Variables override
+        /// </summary>
+        /// <param name="_path">Texture Path</param>
+        /// <param name="_cm">Content Manager Refence</param>
         public override void setVars(string _path, IContent_Manager cm)
         {
             base.setVars(_path, cm);
             mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
+        /// <summary>
+        /// Configures Input
+        /// </summary>
         public override void ConfigureInput()
         {
             base.ConfigureInput();
             mInputManager.Sub_Space(SwapDirection);
-        }
-        public override void Update(GameTime gameTime)
-        { 
-            base.Update(gameTime);
         }
         /// <summary>
         /// Calculate the location of each vertex

@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GMTB The Infirmary
    </div>
+   <div id="projectbrief">Team GMTB 3rd Year games project, The Infirmary musem game</div>
   </td>
  </tr>
  </tbody>
@@ -72,6 +74,9 @@ $(function() {
 <div class="title">GMTB.Dialogue.DialogueBox Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Rendering box for text  
+ <a href="class_g_m_t_b_1_1_dialogue_1_1_dialogue_box.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.Dialogue.DialogueBox:</div>
 <div class="dyncontent">
@@ -84,13 +89,93 @@ Inheritance diagram for GMTB.Dialogue.DialogueBox:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c94454fb451ccf10dce4e660226c762"><td class="memItemLeft" align="right" valign="top"><a id="a3c94454fb451ccf10dce4e660226c762"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DialogueBox</b> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl, Vector2 _pos)</td></tr>
+<tr class="memitem:a3c94454fb451ccf10dce4e660226c762"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_dialogue_1_1_dialogue_box.html#a3c94454fb451ccf10dce4e660226c762">DialogueBox</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl, Vector2 _pos)</td></tr>
+<tr class="memdesc:a3c94454fb451ccf10dce4e660226c762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Constructor  <a href="#a3c94454fb451ccf10dce4e660226c762">More...</a><br /></td></tr>
 <tr class="separator:a3c94454fb451ccf10dce4e660226c762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a50bed9a45ad0a2e55674612b8e4603"><td class="memItemLeft" align="right" valign="top"><a id="a3a50bed9a45ad0a2e55674612b8e4603"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> (SpriteBatch _spriteBatch, string _line)</td></tr>
+<tr class="memitem:a3a50bed9a45ad0a2e55674612b8e4603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_dialogue_1_1_dialogue_box.html#a3a50bed9a45ad0a2e55674612b8e4603">Draw</a> (SpriteBatch _spriteBatch, string _line)</td></tr>
+<tr class="memdesc:a3a50bed9a45ad0a2e55674612b8e4603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Draw Loop  <a href="#a3a50bed9a45ad0a2e55674612b8e4603">More...</a><br /></td></tr>
 <tr class="separator:a3a50bed9a45ad0a2e55674612b8e4603"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Rendering box for text </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3c94454fb451ccf10dce4e660226c762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c94454fb451ccf10dce4e660226c762">&#9670;&nbsp;</a></span>DialogueBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.Dialogue.DialogueBox.DialogueBox </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td>
+          <td class="paramname"><em>_sl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>_pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_sl</td><td>Reference to Service Locator</td></tr>
+    <tr><td class="paramname">_pos</td><td>Position to render text</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3a50bed9a45ad0a2e55674612b8e4603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a50bed9a45ad0a2e55674612b8e4603">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Dialogue.DialogueBox.Draw </td>
+          <td>(</td>
+          <td class="paramtype">SpriteBatch&#160;</td>
+          <td class="paramname"><em>_spriteBatch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>_line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Draw Loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_spriteBatch</td><td>Reference to Main SpriteBatch</td></tr>
+    <tr><td class="paramname">_line</td><td>Text line to render</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_dialogue_1_1_i_dialogue_box.html#a1974f97f06e7e21990a9a1d291b3a46f">GMTB.Dialogue.IDialogueBox</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GMTB/Dialogue/DialogueBox.cs</li>
 </ul>

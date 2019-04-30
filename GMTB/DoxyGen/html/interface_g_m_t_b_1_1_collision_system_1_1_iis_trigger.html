@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GMTB The Infirmary
    </div>
+   <div id="projectbrief">Team GMTB 3rd Year games project, The Infirmary musem game</div>
   </td>
  </tr>
  </tbody>
@@ -72,17 +74,20 @@ $(function() {
 <div class="title">GMTB.CollisionSystem.IisTrigger Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Allows Objects to inform the Collision manager they are a trigger rather than a physical object  
+ <a href="interface_g_m_t_b_1_1_collision_system_1_1_iis_trigger.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.CollisionSystem.IisTrigger:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_g_m_t_b_1_1_collision_system_1_1_iis_trigger.png" usemap="#GMTB.CollisionSystem.IisTrigger_map" alt=""/>
   <map id="GMTB.CollisionSystem.IisTrigger_map" name="GMTB.CollisionSystem.IisTrigger_map">
-<area href="class_g_m_t_b_1_1_collision_system_1_1_door.html" alt="GMTB.CollisionSystem.Door" shape="rect" coords="0,56,255,80"/>
-<area href="class_g_m_t_b_1_1_collision_system_1_1_locked_door.html" alt="GMTB.CollisionSystem.LockedDoor" shape="rect" coords="265,56,520,80"/>
-<area href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html" alt="GMTB.Entities.AI.BasicAI" shape="rect" coords="795,56,1050,80"/>
-<area href="class_g_m_t_b_1_1_entities_1_1_collectable_item.html" alt="GMTB.Entities.CollectableItem" shape="rect" coords="1060,56,1315,80"/>
-<area href="class_g_m_t_b_1_1_collision_system_1_1_locked_door.html" alt="GMTB.CollisionSystem.LockedDoor" shape="rect" coords="0,112,255,136"/>
+<area href="class_g_m_t_b_1_1_collision_system_1_1_door.html" title="Door Object" alt="GMTB.CollisionSystem.Door" shape="rect" coords="0,56,255,80"/>
+<area href="class_g_m_t_b_1_1_collision_system_1_1_locked_door.html" title="Locked Door Object" alt="GMTB.CollisionSystem.LockedDoor" shape="rect" coords="265,56,520,80"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html" title="Class for simple AI" alt="GMTB.Entities.AI.BasicAI" shape="rect" coords="795,56,1050,80"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_collectable_item.html" title="Collectable Item Unlocks a specified door when collided with" alt="GMTB.Entities.CollectableItem" shape="rect" coords="1060,56,1315,80"/>
+<area href="class_g_m_t_b_1_1_collision_system_1_1_locked_door.html" title="Locked Door Object" alt="GMTB.CollisionSystem.LockedDoor" shape="rect" coords="0,112,255,136"/>
 <area href="class_prototypes_1_1_characters_1_1_mouse_1_1_mouse.html" alt="Prototypes.Characters.Mouse.Mouse" shape="rect" coords="265,112,520,136"/>
 <area href="class_the___infirmary_1_1_characters_1_1_doctor_1_1_doctor.html" alt="The_Infirmary.Characters.Doctor.Doctor" shape="rect" coords="530,112,785,136"/>
 <area href="class_the___infirmary_1_1_characters_1_1_matron_1_1_matron.html" alt="The_Infirmary.Characters.Matron.Matron" shape="rect" coords="795,112,1050,136"/>
@@ -93,10 +98,41 @@ Inheritance diagram for GMTB.CollisionSystem.IisTrigger:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac495f8b7b454d4c0381aa680d06b9c5e"><td class="memItemLeft" align="right" valign="top"><a id="ac495f8b7b454d4c0381aa680d06b9c5e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnTrigger</b> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
+<tr class="memitem:ac495f8b7b454d4c0381aa680d06b9c5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_iis_trigger.html#ac495f8b7b454d4c0381aa680d06b9c5e">OnTrigger</a> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
+<tr class="memdesc:ac495f8b7b454d4c0381aa680d06b9c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger Collision Event  <a href="#ac495f8b7b454d4c0381aa680d06b9c5e">More...</a><br /></td></tr>
 <tr class="separator:ac495f8b7b454d4c0381aa680d06b9c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Allows Objects to inform the Collision manager they are a trigger rather than a physical object </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac495f8b7b454d4c0381aa680d06b9c5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac495f8b7b454d4c0381aa680d06b9c5e">&#9670;&nbsp;</a></span>OnTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.CollisionSystem.IisTrigger.OnTrigger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a>&#160;</td>
+          <td class="paramname"><em>_obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trigger Collision Event </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_obj</td><td>Object Triggered with</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_door.html#a6c56d930bca27fedb564280fac33c7ee">GMTB.CollisionSystem.Door</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html#acb77842893fbc2435bd812d7944c8f3f">GMTB.Entities.AI.BasicAI</a>, and <a class="el" href="class_g_m_t_b_1_1_entities_1_1_collectable_item.html#a8682f8ee6658d1dc6ae12e269a9be158">GMTB.Entities.CollectableItem</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
 <li>GMTB/CollisionSystem/IisTrigger.cs</li>
 </ul>

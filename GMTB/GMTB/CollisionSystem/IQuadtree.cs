@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GMTB.CollisionSystem
 {
+    /// <summary>
+    /// QuadTree Interface
+    /// </summary>
     public interface IQuadtree
     {
         /// <summary>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['newentity_3c_20t_20_3e',['newEntity&lt; T &gt;',['../class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a996b960a3e3755a9e2a90501aa961715',1,'GMTB.Managers.Entity_Manager.newEntity&lt; T &gt;()'],['../class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a3898b03d89ea4b3c735866bbe81040b9',1,'GMTB.Managers.Entity_Manager.newEntity&lt; T &gt;(string _path)'],['../class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a994d6ed32e14c2deb0b11a95e1edba7a',1,'GMTB.Managers.Entity_Manager.newEntity&lt; T &gt;(string _path, bool _inputReq)'],['../class_g_m_t_b_1_1_managers_1_1_entity___manager.html#af5d50cb66d7a19322eb28029218d8cc9',1,'GMTB.Managers.Entity_Manager.newEntity&lt; T &gt;(bool _util)'],['../class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a20f8a9eedc3a9d9295b037d9a477cd98',1,'GMTB.Managers.Entity_Manager.newEntity&lt; T &gt;(string _path, float _interval, bool _oneshot)']]]
+  ['loadcontent',['LoadContent',['../class_g_m_t_b_1_1_kernel.html#a71a7710df9a072c576ca05e3fcf3e8fa',1,'GMTB::Kernel']]],
+  ['locatetarget',['LocateTarget',['../class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html#a637b5df55de76f0f8d20def33d11aa50',1,'GMTB::Entities::AI::BasicAI']]]
 ];

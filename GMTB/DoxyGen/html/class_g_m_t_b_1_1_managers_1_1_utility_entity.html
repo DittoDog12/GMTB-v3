@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GMTB The Infirmary
    </div>
+   <div id="projectbrief">Team GMTB 3rd Year games project, The Infirmary musem game</div>
   </td>
  </tr>
  </tbody>
@@ -79,7 +81,7 @@ Inheritance diagram for GMTB.Managers.UtilityEntity:</div>
  <div class="center">
   <img src="class_g_m_t_b_1_1_managers_1_1_utility_entity.png" usemap="#GMTB.Managers.UtilityEntity_map" alt=""/>
   <map id="GMTB.Managers.UtilityEntity_map" name="GMTB.Managers.UtilityEntity_map">
-<area href="class_g_m_t_b_1_1_entities_1_1_entity.html" title="Main Entity public class, everything that has a physical presence in the world inherits from this pub..." alt="GMTB.Entities.Entity" shape="rect" coords="0,56,182,80"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_entity.html" title="Main Entity public class, everything that exists inherits from this public class" alt="GMTB.Entities.Entity" shape="rect" coords="0,56,182,80"/>
 <area href="interface_g_m_t_b_1_1_interfaces_1_1_i_utility___entity.html" alt="GMTB.Interfaces.IUtility_Entity" shape="rect" coords="192,56,374,80"/>
 <area href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html" alt="GMTB.Interfaces.IEntity" shape="rect" coords="0,0,182,24"/>
 <area href="class_prototypes_1_1_cheese_spawner.html" alt="Prototypes.CheeseSpawner" shape="rect" coords="96,168,278,192"/>
@@ -99,22 +101,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setVars</b> (<a class
 <tr class="memdesc:ae6d69c22b16436ec6df3b79099e1e81b inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set UID  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#ae6d69c22b16436ec6df3b79099e1e81b">More...</a><br /></td></tr>
 <tr class="separator:ae6d69c22b16436ec6df3b79099e1e81b inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73f4529a619029861fe443f95d13455c inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a73f4529a619029861fe443f95d13455c">ConfigureInput</a> ()</td></tr>
-<tr class="memdesc:a73f4529a619029861fe443f95d13455c inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to configure if an entity requires input detection Override and specify which events to listen for.  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#a73f4529a619029861fe443f95d13455c">More...</a><br /></td></tr>
+<tr class="memdesc:a73f4529a619029861fe443f95d13455c inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to configure if an entity requires input detection. Uses Service Locator to access Input Manager. Override and specify which events to listen for.  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#a73f4529a619029861fe443f95d13455c">More...</a><br /></td></tr>
 <tr class="separator:a73f4529a619029861fe443f95d13455c inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae60f8e246681666b514ac7f56f61c1ce inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="ae60f8e246681666b514ac7f56f61c1ce"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (GameTime _gameTime)</td></tr>
+<tr class="memitem:ae60f8e246681666b514ac7f56f61c1ce inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#ae60f8e246681666b514ac7f56f61c1ce">Update</a> (GameTime _gameTime)</td></tr>
+<tr class="memdesc:ae60f8e246681666b514ac7f56f61c1ce inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Update Loop  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#ae60f8e246681666b514ac7f56f61c1ce">More...</a><br /></td></tr>
 <tr class="separator:ae60f8e246681666b514ac7f56f61c1ce inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48152c5bdd638aae00c961b1ed6da91e inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a48152c5bdd638aae00c961b1ed6da91e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
+<tr class="memitem:a48152c5bdd638aae00c961b1ed6da91e inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a48152c5bdd638aae00c961b1ed6da91e">Destroy</a> ()</td></tr>
+<tr class="memdesc:a48152c5bdd638aae00c961b1ed6da91e inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy Self  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#a48152c5bdd638aae00c961b1ed6da91e">More...</a><br /></td></tr>
 <tr class="separator:a48152c5bdd638aae00c961b1ed6da91e inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a516b3499690b30f9b4469b387713ad92 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a516b3499690b30f9b4469b387713ad92"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Suspend</b> ()</td></tr>
+<tr class="memitem:a516b3499690b30f9b4469b387713ad92 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a516b3499690b30f9b4469b387713ad92">Suspend</a> ()</td></tr>
+<tr class="memdesc:a516b3499690b30f9b4469b387713ad92 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspend self when not needed  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#a516b3499690b30f9b4469b387713ad92">More...</a><br /></td></tr>
 <tr class="separator:a516b3499690b30f9b4469b387713ad92 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f210094037d5c461432abb0c0e07ab1 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a1f210094037d5c461432abb0c0e07ab1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Resume</b> ()</td></tr>
+<tr class="memitem:a1f210094037d5c461432abb0c0e07ab1 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a1f210094037d5c461432abb0c0e07ab1">Resume</a> ()</td></tr>
+<tr class="memdesc:a1f210094037d5c461432abb0c0e07ab1 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume self when needed again  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#a1f210094037d5c461432abb0c0e07ab1">More...</a><br /></td></tr>
 <tr class="separator:a1f210094037d5c461432abb0c0e07ab1 inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1267b231b54f569a6f7e03d62e41ef7d inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a1267b231b54f569a6f7e03d62e41ef7d"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetState</b> ()</td></tr>
+<tr class="memitem:a1267b231b54f569a6f7e03d62e41ef7d inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a1267b231b54f569a6f7e03d62e41ef7d">GetState</a> ()</td></tr>
+<tr class="memdesc:a1267b231b54f569a6f7e03d62e41ef7d inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current suspension state  <a href="class_g_m_t_b_1_1_entities_1_1_entity.html#a1267b231b54f569a6f7e03d62e41ef7d">More...</a><br /></td></tr>
 <tr class="separator:a1267b231b54f569a6f7e03d62e41ef7d inherit pub_methods_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -127,23 +129,28 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a5c39d9f03ac9d429d6bee7e20efaa421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html">GMTB.Entities.Entity</a></td></tr>
 <tr class="memitem:a6f13d14f6592db3fafeab8bc3428fbf0 inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a6f13d14f6592db3fafeab8bc3428fbf0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>mUID</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a6f13d14f6592db3fafeab8bc3428fbf0">mUID</a></td></tr>
+<tr class="memdesc:a6f13d14f6592db3fafeab8bc3428fbf0 inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_g_m_t_b_1_1_entities.html">Entities</a> Unique Identifier. <br /></td></tr>
 <tr class="separator:a6f13d14f6592db3fafeab8bc3428fbf0 inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f391408dbc4a562f920ea63008021b8 inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a3f391408dbc4a562f920ea63008021b8"></a>
-<a class="el" href="interface_g_m_t_b_1_1_input_system_1_1_i_input___manager.html">IInput_Manager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mInputManager</b></td></tr>
+<a class="el" href="interface_g_m_t_b_1_1_input_system_1_1_i_input___manager.html">IInput_Manager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a3f391408dbc4a562f920ea63008021b8">mInputManager</a></td></tr>
+<tr class="memdesc:a3f391408dbc4a562f920ea63008021b8 inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to Input Manager. <br /></td></tr>
 <tr class="separator:a3f391408dbc4a562f920ea63008021b8 inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56f05d5883150e76b1369e7c16e0e47e inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a56f05d5883150e76b1369e7c16e0e47e"></a>
-<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mServiceLocator</b></td></tr>
+<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a56f05d5883150e76b1369e7c16e0e47e">mServiceLocator</a></td></tr>
+<tr class="memdesc:a56f05d5883150e76b1369e7c16e0e47e inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to Service Locator. <br /></td></tr>
 <tr class="separator:a56f05d5883150e76b1369e7c16e0e47e inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18b80164984558c5b463abd6bf151bfe inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a18b80164984558c5b463abd6bf151bfe"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>mActive</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a18b80164984558c5b463abd6bf151bfe">mActive</a></td></tr>
+<tr class="memdesc:a18b80164984558c5b463abd6bf151bfe inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Active Overrider, allows entities to be paused while not needed without removing them. <br /></td></tr>
 <tr class="separator:a18b80164984558c5b463abd6bf151bfe inherit pro_attribs_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header properties_class_g_m_t_b_1_1_entities_1_1_entity"><td colspan="2" onclick="javascript:toggleInherit('properties_class_g_m_t_b_1_1_entities_1_1_entity')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html">GMTB.Entities.Entity</a></td></tr>
 <tr class="memitem:a97f2859b9841495b499b77753edcea64 inherit properties_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memItemLeft" align="right" valign="top"><a id="a97f2859b9841495b499b77753edcea64"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>UID</b><code> [get]</code></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a97f2859b9841495b499b77753edcea64">UID</a><code> [get]</code></td></tr>
+<tr class="memdesc:a97f2859b9841495b499b77753edcea64 inherit properties_class_g_m_t_b_1_1_entities_1_1_entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique Identifier Accessor. <br /></td></tr>
 <tr class="separator:a97f2859b9841495b499b77753edcea64 inherit properties_class_g_m_t_b_1_1_entities_1_1_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">GMTB.Interfaces.IEntity</a></td></tr>
 <tr class="memitem:a41bff01fc162666cfd9ccd77161a1e5e inherit properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity"><td class="memItemLeft" align="right" valign="top"><a id="a41bff01fc162666cfd9ccd77161a1e5e"></a>

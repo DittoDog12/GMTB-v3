@@ -9,9 +9,13 @@ using GMTB.Interfaces;
 
 namespace GMTB.CollisionSystem
 {
+    /// <summary>
+    /// Rectangular Shape
+    /// </summary>
     public class RectangleShape : ConvexShape
     {
         #region Data Members
+        /// Rectangle for Vector position calculation
         protected Rectangle mRectangle;
         #endregion
 
@@ -19,9 +23,6 @@ namespace GMTB.CollisionSystem
         /// <summary>
         /// Collidable class for rectangular objects
         /// </summary>
-        /// <param name="startPos">Starting position vector</param>
-        /// <param name="tex">Texture</param>
-        /// <param name="content">Reference to the Content Manager</param>
         public RectangleShape()
         { 
             mAxes = 4;
@@ -30,20 +31,16 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Set Variables override
+        /// </summary>
+        /// <param name="_path">Texture Path</param>
+        /// <param name="_cm">Content Manager Refence</param>
         public override void setVars(string _path, IContent_Manager _cm)
         {
             base.setVars(_path, _cm);
             mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
-
-        public override void Update(GameTime _gameTime)
-        {
-            
-            base.Update(_gameTime);
-            //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
-            //Normalize(perpendicularRectangles);
-        }
-
         /// <summary>
         /// Get the points of each vertices of the rectangle
         /// </summary>

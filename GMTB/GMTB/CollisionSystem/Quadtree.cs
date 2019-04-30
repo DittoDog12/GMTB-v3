@@ -10,19 +10,33 @@ using System.Threading.Tasks;
 
 namespace GMTB.CollisionSystem
 {
+    /// <summary>
+    /// QuadTree Broadphase Collision Dection
+    /// </summary>
     public class Quadtree : IQuadtree
     {
         #region Data Members
-        private int mMaxObjs = 5; // Maximum number of objects allowed in a quadtree before it splits
-        private int mMaxLevels = 5; // Maximum number of sublevels
+        /// Maximum number of objects allowed in a quadtree before it splits
+        private int mMaxObjs = 5;
+        /// Maximum number of sublevels
+        private int mMaxLevels = 5;
 
-        private int mLevel; // Current quadtree level
-        private List<ICollidable> mObjects; // Objects in this quadtree
-        private Rectangle mBounds; // Bounds of the quadtree
-        private IQuadtree[] mNodes; // Subnodes of this quadtree
+        /// Current quadtree level
+        private int mLevel;
+        /// Objects in this quadtree
+        private List<ICollidable> mObjects;
+        /// Bounds of the quadtree
+        private Rectangle mBounds;
+        /// Subnodes of this quadtree
+        private IQuadtree[] mNodes; 
         #endregion
 
         #region Constuctor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_Level">Current Level</param>
+        /// <param name="_Bounds">QuadTree Bounds</param>
         public Quadtree(int _Level, Rectangle _Bounds)
         {
             mLevel = _Level;

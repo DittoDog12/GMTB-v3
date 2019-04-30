@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GMTB The Infirmary
    </div>
+   <div id="projectbrief">Team GMTB 3rd Year games project, The Infirmary musem game</div>
   </td>
  </tr>
  </tbody>
@@ -73,6 +75,9 @@ $(function() {
 <div class="title">GMTB.Abstracts.State Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract Class for Behaviour States to inherit from  
+ <a href="class_g_m_t_b_1_1_abstracts_1_1_state.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.Abstracts.State:</div>
 <div class="dyncontent">
@@ -98,43 +103,275 @@ Inheritance diagram for GMTB.Abstracts.State:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a4360e3e744c97f4d206c662bfb53b1"><td class="memItemLeft" align="right" valign="top"><a id="a8a4360e3e744c97f4d206c662bfb53b1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind.html">IAIMind</a> _mind)</td></tr>
+<tr class="memitem:a8a4360e3e744c97f4d206c662bfb53b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a8a4360e3e744c97f4d206c662bfb53b1">State</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind.html">IAIMind</a> _mind)</td></tr>
+<tr class="memdesc:a8a4360e3e744c97f4d206c662bfb53b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for AI minds  <a href="#a8a4360e3e744c97f4d206c662bfb53b1">More...</a><br /></td></tr>
 <tr class="separator:a8a4360e3e744c97f4d206c662bfb53b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f5915a413a9f4884c3cb87611bb42a"><td class="memItemLeft" align="right" valign="top"><a id="a20f5915a413a9f4884c3cb87611bb42a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html">IPlayerMind</a> _mind)</td></tr>
+<tr class="memitem:a20f5915a413a9f4884c3cb87611bb42a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a20f5915a413a9f4884c3cb87611bb42a">State</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html">IPlayerMind</a> _mind)</td></tr>
+<tr class="memdesc:a20f5915a413a9f4884c3cb87611bb42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for Player Minds  <a href="#a20f5915a413a9f4884c3cb87611bb42a">More...</a><br /></td></tr>
 <tr class="separator:a20f5915a413a9f4884c3cb87611bb42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3dc2eb66c8feaa55e4ed914eed7bc15"><td class="memItemLeft" align="right" valign="top"><a id="ae3dc2eb66c8feaa55e4ed914eed7bc15"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()</td></tr>
+<tr class="memitem:ae3dc2eb66c8feaa55e4ed914eed7bc15"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#ae3dc2eb66c8feaa55e4ed914eed7bc15">Initialize</a> ()</td></tr>
+<tr class="memdesc:ae3dc2eb66c8feaa55e4ed914eed7bc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html" title="Abstract Class for Behaviour States to inherit from">State</a> Initializer  <a href="#ae3dc2eb66c8feaa55e4ed914eed7bc15">More...</a><br /></td></tr>
 <tr class="separator:ae3dc2eb66c8feaa55e4ed914eed7bc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af46c23851486462bcbc16a379dbaa5c2"><td class="memItemLeft" align="right" valign="top"><a id="af46c23851486462bcbc16a379dbaa5c2"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (GameTime _gameTime)</td></tr>
+<tr class="memitem:af46c23851486462bcbc16a379dbaa5c2"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#af46c23851486462bcbc16a379dbaa5c2">Update</a> (GameTime _gameTime)</td></tr>
+<tr class="memdesc:af46c23851486462bcbc16a379dbaa5c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">States main Update loop  <a href="#af46c23851486462bcbc16a379dbaa5c2">More...</a><br /></td></tr>
 <tr class="separator:af46c23851486462bcbc16a379dbaa5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa55dfe848beddde77396a93712a673fa"><td class="memItemLeft" align="right" valign="top"><a id="aa55dfe848beddde77396a93712a673fa"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ChangeState</b> (string _nextState)</td></tr>
+<tr class="memitem:aa55dfe848beddde77396a93712a673fa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#aa55dfe848beddde77396a93712a673fa">ChangeState</a> (string _nextState)</td></tr>
+<tr class="memdesc:aa55dfe848beddde77396a93712a673fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html" title="Abstract Class for Behaviour States to inherit from">State</a> method  <a href="#aa55dfe848beddde77396a93712a673fa">More...</a><br /></td></tr>
 <tr class="separator:aa55dfe848beddde77396a93712a673fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73fe72b09e57481cf3d885802560c921"><td class="memItemLeft" align="right" valign="top"><a id="a73fe72b09e57481cf3d885802560c921"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Reactivate</b> ()</td></tr>
+<tr class="memitem:a73fe72b09e57481cf3d885802560c921"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a73fe72b09e57481cf3d885802560c921">Reactivate</a> ()</td></tr>
+<tr class="memdesc:a73fe72b09e57481cf3d885802560c921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional Method for reactivating a state after change  <a href="#a73fe72b09e57481cf3d885802560c921">More...</a><br /></td></tr>
 <tr class="separator:a73fe72b09e57481cf3d885802560c921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a741353ddb34cf91a77de5ef2e49bb5b1"><td class="memItemLeft" align="right" valign="top"><a id="a741353ddb34cf91a77de5ef2e49bb5b1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Collision</b> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
+<tr class="memitem:a741353ddb34cf91a77de5ef2e49bb5b1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a741353ddb34cf91a77de5ef2e49bb5b1">Collision</a> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
+<tr class="memdesc:a741353ddb34cf91a77de5ef2e49bb5b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Method for Collision reaction  <a href="#a741353ddb34cf91a77de5ef2e49bb5b1">More...</a><br /></td></tr>
 <tr class="separator:a741353ddb34cf91a77de5ef2e49bb5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a872a34a99a93997bf5e037b2dd7970aa"><td class="memItemLeft" align="right" valign="top"><a id="a872a34a99a93997bf5e037b2dd7970aa"></a>
-<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind.html">IAIMind</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mMind</b></td></tr>
+<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind.html">IAIMind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a872a34a99a93997bf5e037b2dd7970aa">mMind</a></td></tr>
+<tr class="memdesc:a872a34a99a93997bf5e037b2dd7970aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the AI <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_mind.html">Mind</a>. <br /></td></tr>
 <tr class="separator:a872a34a99a93997bf5e037b2dd7970aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da4ec0eb8ab8819c92f86a251ed42af"><td class="memItemLeft" align="right" valign="top"><a id="a4da4ec0eb8ab8819c92f86a251ed42af"></a>
-<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html">IPlayerMind</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mPMind</b></td></tr>
+<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html">IPlayerMind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a4da4ec0eb8ab8819c92f86a251ed42af">mPMind</a></td></tr>
+<tr class="memdesc:a4da4ec0eb8ab8819c92f86a251ed42af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the Player <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_mind.html">Mind</a>. <br /></td></tr>
 <tr class="separator:a4da4ec0eb8ab8819c92f86a251ed42af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41ea8bb4a207c7395895bafdd006e511"><td class="memItemLeft" align="right" valign="top"><a id="a41ea8bb4a207c7395895bafdd006e511"></a>
-Queue&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mPath</b></td></tr>
+Queue&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a41ea8bb4a207c7395895bafdd006e511">mPath</a></td></tr>
+<tr class="memdesc:a41ea8bb4a207c7395895bafdd006e511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path Queue. <br /></td></tr>
 <tr class="separator:a41ea8bb4a207c7395895bafdd006e511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31402b05fb616b02e7466cdba5a325c5"><td class="memItemLeft" align="right" valign="top"><a id="a31402b05fb616b02e7466cdba5a325c5"></a>
-Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>mCurrentDest</b></td></tr>
+Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html#a31402b05fb616b02e7466cdba5a325c5">mCurrentDest</a></td></tr>
+<tr class="memdesc:a31402b05fb616b02e7466cdba5a325c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector position of current Destination. <br /></td></tr>
 <tr class="separator:a31402b05fb616b02e7466cdba5a325c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract Class for Behaviour States to inherit from </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8a4360e3e744c97f4d206c662bfb53b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4360e3e744c97f4d206c662bfb53b1">&#9670;&nbsp;</a></span>State() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.Abstracts.State.State </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind.html">IAIMind</a>&#160;</td>
+          <td class="paramname"><em>_mind</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for AI minds </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_mind</td><td>Reference to the AI <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_mind.html">Mind</a></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a20f5915a413a9f4884c3cb87611bb42a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f5915a413a9f4884c3cb87611bb42a">&#9670;&nbsp;</a></span>State() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.Abstracts.State.State </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html">IPlayerMind</a>&#160;</td>
+          <td class="paramname"><em>_mind</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for Player Minds </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_mind</td><td>Reference to the Player <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_mind.html">Mind</a></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa55dfe848beddde77396a93712a673fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa55dfe848beddde77396a93712a673fa">&#9670;&nbsp;</a></span>ChangeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.Abstracts.State.ChangeState </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>_nextState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html" title="Abstract Class for Behaviour States to inherit from">State</a> method </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_nextState</td><td>String with new state to trigger</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_prototypes_1_1_characters_1_1_mouse_1_1_persue_state.html#a08d1a3f76f96a0940b2b7e6210606a17">Prototypes.Characters.Mouse.PersueState</a>.</p>
+
+</div>
+</div>
+<a id="a741353ddb34cf91a77de5ef2e49bb5b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a741353ddb34cf91a77de5ef2e49bb5b1">&#9670;&nbsp;</a></span>Collision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.Abstracts.State.Collision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a>&#160;</td>
+          <td class="paramname"><em>_obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual Method for Collision reaction </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_obj</td><td>Reference to the other object collided with</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_state.html">GMTB.Interfaces.IState</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_the___infirmary_1_1_characters_1_1_player_1_1_walk.html#a4403970d50899e2b7c5cd6d13a8ead9c">The_Infirmary.Characters.Player.Walk</a>.</p>
+
+</div>
+</div>
+<a id="ae3dc2eb66c8feaa55e4ed914eed7bc15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3dc2eb66c8feaa55e4ed914eed7bc15">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.Abstracts.State.Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main <a class="el" href="class_g_m_t_b_1_1_abstracts_1_1_state.html" title="Abstract Class for Behaviour States to inherit from">State</a> Initializer </p>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_state.html">GMTB.Interfaces.IState</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_prototypes_1_1_characters_1_1_mouse_1_1_persue_state.html#a0ee4d9fa071ae7feeb8cfa98851b6e64">Prototypes.Characters.Mouse.PersueState</a>.</p>
+
+</div>
+</div>
+<a id="a73fe72b09e57481cf3d885802560c921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73fe72b09e57481cf3d885802560c921">&#9670;&nbsp;</a></span>Reactivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.Abstracts.State.Reactivate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Optional Method for reactivating a state after change </p>
+
+<p>Reimplemented in <a class="el" href="class_the___infirmary_1_1_characters_1_1_player_1_1_walk.html#a2232a46c448b95eb95e13d446e6800e7">The_Infirmary.Characters.Player.Walk</a>.</p>
+
+</div>
+</div>
+<a id="af46c23851486462bcbc16a379dbaa5c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46c23851486462bcbc16a379dbaa5c2">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void GMTB.Abstracts.State.Update </td>
+          <td>(</td>
+          <td class="paramtype">GameTime&#160;</td>
+          <td class="paramname"><em>_gameTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>States main Update loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_gameTime</td><td>Reference to the current GameTime</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_state.html">GMTB.Interfaces.IState</a>.</p>
+
+<p>Implemented in <a class="el" href="class_prototypes_1_1_characters_1_1_mouse_1_1_idle_state.html#a8e59207b7bdd63cc58fe633c9a6021ae">Prototypes.Characters.Mouse.IdleState</a>, <a class="el" href="class_prototypes_1_1_characters_1_1_mouse_1_1_persue_state.html#a9fe436adb5f0316ab8051cdf0150beaa">Prototypes.Characters.Mouse.PersueState</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_player_1_1_walk.html#af18d58c553ec909ec9fb5a43d02793b9">The_Infirmary.Characters.Player.Walk</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_nurse_1_1_idle.html#a3dca5653818b172eaa408ddf354fc66d">The_Infirmary.Characters.Nurse.Idle</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_nurse_1_1_persue.html#a6881ee12a2c3ec69e5a9824cc56dcf6a">The_Infirmary.Characters.Nurse.Persue</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_doctor_1_1_walk.html#a79c6be2b1851004793486d71a8ac95ce">The_Infirmary.Characters.Doctor.Walk</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_old_man_1_1_idle.html#aeb741f211c27e2bb6244eaac73b3d7a8">The_Infirmary.Characters.OldMan.Idle</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_old_man_1_1_talk.html#af2dc343d385b55d21063e7b3214db2b1">The_Infirmary.Characters.OldMan.Talk</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_old_man_1_1_yeet.html#adf2c62333d7754182a9a650b657d654c">The_Infirmary.Characters.OldMan.Yeet</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_doctor_1_1_idle.html#afbc77cc7937d043ee1f6cb31617531fa">The_Infirmary.Characters.Doctor.Idle</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_matron_1_1_idle.html#a9ea982575d8f5c820aceaebad5ca2ed9">The_Infirmary.Characters.Matron.Idle</a>, <a class="el" href="class_the___infirmary_1_1_characters_1_1_matron_1_1_persue.html#a9faaac7bcaf4bb20fce0f0f5dbebf0e1">The_Infirmary.Characters.Matron.Persue</a>, and <a class="el" href="class_the___infirmary_1_1_characters_1_1_player_1_1_jump.html#abdf308310271cf87b83c1d4c3e9386c8">The_Infirmary.Characters.Player.Jump</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>GMTB/Abstracts/State.cs</li>
 </ul>

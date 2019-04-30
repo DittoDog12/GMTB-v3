@@ -9,22 +9,34 @@ using Microsoft.Xna.Framework;
 
 namespace GMTB.CollisionSystem
 {
+    /// <summary>
+    /// Abstract class for a Convex Shape
+    /// </summary>
     public abstract class ConvexShape : PhysicalEntity, ICollidable
     {
         #region Data Members
         //private Rectangle mRectangle;
-        protected List<Vector2> pointsVertices; // List of vectors to hold the points
-        protected List<Vector2> perpRec; // List of Normals
+        /// List of vectors to hold the points
+        protected List<Vector2> pointsVertices;
+        /// List of Normals
+        protected List<Vector2> perpRec;
+        /// Number of Axes in shape
         protected int mAxes;
+        /// Rectangle for AABB midphase Collision Detection
         protected Rectangle mHitbox;
         #endregion
 
         #region Accessors
+        /// Normalized Normals for this shape
         public List<Vector2> RectangleNormalize { get; protected set; } = new List<Vector2>();
+        /// Vertices of this shape
         public List<Vector2> RectangleVertices { get; protected set; } = new List<Vector2>();
+        /// Velocity of this shape
         public Vector2 Velocity{ get { return mVelocity; } }
+        /// AABB for this shape
         public Rectangle Hitbox { get { return mHitbox; } }
 
+        /// Shape Position
         Vector2 ICollidable.Position
         {
             get => mPosition;
@@ -40,11 +52,20 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Sets the initial position of this shape and creates it's hitbox
+        /// </summary>
+        /// <param name="_pos">Vector Coordinates of default position</param>
         public override void setDefaultPos(Vector2 _pos)
         {
             base.setDefaultPos(_pos);
             mHitbox = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
         }
+        /// <summary>
+        /// Main Update loop
+        /// Keeps Hitbox alligned with position
+        /// </summary>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
@@ -161,6 +182,12 @@ namespace GMTB.CollisionSystem
             };
             return _rtnVal;
         }
+        /// <summary>
+        /// Collision Response
+        /// </summary>
+        /// <param name="_mtv">Minimum Translation Vector</param>
+        /// <param name="_cNormal">Collision Normal</param>
+        /// <param name="_otherObj">Other Object Collided with</param>
         public virtual void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
             mPosition += 0.02f * _mtv;
@@ -179,6 +206,11 @@ namespace GMTB.CollisionSystem
             CalculateBounce(_cNormal, _otherObj);
             
         }
+        /// <summary>
+        /// Physics response
+        /// </summary>
+        /// <param name="_cNormal">Collision Normal</param>
+        /// <param name="_otherObj">Other object Collided with</param>
         public virtual void CalculateBounce(Vector2 _cNormal, ICollidable _otherObj)
         {
             Vector2 _difference = mVelocity - _otherObj.Velocity;

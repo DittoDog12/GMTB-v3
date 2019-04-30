@@ -10,23 +10,46 @@ using System.Threading.Tasks;
 
 namespace GMTB.Dialogue
 {
+    /// <summary>
+    /// Dialogue Display System
+    /// Entities with Dialogue will create a displayer and pass their lines into it
+    /// Displayer will then create a renderer box and pass the lines to that when needed
+    /// </summary>
     public class DialogueDisplay : IDialogue
     {
         #region Data Members
+        /// Total Lines
         private string[] mLines;
+        /// Current Line
         private int mCurrLine;
+        /// Override to control wether or not to display text
         private bool mRunning;
+        /// Timer to control automatic dialogue progression
         private float mTimer;
+        /// Interval to progress dialogue
         private float mInterval;
+        /// Reference to Dialogue Renderer box
         private IDialogueBox mDialogueBox;
+        /// Reference to Input Manger
         private IInput_Manager mInputManager;
+        /// Reference to Content Manager
         private IContent_Manager mContentManager;
+        /// Texture to hold character art
         private Texture2D mArt;
+        /// Character art texture path
         private string mArtpath;
+        /// Position to render character art
         private Vector2 mArtPos;
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_sl">Reference to Service Locator</param>
+        /// <param name="_lines">Lines to display</param>
+        /// <param name="_path">Character art path</param>
+        /// <param name="_pos">Character art position</param>
         public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos)
         {
             mLines = _lines;
@@ -56,8 +79,8 @@ namespace GMTB.Dialogue
         /// <summary>
         /// Draw Text on screen
         /// </summary>
-        /// <param name="_spiteBatch"> SpriteBatch </param>
-        /// <param name="_gameTime"> GameTime </param>
+        /// <param name="_spiteBatch">Reference to main SpriteBatch</param>
+        /// <param name="_gameTime">Reference to current GameTime</param>
         public void Draw(SpriteBatch _spiteBatch, GameTime _gameTime)
         {
             mCurrLine = 0;
@@ -84,6 +107,11 @@ namespace GMTB.Dialogue
             // Unsubscribe from the Input Event
             mInputManager.Un_Space(OnSpace);
         }
+        /// <summary>
+        /// Space input event listener
+        /// </summary>
+        /// <param name="_source">Event Source</param>
+        /// <param name="_args">Event Arguments</param>
         public void OnSpace(object _source, InputEvent _args)
         {
             // If space pressed, increment the line and reset the timer

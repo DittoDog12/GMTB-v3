@@ -20,9 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GMTB The Infirmary
    </div>
+   <div id="projectbrief">Team GMTB 3rd Year games project, The Infirmary musem game</div>
   </td>
  </tr>
  </tbody>
@@ -72,23 +74,26 @@ $(function() {
 <div class="title">GMTB.CollisionSystem.Quadtree Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>QuadTree Broadphase Collision Dection  
+ <a href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.CollisionSystem.Quadtree:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_g_m_t_b_1_1_collision_system_1_1_quadtree.png" usemap="#GMTB.CollisionSystem.Quadtree_map" alt=""/>
   <map id="GMTB.CollisionSystem.Quadtree_map" name="GMTB.CollisionSystem.Quadtree_map">
-<area href="interface_g_m_t_b_1_1_collision_system_1_1_i_quadtree.html" alt="GMTB.CollisionSystem.IQuadtree" shape="rect" coords="0,0,199,24"/>
+<area href="interface_g_m_t_b_1_1_collision_system_1_1_i_quadtree.html" title="QuadTree Interface" alt="GMTB.CollisionSystem.IQuadtree" shape="rect" coords="0,0,199,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1be54f5c6efca9f9ed78206849472c8c"><td class="memItemLeft" align="right" valign="top"><a id="a1be54f5c6efca9f9ed78206849472c8c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Quadtree</b> (int _Level, Rectangle _Bounds)</td></tr>
+<tr class="memitem:a1be54f5c6efca9f9ed78206849472c8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html#a1be54f5c6efca9f9ed78206849472c8c">Quadtree</a> (int _Level, Rectangle _Bounds)</td></tr>
+<tr class="memdesc:a1be54f5c6efca9f9ed78206849472c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Constructor  <a href="#a1be54f5c6efca9f9ed78206849472c8c">More...</a><br /></td></tr>
 <tr class="separator:a1be54f5c6efca9f9ed78206849472c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bfe7e80821c425da16ba1bcabfac9ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html#a7bfe7e80821c425da16ba1bcabfac9ac">Clear</a> ()</td></tr>
-<tr class="memdesc:a7bfe7e80821c425da16ba1bcabfac9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html">Quadtree</a> and all subquadtrees  <a href="#a7bfe7e80821c425da16ba1bcabfac9ac">More...</a><br /></td></tr>
+<tr class="memdesc:a7bfe7e80821c425da16ba1bcabfac9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html" title="QuadTree Broadphase Collision Dection">Quadtree</a> and all subquadtrees  <a href="#a7bfe7e80821c425da16ba1bcabfac9ac">More...</a><br /></td></tr>
 <tr class="separator:a7bfe7e80821c425da16ba1bcabfac9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31faf1269f7048a71c59db80f8e6c375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html#a31faf1269f7048a71c59db80f8e6c375">Insert</a> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
 <tr class="memdesc:a31faf1269f7048a71c59db80f8e6c375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main process for inserting objects to the quad trees Splits the tree if the maximum objects is exceeded  <a href="#a31faf1269f7048a71c59db80f8e6c375">More...</a><br /></td></tr>
@@ -97,6 +102,46 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aefeacbfba0320ea7e23c15658179c2c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Method for accessing the quadtree process  <a href="#aefeacbfba0320ea7e23c15658179c2c6">More...</a><br /></td></tr>
 <tr class="separator:aefeacbfba0320ea7e23c15658179c2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>QuadTree Broadphase Collision Dection </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1be54f5c6efca9f9ed78206849472c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be54f5c6efca9f9ed78206849472c8c">&#9670;&nbsp;</a></span>Quadtree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.CollisionSystem.Quadtree.Quadtree </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_Level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rectangle&#160;</td>
+          <td class="paramname"><em>_Bounds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_Level</td><td>Current Level</td></tr>
+    <tr><td class="paramname">_Bounds</td><td>QuadTree Bounds</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7bfe7e80821c425da16ba1bcabfac9ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7bfe7e80821c425da16ba1bcabfac9ac">&#9670;&nbsp;</a></span>Clear()</h2>
@@ -113,7 +158,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clears the <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html">Quadtree</a> and all subquadtrees </p>
+<p>Clears the <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_quadtree.html" title="QuadTree Broadphase Collision Dection">Quadtree</a> and all subquadtrees </p>
 
 <p>Implements <a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_quadtree.html#a1c8e400a9e317fe0152b81e567823443">GMTB.CollisionSystem.IQuadtree</a>.</p>
 

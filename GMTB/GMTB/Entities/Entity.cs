@@ -12,21 +12,26 @@ using GMTB.Managers;
 namespace GMTB.Entities
 {
     /// <summary>
-    /// Main Entity public class, everything that has a physical presence in the world inherits from this public class 
+    /// Main Entity public class, everything that exists inherits from this public class 
     /// </summary>
-    /// 
     public abstract class Entity : IEntity
     {
         #region Data Members
         //--Key Variables
+        /// Entities Unique Identifier
         protected int mUID;
+        /// Reference to Input Manager
         protected IInput_Manager mInputManager;
+        /// Reference to Entity Manager
         private IEntity_Manager mEntityManger;
+        /// Reference to Service Locator
         protected IServiceLocator mServiceLocator;
+        /// Active Overrider, allows entities to be paused while not needed without removing them
         protected bool mActive;
         #endregion
 
         #region Accessors
+        /// Unique Identifier Accessor
         public int UID
         {
             get { return mUID; }
@@ -55,30 +60,47 @@ namespace GMTB.Entities
         
         
         /// <summary>
-        /// Method to configure if an entity requires input detection
+        /// Method to configure if an entity requires input detection.
+        /// Uses Service Locator to access Input Manager.
         /// Override and specify which events to listen for.
         /// </summary>
-        /// <param name="im"> Input Manager </param>
         public virtual void ConfigureInput()
         {
             mInputManager = mServiceLocator.GetService<IInput_Manager>();
         }
+        /// <summary>
+        /// Main Update Loop
+        /// </summary>
+        /// <param name="_gameTime">Reference to current GameTime</param>
         public virtual void Update(GameTime _gameTime)
         {
 
         }
+        /// <summary>
+        /// Destroy Self
+        /// </summary>
         public virtual void Destroy()
         {
             mEntityManger.DestroyEntity(UID);
         }
+        /// <summary>
+        /// Suspend self when not needed
+        /// </summary>
         public virtual void Suspend()
         {
             mActive = false;
         }
+        /// <summary>
+        /// Resume self when needed again
+        /// </summary>
         public virtual void Resume()
         {
             mActive = true;
         }
+        /// <summary>
+        /// Get the current suspension state
+        /// </summary>
+        /// <returns>Current Suspension state</returns>
         public virtual bool GetState()
         {
             return mActive;

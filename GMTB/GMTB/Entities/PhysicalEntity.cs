@@ -11,6 +11,9 @@ using GMTB.CollisionSystem;
 
 namespace GMTB.Entities
 {
+    /// <summary>
+    /// Main physical Entity public class, everything that has a physical presence in the world inherits from this public class 
+    /// </summary>
     public class PhysicalEntity : Entity, IPhysicalEntity
     {
         #region Data Members

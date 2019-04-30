@@ -11,6 +11,5 @@ namespace GMTB.Interfaces
     {
         void Subscribe();
         void Initialize(string _target, bool _suspend);
-        void Initialize(string _target, Vector2 _playerPos, bool _suspend);
     }
 }
