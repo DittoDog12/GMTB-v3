@@ -20,10 +20,14 @@ namespace GMTB.Dialogue
         private float mInterval;
         private IDialogueBox mDialogueBox;
         private IInput_Manager mInputManager;
+        private IContent_Manager mContentManager;
+        private Texture2D mArt;
+        private string mArtpath;
+        private Vector2 mArtPos;
         #endregion
 
         #region Constructor
-        public DialogueDisplay(IServiceLocator _sl, string[] _lines)
+        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos)
         {
             mLines = _lines;
 
@@ -31,6 +35,9 @@ namespace GMTB.Dialogue
             mTimer = 0f;
             mDialogueBox = new DialogueBox(_sl, new Vector2(50, Global.ScreenSize.Y - 50));
             mInputManager = _sl.GetService<IInput_Manager>();
+            mContentManager = _sl.GetService<IContent_Manager>();
+            mArtpath = _path;
+            mArtPos = _pos;
         }
         #endregion
 
@@ -40,6 +47,7 @@ namespace GMTB.Dialogue
         /// </summary>
         public void Begin()
         {
+            mArt = mContentManager.ApplyTexture(mArtpath);
             // Subscribe to the Space Input Event
             mInputManager.Sub_Space(OnSpace);
             // Set the running bool to true
@@ -53,6 +61,8 @@ namespace GMTB.Dialogue
         public void Draw(SpriteBatch _spiteBatch, GameTime _gameTime)
         {
             mCurrLine = 0;
+            // Create rectangle to position the full character art
+            Rectangle _artRect = new Rectangle(mArtPos.ToPoint(), new Point(mArt.Width, mArt.Height));
             // While there are lines to display and the running variable is active
             while (mCurrLine < mLines.Length && mRunning)
             {
@@ -60,6 +70,8 @@ namespace GMTB.Dialogue
                 mTimer += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
                 // Pass the current line to the Dialogue Box
                 mDialogueBox.Draw(_spiteBatch, mLines[mCurrLine]);
+                // Draw thefull character Art
+                _spiteBatch.Draw(mArt, _artRect, Color.White);
                 // If the timer is reached move to next line and update timer.
                 if (mTimer >= mInterval)
                 {
