@@ -48,7 +48,9 @@ namespace The_Infirmary.Characters.Player
         }
         public override void Collision(ICollidable _obj)
         {
-            
+            IStaticObject asInterface = _obj as IStaticObject;
+            if (asInterface.TextureName == "blank")
+                mCanJump = true;
         }
     }
 }

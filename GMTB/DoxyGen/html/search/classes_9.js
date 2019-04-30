@@ -1,7 +1,7 @@
 var searchData=
 [
   ['l1',['L1',['../class_prototypes_1_1_levels_1_1_l1.html',1,'Prototypes.Levels.L1'],['../class_the___infirmary_1_1_levels_1_1_l1.html',1,'The_Infirmary.Levels.L1']]],
-  ['l2',['L2',['../class_the___infirmary_1_1_levels_1_1_l2.html',1,'The_Infirmary.Levels.L2'],['../class_prototypes_1_1_levels_1_1_l2.html',1,'Prototypes.Levels.L2']]],
+  ['l2',['L2',['../class_prototypes_1_1_levels_1_1_l2.html',1,'Prototypes.Levels.L2'],['../class_the___infirmary_1_1_levels_1_1_l2.html',1,'The_Infirmary.Levels.L2']]],
   ['l3',['L3',['../class_prototypes_1_1_levels_1_1_l3.html',1,'Prototypes.Levels.L3'],['../class_the___infirmary_1_1_levels_1_1_l3.html',1,'The_Infirmary.Levels.L3']]],
   ['l4',['L4',['../class_the___infirmary_1_1_levels_1_1_l4.html',1,'The_Infirmary::Levels']]],
   ['l5',['L5',['../class_the___infirmary_1_1_levels_1_1_l5.html',1,'The_Infirmary::Levels']]],

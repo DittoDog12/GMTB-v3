@@ -8,6 +8,6 @@ namespace GMTB.Interfaces
 {
     public interface IStaticObject
     {
-
+        string TextureName { get; }
     }
 }

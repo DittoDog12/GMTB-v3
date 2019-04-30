@@ -1,5 +1,10 @@
 \hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level}{}\section{G\+M\+T\+B.\+Abstracts.\+Level Class Reference}
 \label{class_g_m_t_b_1_1_abstracts_1_1_level}\index{GMTB.Abstracts.Level@{GMTB.Abstracts.Level}}
+
+
+Abstract Class for \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level}{Level}} descriptors to inherit from  
+
+
 Inheritance diagram for G\+M\+T\+B.\+Abstracts.\+Level\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,60 +14,132 @@ Inheritance diagram for G\+M\+T\+B.\+Abstracts.\+Level\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}} 
-virtual void {\bfseries Initialise} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl)
-\item 
-\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}} 
-virtual void {\bfseries Initialise} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl, bool \+\_\+override\+Resume)
-\item 
-\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}} 
-virtual void {\bfseries Suspend} ()
-\item 
-\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}} 
-virtual void {\bfseries Resume} ()
-\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}{Initialise}} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl)
+\begin{DoxyCompactList}\small\item\em Initialises the level, sets up Manager references Then Resumes the level if not already run \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}{Initialise}} (\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \+\_\+sl, bool \+\_\+override\+Resume)
+\begin{DoxyCompactList}\small\item\em Initialises the level, but overrides the Resume \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}{Suspend}} ()
+\begin{DoxyCompactList}\small\item\em Suspends the level by calling the suspend method of each Entity in the Removables list \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}{Resume}} ()
+\begin{DoxyCompactList}\small\item\em Resumes the level by calling the resume method of each Entity in the Removables list \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a937018a2b93ea28578b94ba4ec4cedd1}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a937018a2b93ea28578b94ba4ec4cedd1}} 
-string {\bfseries lvl\+ID}
-\item 
+string \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a937018a2b93ea28578b94ba4ec4cedd1}{lvl\+ID}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level}{Level}} Identifier. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a5e9885c94894c66fa434475a98b24a17}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a5e9885c94894c66fa434475a98b24a17}} 
-string {\bfseries bg}
-\item 
+string \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a5e9885c94894c66fa434475a98b24a17}{bg}}
+\begin{DoxyCompactList}\small\item\em Background Texture path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_ad0bf6dbc3a312fd2a2f36a568a8bf764}\label{class_g_m_t_b_1_1_abstracts_1_1_level_ad0bf6dbc3a312fd2a2f36a568a8bf764}} 
-\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} {\bfseries created\+Entity}
-\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_ad0bf6dbc3a312fd2a2f36a568a8bf764}{created\+Entity}}
+\begin{DoxyCompactList}\small\item\em I\+Entity variable for object creation process. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a8ec95ddca3b52d5d168b98ead74cf34a}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a8ec95ddca3b52d5d168b98ead74cf34a}} 
-I\+Dictionary$<$ int, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} $>$ {\bfseries Removables}
-\item 
+I\+Dictionary$<$ int, \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity}{I\+Entity}} $>$ \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a8ec95ddca3b52d5d168b98ead74cf34a}{Removables}}
+\begin{DoxyCompactList}\small\item\em All objects in this level. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_ab97787325af12a39105e088a5aac1043}\label{class_g_m_t_b_1_1_abstracts_1_1_level_ab97787325af12a39105e088a5aac1043}} 
-bool {\bfseries first\+Run} = true
-\item 
+bool \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_ab97787325af12a39105e088a5aac1043}{first\+Run}} = true
+\begin{DoxyCompactList}\small\item\em First time the level has run. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_aa554339eb5f0d582d0980ae5a9dcb083}\label{class_g_m_t_b_1_1_abstracts_1_1_level_aa554339eb5f0d582d0980ae5a9dcb083}} 
-\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{I\+Entity\+\_\+\+Manager}} {\bfseries m\+Entity\+Manager}
-\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager}{I\+Entity\+\_\+\+Manager}} \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_aa554339eb5f0d582d0980ae5a9dcb083}{m\+Entity\+Manager}}
+\begin{DoxyCompactList}\small\item\em Entity Manager Reference. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a02b437b7b6c283cf47b6f9c66ef1a5dd}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a02b437b7b6c283cf47b6f9c66ef1a5dd}} 
-\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_scene___manager}{I\+Scene\+\_\+\+Manager}} {\bfseries m\+Scene\+Manager}
-\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_scene___manager}{I\+Scene\+\_\+\+Manager}} \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a02b437b7b6c283cf47b6f9c66ef1a5dd}{m\+Scene\+Manager}}
+\begin{DoxyCompactList}\small\item\em Scene Manager Reference. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_ab6ed6a9ccb015e1590403cecfe4392ca}\label{class_g_m_t_b_1_1_abstracts_1_1_level_ab6ed6a9ccb015e1590403cecfe4392ca}} 
-\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{I\+Background\+\_\+\+Manager}} {\bfseries m\+Background\+Manager}
-\item 
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager}{I\+Background\+\_\+\+Manager}} \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_ab6ed6a9ccb015e1590403cecfe4392ca}{m\+Background\+Manager}}
+\begin{DoxyCompactList}\small\item\em Background Manager Reference. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a1b358ab73ef23c5fbe8702232005e876}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a1b358ab73ef23c5fbe8702232005e876}} 
-\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} {\bfseries m\+Service\+Locator}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}} \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a1b358ab73ef23c5fbe8702232005e876}{m\+Service\+Locator}}
+\begin{DoxyCompactList}\small\item\em Service Locator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a439001226a15ab69595def2ee288f3ce}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a439001226a15ab69595def2ee288f3ce}} 
-string {\bfseries Background}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+string \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a439001226a15ab69595def2ee288f3ce}{Background}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Background Texture Path. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_adbba7ac00e5ff29172bc648ab6b37f2c}\label{class_g_m_t_b_1_1_abstracts_1_1_level_adbba7ac00e5ff29172bc648ab6b37f2c}} 
-string {\bfseries Lvl\+ID}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+string \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_adbba7ac00e5ff29172bc648ab6b37f2c}{Lvl\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level}{Level}} Identifier. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a270766fed7ba35f331507d1e2ce61e40}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a270766fed7ba35f331507d1e2ce61e40}} 
-bool {\bfseries First\+Run}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
-\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level_a270766fed7ba35f331507d1e2ce61e40}{First\+Run}}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em First Run control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract Class for \mbox{\hyperlink{class_g_m_t_b_1_1_abstracts_1_1_level}{Level}} descriptors to inherit from 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a0048401bb0fb66b0fb0c19b3b25e4265}} 
+\index{GMTB.Abstracts.Level@{GMTB.Abstracts.Level}!Initialise@{Initialise}}
+\index{Initialise@{Initialise}!GMTB.Abstracts.Level@{GMTB.Abstracts.Level}}
+\subsubsection{\texorpdfstring{Initialise()}{Initialise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Abstracts.\+Level.\+Initialise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}}}]{\+\_\+sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialises the level, sets up Manager references Then Resumes the level if not already run 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+sl} & Reference to the Service Locator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_level}{G\+M\+T\+B.\+Interfaces.\+I\+Level}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l2_adc921dbddf3cfb4274bbebb61d551c41}{The\+\_\+\+Infirmary.\+Levels.\+L2}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l7_a349906e4400cff8ec3688537c7a40f88}{The\+\_\+\+Infirmary.\+Levels.\+L7}}, \mbox{\hyperlink{class_prototypes_1_1_levels_1_1_l1_acdc4fddb5e25296cce22e0c275b32de7}{Prototypes.\+Levels.\+L1}}, \mbox{\hyperlink{class_prototypes_1_1_levels_1_1_l2_a44a8b18b374ec89d0970e13b5da57806}{Prototypes.\+Levels.\+L2}}, \mbox{\hyperlink{class_prototypes_1_1_levels_1_1_l3_a3bc54461ba03ddd3157220c42bdc6d54}{Prototypes.\+Levels.\+L3}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l9_a4c00f07d3adeb5fc814f9692efd5adc6}{The\+\_\+\+Infirmary.\+Levels.\+L9}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l3_aa3f7e6218dcc9888160f80dfc48af443}{The\+\_\+\+Infirmary.\+Levels.\+L3}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l5_ae27f4406b6d74c7634d3f42a26526650}{The\+\_\+\+Infirmary.\+Levels.\+L5}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l8_af246318b7f74c9491887facd3d6face0}{The\+\_\+\+Infirmary.\+Levels.\+L8}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l1_a323ed6642d397f9f04608ff0cf42bfd3}{The\+\_\+\+Infirmary.\+Levels.\+L1}}, \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l4_a50a15955ce03ea614a3fcc32df4672de}{The\+\_\+\+Infirmary.\+Levels.\+L4}}, and \mbox{\hyperlink{class_the___infirmary_1_1_levels_1_1_l6_a430f45237d92f3cae4db4e3399c30029}{The\+\_\+\+Infirmary.\+Levels.\+L6}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a68659ce713c8bd1ca17cebb001f0fd65}} 
+\index{GMTB.Abstracts.Level@{GMTB.Abstracts.Level}!Initialise@{Initialise}}
+\index{Initialise@{Initialise}!GMTB.Abstracts.Level@{GMTB.Abstracts.Level}}
+\subsubsection{\texorpdfstring{Initialise()}{Initialise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Abstracts.\+Level.\+Initialise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator}{I\+Service\+Locator}}}]{\+\_\+sl,  }\item[{bool}]{\+\_\+override\+Resume }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialises the level, but overrides the Resume 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+sl} & Reference to the Service Locator\\
+\hline
+{\em \+\_\+override\+Resume} & Boolean to override the resume\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_level}{G\+M\+T\+B.\+Interfaces.\+I\+Level}}.
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a06d1dddb97da6fe34a062d2528a51390}} 
+\index{GMTB.Abstracts.Level@{GMTB.Abstracts.Level}!Resume@{Resume}}
+\index{Resume@{Resume}!GMTB.Abstracts.Level@{GMTB.Abstracts.Level}}
+\subsubsection{\texorpdfstring{Resume()}{Resume()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Abstracts.\+Level.\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Resumes the level by calling the resume method of each Entity in the Removables list 
+
+\mbox{\Hypertarget{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}\label{class_g_m_t_b_1_1_abstracts_1_1_level_a087ddc187855a472e6d11692e86573fb}} 
+\index{GMTB.Abstracts.Level@{GMTB.Abstracts.Level}!Suspend@{Suspend}}
+\index{Suspend@{Suspend}!GMTB.Abstracts.Level@{GMTB.Abstracts.Level}}
+\subsubsection{\texorpdfstring{Suspend()}{Suspend()}}
+{\footnotesize\ttfamily virtual void G\+M\+T\+B.\+Abstracts.\+Level.\+Suspend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Suspends the level by calling the suspend method of each Entity in the Removables list 
+
+
+
+Implements \mbox{\hyperlink{interface_g_m_t_b_1_1_interfaces_1_1_i_level}{G\+M\+T\+B.\+Interfaces.\+I\+Level}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

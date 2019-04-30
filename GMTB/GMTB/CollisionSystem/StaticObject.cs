@@ -11,6 +11,10 @@ namespace GMTB.CollisionSystem
 {
     public class StaticObject : RectangleShape, IStaticObject
     {
+        public string TextureName
+        {
+            get { return mTexturename; }
+        }
         public override void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
             // Empty override
