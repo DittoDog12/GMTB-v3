@@ -112,9 +112,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="memitem:af5d50cb66d7a19322eb28029218d8cc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#af5d50cb66d7a19322eb28029218d8cc9">newEntity&lt; T &gt;</a> (bool _util)</td></tr>
 <tr class="memdesc:af5d50cb66d7a19322eb28029218d8cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create Utility Entity  <a href="#af5d50cb66d7a19322eb28029218d8cc9">More...</a><br /></td></tr>
 <tr class="separator:af5d50cb66d7a19322eb28029218d8cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f8a9eedc3a9d9295b037d9a477cd98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a20f8a9eedc3a9d9295b037d9a477cd98">newEntity&lt; T &gt;</a> (string _path, float _interval, bool _oneshot)</td></tr>
-<tr class="memdesc:a20f8a9eedc3a9d9295b037d9a477cd98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create Sound entity  <a href="#a20f8a9eedc3a9d9295b037d9a477cd98">More...</a><br /></td></tr>
-<tr class="separator:a20f8a9eedc3a9d9295b037d9a477cd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f67ae980261b0732cefe7fd325a3bed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a9f67ae980261b0732cefe7fd325a3bed">newEntity&lt; T &gt;</a> (string _path, float _interval, bool _oneshot, bool _loop, float _vol)</td></tr>
+<tr class="memdesc:a9f67ae980261b0732cefe7fd325a3bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create Sound entity  <a href="#a9f67ae980261b0732cefe7fd325a3bed">More...</a><br /></td></tr>
+<tr class="separator:a9f67ae980261b0732cefe7fd325a3bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b0bb504faeca844a504b33b08a31ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#ab8b0bb504faeca844a504b33b08a31ee">DestroyEntity</a> (int _uid)</td></tr>
 <tr class="memdesc:ab8b0bb504faeca844a504b33b08a31ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete specific Entity  <a href="#ab8b0bb504faeca844a504b33b08a31ee">More...</a><br /></td></tr>
 <tr class="separator:ab8b0bb504faeca844a504b33b08a31ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -433,8 +433,8 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 
 </div>
 </div>
-<a id="a20f8a9eedc3a9d9295b037d9a477cd98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20f8a9eedc3a9d9295b037d9a477cd98">&#9670;&nbsp;</a></span>newEntity&lt; T &gt;() <span class="overload">[5/5]</span></h2>
+<a id="a9f67ae980261b0732cefe7fd325a3bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f67ae980261b0732cefe7fd325a3bed">&#9670;&nbsp;</a></span>newEntity&lt; T &gt;() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +455,19 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_oneshot</em>&#160;</td>
+          <td class="paramname"><em>_oneshot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_loop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_vol</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -481,6 +493,8 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new IEntity </dd></dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#a1c12fc999e9f03f805e1c79f1fd12810">GMTB.Interfaces.IEntity_Manager</a>.</p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">

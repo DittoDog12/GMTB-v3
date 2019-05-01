@@ -13,7 +13,7 @@ namespace GMTB.Entities
     /// Collectable Item
     /// Unlocks a specified door when collided with
     /// </summary>
-    public class CollectableItem : RectangleShape, IisTrigger, ICollectableItem
+    public class CollectableItem : RectangleShape, ICollectableItem
     {
         #region Data Members
         /// Door to unlock when collected
@@ -42,7 +42,7 @@ namespace GMTB.Entities
         /// Unlocks the target door and removes this item from the game world on collision
         /// </summary>
         /// <param name="_obj">Other Object Collided with</param>
-        public void OnTrigger(ICollidable _obj)
+        public override void Collision(ICollidable _obj)
         {
             // Check the other object is the Player via casting
             IPlayer asInterface = _obj as IPlayer;
@@ -53,17 +53,6 @@ namespace GMTB.Entities
                 // Remove self from world
                 Destroy();
             }
-        }
-        /// <summary>
-        /// Physical Collision Override
-        /// Blank Override
-        /// </summary>
-        /// <param name="_mtv">Minimum Translation Vector</param>
-        /// <param name="_cNormal">Collision Normal</param>
-        /// <param name="_otherObj">Other Object Collided with</param>
-        public override void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
-        {
-            // Blank override
         }
         #endregion
     }

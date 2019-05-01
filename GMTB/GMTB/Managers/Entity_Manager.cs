@@ -180,7 +180,7 @@ namespace GMTB.Managers
         /// <param name="_interval"> Interval to trigger sound </param>
         /// <param name="_oneshot"> Set true if sound should only trigger once </param>
         /// <returns> The new IEntity </returns>
-        public IEntity newEntity<T>(string _path, float _interval, bool _oneshot) where T: IEntity, new()
+        public IEntity newEntity<T>(string _path, float _interval, bool _oneshot, bool _loop, float _vol) where T: IEntity, new()
         {
             // Call parent to create entity type
             IEntity _createdEntity = newEntity<T>();
@@ -189,7 +189,7 @@ namespace GMTB.Managers
             // Cast entity to ISound
             var asInterface = _createdEntity as ISound;
             // Pass Sound specific settings
-            asInterface.setVars(_path, _interval, _oneshot);
+            asInterface.setVars(_path, _interval, _oneshot, _loop, _vol);
             // Return Created Entity
             return _createdEntity;
 

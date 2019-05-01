@@ -9,6 +9,7 @@ namespace GMTB.Interfaces
     /// </summary>
     public interface IPlayer
     {
+
         /// <summary>
         /// Get current position
         /// </summary>
@@ -16,5 +17,10 @@ namespace GMTB.Interfaces
         Vector2 GetPos();
         /// Set Current Texture
         Texture2D Texture { set; }
+        /// <summary>
+        /// Apply a specified force to the Acceleration
+        /// </summary>
+        /// <param name="_force">New Force to apply</param>
+        void ApplyForce(Vector2 _force);
     }
 }

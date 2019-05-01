@@ -263,8 +263,10 @@ namespace GMTB.CollisionSystem
                 // Assume Physical Collision,
                 // Perform MTV calculations and call main Collision Method
                 Vector2 _mtv = mCollisionNormal * mCollisionOverlap;
+                _target.Collision(_otherTarget);
+                //_otherTarget.Collision(_otherTarget);
                 _target.Collision(_mtv, mCollisionNormal, _otherTarget);
-                _otherTarget.Collision(_otherTarget);
+                
             }
             
         }

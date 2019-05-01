@@ -37,6 +37,6 @@ namespace GMTB.Interfaces
         /// Trigger Collision event
         /// </summary>
         /// <param name="_obj">Other Object Collided with</param>
-        void OnTrigger(ICollidable _obj);
+        void Collision(ICollidable _obj);
     }
 }

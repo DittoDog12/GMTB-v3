@@ -10,8 +10,15 @@ using System.Threading.Tasks;
 
 namespace The_Infirmary.Characters.Matron
 {
+    /// <summary>
+    /// Mind for the Matron AI
+    /// </summary>
     public class MatronMind : AIMind
     {
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_self">Reference to the host</param>
         public MatronMind(IBasicAI _self) : base(_self)
         {
             mStates.Add("idle", new Idle(this));
@@ -19,7 +26,11 @@ namespace The_Infirmary.Characters.Matron
 
             mCurrentState = mStates["idle"];
         }
-        public override void OnTrigger(ICollidable _obj)
+        /// <summary>
+        /// On Collision trigger game over
+        /// </summary>
+        /// <param name="_obj"></param>
+        public override void Collision(ICollidable _obj)
         {
             // If collision with player, trigger game over
             IPlayer asInterface = _obj as IPlayer;

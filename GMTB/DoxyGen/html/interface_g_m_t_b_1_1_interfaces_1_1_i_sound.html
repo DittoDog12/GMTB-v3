@@ -89,15 +89,15 @@ Inheritance diagram for GMTB.Interfaces.ISound:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0c8915e0886db43847bedad3a3e80c62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_sound.html#a0c8915e0886db43847bedad3a3e80c62">setVars</a> (string _sound, float _interval, bool _oneshot)</td></tr>
-<tr class="memdesc:a0c8915e0886db43847bedad3a3e80c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set main variables  <a href="#a0c8915e0886db43847bedad3a3e80c62">More...</a><br /></td></tr>
-<tr class="separator:a0c8915e0886db43847bedad3a3e80c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70e12c11337379e54fa1e6740e5e0be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_sound.html#ab70e12c11337379e54fa1e6740e5e0be">setVars</a> (string _sound, float _interval, bool _oneshot, bool _loop, float _vol)</td></tr>
+<tr class="memdesc:ab70e12c11337379e54fa1e6740e5e0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set main variables  <a href="#ab70e12c11337379e54fa1e6740e5e0be">More...</a><br /></td></tr>
+<tr class="separator:ab70e12c11337379e54fa1e6740e5e0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for Sound entites </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0c8915e0886db43847bedad3a3e80c62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c8915e0886db43847bedad3a3e80c62">&#9670;&nbsp;</a></span>setVars()</h2>
+<a id="ab70e12c11337379e54fa1e6740e5e0be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70e12c11337379e54fa1e6740e5e0be">&#9670;&nbsp;</a></span>setVars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +118,19 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_oneshot</em>&#160;</td>
+          <td class="paramname"><em>_oneshot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_loop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_vol</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -134,11 +146,13 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">_sound</td><td>Path to sound</td></tr>
     <tr><td class="paramname">_interval</td><td>Interval that sound should trigger</td></tr>
     <tr><td class="paramname">_oneshot</td><td>Set if sound is a oneshot or not</td></tr>
+    <tr><td class="paramname">_loop</td><td>Set if sound sould loop</td></tr>
+    <tr><td class="paramname">_vol</td><td>Specify the sound effect volume</td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_entities_1_1_sound_entity.html#aa8584c0df82c38c8aa4e4ed3c2841c5f">GMTB.Entities.SoundEntity</a>.</p>
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_entities_1_1_sound_entity.html#a3d57d2b2e885473b79f23974841cbc04">GMTB.Entities.SoundEntity</a>.</p>
 
 </div>
 </div>

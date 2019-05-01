@@ -31,7 +31,7 @@ namespace The_Infirmary.Levels
 				// Old Man
 				createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("Characters/OldMan/walkL");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 150, 280); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Nurse
@@ -75,6 +75,11 @@ namespace The_Infirmary.Levels
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
                 mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //Background sound
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 firstRun = false;

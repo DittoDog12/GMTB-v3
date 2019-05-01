@@ -1,6 +1,7 @@
 ﻿using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace GMTB.Entities
         private bool mOneShot;
         /// Oneshot sound triggered flag
         private bool mOneShotFired;
+        /// Controlable instance for the sound effect
+        private SoundEffectInstance mSoundInstance;
         #endregion
 
         #region Constructor
@@ -33,7 +36,7 @@ namespace GMTB.Entities
         /// </summary>
         public SoundEntity()
         {
-            
+
         }
         #endregion
 
@@ -44,11 +47,16 @@ namespace GMTB.Entities
         /// <param name="_sound">Path to sound file</param>
         /// <param name="_interval">Interval to repeat at</param>
         /// <param name="_oneshot">Set if sound should play once or not</param>
-        public void setVars(string _sound, float _interval, bool _oneshot)
+        /// <param name="_loop">Set if sound sould loop</param>
+        public void setVars(string _sound, float _interval, bool _oneshot, bool _loop, float _vol)
         {
             mSound = mServiceLocator.GetService<IContent_Manager>().LoadSound(_sound);
             mInterval = _interval;
             mOneShot = _oneshot;
+            mSoundInstance = mSound.CreateInstance();
+            // Set the instance loop control to the loop controller
+            mSoundInstance.IsLooped = _loop;
+            mSoundInstance.Volume = _vol;
         }
         /// <summary>
         /// Main update loop
@@ -61,7 +69,9 @@ namespace GMTB.Entities
             // Play sound every interval, unless it is a one shot sound that has fired.
             if (mTimer >= mInterval && !mOneShotFired)
             {
-                mSound.Play();
+                
+                // Start Playing
+                mSoundInstance.Play();
                 // If not a oneshot, reset timer
                 if (!mOneShot)
                     mTimer = 0;
@@ -71,9 +81,25 @@ namespace GMTB.Entities
                     mOneShotFired = true;
                     mServiceLocator.GetService<IEntity_Manager>().DestroyEntity(UID);
                 }
-                    
+
 
             }
+        }
+        /// <summary>
+        /// Pause the sound effect if the entity is suspended
+        /// </summary>
+        public override void Suspend()
+        {
+            base.Suspend();
+            mSoundInstance.Pause();
+        }
+        /// <summary>
+        /// Resume the sound effect if the entity is resumed
+        /// </summary>
+        public override void Resume()
+        {
+            base.Resume();
+            mSoundInstance.Play();
         }
         #endregion
     }

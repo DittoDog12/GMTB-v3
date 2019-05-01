@@ -11,46 +11,60 @@ using System.Threading.Tasks;
 
 namespace The_Infirmary.Characters.Player
 {
+    /// <summary>
+    /// Player Walk State
+    /// </summary>
     public class Walk : State
     {
         #region Data Members
-        private bool mCanJump;
+        /// Reference to the Input Manager
         private IInput_Manager mInputManager;
         #endregion
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_mind">Reference to the Mind</param>
         public Walk(IPlayerMind _mind) : base(_mind)
         {
 
         }
-        public void Initialize(IServiceLocator _sl)
+        /// <summary>
+        /// Initialize the state
+        /// </summary>
+        public override void Initialize()
         {
             base.Initialize();
-            mInputManager = _sl.GetService<IInput_Manager>();
+            mInputManager = mPMind.ServiceLocator.GetService<IInput_Manager>();
             Reactivate();
         }
+        /// <summary>
+        /// Main Update Loop
+        /// </summary>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            mCanJump = false;
+            
         }
-
+        /// <summary>
+        /// Reset settings when swithcing back to this state
+        /// </summary>
         public override void Reactivate()
         {
             mInputManager.Sub_Space(OnSpace);
         }
-
+        /// <summary>
+        /// On space switch to the Jump State
+        /// </summary>
+        /// <param name="source">Event Source</param>
+        /// <param name="args">Event Arguments</param>
         public void OnSpace(object source, InputEvent args)
         {
-            if (mCanJump && args.currentKey == Keybindings.Jump)
+            if (args.currentKey == Keybindings.Jump)
             {
                 mPMind.ChangeState("jump");
                 mInputManager.Un_Space(OnSpace);
             }
                 
-        }
-        public override void Collision(ICollidable _obj)
-        {
-            IStaticObject asInterface = _obj as IStaticObject;
-            if (asInterface.TextureName == "blank")
-                mCanJump = true;
         }
     }
 }

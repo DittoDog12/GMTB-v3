@@ -12,7 +12,7 @@ namespace GMTB.Entities.AI
     /// <summary>
     /// Class for simple AI
     /// </summary>
-    public class BasicAI : AnimatingEntity, IBasicAI, IisTrigger
+    public class BasicAI : AnimatingEntity, IBasicAI
     {
         #region Data Members
         /// Reference to Mind
@@ -81,9 +81,9 @@ namespace GMTB.Entities.AI
         /// Passes to Mind
         /// </summary>
         /// <param name="_obj">Other object collided with</param>
-        public virtual void OnTrigger(ICollidable _obj)
+        public override void Collision(ICollidable _obj)
         {
-            mMind.OnTrigger(_obj);
+            mMind.Collision(_obj);
         }
         #endregion
     }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zoom',['Zoom',['../class_g_m_t_b_1_1_camera2_d.html#a8636897096114e1720df04da44a78ba5',1,'GMTB::Camera2D']]]
+  ['yeet',['Yeet',['../class_the___infirmary_1_1_characters_1_1_old_man_1_1_yeet.html',1,'The_Infirmary.Characters.OldMan.Yeet'],['../class_the___infirmary_1_1_characters_1_1_old_man_1_1_yeet.html#a98db14ff249393c668b5a5e1ed91421a',1,'The_Infirmary.Characters.OldMan.Yeet.Yeet()']]]
 ];

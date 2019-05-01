@@ -122,7 +122,7 @@ namespace GMTB.Entities.AI
         /// Trigger Collision 
         /// </summary>
         /// <param name="_obj">Object Collided with</param>
-        public virtual void OnTrigger(ICollidable _obj)
+        public virtual void Collision(ICollidable _obj)
         {
 
         }

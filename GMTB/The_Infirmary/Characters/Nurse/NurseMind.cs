@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace The_Infirmary.Characters.Nurse
 {
+    /// <summary>
+    /// Nurse Mind
+    /// </summary>
     class NurseMind : AIMind
     {
         public NurseMind(IBasicAI _self) : base(_self)
@@ -19,7 +22,7 @@ namespace The_Infirmary.Characters.Nurse
             mCurrentState = mStates["idle"];
         }
 
-        public override void OnTrigger(ICollidable _obj)
+        public override void Collision(ICollidable _obj)
         {
             // If collision with player, call the level manager and restart the current level.
             IPlayer asInterface = _obj as IPlayer;

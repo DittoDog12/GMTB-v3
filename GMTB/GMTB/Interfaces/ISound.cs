@@ -17,6 +17,8 @@ namespace GMTB.Interfaces
         /// <param name="_sound">Path to sound</param>
         /// <param name="_interval">Interval that sound should trigger</param>
         /// <param name="_oneshot">Set if sound is a oneshot or not</param>
-        void setVars(string _sound, float _interval, bool _oneshot);
+        /// <param name="_loop">Set if sound sould loop</param>
+        /// <param name="_vol">Specify the sound effect volume</param>
+        void setVars(string _sound, float _interval, bool _oneshot, bool _loop, float _vol);
     }
 }

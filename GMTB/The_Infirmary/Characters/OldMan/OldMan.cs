@@ -9,8 +9,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace The_Infirmary.Characters.OldMan
 {
+    /// <summary>
+    /// Old Man Burt AI
+    /// </summary>
     class OldMan : BasicAI
     {
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
         public OldMan()
         {
             mMind = new OldManMind(this);
@@ -18,7 +24,11 @@ namespace The_Infirmary.Characters.OldMan
             mColumns = 8;
             mInterval = 75f;
         }
-
+        /// <summary>
+        /// Main Draw Loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
             if (mMoving)

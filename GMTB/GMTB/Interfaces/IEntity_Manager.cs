@@ -66,5 +66,16 @@ namespace GMTB.Interfaces
         /// Clears all entities from the master list
         /// </summary>
         void ClearAll();
+        /// <summary>
+        /// Create Sound entity
+        /// </summary>
+        /// <typeparam name="T"> Type of IEntity to create </typeparam>
+        /// <param name="_path"> Path to sound file </param>
+        /// <param name="_interval"> Interval to trigger sound </param>
+        /// <param name="_oneshot"> Set true if sound should only trigger once </param>
+        /// <param name="_loop">Set if the sound should loop</param>
+        /// <param name="_vol">Set sound volume</param>
+        /// <returns> The new IEntity </returns>
+        IEntity newEntity<T>(string _path, float _interval, bool _oneshot, bool _loop, float _vol) where T : IEntity, new();
     }
 }

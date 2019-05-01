@@ -11,7 +11,6 @@ var searchData=
   ['idialogue',['IDialogue',['../interface_g_m_t_b_1_1_dialogue_1_1_i_dialogue.html',1,'GMTB::Dialogue']]],
   ['idialoguebox',['IDialogueBox',['../interface_g_m_t_b_1_1_dialogue_1_1_i_dialogue_box.html',1,'GMTB::Dialogue']]],
   ['idle',['Idle',['../class_the___infirmary_1_1_characters_1_1_doctor_1_1_idle.html',1,'The_Infirmary.Characters.Doctor.Idle'],['../class_the___infirmary_1_1_characters_1_1_matron_1_1_idle.html',1,'The_Infirmary.Characters.Matron.Idle'],['../class_the___infirmary_1_1_characters_1_1_nurse_1_1_idle.html',1,'The_Infirmary.Characters.Nurse.Idle'],['../class_the___infirmary_1_1_characters_1_1_old_man_1_1_idle.html',1,'The_Infirmary.Characters.OldMan.Idle']]],
-  ['idlestate',['IdleState',['../class_prototypes_1_1_characters_1_1_mouse_1_1_idle_state.html',1,'Prototypes::Characters::Mouse']]],
   ['idoor',['IDoor',['../interface_g_m_t_b_1_1_interfaces_1_1_i_door.html',1,'GMTB::Interfaces']]],
   ['ientity',['IEntity',['../interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html',1,'GMTB::Interfaces']]],
   ['ientity_5fmanager',['IEntity_Manager',['../interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html',1,'GMTB::Interfaces']]],

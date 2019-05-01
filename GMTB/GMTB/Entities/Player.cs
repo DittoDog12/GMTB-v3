@@ -27,6 +27,8 @@ namespace GMTB.Entities
         }
         #endregion
 
+
+
         #region Methods
         /// <summary>
         /// Setup movement input triggers

@@ -7,8 +7,15 @@ using GMTB.Entities.AI;
 using GMTB.Interfaces;
 namespace The_Infirmary.Characters.OldMan
 {
+    /// <summary>
+    /// Old Man Burt Mind
+    /// </summary>
     public class OldManMind : AIMind
     {
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_self">Reference to himself</param>
         public OldManMind(IBasicAI _self) :base(_self)
         {
             mStates.Add("idle", new Idle(this));

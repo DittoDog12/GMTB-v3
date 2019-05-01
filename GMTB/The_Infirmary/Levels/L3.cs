@@ -73,6 +73,11 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 300, 4270); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
+                // Floor
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, -40, 4400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
 
             }
         }

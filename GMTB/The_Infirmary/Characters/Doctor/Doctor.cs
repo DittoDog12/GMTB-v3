@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace The_Infirmary.Characters.Doctor
 {
+    /// <summary>
+    /// Class for the Doctor
+    /// </summary>
     public class Doctor : BasicAI
     {
+        /// <summary>
+        /// Main Constructor
+        /// Creates Doctors Mind
+        /// </summary>
         public Doctor()
         {
             mMind = new DoctorMind(this);

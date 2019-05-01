@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace The_Infirmary.Characters.Nurse
 {
+    /// <summary>
+    /// Nurse Idle State
+    /// </summary>
     class Idle : State
     {
         private float mTriggerDistance = 300f;

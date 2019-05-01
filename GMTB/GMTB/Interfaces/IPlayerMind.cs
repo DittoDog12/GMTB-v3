@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GMTB.CollisionSystem;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace GMTB.Interfaces
     /// </summary>
     public interface IPlayerMind
     {
+        /// Accessor for States to access service Locator
+        IServiceLocator ServiceLocator { get; }
         /// Reference to the Players Self
         IPlayer MySelf { get; set; }
         /// <summary>
@@ -29,5 +32,10 @@ namespace GMTB.Interfaces
         /// Main Initialize routine
         /// </summary>
         void Initialize();
+        /// <summary>
+        /// Allows the body to call the minds collision method
+        /// </summary>
+        /// <param name="_otherObj">Other object collided with</param>
+        void Collision(ICollidable _otherObj);
     }
 }

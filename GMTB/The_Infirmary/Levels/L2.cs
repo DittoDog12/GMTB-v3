@@ -67,6 +67,15 @@ namespace The_Infirmary.Levels
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
+                //Background sound
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //Footsteps
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/footsteps", 3f, true, false, 1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
                 firstRun = false;
             }
         }

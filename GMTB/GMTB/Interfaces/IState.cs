@@ -27,5 +27,9 @@ namespace GMTB.Interfaces
         /// </summary>
         /// <param name="_obj">Other object collided with</param>
         void Collision(ICollidable _obj);
+        /// <summary>
+        /// Optional Method for reactivating a state after change
+        /// </summary>
+        void Reactivate();
     }
 }

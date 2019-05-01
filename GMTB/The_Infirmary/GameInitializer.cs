@@ -9,6 +9,10 @@ using GMTB.Interfaces;
 
 namespace The_Infirmary
 {
+    /// <summary>
+    /// Main Game Initializer
+    /// Creates the game engine and passes levels, content and menus to the engine
+    /// </summary>
     class GameInitializer : IDisposable
     {
 
@@ -46,12 +50,20 @@ namespace The_Infirmary
             // GC.SuppressFinalize(this);
         }
         #endregion
-
+        /// Engine Variable
         Kernel game1;
+        /// Root Content Directory
         string ContentRoot;
+        /// Number of Levels
         int mLvlCount;
+        /// Level Directory
         string mLvlPath;
 
+        /// <summary>
+        /// Main Constructor
+        /// Creates Kernel and passes Content, Levels and Menus
+        /// Also creates 2D Camera
+        /// </summary>
         public GameInitializer()
         {
             mLvlCount = 9;
@@ -64,7 +76,10 @@ namespace The_Infirmary
             game1.Need2DCamera();
             game1.IsMouseVisible = true;
         }
-
+        /// <summary>
+        /// Main Run method
+        /// Starts all Update and Draw Loops
+        /// </summary>
         public void Run()
         {
             game1.Run();
@@ -73,7 +88,7 @@ namespace The_Infirmary
         /// <summary>
         /// Get all level files in the specified directory
         /// </summary>
-        /// <returns> List of Levels </returns>
+        /// <returns> Dictionary of Levels </returns>
         private IDictionary<string, ILevel> GetLevels()
         {
             IDictionary<string, ILevel> _lvls = new Dictionary<string, ILevel>();
@@ -88,6 +103,10 @@ namespace The_Infirmary
             }
             return _lvls;
         }
+        /// <summary>
+        /// Get all Menus
+        /// </summary>
+        /// <returns>Dictionary of Menus</returns>
         private IDictionary<string, IMenu> GetMenus()
         {
             IDictionary<string, IMenu> _menus = new Dictionary<string, IMenu>();

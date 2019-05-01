@@ -84,7 +84,7 @@ Inheritance diagram for GMTB.Interfaces.IPlayerMind:</div>
  <div class="center">
   <img src="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.png" usemap="#GMTB.Interfaces.IPlayerMind_map" alt=""/>
   <map id="GMTB.Interfaces.IPlayerMind_map" name="GMTB.Interfaces.IPlayerMind_map">
-<area href="class_the___infirmary_1_1_characters_1_1_player_1_1_player_mind.html" alt="The_Infirmary.Characters.Player.PlayerMind" shape="rect" coords="0,56,267,80"/>
+<area href="class_the___infirmary_1_1_characters_1_1_player_1_1_player_mind.html" title="Player Mind" alt="The_Infirmary.Characters.Player.PlayerMind" shape="rect" coords="0,56,267,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -99,9 +99,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a59cd1af5e988606cc8f3554c1c27cee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html#a59cd1af5e988606cc8f3554c1c27cee9">Initialize</a> ()</td></tr>
 <tr class="memdesc:a59cd1af5e988606cc8f3554c1c27cee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Initialize routine  <a href="#a59cd1af5e988606cc8f3554c1c27cee9">More...</a><br /></td></tr>
 <tr class="separator:a59cd1af5e988606cc8f3554c1c27cee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8928af0b572c4e10efb2d729a77bbdb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html#a8928af0b572c4e10efb2d729a77bbdb0">Collision</a> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _otherObj)</td></tr>
+<tr class="memdesc:a8928af0b572c4e10efb2d729a77bbdb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the body to call the minds collision method  <a href="#a8928af0b572c4e10efb2d729a77bbdb0">More...</a><br /></td></tr>
+<tr class="separator:a8928af0b572c4e10efb2d729a77bbdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:acb37fdc34df0b74d16e89eaee7e256d0"><td class="memItemLeft" align="right" valign="top"><a id="acb37fdc34df0b74d16e89eaee7e256d0"></a>
+<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html#acb37fdc34df0b74d16e89eaee7e256d0">ServiceLocator</a><code> [get]</code></td></tr>
+<tr class="memdesc:acb37fdc34df0b74d16e89eaee7e256d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for States to access service Locator. <br /></td></tr>
+<tr class="separator:acb37fdc34df0b74d16e89eaee7e256d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f130c975fe0b58938afb6581553412c"><td class="memItemLeft" align="right" valign="top"><a id="a0f130c975fe0b58938afb6581553412c"></a>
 <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player.html">IPlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_player_mind.html#a0f130c975fe0b58938afb6581553412c">MySelf</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a0f130c975fe0b58938afb6581553412c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the Players Self. <br /></td></tr>
@@ -135,6 +142,34 @@ Properties</h2></td></tr>
 </dl>
 
 <p>Implemented in <a class="el" href="class_the___infirmary_1_1_characters_1_1_player_1_1_player_mind.html#a6d2cba84a51ba1979b3f3e2b8afbbc41">The_Infirmary.Characters.Player.PlayerMind</a>.</p>
+
+</div>
+</div>
+<a id="a8928af0b572c4e10efb2d729a77bbdb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8928af0b572c4e10efb2d729a77bbdb0">&#9670;&nbsp;</a></span>Collision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Interfaces.IPlayerMind.Collision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a>&#160;</td>
+          <td class="paramname"><em>_otherObj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allows the body to call the minds collision method </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_otherObj</td><td>Other object collided with</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_the___infirmary_1_1_characters_1_1_player_1_1_player_mind.html#a4271243d06b2bb4be4bd29c6e18a3f12">The_Infirmary.Characters.Player.PlayerMind</a>.</p>
 
 </div>
 </div>
