@@ -8,15 +8,26 @@ using System.Threading.Tasks;
 
 namespace GMTB.Managers
 {
+    /// <summary>
+    /// AI Manager
+    /// Locates AI Targets and informs the AIs of the targets existance
+    /// </summary>
     public class AI_Manager : IAI_Manager
     {
         #region Data Members
+        /// List of all AIs
         private IDictionary<int, IBasicAI> mAllAI;
+        /// Reference to the Entity Manager
         private IEntity_Manager mEntityManager;
+        /// Reference to the AI Target
         private AITarget mTarget;
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_em">Reference to the Entity Manager</param>
         public AI_Manager(IEntity_Manager _em)
         {
             mEntityManager = _em;
@@ -25,6 +36,11 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Main Update Loop
+        /// Finds all the AIs from the Entity Managers master list and informs them of the current AT target
+        /// </summary>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
         public void Update(GameTime _gameTime)
         {
             mAllAI.Clear();

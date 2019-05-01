@@ -17,6 +17,9 @@ namespace GMTB.InputSystem
             currentKey = _key;
         }
     }
+    /// <summary>
+    /// Mouse event mini public class
+    /// </summary>
     public class MouseEvent : EventArgs
     {
         public Keybindings currentKey;
@@ -29,25 +32,41 @@ namespace GMTB.InputSystem
         }
     }
     #endregion
-
+    /// <summary>
+    /// Main input manager
+    /// </summary>
     class Input_Manager : IInput_Manager
     {
         #region Data Members
+        /// Previous Keyboard State
         private KeyboardState _oldKState;
+        /// Previous Persistant Keyboard State
         private KeyboardState _oldPKState;
+        /// Previous Gamepad State
         private GamePadState _oldGState;
+        /// Previous Mouse State
         private MouseState _oldMState;
+        /// Movement Key Input subscribers
         public event EventHandler<InputEvent> Movement;
+        /// Space Key Input subscribers
         public event EventHandler<InputEvent> Space;
+        /// Escape Key Input subscribers
         public event EventHandler<InputEvent> Esc;
+        /// Use Key Input subscribers
         public event EventHandler<InputEvent> Use;
+        /// Mouse Input subscribers
         public event EventHandler<MouseEvent> MouseUsers;
 
+        /// Detection Update interval
         private float mInterval;
+        /// Detection Update Timer
         private float mTimer;
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
         public Input_Manager()
         {
             _oldKState = Keyboard.GetState();
@@ -187,6 +206,11 @@ namespace GMTB.InputSystem
         #endregion
 
         #region EventTriggers
+        /// <summary>
+        /// Mouse Input Trigger
+        /// </summary>
+        /// <param name="key">Key clicked</param>
+        /// <param name="pos">Mouse Position at moment of click</param>
         protected virtual void MouseInput(Keybindings key, Vector2 pos)
         {
             if (MouseUsers != null)
@@ -196,6 +220,10 @@ namespace GMTB.InputSystem
             }
 
         }
+        /// <summary>
+        /// Movement Input Trigger
+        /// </summary>
+        /// <param name="key">Key pressed</param>
         protected virtual void MovementInput(Keybindings key)
         {
             if (Movement != null)
@@ -204,6 +232,10 @@ namespace GMTB.InputSystem
                 Movement(this, args);
             }
         }
+        /// <summary>
+        /// Movement key release trigger
+        /// </summary>
+        /// <param name="key">Key released</param>
         protected virtual void MovementRelease(Keybindings key)
         {
             if (Movement != null)
@@ -212,6 +244,10 @@ namespace GMTB.InputSystem
                 Movement(this, args);
             }
         }
+        /// <summary>
+        /// Space Key Input Trigger
+        /// </summary>
+        /// <param name="key">Key Pressed</param>
         protected virtual void SpaceInput(Keybindings key)
         {
             if (Space != null)
@@ -221,6 +257,10 @@ namespace GMTB.InputSystem
                 SingleInputTriggered();
             }
         }
+        /// <summary>
+        /// Use Key Input Trigger
+        /// </summary>
+        /// <param name="key">Key Pressed</param>
         protected virtual void UseInput(Keybindings key)
         {
             if (Use != null)
@@ -231,6 +271,10 @@ namespace GMTB.InputSystem
 
             }
         }
+        /// <summary>
+        /// Escape Key Input Trigger
+        /// </summary>
+        /// <param name="key">Key Pressed</param>
         protected virtual void EscapeInput(Keybindings key)
         {
             if (Esc != null)
@@ -316,14 +360,15 @@ namespace GMTB.InputSystem
         {
             Esc += handler;
         }
-        public void Un_Esc(EventHandler<InputEvent> handler)
-        {
-            Esc -= handler;
-        }
         /// <summary>
         /// Escape input unsubscriber
         /// </summary>
         /// <param name="handler"> Entity to stop receiving escapse events</param>
+        public void Un_Esc(EventHandler<InputEvent> handler)
+        {
+            Esc -= handler;
+        }
+        
         #endregion
     }
 }

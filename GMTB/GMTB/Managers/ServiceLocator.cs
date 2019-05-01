@@ -13,14 +13,26 @@ using GMTB.CollisionSystem;
 
 namespace GMTB.Managers
 {
+    /// <summary>
+    /// Service Locator, holds references to all Managers and retrieves on request
+    /// </summary>
     public class ServiceLocator : IServiceLocator
     {
         #region Data Members
-        // Dictionary of Managers and their Interfaces
+        /// Dictionary of Managers and their Interfaces
         private IDictionary<object, object> mServices;
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// Creates Managers
+        /// </summary>
+        /// <param name="_content">Reference to Monogame Content Manager</param>
+        /// <param name="_contentRoot">Path to Content Root Directory</param>
+        /// <param name="_levels">Pass dictionary of all Levels here</param>
+        /// <param name="_menus">Pass dictionary of all Menus here</param>
+        /// <param name="_viewport">Size of current viewport</param>
         internal ServiceLocator(ContentManager _content, string _contentRoot, IDictionary<string, ILevel> _levels, IDictionary<string, IMenu> _menus, Point _viewport)
         {
             mServices = new Dictionary<object, object>();
@@ -47,6 +59,11 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Get a service/manager of the specified type
+        /// </summary>
+        /// <typeparam name="T">Service/Manager to locate</typeparam>
+        /// <returns>The located Service/Manager</returns>
         public T GetService<T>()
         {
             try

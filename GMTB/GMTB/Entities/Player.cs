@@ -12,9 +12,15 @@ using System.Diagnostics;
 
 namespace GMTB.Entities
 {
+    /// <summary>
+    /// Main Class for player
+    /// </summary>
     public class Player : AnimatingEntity, IPlayer
     {
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
         public Player()
         {
             mSpeed = 3f;
@@ -22,15 +28,27 @@ namespace GMTB.Entities
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Setup movement input triggers
+        /// </summary>
         public override void ConfigureInput()
         {
             base.ConfigureInput();
             mInputManager.Sub_Move(OnMoveInput);
         }
+        /// <summary>
+        /// Get current Position
+        /// </summary>
+        /// <returns>Current Vector Position</returns>
         public Vector2 GetPos()
         {
             return mPosition;
         }
+        /// <summary>
+        /// Main movement method
+        /// </summary>
+        /// <param name="_source">Event source</param>
+        /// <param name="_args">Event Arguments</param>
         public virtual void OnMoveInput(object _source, InputEvent _args)
         {
             // Check the current keybinding in the event argument.
@@ -53,6 +71,10 @@ namespace GMTB.Entities
                     break;
             }
         }
+        /// <summary>
+        /// Main Update Loop
+        /// </summary>
+        /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);

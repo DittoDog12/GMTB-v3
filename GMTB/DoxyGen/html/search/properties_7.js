@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rectanglenormalize',['RectangleNormalize',['../class_g_m_t_b_1_1_collision_system_1_1_convex_shape.html#aa6cc1b76c1009cd743eb4cf79da69306',1,'GMTB::CollisionSystem::ConvexShape']]],
-  ['rectanglevertices',['RectangleVertices',['../class_g_m_t_b_1_1_collision_system_1_1_convex_shape.html#ac99a0114e15015f9cc9524d3e0f7efb8',1,'GMTB::CollisionSystem::ConvexShape']]]
+  ['name',['Name',['../class_g_m_t_b_1_1_abstracts_1_1_menu.html#ac387ad652491c06ecefb58f2abf52da2',1,'GMTB.Abstracts.Menu.Name()'],['../interface_g_m_t_b_1_1_interfaces_1_1_i_menu.html#a6b457cc4c741893e7ed4baeda39f9e9d',1,'GMTB.Interfaces.IMenu.Name()']]]
 ];

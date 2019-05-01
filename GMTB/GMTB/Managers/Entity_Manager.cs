@@ -10,18 +10,23 @@ using System.Threading.Tasks;
 
 namespace GMTB.Managers
 {
+    /// <summary>
+    /// Main Entity Manager, creates and destroys all entites
+    /// </summary>
     public class Entity_Manager : IEntity_Manager
     {
         #region Data Members
-        // Create Master List for all entities
+        /// Master List for all entities
         private IDictionary<int, IEntity> mEntities = new Dictionary<int, IEntity>();
-        // Create UID 
+        /// Master UID Count
         private int UID;
 
-        // Create Deletion List
+        /// Deletion List
         private IDictionary<int, IEntity> mDeletions;
 
+        /// Reference to the Content Manager
         private IContent_Manager mContentManager;
+        /// Reference to the Service Locator
         private IServiceLocator mServiceLocator;
         #endregion
 
@@ -30,6 +35,12 @@ namespace GMTB.Managers
         //{
         //    get { return Entities; }
         //}
+        /// <summary>
+        /// Returns specifed entity
+        /// Verifies the entity exists first
+        /// </summary>
+        /// <param name="_index">UID of Entity to locate</param>
+        /// <returns>Entity specified</returns>
         public IEntity GetEntity(int _index)
         {
             try
@@ -41,10 +52,12 @@ namespace GMTB.Managers
                 return null;
             }
         }
+        /// Accessor for all entities
         public IDictionary<int, IEntity> AllEntities
         {
             get { return mEntities; }
         }
+        /// Accessors for total entity count
         public int TotalEntities()
         {
             return mEntities.Count;
@@ -52,6 +65,11 @@ namespace GMTB.Managers
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_sl">Reference to Service Locator</param>
+        /// <param name="_cm">Reference to Content Manager</param>
         public Entity_Manager(IServiceLocator _sl, IContent_Manager _cm)
         {
             // Set UID counter to 0 for first object
@@ -64,7 +82,11 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// Set Core Entity Variables
+        /// Sets the UID and the Service Locator
+        /// </summary>
+        /// <param name="_entity">Entity to Set up</param>
         private void setEntityVars(IEntity _entity)
         {
             // Set the entities UID
@@ -72,6 +94,11 @@ namespace GMTB.Managers
             // Increment the UID
             UID++;
         }
+        /// <summary>
+        /// Set Core Entity Variables for Physical Entities
+        /// </summary>
+        /// <param name="_entity">Entity to set up</param>
+        /// <param name="_path">Path to Entities Texture</param>
         private void setEntityVars(IPhysicalEntity _entity, string _path)
         {
             // Set the entities Texture Path

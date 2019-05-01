@@ -75,26 +75,30 @@ $(function() {
 <div class="title">GMTB.Managers.Entity_Manager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main Entity Manager, creates and destroys all entites  
+ <a href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.Managers.Entity_Manager:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_g_m_t_b_1_1_managers_1_1_entity___manager.png" usemap="#GMTB.Managers.Entity_5FManager_map" alt=""/>
   <map id="GMTB.Managers.Entity_5FManager_map" name="GMTB.Managers.Entity_5FManager_map">
-<area href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html" alt="GMTB.Interfaces.IEntity_Manager" shape="rect" coords="0,0,203,24"/>
+<area href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html" title="Interface for Entity Manager" alt="GMTB.Interfaces.IEntity_Manager" shape="rect" coords="0,0,203,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9203b59e57355460b8a0de499b68b668"><td class="memItemLeft" align="right" valign="top"><a id="a9203b59e57355460b8a0de499b68b668"></a>
-<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetEntity</b> (int _index)</td></tr>
+<tr class="memitem:a9203b59e57355460b8a0de499b68b668"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a9203b59e57355460b8a0de499b68b668">GetEntity</a> (int _index)</td></tr>
+<tr class="memdesc:a9203b59e57355460b8a0de499b68b668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns specifed entity Verifies the entity exists first  <a href="#a9203b59e57355460b8a0de499b68b668">More...</a><br /></td></tr>
 <tr class="separator:a9203b59e57355460b8a0de499b68b668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62926f9bc4730b167d3f22d1acf9dcc8"><td class="memItemLeft" align="right" valign="top"><a id="a62926f9bc4730b167d3f22d1acf9dcc8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>TotalEntities</b> ()</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a62926f9bc4730b167d3f22d1acf9dcc8">TotalEntities</a> ()</td></tr>
+<tr class="memdesc:a62926f9bc4730b167d3f22d1acf9dcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessors for total entity count. <br /></td></tr>
 <tr class="separator:a62926f9bc4730b167d3f22d1acf9dcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a690275ff3e8793641778cd1df808f678"><td class="memItemLeft" align="right" valign="top"><a id="a690275ff3e8793641778cd1df808f678"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Entity_Manager</b> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager.html">IContent_Manager</a> _cm)</td></tr>
+<tr class="memitem:a690275ff3e8793641778cd1df808f678"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a690275ff3e8793641778cd1df808f678">Entity_Manager</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager.html">IContent_Manager</a> _cm)</td></tr>
+<tr class="memdesc:a690275ff3e8793641778cd1df808f678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Constructor  <a href="#a690275ff3e8793641778cd1df808f678">More...</a><br /></td></tr>
 <tr class="separator:a690275ff3e8793641778cd1df808f678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a996b960a3e3755a9e2a90501aa961715"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a996b960a3e3755a9e2a90501aa961715">newEntity&lt; T &gt;</a> ()</td></tr>
 <tr class="memdesc:a996b960a3e3755a9e2a90501aa961715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Entity creation method  <a href="#a996b960a3e3755a9e2a90501aa961715">More...</a><br /></td></tr>
@@ -121,13 +125,55 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>TotalEntities</b> ()</
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a7139bcd7e0e13d529532efa665dfec05"><td class="memItemLeft" align="right" valign="top"><a id="a7139bcd7e0e13d529532efa665dfec05"></a>
-IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>AllEntities</b><code> [get]</code></td></tr>
+IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_entity___manager.html#a7139bcd7e0e13d529532efa665dfec05">AllEntities</a><code> [get]</code></td></tr>
+<tr class="memdesc:a7139bcd7e0e13d529532efa665dfec05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for all entities. <br /></td></tr>
 <tr class="separator:a7139bcd7e0e13d529532efa665dfec05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a></td></tr>
 <tr class="memitem:aec3660eeaf9277e19b30a576af5fa62f inherit properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager"><td class="memItemLeft" align="right" valign="top"><a id="aec3660eeaf9277e19b30a576af5fa62f"></a>
-IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>AllEntities</b><code> [get]</code></td></tr>
+IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#aec3660eeaf9277e19b30a576af5fa62f">AllEntities</a><code> [get]</code></td></tr>
+<tr class="memdesc:aec3660eeaf9277e19b30a576af5fa62f inherit properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of all entities. <br /></td></tr>
 <tr class="separator:aec3660eeaf9277e19b30a576af5fa62f inherit properties_interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main Entity Manager, creates and destroys all entites </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a690275ff3e8793641778cd1df808f678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a690275ff3e8793641778cd1df808f678">&#9670;&nbsp;</a></span>Entity_Manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.Managers.Entity_Manager.Entity_Manager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td>
+          <td class="paramname"><em>_sl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_content___manager.html">IContent_Manager</a>&#160;</td>
+          <td class="paramname"><em>_cm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_sl</td><td>Reference to Service Locator</td></tr>
+    <tr><td class="paramname">_cm</td><td>Reference to Content Manager</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9175e841b277d7773d4ee40f71b3a3fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9175e841b277d7773d4ee40f71b3a3fd">&#9670;&nbsp;</a></span>ClearAll()</h2>
@@ -146,7 +192,7 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 
 <p>Clear all <a class="el" href="namespace_g_m_t_b_1_1_entities.html">Entities</a> from the engine </p>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#ac7dee57e59dd51293df02e036cfccbba">GMTB.Interfaces.IEntity_Manager</a>.</p>
 
 </div>
 </div>
@@ -174,7 +220,36 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#a1902a689567242bd6d954b78f0fc4330">GMTB.Interfaces.IEntity_Manager</a>.</p>
+
+</div>
+</div>
+<a id="a9203b59e57355460b8a0de499b68b668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9203b59e57355460b8a0de499b68b668">&#9670;&nbsp;</a></span>GetEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html">IEntity</a> GMTB.Managers.Entity_Manager.GetEntity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns specifed entity Verifies the entity exists first </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_index</td><td>UID of Entity to locate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Entity specified</dd></dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#afeab619a9fdea37a44adc464b9a1395d">GMTB.Interfaces.IEntity_Manager</a>.</p>
 
 </div>
 </div>
@@ -202,7 +277,7 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>IEntity of new entity </dd></dl>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#a8e32422ab19babf5878e44fca8027570">GMTB.Interfaces.IEntity_Manager</a>.</p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -246,7 +321,7 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>IEntity of new entity </dd></dl>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#a55fbda7c2515e11e794feacdc342383d">GMTB.Interfaces.IEntity_Manager</a>.</p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -301,7 +376,7 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>IEntity of the new entity </dd></dl>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#a1aaad5a17bd7ba806a8d222e348c2865">GMTB.Interfaces.IEntity_Manager</a>.</p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -345,7 +420,7 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>IEntity of the new Entity </dd></dl>
 
-<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">GMTB.Interfaces.IEntity_Manager</a>.</p>
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html#a5b5794283baecd33c8629b40a8c57481">GMTB.Interfaces.IEntity_Manager</a>.</p>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
@@ -419,7 +494,7 @@ IDictionary&lt; int, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>GMTB/Managers/Entity_Manager.cs</li>
+<li>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/GMTB/Managers/Entity_Manager.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -75,6 +75,9 @@ $(function() {
 <div class="title">GMTB.Interfaces.IEntity Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main Entity Interface, everything that exists impliments this Interface  
+ <a href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.Interfaces.IEntity:</div>
 <div class="dyncontent">
@@ -82,9 +85,9 @@ Inheritance diagram for GMTB.Interfaces.IEntity:</div>
   <img src="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.png" usemap="#GMTB.Interfaces.IEntity_map" alt=""/>
   <map id="GMTB.Interfaces.IEntity_map" name="GMTB.Interfaces.IEntity_map">
 <area href="class_g_m_t_b_1_1_entities_1_1_entity.html" title="Main Entity public class, everything that exists inherits from this public class" alt="GMTB.Entities.Entity" shape="rect" coords="1868,56,2157,80"/>
-<area href="class_g_m_t_b_1_1_entities_1_1_physical_entity.html" alt="GMTB.Entities.PhysicalEntity" shape="rect" coords="1569,112,1858,136"/>
-<area href="class_g_m_t_b_1_1_entities_1_1_sound_entity.html" alt="GMTB.Entities.SoundEntity" shape="rect" coords="1868,112,2157,136"/>
-<area href="class_g_m_t_b_1_1_managers_1_1_utility_entity.html" alt="GMTB.Managers.UtilityEntity" shape="rect" coords="2167,112,2456,136"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_physical_entity.html" title="Main physical Entity public class, everything that has a physical presence in the world inherits from..." alt="GMTB.Entities.PhysicalEntity" shape="rect" coords="1569,112,1858,136"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_sound_entity.html" title="Entity to hold a tirggered or repeating sound effect" alt="GMTB.Entities.SoundEntity" shape="rect" coords="1868,112,2157,136"/>
+<area href="class_g_m_t_b_1_1_managers_1_1_utility_entity.html" title="Utility Entity Utility Entites are entites that need to run in the background but do not warrent usin..." alt="GMTB.Managers.UtilityEntity" shape="rect" coords="2167,112,2456,136"/>
 <area href="class_g_m_t_b_1_1_collision_system_1_1_convex_shape.html" title="Abstract class for a Convex Shape" alt="GMTB.CollisionSystem.ConvexShape" shape="rect" coords="1569,168,1858,192"/>
 <area href="class_prototypes_1_1_cheese_spawner.html" alt="Prototypes.CheeseSpawner" shape="rect" coords="2167,168,2456,192"/>
 <area href="class_g_m_t_b_1_1_collision_system_1_1_rectangle_shape.html" title="Rectangular Shape" alt="GMTB.CollisionSystem.RectangleShape" shape="rect" coords="1121,224,1410,248"/>
@@ -97,7 +100,7 @@ Inheritance diagram for GMTB.Interfaces.IEntity:</div>
 <area href="class_prototypes_1_1_characters_1_1_triangle_1_1_triangle.html" alt="Prototypes.Characters.Triangle.Triangle" shape="rect" coords="2018,280,2307,304"/>
 <area href="class_g_m_t_b_1_1_collision_system_1_1_locked_door.html" title="Locked Door Object" alt="GMTB.CollisionSystem.LockedDoor" shape="rect" coords="0,336,289,360"/>
 <area href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html" title="Class for simple AI" alt="GMTB.Entities.AI.BasicAI" shape="rect" coords="598,336,887,360"/>
-<area href="class_g_m_t_b_1_1_entities_1_1_player.html" alt="GMTB.Entities.Player" shape="rect" coords="1644,336,1933,360"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_player.html" title="Main Class for player" alt="GMTB.Entities.Player" shape="rect" coords="1644,336,1933,360"/>
 <area href="class_prototypes_1_1_characters_1_1_mouse_1_1_mouse.html" alt="Prototypes.Characters.Mouse.Mouse" shape="rect" coords="0,392,289,416"/>
 <area href="class_the___infirmary_1_1_characters_1_1_doctor_1_1_doctor.html" alt="The_Infirmary.Characters.Doctor.Doctor" shape="rect" coords="299,392,588,416"/>
 <area href="class_the___infirmary_1_1_characters_1_1_matron_1_1_matron.html" alt="The_Infirmary.Characters.Matron.Matron" shape="rect" coords="598,392,887,416"/>
@@ -110,33 +113,213 @@ Inheritance diagram for GMTB.Interfaces.IEntity:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1070c8961681e6772c8a9cc2bab28442"><td class="memItemLeft" align="right" valign="top"><a id="a1070c8961681e6772c8a9cc2bab28442"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setVars</b> (int _uid, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl)</td></tr>
+<tr class="memitem:a1070c8961681e6772c8a9cc2bab28442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#a1070c8961681e6772c8a9cc2bab28442">setVars</a> (int _uid, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl)</td></tr>
+<tr class="memdesc:a1070c8961681e6772c8a9cc2bab28442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Core Variables  <a href="#a1070c8961681e6772c8a9cc2bab28442">More...</a><br /></td></tr>
 <tr class="separator:a1070c8961681e6772c8a9cc2bab28442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed260c50c9ef2fb82f5932d1a44a0df3"><td class="memItemLeft" align="right" valign="top"><a id="aed260c50c9ef2fb82f5932d1a44a0df3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (GameTime _gameTime)</td></tr>
+<tr class="memitem:aed260c50c9ef2fb82f5932d1a44a0df3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#aed260c50c9ef2fb82f5932d1a44a0df3">Update</a> (GameTime _gameTime)</td></tr>
+<tr class="memdesc:aed260c50c9ef2fb82f5932d1a44a0df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Update Loop  <a href="#aed260c50c9ef2fb82f5932d1a44a0df3">More...</a><br /></td></tr>
 <tr class="separator:aed260c50c9ef2fb82f5932d1a44a0df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc723c9c3846e2658c9aed63b27531b0"><td class="memItemLeft" align="right" valign="top"><a id="abc723c9c3846e2658c9aed63b27531b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ConfigureInput</b> ()</td></tr>
+<tr class="memitem:abc723c9c3846e2658c9aed63b27531b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#abc723c9c3846e2658c9aed63b27531b0">ConfigureInput</a> ()</td></tr>
+<tr class="memdesc:abc723c9c3846e2658c9aed63b27531b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure Input for this Entity  <a href="#abc723c9c3846e2658c9aed63b27531b0">More...</a><br /></td></tr>
 <tr class="separator:abc723c9c3846e2658c9aed63b27531b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a009550bdbad8a2bd046939ab2f627e77"><td class="memItemLeft" align="right" valign="top"><a id="a009550bdbad8a2bd046939ab2f627e77"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Suspend</b> ()</td></tr>
+<tr class="memitem:a009550bdbad8a2bd046939ab2f627e77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#a009550bdbad8a2bd046939ab2f627e77">Suspend</a> ()</td></tr>
+<tr class="memdesc:a009550bdbad8a2bd046939ab2f627e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suspends this entity from all Updates  <a href="#a009550bdbad8a2bd046939ab2f627e77">More...</a><br /></td></tr>
 <tr class="separator:a009550bdbad8a2bd046939ab2f627e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a784a80753903318bab88e495a9a265f8"><td class="memItemLeft" align="right" valign="top"><a id="a784a80753903318bab88e495a9a265f8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Resume</b> ()</td></tr>
+<tr class="memitem:a784a80753903318bab88e495a9a265f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#a784a80753903318bab88e495a9a265f8">Resume</a> ()</td></tr>
+<tr class="memdesc:a784a80753903318bab88e495a9a265f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume this entities updates  <a href="#a784a80753903318bab88e495a9a265f8">More...</a><br /></td></tr>
 <tr class="separator:a784a80753903318bab88e495a9a265f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94558cbc049a71e97604b6f8ba07cc5"><td class="memItemLeft" align="right" valign="top"><a id="ac94558cbc049a71e97604b6f8ba07cc5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetState</b> ()</td></tr>
+<tr class="memitem:ac94558cbc049a71e97604b6f8ba07cc5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#ac94558cbc049a71e97604b6f8ba07cc5">GetState</a> ()</td></tr>
+<tr class="memdesc:ac94558cbc049a71e97604b6f8ba07cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current suspension state of this entity  <a href="#ac94558cbc049a71e97604b6f8ba07cc5">More...</a><br /></td></tr>
 <tr class="separator:ac94558cbc049a71e97604b6f8ba07cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a41bff01fc162666cfd9ccd77161a1e5e"><td class="memItemLeft" align="right" valign="top"><a id="a41bff01fc162666cfd9ccd77161a1e5e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>UID</b><code> [get]</code></td></tr>
+<tr class="memitem:a41bff01fc162666cfd9ccd77161a1e5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity.html#a41bff01fc162666cfd9ccd77161a1e5e">UID</a><code> [get]</code></td></tr>
+<tr class="memdesc:a41bff01fc162666cfd9ccd77161a1e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entity Unique Identifier  <a href="#a41bff01fc162666cfd9ccd77161a1e5e">More...</a><br /></td></tr>
 <tr class="separator:a41bff01fc162666cfd9ccd77161a1e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main Entity Interface, everything that exists impliments this Interface </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abc723c9c3846e2658c9aed63b27531b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc723c9c3846e2658c9aed63b27531b0">&#9670;&nbsp;</a></span>ConfigureInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Interfaces.IEntity.ConfigureInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure Input for this Entity </p>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_entities_1_1_physical_entity.html#ac8ffd1ce4e40a17980f70b97e941451c">GMTB.Entities.PhysicalEntity</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a73f4529a619029861fe443f95d13455c">GMTB.Entities.Entity</a>, <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_triangle_shape.html#a418c3ebbaa4187f74e922ccbea1520ef">GMTB.CollisionSystem.TriangleShape</a>, and <a class="el" href="class_g_m_t_b_1_1_entities_1_1_player.html#af7c91590f66efe071a0dec4853c30265">GMTB.Entities.Player</a>.</p>
+
+</div>
+</div>
+<a id="ac94558cbc049a71e97604b6f8ba07cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94558cbc049a71e97604b6f8ba07cc5">&#9670;&nbsp;</a></span>GetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GMTB.Interfaces.IEntity.GetState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current suspension state of this entity </p>
+<dl class="section return"><dt>Returns</dt><dd>Current suspension state</dd></dl>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a1267b231b54f569a6f7e03d62e41ef7d">GMTB.Entities.Entity</a>.</p>
+
+</div>
+</div>
+<a id="a784a80753903318bab88e495a9a265f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a784a80753903318bab88e495a9a265f8">&#9670;&nbsp;</a></span>Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Interfaces.IEntity.Resume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resume this entities updates </p>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_door.html#ab176fffe1ec86b35ba373f0ee35057b0">GMTB.CollisionSystem.Door</a>, and <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a1f210094037d5c461432abb0c0e07ab1">GMTB.Entities.Entity</a>.</p>
+
+</div>
+</div>
+<a id="a1070c8961681e6772c8a9cc2bab28442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1070c8961681e6772c8a9cc2bab28442">&#9670;&nbsp;</a></span>setVars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Interfaces.IEntity.setVars </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_uid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td>
+          <td class="paramname"><em>_sl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Core Variables </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_uid</td><td>Entity Unique Identifier</td></tr>
+    <tr><td class="paramname">_sl</td><td>Reference to Service Locator</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_door.html#a31faede8cd554e4cfea2a012a1c4928e">GMTB.CollisionSystem.Door</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html#a848c08ffa4f9f575c970308a65144f52">GMTB.Entities.AI.BasicAI</a>, and <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#ae6d69c22b16436ec6df3b79099e1e81b">GMTB.Entities.Entity</a>.</p>
+
+</div>
+</div>
+<a id="a009550bdbad8a2bd046939ab2f627e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a009550bdbad8a2bd046939ab2f627e77">&#9670;&nbsp;</a></span>Suspend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Interfaces.IEntity.Suspend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Suspends this entity from all Updates </p>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_door.html#aaee59b309d63e9fcd18115d28d1bf9c8">GMTB.CollisionSystem.Door</a>, and <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#a516b3499690b30f9b4469b387713ad92">GMTB.Entities.Entity</a>.</p>
+
+</div>
+</div>
+<a id="aed260c50c9ef2fb82f5932d1a44a0df3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed260c50c9ef2fb82f5932d1a44a0df3">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Interfaces.IEntity.Update </td>
+          <td>(</td>
+          <td class="paramtype">GameTime&#160;</td>
+          <td class="paramname"><em>_gameTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Update Loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_gameTime</td><td>Reference to current GameTime</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_g_m_t_b_1_1_entities_1_1_physical_entity.html#ac93eb5a13167dedd3260903c96ff73d0">GMTB.Entities.PhysicalEntity</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_player.html#a32137870cf6017e80ba47fab7096f551">GMTB.Entities.Player</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_entity.html#ae60f8e246681666b514ac7f56f61c1ce">GMTB.Entities.Entity</a>, <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_door.html#ad60e856d8992db43773447d965a546e4">GMTB.CollisionSystem.Door</a>, <a class="el" href="class_g_m_t_b_1_1_collision_system_1_1_convex_shape.html#a2bbcdf1ce494833270e0cd42a37454f7">GMTB.CollisionSystem.ConvexShape</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html#ab2dcbe6e9e03ab42eb40a933f4b9563b">GMTB.Entities.AI.BasicAI</a>, <a class="el" href="class_g_m_t_b_1_1_entities_1_1_sound_entity.html#aef441ff0fcd1cdaab4f30830cf7beb1a">GMTB.Entities.SoundEntity</a>, <a class="el" href="class_prototypes_1_1_cheese_spawner.html#a7fc26037f12221661190fada09c431f5">Prototypes.CheeseSpawner</a>, <a class="el" href="class_prototypes_1_1_cheese.html#a0683b7f62e557204538d62ba9852dc15">Prototypes.Cheese</a>, and <a class="el" href="class_prototypes_1_1_characters_1_1_triangle_1_1_triangle.html#aedbe532fe289d32df2f09aab2039cc58">Prototypes.Characters.Triangle.Triangle</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a41bff01fc162666cfd9ccd77161a1e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41bff01fc162666cfd9ccd77161a1e5e">&#9670;&nbsp;</a></span>UID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GMTB.Interfaces.IEntity.UID</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Entity Unique Identifier </p>
+
+</div>
+</div>
 <hr/>The documentation for this interface was generated from the following file:<ul>
-<li>GMTB/Interfaces/IEntity.cs</li>
+<li>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/GMTB/Interfaces/IEntity.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

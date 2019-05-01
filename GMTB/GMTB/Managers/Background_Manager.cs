@@ -9,24 +9,37 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Managers
 {
+    /// <summary>
+    /// Background Manager, controls the displaying of enviroments on the background
+    /// </summary>
     public class Background_Manager : IBackground_Manager
     {
         #region Data Members
+        /// Reference to the Content Manger
         private IContent_Manager mContentManager;
+        /// Texture for leftmost background
         private Texture2D mBackground;
+        /// Texture for rightmost background
         private Texture2D mBackground2;
+        /// Store for X coordinate
         private int mXPos;
+        /// Store for Y coordinate
         private int mYPos;
         #endregion
 
         #region Accessors
-        public Texture2D Texture
-        {
-            set { mBackground = value; }
-        }
+        ///// Accessor for Texture
+        //public Texture2D Texture
+        //{
+        //    set { mBackground = value; }
+        //}
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_cm">Reference to the Content Manger</param>
         public Background_Manager(IContent_Manager _cm)
         {
             mContentManager = _cm;
@@ -36,6 +49,11 @@ namespace GMTB.Managers
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Main Draw Loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
         public void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
             // Check background is valid and draw at position 0,50

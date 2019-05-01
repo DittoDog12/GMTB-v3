@@ -12,24 +12,37 @@ using System.Threading.Tasks;
 
 namespace GMTB
 {
-
+    /// <summary>
+    /// 2D Platformer Camera that follows the player
+    /// </summary>
     public class Camera2D
     {
         #region Data Members
+        /// Current Position
         private Vector2 mPosition;
+        /// Current Zoom
         protected float mZoom;
+        /// Current Rotation
         protected float mRotatation;
+        /// Transform Matrix
         public Matrix mTransform;
+        /// Current Velocity
         public Vector2 mVelocity;
+        /// Transform Speed
         public float mSpeed = 2.5f;
 
+        /// Reference to the Screen Height
         private int ScreenHeight;
+        /// Reference to the Screen Width
         private int ScreenWidth;
 
         // Follow Player Varaibles, Based on AI system
         //private Vector2 mDistanceToDest;
+        /// Reference to the Player
         private IPlayer mPlayer;
+        /// Reference to the Player Position
         private Vector2 mPlayerPos;
+        /// Reference to the Service Locator
         private IServiceLocator mServiceLocator;
 
         // Part of Broken Ideas
@@ -38,11 +51,16 @@ namespace GMTB
         #endregion
 
         #region Accessors
+        /// Accessor for current Position
         public Vector2 Position
         {
             get { return mPosition; }
             set { mPosition = value; }
         }
+        /// <summary>
+        /// Accessor for current zoom
+        /// Does not allow zoom to go less than 0.1
+        /// </summary>
         public float Zoom
         {
             get { return mZoom; }
@@ -52,6 +70,7 @@ namespace GMTB
                     mZoom = 0.1f;
             }
         }
+        /// Accessor for current rotation
         public float Rotation
         {
             get { return mRotatation; }
@@ -61,6 +80,11 @@ namespace GMTB
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="sh">Screen Height</param>
+        /// <param name="sw">Screen Width</param>
         public Camera2D(int sh, int sw)
         {
             ScreenHeight = sh;
@@ -72,6 +96,10 @@ namespace GMTB
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Initialize Routine
+        /// </summary>
+        /// <param name="_sl">reference to the Service Locator</param>
         public void Intialize(IServiceLocator _sl)
         {
             mServiceLocator = _sl;
@@ -91,15 +119,27 @@ namespace GMTB
         //{
         //    mMove = move;
         //}
+        /// <summary>
+        /// Specify an X coordinate
+        /// </summary>
+        /// <param name="x">New X coordinate</param>
         public void UpdateX(float x)
         {
             mPosition.X = x;
         }
+        /// <summary>
+        /// Specify a Y coordinate
+        /// </summary>
+        /// <param name="y">New Y coordinate</param>
         public void UpdateY(float y)
         {
             mPosition.Y = y;
         }
-
+        /// <summary>
+        /// Calculate the transform matrix
+        /// </summary>
+        /// <param name="graphicsDevice">Reference to the Monogame Graphics Device</param>
+        /// <returns>Transformation Matrix</returns>
         public Matrix GetTransform(GraphicsDevice graphicsDevice)
         {
             mTransform = Matrix.CreateTranslation(new Vector3(-mPosition.X, -mPosition.Y, 0)) *
@@ -110,7 +150,10 @@ namespace GMTB
 
             return mTransform;
         }
-
+        /// <summary>
+        /// Main Update Loop
+        /// </summary>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
         public void Update(GameTime _gameTime)
         {
             // Use the service Locator to access the Entity Manager to identify the player via casting

@@ -31,6 +31,9 @@ namespace GMTB
         /// </summary>
         public static availGameStates GameState { get; set; }
 
+        /// <summary>
+        /// Screen Size
+        /// </summary>
         public static Vector2 ScreenSize { get; set; }
     }
 }

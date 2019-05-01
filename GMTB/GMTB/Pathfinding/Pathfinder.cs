@@ -8,22 +8,31 @@ using GMTB.Interfaces;
 
 namespace GMTB.Pathfinding
 {
+    /// <summary>
+    /// AI pathfinding component
+    /// </summary>
     public class Pathfinder : IPathfinder
     {
         #region Data Members
+        /// Unexamined nodes
         private List<Point> mOpenList;
+        /// Examined Nodes
         private List<Point> mClosedList;
 
+        /// Size of map
         private Rectangle mSize;
 
+        /// Map of Nodes and their weights
         private byte[,] mWeight;
         #endregion
 
         #region Accessors
+        /// Accessor for Map size
         public Rectangle Size
         {
             get { return mSize; }
         }
+        /// Accessor for Map
         public byte[,] Weight
         {
             get { return mWeight; }
@@ -32,6 +41,10 @@ namespace GMTB.Pathfinding
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Default Constructor
+        /// Sets a blank map with current ScreenSize as its size
+        /// </summary>
         public Pathfinder()
         {
             int x = (int)Global.ScreenSize.X;
@@ -39,9 +52,15 @@ namespace GMTB.Pathfinding
             mSize = new Rectangle(0, 0, x, y);
 
         }
-        public Pathfinder(int x, int y, byte[,] _Weight)
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="x">Width of Map</param>
+        /// <param name="y">Height of Map</param>
+        /// <param name="_Weight">Map</param>
+        public Pathfinder(int _width, int _height, byte[,] _Weight)
         {
-            mSize = new Rectangle(0, 0, x, y);
+            mSize = new Rectangle(0, 0, _width, _height);
 
             mWeight = _Weight;
 

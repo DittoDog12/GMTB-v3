@@ -17,10 +17,14 @@ namespace GMTB.Entities
     public class PhysicalEntity : Entity, IPhysicalEntity
     {
         #region Data Members
+        /// Reference to Content Manager
         protected IContent_Manager mContentManager;
-        //--Movement
+        //--Movement 
+        /// Entity Speed
         protected float mSpeed;
+        /// Current Velocity
         protected Vector2 mVelocity;
+        /// Current Acceleration
         protected Vector2 mAcceleration;
 
         // Entity Physic Modifier Properties
@@ -30,30 +34,40 @@ namespace GMTB.Entities
         protected Vector2 mGravity = new Vector2(0, 0);
 
         //--Texture
+        /// Texture
         protected Texture2D mTexture;
+        /// Texture Path
         protected string mTexturename;
 
         //--Position
+        /// Current Position
         protected Vector2 mPosition;
+        /// Default Position
         protected Vector2 mDefaultPos;
+        /// Origin point, for rotation
         protected Vector2 mOrigin;
+        /// Current Rotation
         protected float mRotation;
         #endregion
 
         #region Accessors
+        /// Path to texture
         public string Texturename
         {
             get { return mTexturename; }
         }
+        /// Current Texture
         public Texture2D Texture
         {
             get { return mTexture; }
             set { mTexture = value; }
         }
+        /// Current Position
         public Vector2 Position
         {
             get { return mPosition; }
         }
+        /// Current Acceleration
         public Vector2 Acceleration
         {
             set { mAcceleration = value; }
@@ -62,6 +76,9 @@ namespace GMTB.Entities
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
         public PhysicalEntity()
         {
             mGravity = new Vector2(0, 1);
@@ -69,6 +86,9 @@ namespace GMTB.Entities
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Configure Input
+        /// </summary>
         public override void ConfigureInput()
         {
             base.ConfigureInput();
@@ -100,23 +120,37 @@ namespace GMTB.Entities
             setPos(_pos);
             mDefaultPos = _pos;
         }
-
+        /// <summary>
+        /// Main Update Loop
+        /// </summary>
+        /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
             UpdatePhysics();
             //mPosition += mVelocity;
             mVelocity = Vector2.Zero;
         }
+        /// <summary>
+        /// Main Draw Loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to SpriteBatch</param>
+        /// <param name="_gameTime">Reference to current GameTime</param>
         public virtual void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
             if (mTexture != null && mActive)
                 _spriteBatch.Draw(mTexture, mPosition, Color.AntiqueWhite);
         }
+        /// <summary>
+        /// Non Physical Collision response
+        /// </summary>
+        /// <param name="_obj">Object Collided with</param>
         public virtual void Collision(ICollidable _obj)
         {
 
         }
-
+        /// <summary>
+        /// Main Physics Update loop
+        /// </summary>
         protected virtual void UpdatePhysics()
         {
             // Scale velocity with Damp
@@ -128,18 +162,30 @@ namespace GMTB.Entities
             // Reset Acceleration
             mAcceleration = mGravity;
         }
-
+        /// <summary>
+        /// Apply phyisical Impluse
+        /// </summary>
+        /// <param name="_closingVelocity">Closing Velocity between this and the other object</param>
         public void ApplyImpulse(Vector2 _closingVelocity)
         {
             // Provide a closing velocity to the entity when a collision occurs
             mVelocity += _closingVelocity * mRestitution;
         }
+        /// <summary>
+        /// Apply a specified force to the Acceleration
+        /// </summary>
+        /// <param name="_force">New Force to apply</param>
         public void ApplyForce(Vector2 _force)
         {
             // Calculation for acceleration using force
             mAcceleration += _force * mInverseMass;
         }
-
+        /// <summary>
+        /// Space input toggle
+        /// Currently used for testing gravity
+        /// </summary>
+        /// <param name="source">Event Source</param>
+        /// <param name="args">Event Arguments</param>
         private void OnSpaceInput(object source, InputEvent args)
         {
             if (args.currentKey == Keybindings.Jump)
@@ -147,7 +193,10 @@ namespace GMTB.Entities
                 ToggleGravity();
             }
         }
-
+        /// <summary>
+        /// Toggle gravity on and off
+        /// USed for testing
+        /// </summary>
         public void ToggleGravity()
         {
             if (mGravity == new Vector2(0, 1))

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hitbox',['Hitbox',['../class_g_m_t_b_1_1_collision_system_1_1_convex_shape.html#a8305395f6950d6ac588fc028dd86366b',1,'GMTB::CollisionSystem::ConvexShape']]]
+  ['currentlevel',['CurrentLevel',['../class_g_m_t_b_1_1_managers_1_1_level___manager.html#acba428f5095c75eeb1ebda34715e35da',1,'GMTB::Managers::Level_Manager']]]
 ];

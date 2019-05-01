@@ -74,27 +74,88 @@ $(function() {
 <div class="title">GMTB.Managers.AI_Manager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>AI Manager Locates AI Targets and informs the AIs of the targets existance  
+ <a href="class_g_m_t_b_1_1_managers_1_1_a_i___manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.Managers.AI_Manager:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_g_m_t_b_1_1_managers_1_1_a_i___manager.png" usemap="#GMTB.Managers.AI_5FManager_map" alt=""/>
   <map id="GMTB.Managers.AI_5FManager_map" name="GMTB.Managers.AI_5FManager_map">
-<area href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i___manager.html" alt="GMTB.Interfaces.IAI_Manager" shape="rect" coords="0,0,184,24"/>
+<area href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i___manager.html" title="Interface for AI Manager" alt="GMTB.Interfaces.IAI_Manager" shape="rect" coords="0,0,184,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e308a04964e22ac3e0c6de6526c2677"><td class="memItemLeft" align="right" valign="top"><a id="a4e308a04964e22ac3e0c6de6526c2677"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AI_Manager</b> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a> _em)</td></tr>
+<tr class="memitem:a4e308a04964e22ac3e0c6de6526c2677"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_a_i___manager.html#a4e308a04964e22ac3e0c6de6526c2677">AI_Manager</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a> _em)</td></tr>
+<tr class="memdesc:a4e308a04964e22ac3e0c6de6526c2677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Constructor  <a href="#a4e308a04964e22ac3e0c6de6526c2677">More...</a><br /></td></tr>
 <tr class="separator:a4e308a04964e22ac3e0c6de6526c2677"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f649e07ab6739330bed0f35514dca40"><td class="memItemLeft" align="right" valign="top"><a id="a1f649e07ab6739330bed0f35514dca40"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (GameTime _gameTime)</td></tr>
+<tr class="memitem:a1f649e07ab6739330bed0f35514dca40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_a_i___manager.html#a1f649e07ab6739330bed0f35514dca40">Update</a> (GameTime _gameTime)</td></tr>
+<tr class="memdesc:a1f649e07ab6739330bed0f35514dca40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Update Loop Finds all the AIs from the Entity <a class="el" href="namespace_g_m_t_b_1_1_managers.html">Managers</a> master list and informs them of the current AT target  <a href="#a1f649e07ab6739330bed0f35514dca40">More...</a><br /></td></tr>
 <tr class="separator:a1f649e07ab6739330bed0f35514dca40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>AI Manager Locates AI Targets and informs the AIs of the targets existance </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4e308a04964e22ac3e0c6de6526c2677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e308a04964e22ac3e0c6de6526c2677">&#9670;&nbsp;</a></span>AI_Manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.Managers.AI_Manager.AI_Manager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a>&#160;</td>
+          <td class="paramname"><em>_em</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_em</td><td>Reference to the Entity Manager</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1f649e07ab6739330bed0f35514dca40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f649e07ab6739330bed0f35514dca40">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Managers.AI_Manager.Update </td>
+          <td>(</td>
+          <td class="paramtype">GameTime&#160;</td>
+          <td class="paramname"><em>_gameTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Update Loop Finds all the AIs from the Entity <a class="el" href="namespace_g_m_t_b_1_1_managers.html">Managers</a> master list and informs them of the current AT target </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_gameTime</td><td>Reference to the current GameTime</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_a_i___manager.html#ab2a8356701d718df99c5231ce76a93b6">GMTB.Interfaces.IAI_Manager</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>GMTB/Managers/AI_Manager.cs</li>
+<li>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/GMTB/Managers/AI_Manager.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -76,6 +76,9 @@ $(function() {
 <div class="title">GMTB.InputSystem.Input_Manager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Main input manager  
+ <a href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.InputSystem.Input_Manager:</div>
 <div class="dyncontent">
@@ -88,6 +91,9 @@ Inheritance diagram for GMTB.InputSystem.Input_Manager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ac546dddb9adda3dce6bdb862c07e23d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#ac546dddb9adda3dce6bdb862c07e23d7">Input_Manager</a> ()</td></tr>
+<tr class="memdesc:ac546dddb9adda3dce6bdb862c07e23d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Constructor  <a href="#ac546dddb9adda3dce6bdb862c07e23d7">More...</a><br /></td></tr>
+<tr class="separator:ac546dddb9adda3dce6bdb862c07e23d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19aece0b8405c55cd7c28df0a463899d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a19aece0b8405c55cd7c28df0a463899d">GetCurrentInput</a> (GameTime _gameTime)</td></tr>
 <tr class="memdesc:a19aece0b8405c55cd7c28df0a463899d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main input detection method  <a href="#a19aece0b8405c55cd7c28df0a463899d">More...</a><br /></td></tr>
 <tr class="separator:a19aece0b8405c55cd7c28df0a463899d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,44 +130,105 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a2e4d22c1f800eb5257448a0401cba527"><td class="memItemLeft" align="right" valign="top"><a id="a2e4d22c1f800eb5257448a0401cba527"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>MouseInput</b> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key, Vector2 pos)</td></tr>
+<tr class="memitem:a2e4d22c1f800eb5257448a0401cba527"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a2e4d22c1f800eb5257448a0401cba527">MouseInput</a> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key, Vector2 pos)</td></tr>
+<tr class="memdesc:a2e4d22c1f800eb5257448a0401cba527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse Input Trigger  <a href="#a2e4d22c1f800eb5257448a0401cba527">More...</a><br /></td></tr>
 <tr class="separator:a2e4d22c1f800eb5257448a0401cba527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a832df2f8f405ddbb5813ce23c38099e9"><td class="memItemLeft" align="right" valign="top"><a id="a832df2f8f405ddbb5813ce23c38099e9"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>MovementInput</b> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memitem:a832df2f8f405ddbb5813ce23c38099e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a832df2f8f405ddbb5813ce23c38099e9">MovementInput</a> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memdesc:a832df2f8f405ddbb5813ce23c38099e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movement Input Trigger  <a href="#a832df2f8f405ddbb5813ce23c38099e9">More...</a><br /></td></tr>
 <tr class="separator:a832df2f8f405ddbb5813ce23c38099e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe534eb82818fd12e58d21d4b3f15d41"><td class="memItemLeft" align="right" valign="top"><a id="afe534eb82818fd12e58d21d4b3f15d41"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>MovementRelease</b> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memitem:afe534eb82818fd12e58d21d4b3f15d41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#afe534eb82818fd12e58d21d4b3f15d41">MovementRelease</a> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memdesc:afe534eb82818fd12e58d21d4b3f15d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movement key release trigger  <a href="#afe534eb82818fd12e58d21d4b3f15d41">More...</a><br /></td></tr>
 <tr class="separator:afe534eb82818fd12e58d21d4b3f15d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1af6e88d6c76fbcd7a15069929cae3fc"><td class="memItemLeft" align="right" valign="top"><a id="a1af6e88d6c76fbcd7a15069929cae3fc"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SpaceInput</b> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memitem:a1af6e88d6c76fbcd7a15069929cae3fc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a1af6e88d6c76fbcd7a15069929cae3fc">SpaceInput</a> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memdesc:a1af6e88d6c76fbcd7a15069929cae3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Space Key Input Trigger  <a href="#a1af6e88d6c76fbcd7a15069929cae3fc">More...</a><br /></td></tr>
 <tr class="separator:a1af6e88d6c76fbcd7a15069929cae3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf422a93a9d982352960a38198fe37b"><td class="memItemLeft" align="right" valign="top"><a id="a0bf422a93a9d982352960a38198fe37b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UseInput</b> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memitem:a0bf422a93a9d982352960a38198fe37b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a0bf422a93a9d982352960a38198fe37b">UseInput</a> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memdesc:a0bf422a93a9d982352960a38198fe37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use Key Input Trigger  <a href="#a0bf422a93a9d982352960a38198fe37b">More...</a><br /></td></tr>
 <tr class="separator:a0bf422a93a9d982352960a38198fe37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab3f6ae8c5a062a63e45c6a2dd249dca"><td class="memItemLeft" align="right" valign="top"><a id="aab3f6ae8c5a062a63e45c6a2dd249dca"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>EscapeInput</b> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memitem:aab3f6ae8c5a062a63e45c6a2dd249dca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#aab3f6ae8c5a062a63e45c6a2dd249dca">EscapeInput</a> (<a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a> key)</td></tr>
+<tr class="memdesc:aab3f6ae8c5a062a63e45c6a2dd249dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escape Key Input Trigger  <a href="#aab3f6ae8c5a062a63e45c6a2dd249dca">More...</a><br /></td></tr>
 <tr class="separator:aab3f6ae8c5a062a63e45c6a2dd249dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
 <tr class="memitem:a1a98d2e8436584801ee9c93acc286670"><td class="memItemLeft" align="right" valign="top"><a id="a1a98d2e8436584801ee9c93acc286670"></a>
-EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Movement</b></td></tr>
+EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a1a98d2e8436584801ee9c93acc286670">Movement</a></td></tr>
+<tr class="memdesc:a1a98d2e8436584801ee9c93acc286670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movement Key Input subscribers. <br /></td></tr>
 <tr class="separator:a1a98d2e8436584801ee9c93acc286670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9136dc5d28de3cd77d08b4bc737d667"><td class="memItemLeft" align="right" valign="top"><a id="ac9136dc5d28de3cd77d08b4bc737d667"></a>
-EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Space</b></td></tr>
+EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#ac9136dc5d28de3cd77d08b4bc737d667">Space</a></td></tr>
+<tr class="memdesc:ac9136dc5d28de3cd77d08b4bc737d667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Space Key Input subscribers. <br /></td></tr>
 <tr class="separator:ac9136dc5d28de3cd77d08b4bc737d667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7da631e5feb99e9717d309682b36cd2"><td class="memItemLeft" align="right" valign="top"><a id="ad7da631e5feb99e9717d309682b36cd2"></a>
-EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Esc</b></td></tr>
+EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#ad7da631e5feb99e9717d309682b36cd2">Esc</a></td></tr>
+<tr class="memdesc:ad7da631e5feb99e9717d309682b36cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escape Key Input subscribers. <br /></td></tr>
 <tr class="separator:ad7da631e5feb99e9717d309682b36cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7f688f360492f12be0be2cdf32052d1"><td class="memItemLeft" align="right" valign="top"><a id="aa7f688f360492f12be0be2cdf32052d1"></a>
-EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Use</b></td></tr>
+EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input_event.html">InputEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#aa7f688f360492f12be0be2cdf32052d1">Use</a></td></tr>
+<tr class="memdesc:aa7f688f360492f12be0be2cdf32052d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use Key Input subscribers. <br /></td></tr>
 <tr class="separator:aa7f688f360492f12be0be2cdf32052d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4002b01d34ed7007ee8e69c16a2810be"><td class="memItemLeft" align="right" valign="top"><a id="a4002b01d34ed7007ee8e69c16a2810be"></a>
-EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_mouse_event.html">MouseEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>MouseUsers</b></td></tr>
+EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_mouse_event.html">MouseEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_input_system_1_1_input___manager.html#a4002b01d34ed7007ee8e69c16a2810be">MouseUsers</a></td></tr>
+<tr class="memdesc:a4002b01d34ed7007ee8e69c16a2810be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mouse Input subscribers. <br /></td></tr>
 <tr class="separator:a4002b01d34ed7007ee8e69c16a2810be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Main input manager </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac546dddb9adda3dce6bdb862c07e23d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac546dddb9adda3dce6bdb862c07e23d7">&#9670;&nbsp;</a></span>Input_Manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.InputSystem.Input_Manager.Input_Manager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Constructor </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aab3f6ae8c5a062a63e45c6a2dd249dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3f6ae8c5a062a63e45c6a2dd249dca">&#9670;&nbsp;</a></span>EscapeInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.InputSystem.Input_Manager.EscapeInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escape Key Input Trigger </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key Pressed</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a19aece0b8405c55cd7c28df0a463899d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19aece0b8405c55cd7c28df0a463899d">&#9670;&nbsp;</a></span>GetCurrentInput()</h2>
 
@@ -181,6 +248,153 @@ EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_mouse_ev
 <p>Main input detection method </p>
 
 <p>Implements <a class="el" href="interface_g_m_t_b_1_1_input_system_1_1_i_input___manager.html#ac18c8364400155f82270785e1c5afd72">GMTB.InputSystem.IInput_Manager</a>.</p>
+
+</div>
+</div>
+<a id="a2e4d22c1f800eb5257448a0401cba527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4d22c1f800eb5257448a0401cba527">&#9670;&nbsp;</a></span>MouseInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.InputSystem.Input_Manager.MouseInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mouse Input Trigger </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key clicked</td></tr>
+    <tr><td class="paramname">pos</td><td>Mouse Position at moment of click</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a832df2f8f405ddbb5813ce23c38099e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832df2f8f405ddbb5813ce23c38099e9">&#9670;&nbsp;</a></span>MovementInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.InputSystem.Input_Manager.MovementInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Movement Input Trigger </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key pressed</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afe534eb82818fd12e58d21d4b3f15d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe534eb82818fd12e58d21d4b3f15d41">&#9670;&nbsp;</a></span>MovementRelease()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.InputSystem.Input_Manager.MovementRelease </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Movement key release trigger </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key released</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1af6e88d6c76fbcd7a15069929cae3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af6e88d6c76fbcd7a15069929cae3fc">&#9670;&nbsp;</a></span>SpaceInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.InputSystem.Input_Manager.SpaceInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Space Key Input Trigger </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key Pressed</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -464,8 +678,42 @@ EventHandler&lt; <a class="el" href="class_g_m_t_b_1_1_input_system_1_1_mouse_ev
 
 </div>
 </div>
+<a id="a0bf422a93a9d982352960a38198fe37b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bf422a93a9d982352960a38198fe37b">&#9670;&nbsp;</a></span>UseInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GMTB.InputSystem.Input_Manager.UseInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_g_m_t_b_1_1_input_system.html#a29c73b630f79093ef12619656209d6c1">Keybindings</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use Key Input Trigger </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Key Pressed</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>GMTB/InputSystem/Input_Manager.cs</li>
+<li>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/GMTB/InputSystem/Input_Manager.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -75,6 +75,9 @@ $(function() {
 <div class="title">GMTB.CollisionSystem.ICollidable Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface for collidable entities  
+ <a href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.CollisionSystem.ICollidable:</div>
 <div class="dyncontent">
@@ -92,7 +95,7 @@ Inheritance diagram for GMTB.CollisionSystem.ICollidable:</div>
 <area href="class_prototypes_1_1_characters_1_1_triangle_1_1_triangle.html" alt="Prototypes.Characters.Triangle.Triangle" shape="rect" coords="2018,168,2307,192"/>
 <area href="class_g_m_t_b_1_1_collision_system_1_1_locked_door.html" title="Locked Door Object" alt="GMTB.CollisionSystem.LockedDoor" shape="rect" coords="0,224,289,248"/>
 <area href="class_g_m_t_b_1_1_entities_1_1_a_i_1_1_basic_a_i.html" title="Class for simple AI" alt="GMTB.Entities.AI.BasicAI" shape="rect" coords="598,224,887,248"/>
-<area href="class_g_m_t_b_1_1_entities_1_1_player.html" alt="GMTB.Entities.Player" shape="rect" coords="1644,224,1933,248"/>
+<area href="class_g_m_t_b_1_1_entities_1_1_player.html" title="Main Class for player" alt="GMTB.Entities.Player" shape="rect" coords="1644,224,1933,248"/>
 <area href="class_prototypes_1_1_characters_1_1_mouse_1_1_mouse.html" alt="Prototypes.Characters.Mouse.Mouse" shape="rect" coords="0,280,289,304"/>
 <area href="class_the___infirmary_1_1_characters_1_1_doctor_1_1_doctor.html" alt="The_Infirmary.Characters.Doctor.Doctor" shape="rect" coords="299,280,588,304"/>
 <area href="class_the___infirmary_1_1_characters_1_1_matron_1_1_matron.html" alt="The_Infirmary.Characters.Matron.Matron" shape="rect" coords="598,280,887,304"/>
@@ -106,35 +109,45 @@ Inheritance diagram for GMTB.CollisionSystem.ICollidable:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a027ed345850e7935671261a5d55d3e99"><td class="memItemLeft" align="right" valign="top"><a id="a027ed345850e7935671261a5d55d3e99"></a>
-List&lt; Vector2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateCollisionMesh</b> ()</td></tr>
+List&lt; Vector2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#a027ed345850e7935671261a5d55d3e99">UpdateCollisionMesh</a> ()</td></tr>
+<tr class="memdesc:a027ed345850e7935671261a5d55d3e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update all variables for Collision Detection. <br /></td></tr>
 <tr class="separator:a027ed345850e7935671261a5d55d3e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11c4b7870582f119343dee785ef03d2b"><td class="memItemLeft" align="right" valign="top"><a id="a11c4b7870582f119343dee785ef03d2b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Collision</b> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#a11c4b7870582f119343dee785ef03d2b">Collision</a> (<a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _obj)</td></tr>
+<tr class="memdesc:a11c4b7870582f119343dee785ef03d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non Physical Collision Trigger. <br /></td></tr>
 <tr class="separator:a11c4b7870582f119343dee785ef03d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a519168861b9d1f8d521b41e4c7eab2ca"><td class="memItemLeft" align="right" valign="top"><a id="a519168861b9d1f8d521b41e4c7eab2ca"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Collision</b> (Vector2 _mtv, Vector2 _cNormal, <a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _otherObj)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#a519168861b9d1f8d521b41e4c7eab2ca">Collision</a> (Vector2 _mtv, Vector2 _cNormal, <a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html">ICollidable</a> _otherObj)</td></tr>
+<tr class="memdesc:a519168861b9d1f8d521b41e4c7eab2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Physical Collision Trigger. <br /></td></tr>
 <tr class="separator:a519168861b9d1f8d521b41e4c7eab2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aceffd1c84c62bae752ae840710e25a13"><td class="memItemLeft" align="right" valign="top"><a id="aceffd1c84c62bae752ae840710e25a13"></a>
-List&lt; Vector2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RectangleVertices</b><code> [get]</code></td></tr>
+List&lt; Vector2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#aceffd1c84c62bae752ae840710e25a13">RectangleVertices</a><code> [get]</code></td></tr>
+<tr class="memdesc:aceffd1c84c62bae752ae840710e25a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Vertices. <br /></td></tr>
 <tr class="separator:aceffd1c84c62bae752ae840710e25a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b7b937e2e530412e2eb2a9a1ba9d912"><td class="memItemLeft" align="right" valign="top"><a id="a8b7b937e2e530412e2eb2a9a1ba9d912"></a>
-Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>Position</b><code> [get, set]</code></td></tr>
+Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#a8b7b937e2e530412e2eb2a9a1ba9d912">Position</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a8b7b937e2e530412e2eb2a9a1ba9d912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector Position. <br /></td></tr>
 <tr class="separator:a8b7b937e2e530412e2eb2a9a1ba9d912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8a23657d4e01f17e2de3f5cd46cb975"><td class="memItemLeft" align="right" valign="top"><a id="aa8a23657d4e01f17e2de3f5cd46cb975"></a>
-Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>Velocity</b><code> [get]</code></td></tr>
+Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#aa8a23657d4e01f17e2de3f5cd46cb975">Velocity</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa8a23657d4e01f17e2de3f5cd46cb975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector Velocity. <br /></td></tr>
 <tr class="separator:aa8a23657d4e01f17e2de3f5cd46cb975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cfd47dc5fc27c35679afb1b932dc7cf"><td class="memItemLeft" align="right" valign="top"><a id="a1cfd47dc5fc27c35679afb1b932dc7cf"></a>
-Rectangle&#160;</td><td class="memItemRight" valign="bottom"><b>Hitbox</b><code> [get]</code></td></tr>
+Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#a1cfd47dc5fc27c35679afb1b932dc7cf">Hitbox</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1cfd47dc5fc27c35679afb1b932dc7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">AABB Hitbox. <br /></td></tr>
 <tr class="separator:a1cfd47dc5fc27c35679afb1b932dc7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a0dfb5b30651b63dd909b20392bfae0"><td class="memItemLeft" align="right" valign="top"><a id="a2a0dfb5b30651b63dd909b20392bfae0"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>UID</b><code> [get]</code></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_m_t_b_1_1_collision_system_1_1_i_collidable.html#a2a0dfb5b30651b63dd909b20392bfae0">UID</a><code> [get]</code></td></tr>
+<tr class="memdesc:a2a0dfb5b30651b63dd909b20392bfae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entitiy Unique Idendifier. <br /></td></tr>
 <tr class="separator:a2a0dfb5b30651b63dd909b20392bfae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this interface was generated from the following file:<ul>
-<li>GMTB/CollisionSystem/ICollidable.cs</li>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface for collidable entities </p>
+</div><hr/>The documentation for this interface was generated from the following file:<ul>
+<li>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/GMTB/CollisionSystem/ICollidable.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

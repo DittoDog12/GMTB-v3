@@ -19,34 +19,45 @@ namespace GMTB
         SpriteBatch mSpriteBatch;
 
         // Managers
+        /// Reference to the Scene Manager
         private IScene_Manager mSceneManager;
         //private IEntity_Manager mEntityManager;
         //private IContent_Manager mContentManager;
+        /// Reference to the Service Locator
         private IServiceLocator mServiceLocator;
+        /// Reference to the Input Manager
         private IInput_Manager mInputManager;
+        /// Reference to the Collision Manager
         private ICollision_Manager mCollisionManager;
+        /// Reference to the AI Manager
         private IAI_Manager mAIManager;
+        /// Reference to the Background Manager
         private IBackground_Manager mBackgroundManager;
+        /// Reference to the Menu Manager
         private IMenu_Manager mMenuManager;
+        /// Reference to the Level Manager
         private ILevel_Manager mLevelManager;
 
-        // String to hold the Content Root Directory
-        // to be passed to the Content_Manager
+        /// String to hold the Content Root Directory, to be passed to the Content_Manager
         private string mContentRoot;
 
-        // Variable to hold all loaded levels
+        /// Variable to hold all loaded levels
         private IDictionary<string, ILevel> mLevels;
 
-        // variable to hold all the menus
+        /// variable to hold all the menus
         private IDictionary<string, IMenu> mMenus;
 
-        // Variables to hold the texture refresh rate and the timer
+        /// Variable to hold the texture refresh rate
         private float mRefreshRate = 5f;
+        /// Variable to hold the texture refresh timer
         private float mRefreshTimer = 0f;
 
-        // Hold the 2D Camera if needed
+        /// Hold the 2D Camera if needed
         private Camera2D mCamera;
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public Kernel()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -59,7 +70,12 @@ namespace GMTB
             //Content.RootDirectory = "Content";
 
         }
-
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="content">Content Root Directory</param>
+        /// <param name="lvls">Pass dictionary of all levels here</param>
+        /// <param name="_menus">Pass dictionary of all menus here</param>
         public Kernel(string content, IDictionary<string, ILevel> lvls, IDictionary<string, IMenu> _menus) : this()
         {
             mContentRoot = content;
@@ -121,6 +137,9 @@ namespace GMTB
             mMenuManager.ActivateMenu("main");
             Global.GameState = Global.availGameStates.Menu;
         }
+        /// <summary>
+        /// Call if 2D camera is needed
+        /// </summary>
         public void Need2DCamera()
         {
             mCamera = new Camera2D(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);

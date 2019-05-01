@@ -75,36 +75,148 @@ $(function() {
 <div class="title">GMTB.Managers.Level_Manager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Level Manager, Controls creating, suspending and resuming levels  
+ <a href="class_g_m_t_b_1_1_managers_1_1_level___manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for GMTB.Managers.Level_Manager:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_g_m_t_b_1_1_managers_1_1_level___manager.png" usemap="#GMTB.Managers.Level_5FManager_map" alt=""/>
   <map id="GMTB.Managers.Level_5FManager_map" name="GMTB.Managers.Level_5FManager_map">
-<area href="interface_g_m_t_b_1_1_interfaces_1_1_i_level___manager.html" alt="GMTB.Interfaces.ILevel_Manager" shape="rect" coords="0,0,203,24"/>
+<area href="interface_g_m_t_b_1_1_interfaces_1_1_i_level___manager.html" title="Interface for Level manager" alt="GMTB.Interfaces.ILevel_Manager" shape="rect" coords="0,0,203,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a281f5c2b9186e7f834ec4f4971ce5b8c"><td class="memItemLeft" align="right" valign="top"><a id="a281f5c2b9186e7f834ec4f4971ce5b8c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Level_Manager</b> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a> _em, IDictionary&lt; string, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_level.html">ILevel</a> &gt; _levels)</td></tr>
+<tr class="memitem:a281f5c2b9186e7f834ec4f4971ce5b8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_level___manager.html#a281f5c2b9186e7f834ec4f4971ce5b8c">Level_Manager</a> (<a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a> _sl, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a> _em, IDictionary&lt; string, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_level.html">ILevel</a> &gt; _levels)</td></tr>
+<tr class="memdesc:a281f5c2b9186e7f834ec4f4971ce5b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Constructor  <a href="#a281f5c2b9186e7f834ec4f4971ce5b8c">More...</a><br /></td></tr>
 <tr class="separator:a281f5c2b9186e7f834ec4f4971ce5b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc0e4c7f0ae512d2c67f76175e4eb129"><td class="memItemLeft" align="right" valign="top"><a id="afc0e4c7f0ae512d2c67f76175e4eb129"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadLevel</b> (string _target, bool _suspend)</td></tr>
+<tr class="memitem:afc0e4c7f0ae512d2c67f76175e4eb129"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_level___manager.html#afc0e4c7f0ae512d2c67f76175e4eb129">LoadLevel</a> (string _target, bool _suspend)</td></tr>
+<tr class="memdesc:afc0e4c7f0ae512d2c67f76175e4eb129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Routine for changing Level  <a href="#afc0e4c7f0ae512d2c67f76175e4eb129">More...</a><br /></td></tr>
 <tr class="separator:afc0e4c7f0ae512d2c67f76175e4eb129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aece4e1c3b61846a622a38e63a474bd69"><td class="memItemLeft" align="right" valign="top"><a id="aece4e1c3b61846a622a38e63a474bd69"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RestartLevel</b> ()</td></tr>
+<tr class="memitem:aece4e1c3b61846a622a38e63a474bd69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_level___manager.html#aece4e1c3b61846a622a38e63a474bd69">RestartLevel</a> ()</td></tr>
+<tr class="memdesc:aece4e1c3b61846a622a38e63a474bd69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restarts the current level Clears the Entity Manager and reloads eveything  <a href="#aece4e1c3b61846a622a38e63a474bd69">More...</a><br /></td></tr>
 <tr class="separator:aece4e1c3b61846a622a38e63a474bd69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:acba428f5095c75eeb1ebda34715e35da"><td class="memItemLeft" align="right" valign="top"><a id="acba428f5095c75eeb1ebda34715e35da"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentLevel</b><code> [get]</code></td></tr>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_m_t_b_1_1_managers_1_1_level___manager.html#acba428f5095c75eeb1ebda34715e35da">CurrentLevel</a><code> [get]</code></td></tr>
+<tr class="memdesc:acba428f5095c75eeb1ebda34715e35da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for current Level. <br /></td></tr>
 <tr class="separator:acba428f5095c75eeb1ebda34715e35da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Level Manager, Controls creating, suspending and resuming levels </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a281f5c2b9186e7f834ec4f4971ce5b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a281f5c2b9186e7f834ec4f4971ce5b8c">&#9670;&nbsp;</a></span>Level_Manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMTB.Managers.Level_Manager.Level_Manager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html">IServiceLocator</a>&#160;</td>
+          <td class="paramname"><em>_sl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_entity___manager.html">IEntity_Manager</a>&#160;</td>
+          <td class="paramname"><em>_em</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IDictionary&lt; string, <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_level.html">ILevel</a> &gt;&#160;</td>
+          <td class="paramname"><em>_levels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_sl</td><td>Reference to the Service Locator</td></tr>
+    <tr><td class="paramname">_em</td><td>Reference to the Entity Manager</td></tr>
+    <tr><td class="paramname">_levels</td><td>Pass all Loaded levels here</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afc0e4c7f0ae512d2c67f76175e4eb129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0e4c7f0ae512d2c67f76175e4eb129">&#9670;&nbsp;</a></span>LoadLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Managers.Level_Manager.LoadLevel </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_suspend</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main Routine for changing Level </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_target</td><td>New Level to open</td></tr>
+    <tr><td class="paramname">_suspend</td><td>Default suspend option</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_level___manager.html#acf31cd8cd19c557f3aefc6194c9b6d43">GMTB.Interfaces.ILevel_Manager</a>.</p>
+
+</div>
+</div>
+<a id="aece4e1c3b61846a622a38e63a474bd69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece4e1c3b61846a622a38e63a474bd69">&#9670;&nbsp;</a></span>RestartLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GMTB.Managers.Level_Manager.RestartLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restarts the current level Clears the Entity Manager and reloads eveything </p>
+
+<p>Implements <a class="el" href="interface_g_m_t_b_1_1_interfaces_1_1_i_level___manager.html#a1e2452d75109c847a89d077c0b132a47">GMTB.Interfaces.ILevel_Manager</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>GMTB/Managers/Level_Manager.cs</li>
+<li>C:/Users/James/Documents/GitHub/GMTB-v3/GMTB/GMTB/Managers/Level_Manager.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
