@@ -40,10 +40,19 @@ namespace GMTB.Dialogue
         private string mArtpath;
         /// Position to render character art
         private Vector2 mArtPos;
-        /// Reference to the Entity Speaking
-        ISpeaker mSpeaker;
         /// Rectangle to hold the full character art for the speaking character
         private Rectangle mArtRect;
+        /// Texture to hold character art
+        private Texture2D mArt2;
+        /// Character art texture path
+        private string mArtpath2;
+        /// Position to render character art
+        private Vector2 mArtPos2;
+        /// Rectangle to hold the full character art for the speaking character
+        private Rectangle mArtRect2;
+        /// Reference to the Entity Speaking
+        ISpeaker mSpeaker;
+
         #endregion
 
         #region Constructor
@@ -54,6 +63,7 @@ namespace GMTB.Dialogue
         /// <param name="_lines">Lines to display</param>
         /// <param name="_path">Character art path</param>
         /// <param name="_pos">Character art position</param>
+        /// <param name="_speaker">Reference to the speaker</param>
         public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos, ISpeaker _speaker)
         {
             mLines = _lines;
@@ -66,6 +76,21 @@ namespace GMTB.Dialogue
             mArtpath = _path;
             mArtPos = _pos;
             mSpeaker = _speaker;
+        }
+        /// <summary>
+        /// Main Constructor
+        /// </summary>
+        /// <param name="_sl">Reference to Service Locator</param>
+        /// <param name="_lines">Lines to display</param>
+        /// <param name="_path">Character art path</param>
+        /// <param name="_pos">Character art position</param>
+        /// <param name="_path2">Second Character art path</param>
+        /// <param name="_pos2">Second Character art positon</param>
+        /// <param name="_speaker">Reference to the speaker</param>
+        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos, string _path2, Vector2 _pos2, ISpeaker _speaker): this(_sl, _lines, _path, _pos, _speaker)
+        {
+            mArtpath2 = _path2;
+            mArtPos2 = _pos2;
         }
         #endregion
 
@@ -83,6 +108,7 @@ namespace GMTB.Dialogue
             mCurrLine = 0;
             // Create rectangle to position the full character art
             mArtRect = new Rectangle(mArtPos.ToPoint(), new Point(mArt.Width, mArt.Height));
+            mArtRect2 = new Rectangle(mArtPos2.ToPoint(), new Point(mArt2.Width, mArt2.Height));
         }
         /// <summary>
         /// Draw Text on screen
@@ -100,6 +126,7 @@ namespace GMTB.Dialogue
                 mDialogueBox.Draw(_spiteBatch, mLines[mCurrLine]);
                 // Draw thefull character Art
                 _spiteBatch.Draw(mArt, mArtRect, Color.White);
+                _spiteBatch.Draw(mArt2, mArtRect2, Color.White);
                 // If the timer is reached move to next line and update timer.
                 if (mTimer >= mInterval)
                 {
