@@ -53,8 +53,10 @@
     <Compile Include="Dialogue\DialogueDisplay.cs" />
     <Compile Include="Dialogue\IDialogue.cs" />
     <Compile Include="Dialogue\IDialogueBox.cs" />
+    <Compile Include="Dialogue\ISpeaker.cs" />
     <Compile Include="Entities\AnimatingEntity.cs" />
     <Compile Include="Entities\CollectableItem.cs" />
+    <Compile Include="Interfaces\IAnimation.cs" />
     <Compile Include="Interfaces\ICollectableItem.cs" />
     <Compile Include="Entities\SoundEntity.cs" />
     <Compile Include="Interfaces\AITarget.cs" />

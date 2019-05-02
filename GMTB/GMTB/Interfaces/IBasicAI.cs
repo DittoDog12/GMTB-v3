@@ -20,6 +20,8 @@ namespace GMTB.Interfaces
         bool Moving { set; }
         /// Current Texture
         Texture2D Texture { get; }
+        /// Lets Behaviours change Texture
+        string Texturename { set; }
         /// Current Position
         Vector2 Position { get; }
         /// Current Acceleration

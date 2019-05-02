@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using GMTB.CollisionSystem;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Entities.AI
 {
@@ -37,6 +38,11 @@ namespace GMTB.Entities.AI
         {
             set { mMoving = value; }
         }
+        /// Lets Behaviours change Texture
+        string IBasicAI.Texturename
+        {
+            set { mTexturename = value; }
+        }
         #endregion
 
         #region Constructor
@@ -67,6 +73,16 @@ namespace GMTB.Entities.AI
             mMind.Update(_gameTime);
             base.Update(_gameTime);
             mTarget = null;
+        }
+        /// <summary>
+        /// Main Draw Loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
+        /// <param name="_gameTime">Reference to current GameTime</param>
+        public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
+        {
+            mMind.Draw(_spriteBatch, _gameTime);
+            base.Draw(_spriteBatch, _gameTime);
         }
         /// <summary>
         /// Locate the specified AI target

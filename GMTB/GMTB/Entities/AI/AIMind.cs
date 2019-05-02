@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Entities.AI
 {
@@ -110,6 +110,10 @@ namespace GMTB.Entities.AI
         {
             mCurrentState.Update(_gameTime);
         }
+        public virtual void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
+        {
+            mCurrentState.Draw(_spriteBatch, _gameTime);
+        }
         /// <summary>
         /// Change State Trigger
         /// </summary>
@@ -117,6 +121,7 @@ namespace GMTB.Entities.AI
         public virtual void ChangeState(string _newState)
         {
             mCurrentState = mStates[_newState];
+            mCurrentState.Reactivate();
         }
         /// <summary>
         /// Trigger Collision 

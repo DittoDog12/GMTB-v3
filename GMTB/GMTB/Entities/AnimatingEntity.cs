@@ -13,7 +13,7 @@ namespace GMTB.Entities
     /// <summary>
     /// Animating Entity
     /// </summary>
-    public class AnimatingEntity : RectangleShape
+    public class AnimatingEntity : RectangleShape, IAnimation
     {
         #region Data Members
         // Sets frame information for the Draw Method to read the spritesheets
@@ -40,6 +40,15 @@ namespace GMTB.Entities
 
         /// Boolean to control if the entity is moving or not
         protected bool mMoving;
+        #endregion
+
+        #region Accessors
+        /// lets behaviours control animation frame
+        public int Frame
+        {
+            get { return mCurrentFrame; }
+            set { mCurrentFrame = value; }
+        }
         #endregion
 
         #region Constructor

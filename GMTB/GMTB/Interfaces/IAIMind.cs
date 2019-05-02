@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using GMTB.CollisionSystem;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
@@ -38,5 +39,11 @@ namespace GMTB.Interfaces
         /// </summary>
         /// <param name="_obj">Other Object Collided with</param>
         void Collision(ICollidable _obj);
+        /// <summary>
+        /// Main Draw Loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
+        /// <param name="_gameTime">Reference to current GameTime</param>
+        void Draw(SpriteBatch spriteBatch, GameTime gameTime);
     }
 }

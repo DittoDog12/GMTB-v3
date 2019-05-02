@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GMTB.CollisionSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
@@ -31,5 +32,11 @@ namespace GMTB.Interfaces
         /// Optional Method for reactivating a state after change
         /// </summary>
         void Reactivate();
+        /// <summary>
+        /// States Draw Update loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
+        void Draw(SpriteBatch spriteBatch, GameTime gameTime);
     }
 }

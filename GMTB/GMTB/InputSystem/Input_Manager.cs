@@ -94,7 +94,12 @@ namespace GMTB.InputSystem
         public void GetCurrentInput(GameTime _gameTime)
         {
             // Check for persistant keypresses every update
-            PersistantKeyboardInput();
+            // Only if game is in playing state
+            if (Global.GameState == Global.availGameStates.Playing)        
+                PersistantKeyboardInput();
+            // Else stop the player moving
+            else if (Global.GameState == Global.availGameStates.Dialogue)
+                MovementRelease(Keybindings.Released);
 
             // Only check for other input if not on cool down.
             mTimer -= _gameTime.ElapsedGameTime.Milliseconds;

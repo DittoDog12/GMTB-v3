@@ -33,7 +33,7 @@ namespace GMTB.Dialogue
         {
             mContentManager = _sl.GetService<IContent_Manager>();
             mPosition = _pos;
-            mFont = mContentManager.LoadFont("HudText");
+            mFont = mContentManager.LoadFont("Text");
         }
         #endregion
 

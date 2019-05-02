@@ -39,5 +39,10 @@ namespace The_Infirmary.Characters.OldMan
                 mTexture = mContentManager.ApplyTexture(mTexturename);
 
         }
+
+        public override void Update(GameTime _gameTime)
+        {
+            base.Update(_gameTime);
+        }
     }
 }

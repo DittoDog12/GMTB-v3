@@ -2,6 +2,7 @@
 using GMTB.Entities.AI;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,12 @@ namespace GMTB.Abstracts
         /// </summary>
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public abstract void Update(GameTime _gameTime);
+        /// <summary>
+        /// States Draw Update loop
+        /// </summary>
+        /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
+        public abstract void Draw(SpriteBatch _spriteBatch, GameTime _gameTime);
         /// <summary>
         /// Change State method
         /// </summary>

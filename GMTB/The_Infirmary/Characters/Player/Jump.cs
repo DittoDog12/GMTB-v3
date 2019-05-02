@@ -2,6 +2,7 @@
 using GMTB.CollisionSystem;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,6 +77,11 @@ namespace The_Infirmary.Characters.Player
             IStaticObject asInterface = _obj as IStaticObject;
             if (asInterface.TextureName == "floor" && !mJumping)
                 mPMind.ChangeState("walk");
+        }
+
+        public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
+        {
+            
         }
     }
 }
