@@ -1,4 +1,4 @@
-﻿using GMTB;
+using GMTB;
 using GMTB.Abstracts;
 using GMTB.InputSystem;
 using GMTB.Interfaces;
@@ -40,6 +40,11 @@ namespace The_Infirmary.Menus
             //exitButton = mContentManager.ApplyTexture("exit");
             mBackgroundManager.ChangeBackground("Menus/title");
             mBackgroundManager.ChangePosition(240, 180);
+
+            if (mInputManager.CheckController())
+                mInputManager.Sub_Space(OnGPInput);
+
+
         }
         public override void Draw(SpriteBatch _spriteBatch)
         {
@@ -61,11 +66,7 @@ namespace The_Infirmary.Menus
             Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(100, 40));
 
             if (_mousePos.Intersects(_startPos))
-            {
-                mLevelManger.LoadLevel("L1", false);
-                base.CloseMenu();
-                Global.GameState = Global.availGameStates.Playing;
-            }
+                StartGame();
             else if (_mousePos.Intersects(_exitPos))
                 Global.GameState = Global.availGameStates.Exiting;
         }
@@ -73,6 +74,18 @@ namespace The_Infirmary.Menus
         {
             if (args.currentKey == Keybindings.Pause)
                 Global.GameState = Global.availGameStates.Exiting;
+        }
+        public void OnGPInput(object source, InputEvent args)
+        {
+            if (args.currentKey == Keybindings.Jump)
+                StartGame();
+        }
+        private void StartGame()
+        {
+            mLevelManger.LoadLevel("L1", false);
+            mInputManager.Un_Space(OnGPInput);
+            base.CloseMenu();
+            Global.GameState = Global.availGameStates.Playing;
         }
         #endregion
     }

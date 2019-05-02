@@ -37,13 +37,13 @@ namespace The_Infirmary.Levels
 				// Doctor
 				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkR");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Matron
 				createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/walkR");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Door - Boardroom
@@ -70,8 +70,26 @@ namespace The_Infirmary.Levels
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 4700, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
-				
-				
+
+                // Floor
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+                // Floor
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, 2360, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //Background sound
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //Footsteps
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/footsteps", 3f, true, false, 1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
+
                 firstRun = false;
 
             }

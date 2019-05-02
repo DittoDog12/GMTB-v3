@@ -32,19 +32,19 @@ namespace The_Infirmary.Levels
 				// Nurse
 				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Nurse
 				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse2/walkR");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Doctor
 				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkR");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Door - Medicine
@@ -78,8 +78,21 @@ namespace The_Infirmary.Levels
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 80, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
-				
-				
+
+                // Floor
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+                // Floor
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, 2360, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //Background sound
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
+
                 firstRun = false;
 
             }

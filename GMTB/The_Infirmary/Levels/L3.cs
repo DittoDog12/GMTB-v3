@@ -82,11 +82,21 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, -30, 3860); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
+                //Background sound
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Right
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, 1919, 3860); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
+                //Footsteps
+                createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/footsteps", 3f, true, false, 1f);
+                mSceneManager.newEntity(createdEntity, 0, 0);
+                Removables.Add(createdEntity.UID, createdEntity);
+
+
             }
         }
         #endregion
