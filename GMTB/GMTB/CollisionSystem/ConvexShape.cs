@@ -24,6 +24,8 @@ namespace GMTB.CollisionSystem
         protected int mAxes;
         /// Rectangle for AABB midphase Collision Detection
         protected Rectangle mHitbox;
+        /// Detect if collidable is floor or wall
+        protected bool isFloorOrWall;
         #endregion
 
         #region Accessors
@@ -190,7 +192,20 @@ namespace GMTB.CollisionSystem
         /// <param name="_otherObj">Other Object Collided with</param>
         public virtual void Collision(Vector2 _mtv, Vector2 _cNormal, ICollidable _otherObj)
         {
-            mPosition += 0.02f * _mtv;
+            isFloorOrWall = false;
+
+            if (_cNormal == new Vector2(0, 1))
+            {
+                isFloorOrWall = true;
+            } else if (_cNormal == new Vector2(1, 0) || _cNormal == new Vector2(-1, 0))
+            {
+                mPosition += 0.07f * _mtv;
+                isFloorOrWall = true;
+            } else
+            {
+                mPosition += 0.02f * _mtv;
+            }
+
 
             IStaticObject asInterface = _otherObj as IStaticObject;
 
@@ -200,23 +215,23 @@ namespace GMTB.CollisionSystem
             }
             else
             {
-                _otherObj.Position -= 0.02f * _mtv;
+                _otherObj.Position -= 0.05f * _mtv;
             }
 
-            CalculateBounce(_cNormal, _otherObj);
-            
+            CalculateBounce(_cNormal, _otherObj, isFloorOrWall);
+
         }
         /// <summary>
         /// Physics response
         /// </summary>
         /// <param name="_cNormal">Collision Normal</param>
         /// <param name="_otherObj">Other object Collided with</param>
-        public virtual void CalculateBounce(Vector2 _cNormal, ICollidable _otherObj)
+        public virtual void CalculateBounce(Vector2 _cNormal, ICollidable _otherObj, bool isFloorOrWall)
         {
             Vector2 _difference = mVelocity - _otherObj.Velocity;
             float _dot = Vector2.Dot(_cNormal, _difference);
             Vector2 _ClosingVelocity = _dot * _cNormal;
-            ApplyImpulse(_ClosingVelocity);
+            ApplyImpulse(_ClosingVelocity, isFloorOrWall);
         }
     }
     #endregion

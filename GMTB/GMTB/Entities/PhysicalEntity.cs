@@ -166,10 +166,17 @@ namespace GMTB.Entities
         /// Apply phyisical Impluse
         /// </summary>
         /// <param name="_closingVelocity">Closing Velocity between this and the other object</param>
-        public void ApplyImpulse(Vector2 _closingVelocity)
+        public void ApplyImpulse(Vector2 _closingVelocity, bool _isFloorOrWall)
         {
             // Provide a closing velocity to the entity when a collision occurs
             mVelocity += _closingVelocity * mRestitution;
+
+            if (_isFloorOrWall)
+            {
+                //mVelocity = Vector2.Zero;
+                mAcceleration = Vector2.Zero;
+            }
+
         }
         /// <summary>
         /// Apply a specified force to the Acceleration

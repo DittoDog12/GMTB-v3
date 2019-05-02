@@ -40,9 +40,24 @@ namespace The_Infirmary.Levels
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 2260);
                 Removables.Add(createdEntity.UID, createdEntity);
-				
-				// Exit Door
-				createdEntity = mEntityManager.newEntity<Door>("blank");
+
+                // Floor
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, 0, 2400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Wall Left
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, -30, 1890); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Wall Right
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, 1919, 1890); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Exit Door
+                createdEntity = mEntityManager.newEntity<Door>("blank");
 				var asInterface = createdEntity as IDoor;
 				asInterface.Initialize("L1", true); //coordinates of players previous location
                // X, Y coordinates

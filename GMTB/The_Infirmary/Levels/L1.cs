@@ -69,12 +69,37 @@ namespace The_Infirmary.Levels
 				asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L4", false);               
                 // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 4666, 280); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 4666, 300); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 0, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Floor 2
+                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                mSceneManager.newEntity(createdEntity, 2400, 400); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //// Roof
+                //createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                //mSceneManager.newEntity(createdEntity, 0, 75); //Change coordinates
+                //Removables.Add(createdEntity.UID, createdEntity);
+
+                //// Roof 2
+                //createdEntity = mEntityManager.newEntity<StaticObject>("floor");
+                //mSceneManager.newEntity(createdEntity, 2400, 75); //Change coordinates
+                //Removables.Add(createdEntity.UID, createdEntity);
+
+                // Wall Left
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, -30, -100); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Wall Right
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, 4800, -100); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Background sound
