@@ -81,7 +81,7 @@ namespace GMTB.InputSystem
         /// Controller checking method
         /// </summary>
         /// <returns> Boolean indicating controller connected state </returns>
-        private bool CheckController()
+        public bool CheckController()
         {
             if (GamePad.GetState(PlayerIndex.One).IsConnected)
                 return true;
@@ -101,19 +101,22 @@ namespace GMTB.InputSystem
             else if (Global.GameState == Global.availGameStates.Dialogue)
                 MovementRelease(Keybindings.Released);
 
+            // Check if a controller is connected, detect input from that if true
+            if (CheckController())
+                GamePadInput();
+
             // Only check for other input if not on cool down.
             mTimer -= _gameTime.ElapsedGameTime.Milliseconds;
             if (mTimer <= 0f)
             {
                 // Get Mouse Input
                 MouseInput();
-                // Check if a controller is connected, detect input from that if true
-                if (CheckController())
-                    GamePadInput();
+                
                 // else //Enable this top stop keyboard detection if controller detected
                 // Get Keyboard Input
                 KeyboardInput();
            }
+            
 
         }
         /// <summary>
@@ -188,14 +191,21 @@ namespace GMTB.InputSystem
 
             if (_newGState.ThumbSticks.Left.X < 0)
                 MovementInput(Keybindings.Left);
-            else if (_newGState.ThumbSticks.Left.X < 0)
+            else if (_newGState.ThumbSticks.Left.X > 0)
                 MovementInput(Keybindings.Right);
+
+            if (_oldGState.ThumbSticks.Left.X < 0 && _newGState.ThumbSticks.Left.X == 0
+                || _oldGState.ThumbSticks.Left.X > 0 && _newGState.ThumbSticks.Left.X == 0)
+                MovementRelease(Keybindings.Released);
 
             if (_oldGState.Buttons.X == ButtonState.Released && _newGState.Buttons.X == ButtonState.Pressed)
                 UseInput(Keybindings.Use);
 
             if (_oldGState.Buttons.A == ButtonState.Released && _newGState.Buttons.A == ButtonState.Pressed)
                 SpaceInput(Keybindings.Jump);
+
+            if (_oldGState.Buttons.Start == ButtonState.Released && _newGState.Buttons.Start == ButtonState.Pressed)
+                EscapeInput(Keybindings.Pause);
 
             _oldGState = _newGState;
 

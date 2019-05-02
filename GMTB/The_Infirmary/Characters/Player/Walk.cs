@@ -52,6 +52,7 @@ namespace The_Infirmary.Characters.Player
         public override void Reactivate()
         {
             mInputManager.Sub_Space(OnSpace);
+            
         }
         /// <summary>
         /// On space switch to the Jump State

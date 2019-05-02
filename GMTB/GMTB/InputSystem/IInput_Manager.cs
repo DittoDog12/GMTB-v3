@@ -30,6 +30,11 @@ namespace GMTB.InputSystem
     public interface IInput_Manager
     {
         /// <summary>
+        /// Controller checking method
+        /// </summary>
+        /// <returns> Boolean indicating controller connected state </returns>
+        bool CheckController();
+        /// <summary>
         /// Mouse Event Subscriber
         /// </summary>
         /// <param name="handler"> Entity to receive Mouse Events </param>
