@@ -79,13 +79,23 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 80, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
+                // Wall Left
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, 0, -100); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Wall Right
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, 4800, -100); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, -40, 400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 0, 400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, 2360, 400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 2400, 400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Background sound

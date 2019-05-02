@@ -60,6 +60,16 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, -40, 2400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
+                // Wall Left
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, -30, 1900); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Wall Right
+                createdEntity = mEntityManager.newEntity<StaticObject>("wall");
+                mSceneManager.newEntity(createdEntity, 1450, 1900); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
                 //Background sound
                 createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
                 mSceneManager.newEntity(createdEntity, 0, 0);

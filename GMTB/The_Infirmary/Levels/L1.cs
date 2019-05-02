@@ -82,16 +82,6 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 2400, 400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
-                //// Roof
-                //createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                //mSceneManager.newEntity(createdEntity, 0, 75); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
-
-                //// Roof 2
-                //createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                //mSceneManager.newEntity(createdEntity, 2400, 75); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
-
                 // Wall Left
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, -30, -100); //Change coordinates
@@ -101,6 +91,7 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, 4800, -100); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
+
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
                 mSceneManager.newEntity(createdEntity, 2360, 400); //Change coordinates
