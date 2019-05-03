@@ -201,11 +201,11 @@ namespace GMTB.CollisionSystem
             {
                 mPosition += 0.07f * _mtv;
                 isFloorOrWall = true;
-            } else
+            }
+            else
             {
                 mPosition += 0.02f * _mtv;
             }
-
 
             IStaticObject asInterface = _otherObj as IStaticObject;
 
@@ -215,7 +215,7 @@ namespace GMTB.CollisionSystem
             }
             else
             {
-                _otherObj.Position -= 0.05f * _mtv;
+                mPosition += 0.05f * _mtv;
             }
 
             CalculateBounce(_cNormal, _otherObj, isFloorOrWall);
