@@ -39,5 +39,17 @@ namespace The_Infirmary.Characters.Nurse
                 mTexture = mContentManager.ApplyTexture(mTexturename);
 
         }
+        /// <summary>
+        /// Main Update Loop
+        /// </summary>
+        /// <param name="_gameTime">Reference to the current GameTime</param>
+        public override void Update(GameTime _gameTime)
+        {
+            base.Update(_gameTime);
+            if (mVelocity.X > 0)
+                mTexturename = "Characters/Nurse1/walkLR";
+            else if (mVelocity.X < 0)
+                mTexturename = "Characters/Nurse1/walkL";
+        }
     }
 }

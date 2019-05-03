@@ -76,7 +76,7 @@ namespace GMTB.Entities.AI
         {
             mStates = new Dictionary<string, IState>();
             mSelf = _self;
-            mPathfinder = new Pathfinder((int)Global.ScreenSize.X, (int)Global.ScreenSize.Y, mMap);
+            mPathfinder = new Pathfinder(Global.ScreenWidth, Global.ScreenHeight, mMap);
         }
         #endregion
 

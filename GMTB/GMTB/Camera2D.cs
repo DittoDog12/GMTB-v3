@@ -92,6 +92,9 @@ namespace GMTB
             mZoom = 0.75f;
             mRotatation = 0.0f;
             mPosition = Vector2.Zero;
+
+            // Reveal self to the Global
+            Global.Camera = this;
         }
         #endregion
 

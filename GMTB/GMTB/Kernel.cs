@@ -65,7 +65,8 @@ namespace GMTB
             graphics.PreferredBackBufferWidth = 1440;
             graphics.ApplyChanges();
 
-            Global.ScreenSize = new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            Global.ScreenHeight = graphics.PreferredBackBufferHeight;
+            Global.ScreenWidth = graphics.PreferredBackBufferHeight;
 
             //Content.RootDirectory = "Content";
 

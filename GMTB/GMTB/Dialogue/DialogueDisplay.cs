@@ -70,7 +70,7 @@ namespace GMTB.Dialogue
 
             mInterval = 3000f;
             mTimer = 0f;
-            mDialogueBox = new DialogueBox(_sl, new Vector2(50, Global.ScreenSize.Y - 50));
+            mDialogueBox = new DialogueBox(_sl, new Vector2(Global.Camera.Position.X - 1000, Global.Camera.Position.Y));
             mInputManager = _sl.GetService<IInput_Manager>();
             mContentManager = _sl.GetService<IContent_Manager>();
             mArtpath = _path;

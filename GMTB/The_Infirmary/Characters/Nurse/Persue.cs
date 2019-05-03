@@ -15,6 +15,8 @@ namespace The_Infirmary.Characters.Nurse
     /// </summary>
     public class Persue : State
     {
+        ///
+        private float mPersueDistance = 150f;
         /// <summary>
         /// Main Constructor
         /// </summary>
@@ -42,6 +44,10 @@ namespace The_Infirmary.Characters.Nurse
         {
             mMind.MySelf.Moving = true;
             mMind.MySelf.ApplyForce(PlotPath());
+
+            // If player too far away, give up
+            if (mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X > mPersueDistance)
+                mMind.ChangeState("idle");
         }
         /// <summary>
         /// Plot a path

@@ -47,8 +47,8 @@ namespace GMTB.Pathfinding
         /// </summary>
         public Pathfinder()
         {
-            int x = (int)Global.ScreenSize.X;
-            int y = (int)Global.ScreenSize.Y;
+            int x = Global.ScreenWidth;
+            int y = Global.ScreenHeight;
             mSize = new Rectangle(0, 0, x, y);
 
         }

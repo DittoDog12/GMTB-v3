@@ -24,8 +24,10 @@ namespace The_Infirmary.Characters.Player
         private bool mJumping = true;
         /// Max height reached
         private bool mMaxReached = false;
-        /// Max Height to jump to
-        private float mJumpMax = 185f;
+        /// Max Height of jump
+        private float mJumpHeight = 140f;
+        /// Max Height of current Jump
+        private float mJumpMax;
 
         /// <summary>
         /// Main Constructor
@@ -45,6 +47,8 @@ namespace The_Infirmary.Characters.Player
             mJumping = true;
             // Reset max jump reached
             mMaxReached = false;
+            // Calculate the coordinates of the current jump max
+            mJumpMax = mPMind.MySelf.GetPos().Y - mJumpHeight;
         }
         /// <summary>
         /// Main Update Loop

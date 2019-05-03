@@ -33,7 +33,7 @@ namespace The_Infirmary.Characters.OldMan
         {
             base.Initialize();
             string[] _lines = File.ReadAllLines(Environment.CurrentDirectory + "/Content/Dialogue/OldMan.txt");
-            mDialogue = new DialogueDisplay(mMind.MySelf.ServiceLocator, _lines, "Characters/OldMan/fullart", new Vector2(10, 300), this as ISpeaker);
+            mDialogue = new DialogueDisplay(mMind.MySelf.ServiceLocator, _lines, "Characters/OldMan/fullart", new Vector2(Global.Camera.Position.X - 1300, Global.Camera.Position.Y), "Characters/Player/fullart", new Vector2(Global.Camera.Position.X - 100, Global.Camera.Position.Y), this as ISpeaker);
         }
         /// <summary>
         /// Allows the dialogue system to inform the original behaviour state that the dialogue has finsihed

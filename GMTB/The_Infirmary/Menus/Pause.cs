@@ -47,8 +47,8 @@ namespace The_Infirmary.Menus
             //_spriteBatch.Draw(resumeButton, resumePosition, Color.White);
             //_spriteBatch.Draw(exitButton, exitPosition, Color.White);
             // Render the pause text over the main game, positioned center with the cameras present location
-            _spriteBatch.Draw(mPauseScreen, new Rectangle((int)(mCam.Position.X - Global.ScreenSize.X /2), 
-                (int)(mCam.Position.Y - Global.ScreenSize.Y / 2), (int)Global.ScreenSize.X, (int)Global.ScreenSize.Y), Color.White);
+            _spriteBatch.Draw(mPauseScreen, new Rectangle((int)(mCam.Position.X - Global.ScreenWidth /2), 
+                (int)(mCam.Position.Y - Global.ScreenHeight / 2), Global.ScreenWidth, Global.ScreenHeight), Color.White);
         }
         public override void Update(GameTime _gameTime)
         {

@@ -32,8 +32,18 @@ namespace GMTB
         public static availGameStates GameState { get; set; }
 
         /// <summary>
-        /// Screen Size
+        /// Screen Height
         /// </summary>
-        public static Vector2 ScreenSize { get; set; }
+        public static int ScreenHeight { get; set; }
+        /// <summary>
+        /// Screen Width
+        /// </summary>
+        public static int ScreenWidth { get; set; }
+
+
+        /// <summary>
+        /// Reference to the 2D camera
+        /// </summary>
+        public static Camera2D Camera { get; set;}
     }
 }
