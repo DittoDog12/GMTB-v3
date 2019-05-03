@@ -1,5 +1,5 @@
-﻿using GMTB.Interfaces;
-using GMTB.InputSystem;
+﻿using GMTB.InputSystem;
+using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -87,7 +87,7 @@ namespace GMTB.Dialogue
         /// <param name="_path2">Second Character art path</param>
         /// <param name="_pos2">Second Character art positon</param>
         /// <param name="_speaker">Reference to the speaker</param>
-        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos, string _path2, Vector2 _pos2, ISpeaker _speaker): this(_sl, _lines, _path, _pos, _speaker)
+        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos, string _path2, Vector2 _pos2, ISpeaker _speaker) : this(_sl, _lines, _path, _pos, _speaker)
         {
             mArtpath2 = _path2;
             mArtPos2 = _pos2;
@@ -100,7 +100,10 @@ namespace GMTB.Dialogue
         /// </summary>
         public void Begin()
         {
+            // Load Art
             mArt = mContentManager.ApplyTexture(mArtpath);
+            if (mArtpath2 != null)
+                mArt2 = mContentManager.ApplyTexture(mArtpath2);
             // Subscribe to the Space Input Event
             mInputManager.Sub_Space(OnSpace);
             // Set the running bool to true
@@ -108,7 +111,8 @@ namespace GMTB.Dialogue
             mCurrLine = 0;
             // Create rectangle to position the full character art
             mArtRect = new Rectangle(mArtPos.ToPoint(), new Point(mArt.Width, mArt.Height));
-            mArtRect2 = new Rectangle(mArtPos2.ToPoint(), new Point(mArt2.Width, mArt2.Height));
+            if (mArt2 != null)
+                mArtRect2 = new Rectangle(mArtPos2.ToPoint(), new Point(mArt2.Width, mArt2.Height));
         }
         /// <summary>
         /// Draw Text on screen
@@ -116,7 +120,7 @@ namespace GMTB.Dialogue
         /// <param name="_spiteBatch">Reference to main SpriteBatch</param>
         /// <param name="_gameTime">Reference to current GameTime</param>
         public void Draw(SpriteBatch _spiteBatch, GameTime _gameTime)
-        {      
+        {
             // While there are lines to display and the running variable is active
             if (mCurrLine < mLines.Length && mRunning)
             {
@@ -126,7 +130,8 @@ namespace GMTB.Dialogue
                 mDialogueBox.Draw(_spiteBatch, mLines[mCurrLine]);
                 // Draw thefull character Art
                 _spiteBatch.Draw(mArt, mArtRect, Color.White);
-                _spiteBatch.Draw(mArt2, mArtRect2, Color.White);
+                if (mArt2 != null)
+                    _spiteBatch.Draw(mArt2, mArtRect2, Color.White);
                 // If the timer is reached move to next line and update timer.
                 if (mTimer >= mInterval)
                 {
@@ -141,7 +146,7 @@ namespace GMTB.Dialogue
                 // Unsubscribe from the Input Event
                 mInputManager.Un_Space(OnSpace);
                 mSpeaker.DialougeComplete();
-            }            
+            }
 
         }
         /// <summary>
@@ -157,7 +162,7 @@ namespace GMTB.Dialogue
                 mCurrLine++;
                 mTimer = 0;
             }
-                
+
         }
         #endregion
     }

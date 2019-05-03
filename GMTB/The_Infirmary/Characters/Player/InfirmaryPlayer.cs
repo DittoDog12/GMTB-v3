@@ -101,8 +101,8 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_gameTime">Reference to the GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            base.Update(_gameTime);
             mMind.Update(_gameTime);
+            base.Update(_gameTime);        
         }
         /// <summary>
         /// Main Draw Loop
