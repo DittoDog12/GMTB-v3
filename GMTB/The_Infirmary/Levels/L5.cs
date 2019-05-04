@@ -3,6 +3,7 @@ using GMTB.CollisionSystem;
 using GMTB.Entities;
 using GMTB.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace The_Infirmary.Levels
 {
@@ -68,6 +69,22 @@ namespace The_Infirmary.Levels
                 // Wall Right
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, 1530, 1900); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //Collectable Object
+                createdEntity = mEntityManager.newEntity<CollectableItem>("Objects/key");
+                ICollectableItem _item = createdEntity as ICollectableItem;
+                foreach (KeyValuePair<int, IEntity> _keyPair in mEntityManager.AllEntities)
+                {
+                    ILockedDoor _door = _keyPair.Value as ILockedDoor;
+                    if (_door != null)
+                    {
+                        _item.SetTarget(_door);
+                        break;
+                    }
+                }
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 1400, 2260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Background sound
