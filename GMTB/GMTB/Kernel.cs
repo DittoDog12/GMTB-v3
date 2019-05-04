@@ -55,6 +55,9 @@ namespace GMTB
         /// Hold the 2D Camera if needed
         private Camera2D mCamera;
 
+        /// Hold an alternate quadtree size if needed
+        private Point mQTreeSize;
+
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -77,11 +80,22 @@ namespace GMTB
         /// <param name="content">Content Root Directory</param>
         /// <param name="lvls">Pass dictionary of all levels here</param>
         /// <param name="_menus">Pass dictionary of all menus here</param>
-        public Kernel(string content, IDictionary<string, ILevel> lvls, IDictionary<string, IMenu> _menus) : this()
+        public Kernel(string _content, IDictionary<string, ILevel> _lvls, IDictionary<string, IMenu> _menus) : this()
         {
-            mContentRoot = content;
-            mLevels = lvls;
+            mContentRoot = _content;
+            mLevels = _lvls;
             mMenus = _menus;
+        }
+        /// <summary>
+        /// Specify alternate quadtree size
+        /// </summary>
+        /// <param name="content">Content Root Directory</param>
+        /// <param name="lvls">Pass dictionary of all levels here</param>
+        /// <param name="_menus">Pass dictionary of all menus here</param>
+        /// <param name="_qtsize">Alternate Quadtree dimensions</param>
+        public Kernel(string _content, IDictionary<string, ILevel> _lvls, IDictionary<string, IMenu> _menus, Point _qtsize) : this(_content, _lvls, _menus)
+        {
+            mQTreeSize = _qtsize;
         }
 
         /// <summary>
@@ -98,8 +112,15 @@ namespace GMTB
             // Create Input Manager
             //mInputManager = new Input_Manager();
             // Create Service Locator and all Managers
-            mServiceLocator = new ServiceLocator(Content, mContentRoot, mLevels, mMenus,
-                new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
+            // Check if alternate Quadtree size specifed and apply, otherwise use the default viewport size
+            if (mQTreeSize != null)
+                mServiceLocator = new ServiceLocator(Content, mContentRoot, mLevels, mMenus, mQTreeSize);
+            else
+                mServiceLocator = new ServiceLocator(Content, mContentRoot, mLevels, mMenus,
+                    new Point(graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height));
+
+            
+
 
             // Retrive Managers required
             mSceneManager = mServiceLocator.GetService<IScene_Manager>();

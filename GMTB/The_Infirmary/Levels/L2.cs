@@ -41,11 +41,6 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 10, 2260);
                 Removables.Add(createdEntity.UID, createdEntity);
 
-                // Floor
-                createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, 0, 2400); //Change coordinates
-                Removables.Add(createdEntity.UID, createdEntity);
-
                 // Wall Left
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, -30, 1890); //Change coordinates
@@ -67,18 +62,18 @@ namespace The_Infirmary.Levels
                 //// Beds
                 for (int i = 1; i <= mBeds; i++)
                 {
-                    createdEntity = mEntityManager.newEntity<StaticObject>("Objects/bed");
+                    createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bed");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(100, 2000), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1900), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
                 //Tables
                 for (int i = 1; i <= mTables; i++)
                 {
-                    createdEntity = mEntityManager.newEntity<StaticObject>("Objects/bedsidetable");
+                    createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bedsidetable");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(100, 2000), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1900), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 

@@ -46,6 +46,7 @@
     <Compile Include="Camera2D.cs" />
     <Compile Include="CollisionSystem\LockedDoor.cs" />
     <Compile Include="CollisionSystem\Door.cs" />
+    <Compile Include="CollisionSystem\SolidObject.cs" />
     <Compile Include="CollisionSystem\StaticObject.cs" />
     <Compile Include="CollisionSystem\IQuadtree.cs" />
     <Compile Include="CollisionSystem\Quadtree.cs" />

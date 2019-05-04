@@ -2,6 +2,7 @@ var searchData=
 [
   ['iai_5fmanager',['IAI_Manager',['../interface_g_m_t_b_1_1_interfaces_1_1_i_a_i___manager.html',1,'GMTB::Interfaces']]],
   ['iaimind',['IAIMind',['../interface_g_m_t_b_1_1_interfaces_1_1_i_a_i_mind.html',1,'GMTB::Interfaces']]],
+  ['ianimation',['IAnimation',['../interface_g_m_t_b_1_1_interfaces_1_1_i_animation.html',1,'GMTB::Interfaces']]],
   ['ibackground_5fmanager',['IBackground_Manager',['../interface_g_m_t_b_1_1_interfaces_1_1_i_background___manager.html',1,'GMTB::Interfaces']]],
   ['ibasicai',['IBasicAI',['../interface_g_m_t_b_1_1_interfaces_1_1_i_basic_a_i.html',1,'GMTB::Interfaces']]],
   ['icollectableitem',['ICollectableItem',['../interface_g_m_t_b_1_1_interfaces_1_1_i_collectable_item.html',1,'GMTB::Interfaces']]],
@@ -32,6 +33,7 @@ var searchData=
   ['iscene_5fmanager',['IScene_Manager',['../interface_g_m_t_b_1_1_interfaces_1_1_i_scene___manager.html',1,'GMTB::Interfaces']]],
   ['iservicelocator',['IServiceLocator',['../interface_g_m_t_b_1_1_interfaces_1_1_i_service_locator.html',1,'GMTB::Interfaces']]],
   ['isound',['ISound',['../interface_g_m_t_b_1_1_interfaces_1_1_i_sound.html',1,'GMTB::Interfaces']]],
+  ['ispeaker',['ISpeaker',['../interface_g_m_t_b_1_1_dialogue_1_1_i_speaker.html',1,'GMTB::Dialogue']]],
   ['istate',['IState',['../interface_g_m_t_b_1_1_interfaces_1_1_i_state.html',1,'GMTB::Interfaces']]],
   ['istaticobject',['IStaticObject',['../interface_g_m_t_b_1_1_interfaces_1_1_i_static_object.html',1,'GMTB::Interfaces']]],
   ['iutility_5fentity',['IUtility_Entity',['../interface_g_m_t_b_1_1_interfaces_1_1_i_utility___entity.html',1,'GMTB::Interfaces']]]

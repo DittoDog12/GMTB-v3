@@ -1,11 +1,11 @@
-﻿using System;
+﻿using GMTB.Entities;
+using GMTB.Interfaces;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GMTB.Entities;
-using GMTB.Interfaces;
-using Microsoft.Xna.Framework;
 
 namespace GMTB.CollisionSystem
 {
@@ -34,7 +34,7 @@ namespace GMTB.CollisionSystem
         /// Vertices of this shape
         public List<Vector2> RectangleVertices { get; protected set; } = new List<Vector2>();
         /// Velocity of this shape
-        public Vector2 Velocity{ get { return mVelocity; } }
+        public Vector2 Velocity { get { return mVelocity; } }
         /// AABB for this shape
         public Rectangle Hitbox { get { return mHitbox; } }
 
@@ -49,7 +49,7 @@ namespace GMTB.CollisionSystem
         #region Constructor
         public ConvexShape()
         {
-            
+
         }
         #endregion
 
@@ -96,7 +96,7 @@ namespace GMTB.CollisionSystem
         /// Overriden by actual shape
         /// </summary>
         /// <returns>List of Points</returns>
-        protected abstract List<Vector2> GetPointsVertices();      
+        protected abstract List<Vector2> GetPointsVertices();
         /// <summary>
         /// Add the current location of the vertices to the main list
         /// Correct for rotation
@@ -194,31 +194,36 @@ namespace GMTB.CollisionSystem
         {
             isFloorOrWall = false;
 
-            if (_cNormal == new Vector2(0, 1))
-            {
-                isFloorOrWall = true;
-            } else if (_cNormal == new Vector2(1, 0) || _cNormal == new Vector2(-1, 0))
-            {
-                mPosition += 0.07f * _mtv;
-                isFloorOrWall = true;
-            }
-            else
-            {
-                mPosition += 0.02f * _mtv;
-            }
+            //if (_cNormal == new Vector2(0, 1))
+            //{
+            //    isFloorOrWall = true;
+            //}
+            //else if (_cNormal == new Vector2(1, 0) || _cNormal == new Vector2(-1, 0))
+            //{
+            //    mPosition += 0.07f * _mtv;
+            //    isFloorOrWall = true;
+            //}
+            //else
+            //{
+            //    mPosition += 0.02f * _mtv;
+            //}
+
+            mPosition += 0.02f * _mtv;
 
             IStaticObject asInterface = _otherObj as IStaticObject;
-
+            
             if (asInterface != null)
             {
-
+                if (asInterface.TextureName == "wall" || asInterface.TextureName == "floor")
+                    isFloorOrWall = true;
             }
-            else
-            {
-                mPosition += 0.05f * _mtv;
-            }
+            //else
+            //{
+            //    mPosition += 0.05f * _mtv;
+            //}
 
             CalculateBounce(_cNormal, _otherObj, isFloorOrWall);
+            mVelocity = Vector2.Zero;
 
         }
         /// <summary>

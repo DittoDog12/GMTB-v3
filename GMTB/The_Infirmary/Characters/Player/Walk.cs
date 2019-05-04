@@ -1,4 +1,5 @@
-﻿using GMTB.Abstracts;
+﻿using GMTB;
+using GMTB.Abstracts;
 using GMTB.CollisionSystem;
 using GMTB.InputSystem;
 using GMTB.Interfaces;
@@ -61,7 +62,7 @@ namespace The_Infirmary.Characters.Player
         /// <param name="args">Event Arguments</param>
         public void OnSpace(object source, InputEvent args)
         {
-            if (args.currentKey == Keybindings.Jump)
+            if (args.currentKey == Keybindings.Jump && Global.GameState == Global.availGameStates.Playing)
             {
                 mPMind.ChangeState("jump");
                 mInputManager.Un_Space(OnSpace);

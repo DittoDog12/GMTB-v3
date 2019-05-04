@@ -93,7 +93,7 @@ namespace GMTB.CollisionSystem
 
             //Object can completey fit in top quadrants
             bool _topQuad = _rect.Y < _horiMid && _rect.Y + _rect.Height < _horiMid;
-            /// Object can completely fir within bottom quadrants
+            // Object can completely fir within bottom quadrants
             bool _bottomQuad = _rect.Y > _horiMid;
 
             // Object can compeltely fit within the left quadrants
@@ -124,7 +124,7 @@ namespace GMTB.CollisionSystem
         {
             // Cast the target object to an IPhysicalEntity to access it's location and size
             IPhysicalEntity _entity = _obj as IPhysicalEntity;
-            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.X, _entity.Texture.Width, _entity.Texture.Height);
+            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.Y, _entity.Texture.Width, _entity.Texture.Height);
 
 
             if (mNodes[0] != null)
@@ -155,7 +155,7 @@ namespace GMTB.CollisionSystem
                 {
                     // Cast the target object to an IPhysicalEntity to access it's location and size
                     IPhysicalEntity _ent = mObjects[i] as IPhysicalEntity;
-                    Rectangle _rec = new Rectangle((int)_ent.Position.X, (int)_ent.Position.X, _ent.Texture.Width, _ent.Texture.Height);
+                    Rectangle _rec = new Rectangle((int)_ent.Position.X, (int)_ent.Position.Y, _ent.Texture.Width, _ent.Texture.Height);
 
                     int _index = GetIndex(_rec);
                     if (_index != -1)
@@ -179,7 +179,7 @@ namespace GMTB.CollisionSystem
         {
             // Cast the target object to an IPhysicalEntity to access it's location and size
             IPhysicalEntity _entity = _target as IPhysicalEntity;
-            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.X, _entity.Texture.Width, _entity.Texture.Height);
+            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.Y, _entity.Texture.Width, _entity.Texture.Height);
 
             // Calculate which quadtree the target obejct is in
             int _index = GetIndex(_rect);

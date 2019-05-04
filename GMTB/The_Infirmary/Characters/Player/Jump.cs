@@ -78,8 +78,8 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_obj">Other Object Collided with</param>
         public override void Collision(ICollidable _obj)
         {
-            IStaticObject asInterface = _obj as IStaticObject;
-            if (asInterface.TextureName == "floor" && !mJumping)
+            //IStaticObject asInterface = _obj as IStaticObject;
+            //if (asInterface.TextureName == "floor" && !mJumping)
                 mPMind.ChangeState("walk");
         }
 
