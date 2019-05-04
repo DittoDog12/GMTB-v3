@@ -82,7 +82,7 @@ namespace The_Infirmary.Levels
 
                 // Wall Left
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
-                mSceneManager.newEntity(createdEntity, 0, -100); //Change coordinates
+                mSceneManager.newEntity(createdEntity, -200, -100); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Right
