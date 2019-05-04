@@ -39,22 +39,16 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Surgery Table
-                createdEntity = mEntityManager.newEntity<RectangleShape>("blank");
+                createdEntity = mEntityManager.newEntity<SolidObject>("blank");
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 500, 2260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Surgery Table
-                createdEntity = mEntityManager.newEntity<RectangleShape>("blank");
+                createdEntity = mEntityManager.newEntity<SolidObject>("blank");
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 1200, 2260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
-
-                ////Collectable Object
-                //createdEntity = mEntityManager.newEntity<Collectable>("Item");
-                //           // X, Y coordinates
-                //            mSceneManager.newEntity(createdEntity, 170, 150); //Change coordinates
-                //            Removables.Add(createdEntity.UID, createdEntity);
 
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
@@ -68,7 +62,7 @@ namespace The_Infirmary.Levels
 
                 // Wall Right
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
-                mSceneManager.newEntity(createdEntity, 1530, 1900); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 1550, 1900); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Collectable Object
