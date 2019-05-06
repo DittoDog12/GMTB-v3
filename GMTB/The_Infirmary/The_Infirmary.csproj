@@ -46,6 +46,10 @@
     <Compile Include="Characters\Matron\Matron.cs" />
     <Compile Include="Characters\Matron\MatronMind.cs" />
     <Compile Include="Characters\Matron\Persue.cs" />
+    <Compile Include="Characters\Nurse2\Idle.cs" />
+    <Compile Include="Characters\Nurse2\Nurse.cs" />
+    <Compile Include="Characters\Nurse2\NurseMind.cs" />
+    <Compile Include="Characters\Nurse2\Persue.cs" />
     <Compile Include="Characters\Nurse\Idle.cs" />
     <Compile Include="Characters\Nurse\Nurse.cs" />
     <Compile Include="Characters\Nurse\NurseMind.cs" />

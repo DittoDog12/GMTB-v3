@@ -21,6 +21,9 @@ namespace The_Infirmary.Characters.Doctor
         public Doctor()
         {
             mMind = new DoctorMind(this);
+            mFrames = 8;
+            mColumns = 8;
+            mInterval = 75f;
         }
         /// <summary>
         /// Main Draw Loop

@@ -15,6 +15,8 @@ namespace The_Infirmary.Characters.Doctor
     /// </summary>
     public class Idle : State
     {
+        private float mTriggerDistance = 300f;
+
         /// <summary>
         /// Main Constructor
         /// </summary>
@@ -38,7 +40,13 @@ namespace The_Infirmary.Characters.Doctor
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            
+            if (mMind.Target != null)
+            {
+                Vector2 _dist = mMind.Target.Position - mMind.MySelf.Position;
+                float _distance = _dist.Length();
+                if (_distance < mTriggerDistance)
+                    ChangeState("walk");
+            }
         }
     }
 }

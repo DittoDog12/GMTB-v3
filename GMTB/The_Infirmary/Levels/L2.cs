@@ -64,7 +64,7 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bed");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1900), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1850), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
@@ -73,7 +73,7 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bedsidetable");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1900), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1850), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 

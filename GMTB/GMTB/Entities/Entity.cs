@@ -84,6 +84,13 @@ namespace GMTB.Entities
             mEntityManger.DestroyEntity(UID);
         }
         /// <summary>
+        /// Cleans up the entitity before destruction
+        /// </summary>
+        public virtual void Cleanup()
+        {
+
+        }
+        /// <summary>
         /// Suspend self when not needed
         /// </summary>
         public virtual void Suspend()

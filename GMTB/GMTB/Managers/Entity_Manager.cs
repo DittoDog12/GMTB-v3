@@ -207,6 +207,8 @@ namespace GMTB.Managers
         /// </summary>
         public void ClearAll()
         {
+            foreach (KeyValuePair<int, IEntity> _keyPair in mEntities)
+                _keyPair.Value.Cleanup();
             mEntities.Clear();
         }
         #endregion

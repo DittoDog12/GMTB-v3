@@ -101,6 +101,14 @@ namespace GMTB.Entities
             base.Resume();
             mSoundInstance.Play();
         }
+        /// <summary>
+        /// Cleans up the entitity before destruction
+        /// </summary>
+        public override void Cleanup()
+        {
+            base.Cleanup();
+            mSoundInstance.Stop();
+        }
         #endregion
     }
 }

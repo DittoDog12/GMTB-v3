@@ -41,5 +41,13 @@ namespace GMTB.Interfaces
         /// </summary>
         /// <returns>Current suspension state</returns>
         bool GetState();
+        /// <summary>
+        /// Destroy Self
+        /// </summary>
+        void Destroy();
+        /// <summary>
+        /// Cleans up the entitity before destruction
+        /// </summary>
+        void Cleanup();
     }
 }
