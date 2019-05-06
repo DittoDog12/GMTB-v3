@@ -35,6 +35,8 @@ namespace The_Infirmary.Characters.Nurse2
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
+            mMind.MySelf.Moving = false;
+
             if (mMind.Target != null)
             {
                 Vector2 _dist = mMind.Target.Position - mMind.MySelf.Position;

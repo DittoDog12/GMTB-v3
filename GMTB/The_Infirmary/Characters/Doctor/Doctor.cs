@@ -47,10 +47,10 @@ namespace The_Infirmary.Characters.Doctor
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
-            if (mVelocity.X > 0)
-                mTexturename = "Characters/Doctor/walkLR";
-            else if (mVelocity.X < 0)
-                mTexturename = "Characters/Doctor/walkL";
+            if (mCurrDir == GMTB.Entities.FacingDirection.Right)
+                mTexture = mContentManager.ApplyTexture("Characters/Doctor/walkR");
+            else if (mCurrDir == GMTB.Entities.FacingDirection.Left)
+                mTexture = mContentManager.ApplyTexture("Characters/Doctor/walkL");
         }
     }
 }

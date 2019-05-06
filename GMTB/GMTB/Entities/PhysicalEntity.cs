@@ -11,6 +11,11 @@ using GMTB.CollisionSystem;
 
 namespace GMTB.Entities
 {
+    public enum FacingDirection
+    {
+        Right,
+        Left
+    }
     /// <summary>
     /// Main physical Entity public class, everything that has a physical presence in the world inherits from this public class 
     /// </summary>
@@ -32,6 +37,9 @@ namespace GMTB.Entities
         protected float mDamping = 0.5f;
         protected float mInverseMass = 1f;
         protected Vector2 mGravity = new Vector2(0, 0);
+
+        /// Hold the facing direction for the animatior to load the correct spritesheet
+        protected FacingDirection mCurrDir;
 
         //--Texture
         /// Texture
@@ -127,6 +135,10 @@ namespace GMTB.Entities
         public override void Update(GameTime _gameTime)
         {
             UpdatePhysics();
+            if (mVelocity.X > 0)
+                mCurrDir = FacingDirection.Right;
+            else if (mVelocity.X < 0)
+                mCurrDir = FacingDirection.Left;
             //mPosition += mVelocity;
             mVelocity = Vector2.Zero;
         }

@@ -59,7 +59,7 @@ namespace The_Infirmary.Levels
 				createdEntity = mEntityManager.newEntity<Door>("blank");
                 var asInterface = createdEntity as IDoor;
                 asInterface = createdEntity as IDoor;
-                asInterface.Initialize("L2", true);
+                asInterface.Initialize("L10", true);
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 2380, 260); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);

@@ -65,6 +65,7 @@
     <Compile Include="Characters\Player\Walk.cs" />
     <Compile Include="GameInitializer.cs" />
     <Compile Include="Levels\L1.cs" />
+    <Compile Include="Levels\L10.cs" />
     <Compile Include="Levels\L7.cs" />
     <Compile Include="Levels\L8.cs" />
     <Compile Include="Levels\L9.cs" />

@@ -66,7 +66,7 @@ namespace The_Infirmary
         /// </summary>
         public GameInitializer()
         {
-            mLvlCount = 9;
+            mLvlCount = 10;
             mLvlPath = "The_Infirmary.Levels.L";
 
             // Set the content root for this game

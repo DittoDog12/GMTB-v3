@@ -33,11 +33,7 @@ namespace The_Infirmary.Characters.Nurse2
         {
             if (mMoving)
                 IncrementFrame(_gameTime);
-            base.Draw(_spriteBatch, _gameTime);
-
-            if (mTexturename != mTexture.Name)
-                mTexture = mContentManager.ApplyTexture(mTexturename);
-
+            base.Draw(_spriteBatch, _gameTime);            
         }
         /// <summary>
         /// Main Update Loop
@@ -46,10 +42,10 @@ namespace The_Infirmary.Characters.Nurse2
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
-            if (mVelocity.X > 0)
-                mTexturename = "Characters/Nurse2/walkLR";
-            else if (mVelocity.X < 0)
-                mTexturename = "Characters/Nurse2/walkL";
+            if (mCurrDir == GMTB.Entities.FacingDirection.Right)
+                mTexture = mContentManager.ApplyTexture("Characters/Nurse2/walkR");
+            else if (mCurrDir == GMTB.Entities.FacingDirection.Left)
+                mTexture = mContentManager.ApplyTexture("Characters/Nurse2/walkL");
         }
     }
 }

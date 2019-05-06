@@ -24,7 +24,7 @@ namespace The_Infirmary.Characters.Nurse
         public Persue(IAIMind _mind) : base(_mind)
         {
             mPath = new Queue<Point>();
-            
+
         }
         /// <summary>
         /// Main Draw Loop
@@ -33,7 +33,7 @@ namespace The_Infirmary.Characters.Nurse
         /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-            
+
         }
 
         /// <summary>
