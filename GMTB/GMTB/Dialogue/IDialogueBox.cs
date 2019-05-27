@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace GMTB.Dialogue
 {
@@ -14,6 +15,6 @@ namespace GMTB.Dialogue
         /// </summary>
         /// <param name="_spriteBatch">Reference to Main SpriteBatch</param>
         /// <param name="_line">Text line to render</param>
-        void Draw(SpriteBatch _spriteBatch, string _line);
+        void Draw(SpriteBatch _spriteBatch, string _line, Vector2 _pos);
     }
 }

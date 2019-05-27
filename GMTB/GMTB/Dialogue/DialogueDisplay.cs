@@ -52,6 +52,8 @@ namespace GMTB.Dialogue
         private Rectangle mArtRect2;
         /// Reference to the Entity Speaking
         ISpeaker mSpeaker;
+        /// Position for the text
+        private Vector2 mTextPos;
 
         #endregion
 
@@ -64,17 +66,16 @@ namespace GMTB.Dialogue
         /// <param name="_path">Character art path</param>
         /// <param name="_pos">Character art position</param>
         /// <param name="_speaker">Reference to the speaker</param>
-        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos, ISpeaker _speaker)
+        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, ISpeaker _speaker)
         {
             mLines = _lines;
 
             mInterval = 3000f;
             mTimer = 0f;
-            mDialogueBox = new DialogueBox(_sl, new Vector2(Global.Camera.Position.X - 1000, Global.Camera.Position.Y));
+            mDialogueBox = new DialogueBox(_sl);
             mInputManager = _sl.GetService<IInput_Manager>();
             mContentManager = _sl.GetService<IContent_Manager>();
             mArtpath = _path;
-            mArtPos = _pos;
             mSpeaker = _speaker;
         }
         /// <summary>
@@ -87,10 +88,9 @@ namespace GMTB.Dialogue
         /// <param name="_path2">Second Character art path</param>
         /// <param name="_pos2">Second Character art positon</param>
         /// <param name="_speaker">Reference to the speaker</param>
-        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, Vector2 _pos, string _path2, Vector2 _pos2, ISpeaker _speaker) : this(_sl, _lines, _path, _pos, _speaker)
+        public DialogueDisplay(IServiceLocator _sl, string[] _lines, string _path, string _path2, ISpeaker _speaker) : this(_sl, _lines, _path, _speaker)
         {
             mArtpath2 = _path2;
-            mArtPos2 = _pos2;
         }
         #endregion
 
@@ -109,10 +109,7 @@ namespace GMTB.Dialogue
             // Set the running bool to true
             mRunning = true;
             mCurrLine = 0;
-            // Create rectangle to position the full character art
-            mArtRect = new Rectangle(mArtPos.ToPoint(), new Point(mArt.Width, mArt.Height));
-            if (mArt2 != null)
-                mArtRect2 = new Rectangle(mArtPos2.ToPoint(), new Point(mArt2.Width, mArt2.Height));
+            
         }
         /// <summary>
         /// Draw Text on screen
@@ -121,13 +118,24 @@ namespace GMTB.Dialogue
         /// <param name="_gameTime">Reference to current GameTime</param>
         public void Draw(SpriteBatch _spiteBatch, GameTime _gameTime)
         {
+            // Recalculate position each draw loop
+            mTextPos = new Vector2(Global.Camera.Position.X - 525, Global.Camera.Position.Y + 225);
+            mArtPos = new Vector2(Global.Camera.Position.X - 725, Global.Camera.Position.Y + 225);
+            if (mArt2 != null)
+                mArtPos2 = new Vector2(Global.Camera.Position.X + 475, Global.Camera.Position.Y + 225);
+
+            // Create rectangle to position the full character art
+            mArtRect = new Rectangle(mArtPos.ToPoint(), new Point(mArt.Width, mArt.Height));
+            if (mArt2 != null)
+                mArtRect2 = new Rectangle(mArtPos2.ToPoint(), new Point(mArt2.Width, mArt2.Height));
+
             // While there are lines to display and the running variable is active
             if (mCurrLine < mLines.Length && mRunning)
             {
                 // Update the internal timer
                 mTimer += (float)_gameTime.ElapsedGameTime.TotalMilliseconds;
                 // Pass the current line to the Dialogue Box
-                mDialogueBox.Draw(_spiteBatch, mLines[mCurrLine]);
+                mDialogueBox.Draw(_spiteBatch, mLines[mCurrLine], mTextPos);
                 // Draw thefull character Art
                 _spiteBatch.Draw(mArt, mArtRect, Color.White);
                 if (mArt2 != null)

@@ -19,8 +19,6 @@ namespace GMTB.Dialogue
         private IContent_Manager mContentManager;
         /// Font Reference
         private SpriteFont mFont;
-        /// Text Position
-        private Vector2 mPosition;
         #endregion
 
         #region Constructor
@@ -29,10 +27,9 @@ namespace GMTB.Dialogue
         /// </summary>
         /// <param name="_sl">Reference to Service Locator</param>
         /// <param name="_pos">Position to render text</param>
-        public DialogueBox(IServiceLocator _sl, Vector2 _pos)
+        public DialogueBox(IServiceLocator _sl)
         {
             mContentManager = _sl.GetService<IContent_Manager>();
-            mPosition = _pos;
             mFont = mContentManager.LoadFont("Text");
         }
         #endregion
@@ -43,9 +40,9 @@ namespace GMTB.Dialogue
         /// </summary>
         /// <param name="_spriteBatch">Reference to Main SpriteBatch</param>
         /// <param name="_line">Text line to render</param>
-        public void Draw(SpriteBatch _spriteBatch, string _line)
+        public void Draw(SpriteBatch _spriteBatch, string _line, Vector2 _pos)
         {
-            _spriteBatch.DrawString(mFont, _line, mPosition, Color.White);
+            _spriteBatch.DrawString(mFont, _line, _pos, Color.White);
         }
         #endregion
     }

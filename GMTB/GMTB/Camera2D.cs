@@ -89,7 +89,7 @@ namespace GMTB
         {
             ScreenHeight = sh;
             ScreenWidth = sw;
-            mZoom = 0.75f;
+            mZoom = 1f;
             mRotatation = 0.0f;
             mPosition = Vector2.Zero;
 

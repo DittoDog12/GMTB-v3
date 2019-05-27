@@ -35,9 +35,9 @@ namespace The_Infirmary.Menus
         {
             base.Initialize(_sl, _cam);
             startPosition = new Vector2(900, 345);
-            //startButton = mContentManager.ApplyTexture("start");
+            startButton = mContentManager.ApplyTexture("start");
             exitPosition = new Vector2(910, 500);
-            //exitButton = mContentManager.ApplyTexture("exit");
+            exitButton = mContentManager.ApplyTexture("exit");
             mBackgroundManager.ChangeBackground("Menus/title");
             mBackgroundManager.ChangePosition(240, 180);
 
@@ -48,12 +48,11 @@ namespace The_Infirmary.Menus
         }
         public override void Draw(SpriteBatch _spriteBatch)
         {
-            //_spriteBatch.Draw(startButton, startPosition, Color.White);
-            //_spriteBatch.Draw(exitButton, exitPosition, Color.White);
+            _spriteBatch.Draw(startButton, startPosition, Color.White);
+            _spriteBatch.Draw(exitButton, exitPosition, Color.White);
         }
         public override void Update(GameTime _gameTime)
         {
-            //throw new NotImplementedException();
             mCam.Position = new Vector2(680, 500);
         }
         public override void OnClick(object source, MouseEvent args)
@@ -62,8 +61,8 @@ namespace The_Infirmary.Menus
 
             Rectangle _mousePos = new Rectangle(args.currentPos.ToPoint(), new Point(10));
 
-            Rectangle _startPos = new Rectangle(startPosition.ToPoint(), new Point(135, 40));
-            Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(100, 40));
+            Rectangle _startPos = new Rectangle(startPosition.ToPoint(), new Point(startButton.Width, startButton.Height));
+            Rectangle _exitPos = new Rectangle(exitPosition.ToPoint(), new Point(startButton.Width, exitButton.Height));
 
             if (_mousePos.Intersects(_startPos))
                 StartGame();
