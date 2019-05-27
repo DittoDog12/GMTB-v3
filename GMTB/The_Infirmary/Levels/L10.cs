@@ -43,12 +43,12 @@ namespace The_Infirmary.Levels
 
                 // Wall Left
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
-                mSceneManager.newEntity(createdEntity, -200, 4890); //Change coordinates
+                mSceneManager.newEntity(createdEntity, -200, 3890); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Right
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
-                mSceneManager.newEntity(createdEntity, 1919, 4890); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 1919, 3890); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Exit Door

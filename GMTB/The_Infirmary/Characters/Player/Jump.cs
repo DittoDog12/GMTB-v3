@@ -25,7 +25,7 @@ namespace The_Infirmary.Characters.Player
         /// Max height reached
         private bool mMaxReached = false;
         /// Max Height of jump
-        private float mJumpHeight = 140f;
+        private float mJumpHeight = 160f;
         /// Max Height of current Jump
         private float mJumpMax;
 
@@ -35,7 +35,7 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_mind">Reference to the Mind</param>
         public Jump(IPlayerMind _mind) : base(_mind)
         {
-            mJumpForce = -3f;
+            mJumpForce = -6f;
             mJumping = true;
         }
         /// <summary>

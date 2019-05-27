@@ -46,7 +46,7 @@ namespace The_Infirmary.Characters.Nurse
             mMind.MySelf.ApplyForce(PlotPath());
 
             // If player too far away, give up
-            if (mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X > mPersueDistance)
+            if (mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X > mPersueDistance || mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X < -mPersueDistance)
                 mMind.ChangeState("idle");
         }
         /// <summary>
