@@ -71,6 +71,7 @@ namespace The_Infirmary.Characters.Player
             base.OnMoveInput(_source, _args);
             switch (_args.currentKey)
             {
+                // Right Movement
                 case Keybindings.Right:
                     if (mFacingDirection == "left")
                     {
@@ -80,6 +81,7 @@ namespace The_Infirmary.Characters.Player
                     }
                     mMoving = true;
                     break;
+                //Left Movement
                 case Keybindings.Left:
                     if (mFacingDirection == "right")
                     {
@@ -88,7 +90,12 @@ namespace The_Infirmary.Characters.Player
                     }
                     mMoving = true;
                     break;
-                case Keybindings.Released:
+                // Override up and down, if using gamepad and the stick is slightly mvoed on the Y axis it confuses the input detection
+                case Keybindings.Up:
+                case Keybindings.Down:
+                    break;
+                // Reset if not moving, or input not recognised
+                case Keybindings.Released:              
                 default:
                     mCurrentFrame = 0;
                     mMoving = false;

@@ -41,10 +41,7 @@ namespace The_Infirmary.Menus
             mBackgroundManager.ChangeBackground("Menus/title");
             mBackgroundManager.ChangePosition(240, 180);
 
-            if (mInputManager.CheckController())
-                mInputManager.Sub_Space(OnGPInput);
-
-
+            mInputManager.Sub_Space(OnSpaceInput);
         }
         public override void Draw(SpriteBatch _spriteBatch)
         {
@@ -74,7 +71,7 @@ namespace The_Infirmary.Menus
             if (args.currentKey == Keybindings.Pause)
                 Global.GameState = Global.availGameStates.Exiting;
         }
-        public void OnGPInput(object source, InputEvent args)
+        public void OnSpaceInput(object source, InputEvent args)
         {
             if (args.currentKey == Keybindings.Jump)
                 StartGame();
@@ -82,7 +79,7 @@ namespace The_Infirmary.Menus
         private void StartGame()
         {
             mLevelManger.LoadLevel("L1", false);
-            mInputManager.Un_Space(OnGPInput);
+            mInputManager.Un_Space(OnSpaceInput);
             base.CloseMenu();
             Global.GameState = Global.availGameStates.Playing;
         }

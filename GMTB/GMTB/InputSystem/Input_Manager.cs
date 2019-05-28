@@ -44,6 +44,8 @@ namespace GMTB.InputSystem
         private KeyboardState _oldPKState;
         /// Previous Gamepad State
         private GamePadState _oldGState;
+        /// Previous Persistant GamePad State
+        private GamePadState _oldPGState;
         /// Previous Mouse State
         private MouseState _oldMState;
         /// Movement Key Input subscribers
@@ -95,15 +97,20 @@ namespace GMTB.InputSystem
         {
             // Check for persistant keypresses every update
             // Only if game is in playing state
-            if (Global.GameState == Global.availGameStates.Playing)        
+            if (Global.GameState == Global.availGameStates.Playing)
+            {
                 PersistantKeyboardInput();
+                // Check if a controller is connected, detect input from that if true
+                if (CheckController())
+                    PersistantGamePadInput();
+            }
             // Else stop the player moving
             else if (Global.GameState == Global.availGameStates.Dialogue)
                 MovementRelease(Keybindings.Released);
 
             // Check if a controller is connected, detect input from that if true
-            if (CheckController())
-                GamePadInput();
+                if (CheckController())
+                    GamePadInput();
 
             // Only check for other input if not on cool down.
             mTimer -= _gameTime.ElapsedGameTime.Milliseconds;
@@ -178,25 +185,34 @@ namespace GMTB.InputSystem
             _oldKState = _newKState;
         }
         /// <summary>
+        /// Check for Gamepad input that should be persistant, IE movement stick held 
+        /// </summary>
+        private void PersistantGamePadInput()
+        {
+            GamePadState _newPGState = GamePad.GetState(PlayerIndex.One);
+
+            if (_newPGState.ThumbSticks.Left.Y > 0)
+                MovementInput(Keybindings.Up);
+            else if (_newPGState.ThumbSticks.Left.Y < 0)
+                MovementInput(Keybindings.Down);
+
+            if (_newPGState.ThumbSticks.Left.X < 0)
+                MovementInput(Keybindings.Left);
+            else if (_newPGState.ThumbSticks.Left.X > 0)
+                MovementInput(Keybindings.Right);
+
+            if (_oldGState.ThumbSticks.Left.X < 0 && _newPGState.ThumbSticks.Left.X == 0
+                || _oldGState.ThumbSticks.Left.X > 0 && _newPGState.ThumbSticks.Left.X == 0)
+                MovementRelease(Keybindings.Released);
+
+            _oldPGState = _newPGState;
+        }
+        /// <summary>
         /// Second method to check for gamepad input
         /// </summary>
         private void GamePadInput()
         {
             GamePadState _newGState = GamePad.GetState(PlayerIndex.One);
-
-            if (_newGState.ThumbSticks.Left.Y > 0)
-                MovementInput(Keybindings.Up);
-            else if (_newGState.ThumbSticks.Left.Y < 0)
-                MovementInput(Keybindings.Down);
-
-            if (_newGState.ThumbSticks.Left.X < 0)
-                MovementInput(Keybindings.Left);
-            else if (_newGState.ThumbSticks.Left.X > 0)
-                MovementInput(Keybindings.Right);
-
-            if (_oldGState.ThumbSticks.Left.X < 0 && _newGState.ThumbSticks.Left.X == 0
-                || _oldGState.ThumbSticks.Left.X > 0 && _newGState.ThumbSticks.Left.X == 0)
-                MovementRelease(Keybindings.Released);
 
             if (_oldGState.Buttons.X == ButtonState.Released && _newGState.Buttons.X == ButtonState.Pressed)
                 UseInput(Keybindings.Use);
