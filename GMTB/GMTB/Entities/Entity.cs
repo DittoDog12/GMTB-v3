@@ -28,6 +28,8 @@ namespace GMTB.Entities
         protected IServiceLocator mServiceLocator;
         /// Active Overrider, allows entities to be paused while not needed without removing them
         protected bool mActive;
+        /// Unique name for idenfication
+        protected string mUName;
         #endregion
 
         #region Accessors
@@ -35,6 +37,11 @@ namespace GMTB.Entities
         public int UID
         {
             get { return mUID; }
+        }
+        /// Unique Name Accessor
+        public string Name
+        {
+            get { return mUName; }
         }
         #endregion
 
@@ -57,7 +64,14 @@ namespace GMTB.Entities
             mServiceLocator = _sl;
             mEntityManger = mServiceLocator.GetService<IEntity_Manager>();
         }
-        
+        /// <summary>
+        /// Set Unique name
+        /// </summary>
+        /// <param name="_name">Entities name</param>
+        public virtual void setVars(string _name) 
+        {
+            mUName = _name;
+        }
         
         /// <summary>
         /// Method to configure if an entity requires input detection.

@@ -14,11 +14,21 @@ namespace GMTB.Interfaces
         int UID { get; }
 
         /// <summary>
+        /// Unique Name Accessor
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
         /// Set Core Variables
         /// </summary>
         /// <param name="_uid">Entity Unique Identifier</param>
         /// <param name="_sl">Reference to Service Locator</param>
-        void setVars(int _uid, IServiceLocator _sl);      
+        void setVars(int _uid, IServiceLocator _sl);
+        /// <summary>
+        /// Set Unique name
+        /// </summary>
+        /// <param name="_name">Entities name</param>
+        void setVars(string _name);
         /// <summary>
         /// Main Update Loop
         /// </summary>

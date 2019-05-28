@@ -57,6 +57,7 @@
     <Compile Include="Characters\OldMan\Idle.cs" />
     <Compile Include="Characters\OldMan\OldMan.cs" />
     <Compile Include="Characters\OldMan\OldManMind.cs" />
+    <Compile Include="Characters\OldMan\Run.cs" />
     <Compile Include="Characters\OldMan\Talk.cs" />
     <Compile Include="Characters\OldMan\Yeet.cs" />
     <Compile Include="Characters\Player\InfirmaryPlayer.cs" />

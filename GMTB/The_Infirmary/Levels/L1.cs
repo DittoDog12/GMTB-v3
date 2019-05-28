@@ -38,6 +38,7 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkL");
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
+                createdEntity.setVars("nurse");
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Door

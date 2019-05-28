@@ -40,7 +40,7 @@ namespace The_Infirmary.Characters.OldMan
         /// </summary>
         public void DialougeComplete()
         {
-            ChangeState("yeet");
+            ChangeState("run");
             Global.GameState = Global.availGameStates.Playing;
         }
         /// <summary>

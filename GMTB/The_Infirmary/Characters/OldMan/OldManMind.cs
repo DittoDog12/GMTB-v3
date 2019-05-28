@@ -21,6 +21,7 @@ namespace The_Infirmary.Characters.OldMan
             mStates.Add("idle", new Idle(this));
             mStates.Add("talk", new Talk(this));
             mStates.Add("yeet", new Yeet(this));
+            mStates.Add("run", new Run(this));
 
             mCurrentState = mStates["idle"];
         }

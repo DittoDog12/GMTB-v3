@@ -2,6 +2,7 @@
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GMTB.CollisionSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,18 @@ namespace The_Infirmary.Characters.OldMan
     /// </summary>
     public class Yeet : State
     {
-        /// Velocity to jump at
-        private Vector2 mJumpVelocity;
+        /// Vector to jump along
+        private Vector2 mJumpVector;
+        /// Force of the jump
+        private float mJumpForce;
+        /// Jumping or not, used to stop the collision detection triggering too early
+        private bool mJumping = true;
+        /// Max height reached
+        private bool mMaxReached = false;
+        /// Max Height of jump
+        private float mJumpHeight = 160f;
+        /// Max Height of current Jump
+        private float mJumpMax;
 
         /// <summary>
         /// Main Constructor
@@ -24,13 +35,20 @@ namespace The_Infirmary.Characters.OldMan
         /// <param name="_mind">Reference to the mind</param>
         public Yeet(IAIMind _mind): base(_mind)
         {
-            mJumpVelocity = new Vector2(5f, -5f);
-            
+            mJumpForce = -6f;
+            mJumping = true;
+
         }
         public override void Reactivate()
         {
             base.Reactivate();
             mMind.MySelf.Texturename = "Characters/OldMan/jumpR";
+            // Stop collision detection running right away
+            mJumping = true;
+            // Reset max jump reached
+            mMaxReached = false;
+            // Calculate the coordinates of the current jump max
+            mJumpMax = mMind.MySelf.Position.Y - mJumpHeight;
         }
         /// <summary>
         /// Main Draw Loop
@@ -48,13 +66,37 @@ namespace The_Infirmary.Characters.OldMan
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            mMind.MySelf.ApplyForce(mJumpVelocity);
+            mJumpVector.X = 7f;
+            // If not at top of jump, continue jumping
+            if (!mMaxReached)
+                mJumpVector.Y = mJumpForce;
+            // If at top of jump, stop jumping
+            if (mMind.MySelf.Position.Y <= mJumpMax)
+            {
+                mMaxReached = true;
+                mJumpVector.Y = 0;
+            }
+            mMind.MySelf.ApplyForce(mJumpVector);
+            // Set toggle to allow collision detection to resume
+            mJumping = false;
+
             IAnimation asInterface = mMind.MySelf as IAnimation;
             if (asInterface != null)
             {
-                if (asInterface.Frame >= 3)
+                if (asInterface.Frame >= 3 && !mMaxReached)
                     asInterface.Frame = 3;
             }
+        }
+        /// <summary>
+        /// Non physical Collision Detection
+        /// Used to see if the player has landed
+        /// </summary>
+        /// <param name="_obj">Other Object Collided with</param>
+        public override void Collision(ICollidable _obj)
+        {
+            //IStaticObject asInterface = _obj as IStaticObject;
+            //if (asInterface.TextureName == "floor" && !mJumping)
+            mMind.ChangeState("walk");
         }
     }
 }
