@@ -49,6 +49,8 @@ namespace The_Infirmary.Characters.Player
             mMaxReached = false;
             // Calculate the coordinates of the current jump max
             mJumpMax = mPMind.MySelf.GetPos().Y - mJumpHeight;
+            // Set Texture
+            mMind.MySelf.Texturename = "Characters/Player/jumpR";
         }
         /// <summary>
         /// Main Update Loop

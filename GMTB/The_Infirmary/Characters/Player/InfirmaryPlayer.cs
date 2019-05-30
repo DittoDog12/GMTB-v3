@@ -31,8 +31,8 @@ namespace The_Infirmary.Characters.Player
         /// </summary>
         public InfirmaryPlayer()
         {
-            mFrames = 8;
-            mColumns = 8;
+            mFrames = 1;
+            mColumns = 1;
             mInterval = 75f;
         }
         #endregion
@@ -68,26 +68,30 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_args">Event Arguments</param>
         public override void OnMoveInput(object _source, InputEvent _args)
         {
+            
             base.OnMoveInput(_source, _args);
             switch (_args.currentKey)
             {
                 // Right Movement
                 case Keybindings.Right:
-                    if (mFacingDirection == "left")
+                    if (mFacingDirection != "right")
                     {
                         mFacingDirection = "right";
                         mTexturename = "Characters/Player/walkR";
-
                     }
+                    mFrames = 8;
+                    mColumns = 8;
                     mMoving = true;
                     break;
                 //Left Movement
                 case Keybindings.Left:
-                    if (mFacingDirection == "right")
+                    if (mFacingDirection != "left")
                     {
                         mFacingDirection = "left";
                         mTexturename = "Characters/Player/walkL";
                     }
+                    mFrames = 8;
+                    mColumns = 8;
                     mMoving = true;
                     break;
                 // Override up and down, if using gamepad and the stick is slightly mvoed on the Y axis it confuses the input detection
@@ -97,7 +101,15 @@ namespace The_Infirmary.Characters.Player
                 // Reset if not moving, or input not recognised
                 case Keybindings.Released:              
                 default:
+                    mFrames = 1;
+                    mColumns = 1;
                     mCurrentFrame = 0;
+                    if (mFacingDirection == "right")
+                        mTexturename = "Characters/Player/standR";
+                    else if (mFacingDirection == "left")
+                        mTexturename = "Characters/Player/standL";
+
+                    mFacingDirection = "stand";
                     mMoving = false;
                     break;
             }
@@ -120,11 +132,11 @@ namespace The_Infirmary.Characters.Player
         {
             if (mMoving)
                 IncrementFrame(_gameTime);
-            base.Draw(_spriteBatch, _gameTime);
 
             if (mTexturename != mTexture.Name)
                 mTexture = mContentManager.ApplyTexture(mTexturename);
 
+            base.Draw(_spriteBatch, _gameTime);
         }
         /// <summary>
         /// Non physical collision response
