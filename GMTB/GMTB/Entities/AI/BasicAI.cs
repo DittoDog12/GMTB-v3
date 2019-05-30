@@ -33,11 +33,6 @@ namespace GMTB.Entities.AI
         {
             get { return mTarget; }
         }
-        /// Moving or not override
-        public bool Moving
-        {
-            set { mMoving = value; }
-        }
         /// Lets Behaviours change Texture
         string IBasicAI.Texturename
         {

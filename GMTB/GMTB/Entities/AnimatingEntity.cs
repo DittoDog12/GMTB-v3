@@ -49,6 +49,22 @@ namespace GMTB.Entities
             get { return mCurrentFrame; }
             set { mCurrentFrame = value; }
         }
+        /// Allows states to change amount of frames
+        public int Frames
+        {
+            set { mFrames = value; }
+        }
+        /// Allows States to change number of columns
+        public int Columns
+        {
+            set { mColumns = value; }
+        }
+        /// Allows states to tell the physical entity if it's moving or not
+        public bool Moving
+        {
+            get { return mMoving; }
+            set { mMoving = value; }
+        }
         #endregion
 
         #region Constructor

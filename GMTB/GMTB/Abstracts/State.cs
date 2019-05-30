@@ -25,6 +25,8 @@ namespace GMTB.Abstracts
         protected Queue<Point> mPath;
         /// Vector position of current Destination
         protected Vector2 mCurrentDest;
+        /// Gives state access to animation system
+        protected IAnimation mAnimation;
         #endregion
 
         #region Constructor
@@ -35,6 +37,7 @@ namespace GMTB.Abstracts
         public State(IAIMind _mind)
         {
             mMind = _mind;
+            mAnimation = mMind.MySelf as IAnimation;
         }
         /// <summary>
         /// Constructor for Player Minds
@@ -43,6 +46,7 @@ namespace GMTB.Abstracts
         public State(IPlayerMind _mind)
         {
             mPMind = _mind;
+            mAnimation = mPMind.MySelf as IAnimation;
         }
         #endregion
 

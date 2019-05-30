@@ -49,6 +49,9 @@ namespace The_Infirmary.Characters.OldMan
             mMaxReached = false;
             // Calculate the coordinates of the current jump max
             mJumpMax = mMind.MySelf.Position.Y - mJumpHeight;
+            // Set animation frames
+            mAnimation.Frames = 5;
+            mAnimation.Columns = 5;
         }
         /// <summary>
         /// Main Draw Loop
@@ -83,7 +86,9 @@ namespace The_Infirmary.Characters.OldMan
             IAnimation asInterface = mMind.MySelf as IAnimation;
             if (asInterface != null)
             {
-                if (asInterface.Frame >= 3 && !mMaxReached)
+                if (asInterface.Frame >= 2 && !mMaxReached)
+                    asInterface.Frame = 2;
+                else if (asInterface.Frame <= 2 && mMaxReached)
                     asInterface.Frame = 3;
             }
         }

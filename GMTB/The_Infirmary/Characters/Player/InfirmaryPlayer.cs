@@ -18,8 +18,7 @@ namespace The_Infirmary.Characters.Player
     class InfirmaryPlayer : GMTB.Entities.Player, AITarget
     {
         #region Data Members
-        /// String to hold the current facing direction
-        private string mFacingDirection;
+
         /// Reference to the Mind
         private IPlayerMind mMind;
         #endregion
@@ -61,59 +60,7 @@ namespace The_Infirmary.Characters.Player
             else if (_path == "Characters/Player/walkL")
                 mFacingDirection = "left";
         }
-        /// <summary>
-        /// Move input trigger
-        /// </summary>
-        /// <param name="_source">Event Source</param>
-        /// <param name="_args">Event Arguments</param>
-        public override void OnMoveInput(object _source, InputEvent _args)
-        {
-            
-            base.OnMoveInput(_source, _args);
-            switch (_args.currentKey)
-            {
-                // Right Movement
-                case Keybindings.Right:
-                    if (mFacingDirection != "right")
-                    {
-                        mFacingDirection = "right";
-                        mTexturename = "Characters/Player/walkR";
-                    }
-                    mFrames = 8;
-                    mColumns = 8;
-                    mMoving = true;
-                    break;
-                //Left Movement
-                case Keybindings.Left:
-                    if (mFacingDirection != "left")
-                    {
-                        mFacingDirection = "left";
-                        mTexturename = "Characters/Player/walkL";
-                    }
-                    mFrames = 8;
-                    mColumns = 8;
-                    mMoving = true;
-                    break;
-                // Override up and down, if using gamepad and the stick is slightly mvoed on the Y axis it confuses the input detection
-                case Keybindings.Up:
-                case Keybindings.Down:
-                    break;
-                // Reset if not moving, or input not recognised
-                case Keybindings.Released:              
-                default:
-                    mFrames = 1;
-                    mColumns = 1;
-                    mCurrentFrame = 0;
-                    if (mFacingDirection == "right")
-                        mTexturename = "Characters/Player/standR";
-                    else if (mFacingDirection == "left")
-                        mTexturename = "Characters/Player/standL";
-
-                    mFacingDirection = "stand";
-                    mMoving = false;
-                    break;
-            }
-        }
+        
         /// <summary>
         /// Main Update Loop
         /// </summary>

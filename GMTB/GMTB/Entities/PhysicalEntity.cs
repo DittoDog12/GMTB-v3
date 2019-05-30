@@ -63,6 +63,7 @@ namespace GMTB.Entities
         public string Texturename
         {
             get { return mTexturename; }
+            set { mTexturename = value; }
         }
         /// Current Texture
         public Texture2D Texture

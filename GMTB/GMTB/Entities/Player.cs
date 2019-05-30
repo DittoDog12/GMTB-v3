@@ -17,18 +17,29 @@ namespace GMTB.Entities
     /// </summary>
     public class Player : AnimatingEntity, IPlayer
     {
+        #region Data Members
+        /// String to hold the current facing direction
+        protected string mFacingDirection;
+        #endregion
         #region Constructor
         /// <summary>
         /// Main Constructor
         /// </summary>
         public Player()
         {
-            mSpeed = 3f;
         }
         #endregion
 
-
-
+        #region Accessors
+        /// <summary>
+        /// Allows states to see and alter the facing direction
+        /// </summary>
+        public string FacingDirection
+        {
+            get { return mFacingDirection; }
+            set { mFacingDirection = value; }
+        }
+        #endregion
         #region Methods
         /// <summary>
         /// Setup movement input triggers
@@ -36,7 +47,7 @@ namespace GMTB.Entities
         public override void ConfigureInput()
         {
             base.ConfigureInput();
-            mInputManager.Sub_Move(OnMoveInput);
+            
         }
         /// <summary>
         /// Get current Position
@@ -45,33 +56,6 @@ namespace GMTB.Entities
         public Vector2 GetPos()
         {
             return mPosition;
-        }
-        /// <summary>
-        /// Main movement method
-        /// </summary>
-        /// <param name="_source">Event source</param>
-        /// <param name="_args">Event Arguments</param>
-        public virtual void OnMoveInput(object _source, InputEvent _args)
-        {
-            // Check the current keybinding in the event argument.
-            // Apply force respectiveley
-            switch (_args.currentKey)
-            {
-                case Keybindings.Down:                    
-                case Keybindings.Up:           
-                    break;
-                case Keybindings.Right:
-                    ApplyForce(new Vector2(mSpeed, 0));
-                    break;
-                case Keybindings.Left:
-                    ApplyForce(new Vector2(-mSpeed, 0));
-                    break;
-                // If Keybinding is released, or keybinding is not recognised, stop moving
-                case Keybindings.Released:
-                default:
-                    mVelocity = Vector2.Zero;
-                    break;
-            }
         }
         /// <summary>
         /// Main Update Loop

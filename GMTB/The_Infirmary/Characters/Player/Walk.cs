@@ -21,6 +21,8 @@ namespace The_Infirmary.Characters.Player
         #region Data Members
         /// Reference to the Input Manager
         private IInput_Manager mInputManager;
+        private float mSpeed;
+        
         #endregion
         /// <summary>
         /// Main Constructor
@@ -28,7 +30,7 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_mind">Reference to the Mind</param>
         public Walk(IPlayerMind _mind) : base(_mind)
         {
-
+            mSpeed = 3f;
         }
         /// <summary>
         /// Initialize the state
@@ -53,7 +55,80 @@ namespace The_Infirmary.Characters.Player
         public override void Reactivate()
         {
             mInputManager.Sub_Space(OnSpace);
+            mInputManager.Sub_Move(OnMoveInput);
+            if (mAnimation.Moving)
+            {
+                mAnimation.Frames = 8;
+                mAnimation.Columns = 8;
+                if (mPMind.MySelf.FacingDirection == "right")
+                    mPMind.MySelf.Texturename = "Characters/Player/walkR";
+                else if (mPMind.MySelf.FacingDirection == "left")
+                    mPMind.MySelf.Texturename = "Characters/Player/walkL";
+            }
+            else
+            {
+                mAnimation.Frames = 1;
+                mAnimation.Columns = 1;
+                if (mPMind.MySelf.FacingDirection == "right")
+                    mPMind.MySelf.Texturename = "Characters/Player/standR";
+                else if (mPMind.MySelf.FacingDirection == "left")
+                    mPMind.MySelf.Texturename = "Characters/Player/standL";
+            }
             
+        }
+        /// <summary>
+        /// Move input trigger
+        /// </summary>
+        /// <param name="_source">Event Source</param>
+        /// <param name="_args">Event Arguments</param>
+        public void OnMoveInput(object _source, InputEvent _args)
+        {
+            switch (_args.currentKey)
+            {
+                // Right Movement
+                case Keybindings.Right:
+                    if (mPMind.MySelf.FacingDirection != "right")
+                    {
+                        mPMind.MySelf.FacingDirection = "right";
+                        mPMind.MySelf.Texturename = "Characters/Player/walkR";
+                    }
+                    mAnimation.Frames = 8;
+                    mAnimation.Columns = 8;
+                    mAnimation.Moving = true;
+                    mPMind.MySelf.ApplyForce(new Vector2(mSpeed, 0));
+                    break;
+                //Left Movement
+                case Keybindings.Left:
+                    if (mPMind.MySelf.FacingDirection != "left")
+                    {
+                        mPMind.MySelf.FacingDirection = "left";
+                        mPMind.MySelf.Texturename = "Characters/Player/walkL";
+                    }
+                    mAnimation.Frames = 8;
+                    mAnimation.Columns = 8;
+                    mAnimation.Moving = true;
+                    mPMind.MySelf.ApplyForce(new Vector2(-mSpeed, 0));
+                    break;
+                // Override up and down, if using gamepad and the stick is slightly mvoed on the Y axis it confuses the input detection
+                case Keybindings.Up:
+                case Keybindings.Down:
+                    break;
+                // Reset if not moving, or input not recognised
+                case Keybindings.Released:
+                default:
+                    mAnimation.Frames = 1;
+                    mAnimation.Columns = 1;
+                    mAnimation.Frame = 0;
+                    if (mPMind.MySelf.FacingDirection == "right")
+                        mPMind.MySelf.Texturename = "Characters/Player/standR";
+                    else if (mPMind.MySelf.FacingDirection == "left")
+                        mPMind.MySelf.Texturename = "Characters/Player/standL";
+
+                    mPMind.MySelf.FacingDirection = "stand";
+                    mAnimation.Moving = false;
+                    mPMind.MySelf.ApplyForce(Vector2.Zero);
+                    break;
+            }
         }
         /// <summary>
         /// On space switch to the Jump State
@@ -66,6 +141,7 @@ namespace The_Infirmary.Characters.Player
             {
                 mPMind.ChangeState("jump");
                 mInputManager.Un_Space(OnSpace);
+                mInputManager.Un_Move(OnMoveInput);
             }
                 
         }
