@@ -39,6 +39,16 @@ namespace The_Infirmary.Characters.Player
         {
             base.Initialize();
             mInputManager = mPMind.ServiceLocator.GetService<IInput_Manager>();
+            // Set intial facing direction
+            switch (mPMind.MySelf.Texturename)
+            {
+                case "Characters/Player/standR":
+                    mPMind.MySelf.FacingDirection = "right";
+                    break;
+                case "Characters/Player/standL":
+                    mPMind.MySelf.FacingDirection = "left";
+                    break;
+            }
             Reactivate();
         }
         /// <summary>
@@ -69,9 +79,10 @@ namespace The_Infirmary.Characters.Player
             {
                 mAnimation.Frames = 1;
                 mAnimation.Columns = 1;
-                if (mPMind.MySelf.FacingDirection == "right")
+                mAnimation.Frame = 0;
+                if (mPMind.MySelf.FacingDirection == "standR")
                     mPMind.MySelf.Texturename = "Characters/Player/standR";
-                else if (mPMind.MySelf.FacingDirection == "left")
+                else if (mPMind.MySelf.FacingDirection == "standL")
                     mPMind.MySelf.Texturename = "Characters/Player/standL";
             }
             
@@ -120,11 +131,15 @@ namespace The_Infirmary.Characters.Player
                     mAnimation.Columns = 1;
                     mAnimation.Frame = 0;
                     if (mPMind.MySelf.FacingDirection == "right")
+                    {
                         mPMind.MySelf.Texturename = "Characters/Player/standR";
+                        mPMind.MySelf.FacingDirection = "standR";
+                    }
                     else if (mPMind.MySelf.FacingDirection == "left")
+                    {
                         mPMind.MySelf.Texturename = "Characters/Player/standL";
-
-                    mPMind.MySelf.FacingDirection = "stand";
+                        mPMind.MySelf.FacingDirection = "standL";
+                    }
                     mAnimation.Moving = false;
                     mPMind.MySelf.ApplyForce(Vector2.Zero);
                     break;

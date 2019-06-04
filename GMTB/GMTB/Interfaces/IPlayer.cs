@@ -20,7 +20,7 @@ namespace GMTB.Interfaces
         /// <summary>
         /// Allows States to change the texture
         /// </summary>
-        string Texturename { set; }
+        string Texturename { get; set; }
         /// <summary>
         /// Apply a specified force to the Acceleration
         /// </summary>

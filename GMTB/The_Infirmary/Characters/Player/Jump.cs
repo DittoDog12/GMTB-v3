@@ -48,8 +48,11 @@ namespace The_Infirmary.Characters.Player
         public override void Reactivate()
         {
             base.Reactivate();
+            // Set animation settings
             mAnimation.Frames = 5;
             mAnimation.Columns = 5;
+            // Reset Jump Velocity
+            mJumpVector = Vector2.Zero;
             // Stop collision detection running right away
             mJumping = true;
             // Reset max jump reached
@@ -57,7 +60,10 @@ namespace The_Infirmary.Characters.Player
             // Calculate the coordinates of the current jump max
             mJumpMax = mPMind.MySelf.GetPos().Y - mJumpHeight;
             // Set Texture
-            mPMind.MySelf.Texturename = "Characters/Player/jumpR";
+            if (mPMind.MySelf.FacingDirection == "right" || mPMind.MySelf.FacingDirection == "standR")
+                mPMind.MySelf.Texturename = "Characters/Player/jumpR";
+            else if (mPMind.MySelf.FacingDirection == "left" || mPMind.MySelf.FacingDirection == "standL")
+                mPMind.MySelf.Texturename = "Characters/Player/jumpL";
             // Subscribe the movement
             mPMind.ServiceLocator.GetService<IInput_Manager>().Sub_Move(OnMoveInput);
         }
@@ -77,13 +83,17 @@ namespace The_Infirmary.Characters.Player
                 mJumpVector.Y = 0;
             }
 
-            IAnimation asInterface = mPMind.MySelf as IAnimation;
-            if (asInterface != null)
+            if (mAnimation != null)
             {
-                if (asInterface.Frame >= 2 && !mMaxReached)
-                    asInterface.Frame = 2;
-                else if (asInterface.Frame <= 2 && mMaxReached)
-                    asInterface.Frame = 3;
+                if (mAnimation.Frame >= 2 && !mMaxReached)
+                {
+                    mAnimation.Frame = 2;
+                    mAnimation.Moving = false;
+                }
+                else if (mAnimation.Frame <= 2 && mMaxReached)
+                {
+                    mAnimation.Frame = 4;
+                }
             }
 
             mPMind.MySelf.ApplyForce(mJumpVector);
@@ -119,7 +129,6 @@ namespace The_Infirmary.Characters.Player
                         mPMind.MySelf.FacingDirection = "right";
                         mPMind.MySelf.Texturename = "Characters/Player/jumpR";
                     }
-                    mAnimation.Moving = true;
                     mJumpVector.X = mSpeed;
                     break;
                 //Left Movement
@@ -129,7 +138,6 @@ namespace The_Infirmary.Characters.Player
                         mPMind.MySelf.FacingDirection = "left";
                         mPMind.MySelf.Texturename = "Characters/Player/jumpL";
                     }
-                    mAnimation.Moving = true;
                     mJumpVector.X = -mSpeed;
                     break;
                 // Override up and down, if using gamepad and the stick is slightly mvoed on the Y axis it confuses the input detection
@@ -139,8 +147,11 @@ namespace The_Infirmary.Characters.Player
                 // Reset if not moving, or input not recognised
                 case Keybindings.Released:
                 default:
+                    if (mPMind.MySelf.FacingDirection == "right")
+                        mPMind.MySelf.FacingDirection = "standR";
+                    else if (mPMind.MySelf.FacingDirection == "left")
+                        mPMind.MySelf.FacingDirection = "standL";
                     mJumpVector.X = 0;
-                    mAnimation.Moving = false;
                     break;
             }
         }
