@@ -20,6 +20,13 @@ namespace The_Infirmary.Characters.Nurse
         public Idle(IAIMind _mind) : base(_mind)
         {
         }
+        public override void Reactivate()
+        {
+            base.Reactivate();
+            IAnimation _animation = mMind.MySelf as IAnimation;
+            _animation.Frames = 1;
+            _animation.Columns = 1;
+        }
         /// <summary>
         /// Main Draw Loop
         /// </summary>
@@ -35,6 +42,12 @@ namespace The_Infirmary.Characters.Nurse
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
+            
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Nurse1/standR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Nurse1/standL";
+
             mMind.MySelf.Moving = false;
             if (mMind.Target != null)
             {

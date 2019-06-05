@@ -42,12 +42,6 @@ namespace The_Infirmary.Characters.Nurse
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
-            if (mCurrDir == GMTB.Entities.FacingDirection.Right)
-                mTexture = mContentManager.ApplyTexture("Characters/Nurse1/walkR");
-            else if (mCurrDir == GMTB.Entities.FacingDirection.Left)
-                mTexture = mContentManager.ApplyTexture("Characters/Nurse1/walkL");
-
-            
         }
     }
 }

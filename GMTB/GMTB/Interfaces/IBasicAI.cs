@@ -28,6 +28,8 @@ namespace GMTB.Interfaces
         Vector2 Acceleration { set; }
         /// Current AI Target
         AITarget Target { get; }
+        /// Lets behaviours see current direction
+        GMTB.Entities.FacingDirection CurrentDirection { get; }
         /// <summary>
         /// Get the position of the specified target
         /// </summary>

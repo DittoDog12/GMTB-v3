@@ -26,6 +26,13 @@ namespace The_Infirmary.Characters.Nurse
             mPath = new Queue<Point>();
 
         }
+        public override void Reactivate()
+        {
+            base.Reactivate();
+            IAnimation _animation = mMind.MySelf as IAnimation;
+            _animation.Frames = 8;
+            _animation.Columns = 8;
+        }
         /// <summary>
         /// Main Draw Loop
         /// </summary>
@@ -42,6 +49,11 @@ namespace The_Infirmary.Characters.Nurse
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Nurse1/walkR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Nurse1/walkL";
+
             mMind.MySelf.Moving = true;
             mMind.MySelf.ApplyForce(PlotPath());
 

@@ -38,6 +38,11 @@ namespace GMTB.Entities.AI
         {
             set { mTexturename = value; }
         }
+        /// Lets behaviours see current direction
+        public FacingDirection CurrentDirection
+        {
+            get { return mCurrDir; }
+        }
         #endregion
 
         #region Constructor
@@ -78,6 +83,9 @@ namespace GMTB.Entities.AI
         {
             mMind.Draw(_spriteBatch, _gameTime);
             base.Draw(_spriteBatch, _gameTime);
+
+            if (mTexture.Name != mTexturename)
+                mTexture = mContentManager.ApplyTexture(mTexturename);
         }
         /// <summary>
         /// Locate the specified AI target
