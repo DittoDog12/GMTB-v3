@@ -18,6 +18,8 @@ namespace GMTB.Interfaces
         IServiceLocator ServiceLocator { get; }
         /// Reference to the Players Self
         IPlayer MySelf { get; set; }
+        /// Moving bool to control animation when returning to walk state from jump state
+        bool Moving { get; set; }
         /// <summary>
         /// Main Update Loop
         /// </summary>

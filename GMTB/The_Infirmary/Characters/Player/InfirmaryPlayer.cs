@@ -55,10 +55,10 @@ namespace The_Infirmary.Characters.Player
         public override void setVars(string _path, IContent_Manager _cm)
         {
             base.setVars(_path, _cm);
-            if (_path == "Characters/Player/walkR")
-                mFacingDirection = "right";
-            else if (_path == "Characters/Player/walkL")
-                mFacingDirection = "left";
+            if (_path == "Characters/Player/standR")
+                mFacingDirection = "standR";
+            else if (_path == "Characters/Player/standL")
+                mFacingDirection = "standL";
         }
         
         /// <summary>

@@ -29,23 +29,23 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 
 
-				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 3400, 260); //Change coordinates
-                Removables.Add(createdEntity.UID, createdEntity);
+				//// Nurse
+				//createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
+    //           // X, Y coordinates
+    //            mSceneManager.newEntity(createdEntity, 3400, 260); //Change coordinates
+    //            Removables.Add(createdEntity.UID, createdEntity);
 				
-				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse2.Nurse>("Characters/Nurse2/walkR");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 2500, 260); //Change coordinates
-                Removables.Add(createdEntity.UID, createdEntity);
+				//// Nurse
+				//createdEntity = mEntityManager.newEntity<Characters.Nurse2.Nurse>("Characters/Nurse2/walkR");
+    //           // X, Y coordinates
+    //            mSceneManager.newEntity(createdEntity, 2500, 260); //Change coordinates
+    //            Removables.Add(createdEntity.UID, createdEntity);
 				
-				// Doctor
-				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkL");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 2200, 260); //Change coordinates
-                Removables.Add(createdEntity.UID, createdEntity);
+				//// Doctor
+				//createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkL");
+    //           // X, Y coordinates
+    //            mSceneManager.newEntity(createdEntity, 2200, 260); //Change coordinates
+    //            Removables.Add(createdEntity.UID, createdEntity);
 				
 				//// Door - Medicine
 				//createdEntity = mEntityManager.newEntity<Door>("blank");

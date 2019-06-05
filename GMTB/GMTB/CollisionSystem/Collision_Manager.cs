@@ -63,7 +63,7 @@ namespace GMTB.CollisionSystem
         {
             // Iterate through all the current Entities
             foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
-            {                
+            {
                 // try cast the current Dictionary entry as a collidable
                 var asInterface = _keypair.Value as ICollidable;
                 // If successful, add it to the local list
@@ -127,7 +127,7 @@ namespace GMTB.CollisionSystem
                                 DetermineCollisionType(objA, objB);
                         }
                     }
-                                       
+
                 }
                 #region OLD
                 //// Second iterate, ie compare all objects against all other objects
@@ -175,7 +175,7 @@ namespace GMTB.CollisionSystem
             bool CollisionFlag = true;
 
             Vector2 mShortestOverlap = new Vector2(0);
-            float mOverlap = 1000;
+            float mOverlap = 1000000;
             // Use the face of each shape as the separating axis
             foreach (Vector2 Norm in ObjectABNormals)
             {
@@ -211,32 +211,56 @@ namespace GMTB.CollisionSystem
                 // Use the maximum and minimum dot products from the last step to check for an overlap
                 // If no overlap detected, break from the for loop and return false
                 // Else store overlap value for later translation vecotr calculation
-                float currentOverlap = 0;
+                //float currentOverlap = 0;
 
-                if ((obj2Max >= obj1Max && obj1Max < obj2Min) ||
-                    (obj1Max >= obj2Max && obj2Max < obj1Min))
+                //if ((obj2Max >= obj1Max && obj1Max < obj2Min) ||
+                //    (obj1Max >= obj2Max && obj2Max < obj1Min))
+                //{
+                //    CollisionFlag = false;
+                //    break;
+                //}
+                //else
+                //{
+                //    // Check which side is overlapping
+                //    //if (obj1Max > obj2Max)
+                //    //    currentOverlap = obj1Max - obj2Max;
+                //    //else if (obj2Max > obj1Max)
+                //    //    currentOverlap = obj2Max - obj1Max;
+                //    if (obj1Max > obj2Max)
+                //        currentOverlap = obj2Max - obj1Min;
+                //    else if (obj2Max > obj1Max)
+                //        currentOverlap = obj1Max - obj2Min;
+                //    // Check for shorter overlap
+                //    if (currentOverlap < mOverlap)
+                //    {
+                //        mOverlap = currentOverlap;
+                //        mShortestOverlap = Norm;
+                //    }
+                //}
+
+                // Overlap detection
+                // first get the leftmost and rightmost positions of the projections
+                // Calculate the difference between them
+                // If the difference is less than 0 then no overlap and break
+                float min1 = Math.Min(obj1Max, obj2Max);
+                float max1 = Math.Max(obj1Min, obj2Min);
+                float diff = min1 - max1;
+                float currentOverlap = Math.Max(0, diff);
+                if (currentOverlap == 0)
                 {
                     CollisionFlag = false;
                     break;
                 }
+                // if the difference is over 0 then calculate the smallest overlap for MTV
                 else
                 {
-                    // Check which side is overlapping
-                    //if (obj1Max > obj2Max)
-                    //    currentOverlap = obj1Max - obj2Max;
-                    //else if (obj2Max > obj1Max)
-                    //    currentOverlap = obj2Max - obj1Max;
-                    if (obj1Max > obj2Max)
-                        currentOverlap = obj2Max - obj1Min;
-                    else if (obj2Max > obj1Max)
-                        currentOverlap = obj1Max - obj2Min;
-                    // Check for shorter overlap
                     if (currentOverlap < mOverlap)
                     {
                         mOverlap = currentOverlap;
                         mShortestOverlap = Norm;
                     }
                 }
+
             }
             // If all faces have not broken the main loop
             // The loop will exit here, run MTV calculation and then return a true collision flag
@@ -268,7 +292,7 @@ namespace GMTB.CollisionSystem
                 if (_ObjA != null)
                     _ObjA.OnTrigger(_otherTarget);
             }
-                
+
             else
             {
                 // Assume Physical Collision,
@@ -281,7 +305,7 @@ namespace GMTB.CollisionSystem
 
 
             }
-            
+
         }
 
         #endregion

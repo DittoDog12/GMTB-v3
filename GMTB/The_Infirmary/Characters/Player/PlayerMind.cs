@@ -24,6 +24,8 @@ namespace The_Infirmary.Characters.Player
         protected IPlayer mSelf;
         /// Reference to the Service Locator
         protected IServiceLocator mServiceLocator;
+        /// Moving bool to control animation when returning to walk state from jump state
+        protected bool mMoving;
         #endregion
 
         #region Accessors
@@ -37,6 +39,12 @@ namespace The_Infirmary.Characters.Player
         public IServiceLocator ServiceLocator
         {
             get { return mServiceLocator; }
+        }
+        /// Moving bool to control animation when returning to walk state from jump state
+        public bool Moving
+        {
+            get { return mMoving; }
+            set { mMoving = value; }
         }
         #endregion
 

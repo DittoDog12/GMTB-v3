@@ -130,6 +130,7 @@ namespace The_Infirmary.Characters.Player
                         mPMind.MySelf.Texturename = "Characters/Player/jumpR";
                     }
                     mJumpVector.X = mSpeed;
+                    mPMind.Moving = true;
                     break;
                 //Left Movement
                 case Keybindings.Left:
@@ -139,6 +140,7 @@ namespace The_Infirmary.Characters.Player
                         mPMind.MySelf.Texturename = "Characters/Player/jumpL";
                     }
                     mJumpVector.X = -mSpeed;
+                    mPMind.Moving = true;
                     break;
                 // Override up and down, if using gamepad and the stick is slightly mvoed on the Y axis it confuses the input detection
                 case Keybindings.Up:
@@ -152,6 +154,7 @@ namespace The_Infirmary.Characters.Player
                     else if (mPMind.MySelf.FacingDirection == "left")
                         mPMind.MySelf.FacingDirection = "standL";
                     mJumpVector.X = 0;
+                    mPMind.Moving = false;
                     break;
             }
         }

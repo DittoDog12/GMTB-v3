@@ -66,7 +66,7 @@ namespace The_Infirmary.Characters.Player
         {
             mInputManager.Sub_Space(OnSpace);
             mInputManager.Sub_Move(OnMoveInput);
-            if (mAnimation.Moving)
+            if (mPMind.Moving)
             {
                 mAnimation.Frames = 8;
                 mAnimation.Columns = 8;
