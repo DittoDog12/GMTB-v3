@@ -38,7 +38,7 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_mind">Reference to the Mind</param>
         public Jump(IPlayerMind _mind) : base(_mind)
         {
-            mJumpForce = -6f;
+            mJumpForce = -9f;
             mJumping = true;
             mSpeed = 3f;
         }

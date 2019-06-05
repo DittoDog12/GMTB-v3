@@ -90,7 +90,7 @@ namespace GMTB.Entities
         /// </summary>
         public PhysicalEntity()
         {
-            mGravity = new Vector2(0, 1);
+            mGravity = new Vector2(0, 3);
         }
         #endregion
 

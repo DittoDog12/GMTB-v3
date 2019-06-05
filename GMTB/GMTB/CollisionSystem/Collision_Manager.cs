@@ -114,6 +114,13 @@ namespace GMTB.CollisionSystem
                             {
                                 ObjectABNormals.Add(vec);
                             }
+                            // debug if statement
+                            IPhysicalEntity objAEnt = objA as IPhysicalEntity;
+                            IPhysicalEntity objBEnt = objB as IPhysicalEntity;
+                            if (objAEnt.Texturename == "Characters/Player/standR" && objBEnt.Texturename == "floor")
+                            {
+                                //breakpoint
+                            }
                             // Call the main collision test method, pass the reference to the objects Vertices lists
                             // If collision returns true, call the MTV calculation, pass Object A as the target
                             if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
@@ -215,10 +222,14 @@ namespace GMTB.CollisionSystem
                 else
                 {
                     // Check which side is overlapping
+                    //if (obj1Max > obj2Max)
+                    //    currentOverlap = obj1Max - obj2Max;
+                    //else if (obj2Max > obj1Max)
+                    //    currentOverlap = obj2Max - obj1Max;
                     if (obj1Max > obj2Max)
-                        currentOverlap = obj1Max - obj2Max;
+                        currentOverlap = obj2Max - obj1Min;
                     else if (obj2Max > obj1Max)
-                        currentOverlap = obj1Min - obj2Min;
+                        currentOverlap = obj1Max - obj2Min;
                     // Check for shorter overlap
                     if (currentOverlap < mOverlap)
                     {

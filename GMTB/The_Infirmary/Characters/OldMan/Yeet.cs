@@ -35,7 +35,7 @@ namespace The_Infirmary.Characters.OldMan
         /// <param name="_mind">Reference to the mind</param>
         public Yeet(IAIMind _mind): base(_mind)
         {
-            mJumpForce = -6f;
+            mJumpForce = -9f;
             mJumping = true;
 
         }

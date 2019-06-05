@@ -130,7 +130,6 @@ namespace GMTB.Entities
         /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-
             // Override normal draw method with specialised animating one
 
             // Calculate size of each animation frame
