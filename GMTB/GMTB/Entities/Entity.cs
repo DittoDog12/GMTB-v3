@@ -30,6 +30,7 @@ namespace GMTB.Entities
         protected bool mActive;
         /// Unique name for idenfication
         protected string mUName;
+       
         #endregion
 
         #region Accessors

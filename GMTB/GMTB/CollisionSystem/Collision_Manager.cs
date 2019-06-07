@@ -117,7 +117,7 @@ namespace GMTB.CollisionSystem
                             // debug if statement
                             IPhysicalEntity objAEnt = objA as IPhysicalEntity;
                             IPhysicalEntity objBEnt = objB as IPhysicalEntity;
-                            if (objAEnt.Texturename == "Characters/Player/standR" && objBEnt.Texturename == "floor")
+                            if (objAEnt.Texturename == "Characters/Player/standR" && objBEnt.Texturename == "Objects/bed")
                             {
                                 //breakpoint
                             }
@@ -242,9 +242,12 @@ namespace GMTB.CollisionSystem
                 // first get the leftmost and rightmost positions of the projections
                 // Calculate the difference between them
                 // If the difference is less than 0 then no overlap and break
-                float min1 = Math.Min(obj1Max, obj2Max);
-                float max1 = Math.Max(obj1Min, obj2Min);
-                float diff = min1 - max1;
+                //float min1 = Math.Min(obj1Max, obj2Max);
+                //float max1 = Math.Max(obj1Min, obj2Min);
+                float max1 = Math.Min(obj1Max, obj2Max);
+                float min1 = Math.Max(obj1Min, obj2Min);
+               // float diff = min1 - max1;
+                float diff = max1 - min1;
                 float currentOverlap = Math.Max(0, diff);
                 if (currentOverlap == 0)
                 {

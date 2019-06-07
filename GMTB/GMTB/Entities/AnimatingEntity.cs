@@ -138,6 +138,10 @@ namespace GMTB.Entities
             int _row = (int)((float)mCurrentFrame / (float)mColumns);
             int _column = mCurrentFrame % mColumns;
 
+            // Update Current Texture width and height
+            mCurrentTextureHeight = mHeight;
+            mCurrentTextureWidth = mWidth;
+
             // Position selection around frame of spritesheet
             Rectangle _sourceRectangle = new Rectangle(mWidth * _column, mHeight * _row, mWidth, mHeight);
             Rectangle _destinationRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mWidth, mHeight);

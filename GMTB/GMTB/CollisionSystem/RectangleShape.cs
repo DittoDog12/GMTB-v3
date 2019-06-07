@@ -39,7 +39,7 @@ namespace GMTB.CollisionSystem
         public override void setVars(string _path, IContent_Manager _cm)
         {
             base.setVars(_path, _cm);
-            mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
+            mRectangle = new Rectangle((int)mPosition.X, (int)mPosition.Y, mCurrentTextureWidth, mCurrentTextureHeight);
         }
         /// <summary>
         /// Get the points of each vertices of the rectangle
@@ -54,7 +54,7 @@ namespace GMTB.CollisionSystem
                 new Vector2(mPosition.X + mRectangle.Width, mPosition.Y + mRectangle.Height),
                 new Vector2(mPosition.X, mPosition.Y + mRectangle.Height)
             };
-
+            Console.WriteLine(mTexture.Name + ": " + mCurrentTextureWidth + ", " + mCurrentTextureHeight);
             return rtnLst;
         }
 

@@ -46,6 +46,10 @@ namespace GMTB.Entities
         protected Texture2D mTexture;
         /// Texture Path
         protected string mTexturename;
+        /// Additional storage variable for texture height
+        protected int mCurrentTextureHeight;
+        /// Additional storage variable for texture height
+        protected int mCurrentTextureWidth;
 
         //--Position
         /// Current Position
@@ -111,6 +115,9 @@ namespace GMTB.Entities
         {
             mTexturename = _path;
             mContentManager = _cm;
+            mTexture = mContentManager.ApplyTexture(mTexturename);
+            mCurrentTextureHeight = mTexture.Height;
+            mCurrentTextureWidth = mTexture.Width;
         }
         /// <summary>
         /// Force change position

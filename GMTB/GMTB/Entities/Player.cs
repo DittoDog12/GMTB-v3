@@ -64,7 +64,7 @@ namespace GMTB.Entities
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
-            Debug.WriteLine(mPosition);
+            //Debug.WriteLine(mPosition);
         }
 
 

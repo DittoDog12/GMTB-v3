@@ -133,8 +133,8 @@ namespace GMTB.Managers
             IEntity _createdEntity = newEntity<T>();
             // Change the Entity to a PhysicalEntity
             IPhysicalEntity _entity = _createdEntity as IPhysicalEntity;
-            // Call the Content Manager to apply the entities texture
-            _entity.Texture = mContentManager.ApplyTexture(_path);
+            //// Call the Content Manager to apply the entities texture
+            //_entity.Texture = mContentManager.ApplyTexture(_path);
             setEntityVars(_entity, _path);
             // Return Created Entity
             return _createdEntity;
