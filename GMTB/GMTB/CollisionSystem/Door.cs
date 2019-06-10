@@ -34,7 +34,7 @@ namespace GMTB.CollisionSystem
         #region Constructor
         public Door()
         {
-            mAxes = 4;
+            mAxes = 2;
             mRotation = 0f;
         }
 

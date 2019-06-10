@@ -25,7 +25,7 @@ namespace GMTB.CollisionSystem
         /// </summary>
         public RectangleShape()
         { 
-            mAxes = 4;
+            mAxes = 2;
             mRotation = 0f;
         }
         #endregion
@@ -54,7 +54,7 @@ namespace GMTB.CollisionSystem
                 new Vector2(mPosition.X + mRectangle.Width, mPosition.Y + mRectangle.Height),
                 new Vector2(mPosition.X, mPosition.Y + mRectangle.Height)
             };
-            Console.WriteLine(mTexture.Name + ": " + mCurrentTextureWidth + ", " + mCurrentTextureHeight);
+            //Console.WriteLine(mTexture.Name + ": " + mCurrentTextureWidth + ", " + mCurrentTextureHeight);
             return rtnLst;
         }
 

@@ -119,20 +119,26 @@ namespace GMTB.CollisionSystem
         {
             List<Vector2> _rtnLst = new List<Vector2>();
 
+            //for (int i = 0; i < mAxes; i++)
+            //{
+            //    if (i == mAxes - 1)
+            //    {
+            //        _rtnLst.Add(
+            //            Vector2.Subtract(RectangleVertices[0], RectangleVertices[i]));
+            //    }
+            //    else
+            //    {
+            //        _rtnLst.Add(
+            //            Vector2.Subtract(RectangleVertices[i + 1], RectangleVertices[i]));
+            //    }
+            //}
             for (int i = 0; i < mAxes; i++)
             {
-                if (i == mAxes - 1)
-                {
-                    _rtnLst.Add(
-                        Vector2.Subtract(RectangleVertices[0], RectangleVertices[i]));
-                }
-                else
-                {
-                    _rtnLst.Add(
-                        Vector2.Subtract(RectangleVertices[i + 1], RectangleVertices[i]));
-                }
+                Vector2 v1 = RectangleVertices[i];
+                Vector2 v2 = RectangleVertices[i + 1];
+                _rtnLst.Add(
+                    Vector2.Subtract(v1, v2));
             }
-
             return _rtnLst;
         }
         /// <summary>
@@ -211,7 +217,7 @@ namespace GMTB.CollisionSystem
             mPosition += _mtv;
 
             IStaticObject asInterface = _otherObj as IStaticObject;
-            
+
             if (asInterface != null)
             {
                 if (asInterface.TextureName == "wall" || asInterface.TextureName == "floor")
