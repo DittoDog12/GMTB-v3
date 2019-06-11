@@ -49,6 +49,7 @@ namespace GMTB.CollisionSystem
             mCollidables = new Dictionary<int, ICollidable>();
             mEntityManager = _em;
             mQuadtree = new Quadtree(0, new Rectangle(Global.Camera.Position.ToPoint(), new Point(Global.Camera.ViewPortWidth, Global.Camera.ViewPortHeight)));
+            //mQuadtree = new Quadtree(0, new Rectangle(new Point (0,0), new Point(5000,5000)));
         }
         #endregion
 
@@ -61,6 +62,7 @@ namespace GMTB.CollisionSystem
         /// </summary>
         public void CollisionDetec()
         {
+            // Update the quad tree to line up with the camera's current position
             mQuadtree.UpdatePosition(new Rectangle(Global.Camera.TLPosition.ToPoint(), new Point(Global.Camera.ViewPortWidth, Global.Camera.ViewPortHeight)));
             // Iterate through all the current Entities
             foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
@@ -251,8 +253,8 @@ namespace GMTB.CollisionSystem
                 //float max1 = Math.Max(obj1Min, obj2Min);
                 float max1 = Math.Min(obj1Max, obj2Max);
                 float min1 = Math.Max(obj1Min, obj2Min);
-                float diff = min1 - max1;
-                //float diff = max1 - min1;
+                //float diff = min1 - max1;
+                float diff = max1 - min1;
                 float currentOverlap = Math.Max(0, diff);
                 if (currentOverlap == 0)
                 {
@@ -306,6 +308,15 @@ namespace GMTB.CollisionSystem
                 // Assume Physical Collision,
                 // Perform MTV calculations and call main Collision Method
                 Vector2 _mtv = mCollisionNormal * mCollisionOverlap;
+
+                // Check MTV is in right direction
+                Vector2 _o2too1 = Vector2.Subtract(_otherTarget.Position, _target.Position);
+                float dot = Vector2.Dot(_o2too1, mCollisionNormal);
+                if (dot >=0)
+                {
+                    _mtv *= -1;
+                }
+            
                 _target.Collision(_otherTarget);
                 _otherTarget.Collision(_target);
                 _target.Collision(_mtv, mCollisionNormal, _otherTarget);

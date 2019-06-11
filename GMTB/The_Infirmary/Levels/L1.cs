@@ -25,21 +25,21 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 100, 280);
+                mSceneManager.newEntity(createdEntity, 10, 280);
                 Removables.Add(createdEntity.UID, createdEntity);
 
-                //// Old Man
-                //createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("Characters/OldMan/standL");
-                //// X, Y coordinates
-                //mSceneManager.newEntity(createdEntity, 150, 280); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                // Old Man
+                createdEntity = mEntityManager.newEntity<Characters.OldMan.OldMan>("Characters/OldMan/standL");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 150, 280); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
 
-                //// Nurse
-                //createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/standL");
-                //// X, Y coordinates
-                //mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
-                //createdEntity.setVars("nurse");
-                //Removables.Add(createdEntity.UID, createdEntity);
+                // Nurse
+                createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/standL");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 700, 280); //Change coordinates
+                createdEntity.setVars("nurse");
+                Removables.Add(createdEntity.UID, createdEntity);
 
                 // Door
                 createdEntity = mEntityManager.newEntity<Door>("blank");

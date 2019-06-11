@@ -4,6 +4,7 @@ using GMTB.Interfaces;
 using GMTB.CollisionSystem;
 using System;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace The_Infirmary.Levels
 {
@@ -13,6 +14,8 @@ namespace The_Infirmary.Levels
 		private Random rand;
 		private int mBeds;
 		private int mTables;
+        private List<int> mObjectPositions;
+        private int mObjectPosition;
 		#endregion
 
         #region Constructor
@@ -38,7 +41,7 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 120, 2200);
+                mSceneManager.newEntity(createdEntity, 10, 2200);
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left
@@ -64,7 +67,7 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bed");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, mObjectPosition, 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
