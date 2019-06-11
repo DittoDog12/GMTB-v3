@@ -48,6 +48,14 @@ namespace GMTB.CollisionSystem
 
         #region Methods
         /// <summary>
+        /// Allows Collision Manager to update the quadtrees position
+        /// </summary>
+        /// <param name="_bounds"></param>
+        public void UpdatePosition(Rectangle _bounds)
+        {
+            mBounds = _bounds;
+        }
+        /// <summary>
         /// Clears the Quadtree and all subquadtrees
         /// </summary>
         public void Clear()
@@ -124,7 +132,7 @@ namespace GMTB.CollisionSystem
         {
             // Cast the target object to an IPhysicalEntity to access it's location and size
             IPhysicalEntity _entity = _obj as IPhysicalEntity;
-            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.Y, _entity.Texture.Width, _entity.Texture.Height);
+            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.Y, _entity.CurrentTextureWidth, _entity.CurrentTextureHeight);
 
 
             if (mNodes[0] != null)
@@ -155,7 +163,7 @@ namespace GMTB.CollisionSystem
                 {
                     // Cast the target object to an IPhysicalEntity to access it's location and size
                     IPhysicalEntity _ent = mObjects[i] as IPhysicalEntity;
-                    Rectangle _rec = new Rectangle((int)_ent.Position.X, (int)_ent.Position.Y, _ent.Texture.Width, _ent.Texture.Height);
+                    Rectangle _rec = new Rectangle((int)_ent.Position.X, (int)_ent.Position.Y, _ent.CurrentTextureWidth, _ent.CurrentTextureHeight);
 
                     int _index = GetIndex(_rec);
                     if (_index != -1)
@@ -179,7 +187,7 @@ namespace GMTB.CollisionSystem
         {
             // Cast the target object to an IPhysicalEntity to access it's location and size
             IPhysicalEntity _entity = _target as IPhysicalEntity;
-            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.Y, _entity.Texture.Width, _entity.Texture.Height);
+            Rectangle _rect = new Rectangle((int)_entity.Position.X, (int)_entity.Position.Y, _entity.CurrentTextureWidth, _entity.CurrentTextureHeight);
 
             // Calculate which quadtree the target obejct is in
             int _index = GetIndex(_rect);

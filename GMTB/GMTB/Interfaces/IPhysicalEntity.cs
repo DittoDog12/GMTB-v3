@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace GMTB.Interfaces
 {
@@ -17,10 +17,15 @@ namespace GMTB.Interfaces
         string Texturename { get; }
         /// Current Texture
         Texture2D Texture { get; set; }
+        /// Current Texture Height
+        int CurrentTextureHeight { get; }
+        /// Current Texture Width
+        int CurrentTextureWidth { get; }
         /// Current Position
         Vector2 Position { get; }
         /// Current Acceleration
         Vector2 Acceleration { set; }
+
 
         /// <summary>
         /// Set core variables

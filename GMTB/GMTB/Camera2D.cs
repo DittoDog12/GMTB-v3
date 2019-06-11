@@ -35,6 +35,10 @@ namespace GMTB
         private int ScreenHeight;
         /// Reference to the Screen Width
         private int ScreenWidth;
+        /// Reference to the Viewport Height
+        private int mViewPortHeight;
+        /// Reference to the Viewport Width
+        private int mViewPortWidth;
 
         // Follow Player Varaibles, Based on AI system
         //private Vector2 mDistanceToDest;
@@ -51,11 +55,16 @@ namespace GMTB
         #endregion
 
         #region Accessors
-        /// Accessor for current Position
+        /// Accessor for current Center Position
         public Vector2 Position
         {
             get { return mPosition; }
             set { mPosition = value; }
+        }
+        /// Accessor for current top left Position
+        public Vector2 TLPosition
+        {
+            get { return new Vector2(mPosition.X - mViewPortHeight / 2, mPosition.Y - mViewPortWidth / 2); }
         }
         /// <summary>
         /// Accessor for current zoom
@@ -76,7 +85,14 @@ namespace GMTB
             get { return mRotatation; }
             set { mRotatation = value; }
         }
-
+        public int ViewPortHeight
+        {
+            get { return mViewPortHeight; }
+        }
+        public int ViewPortWidth
+        {
+            get { return mViewPortWidth; }
+        }
         #endregion
 
         #region Constructor
@@ -149,8 +165,10 @@ namespace GMTB
                 Matrix.CreateRotationZ(Rotation) *
                 Matrix.CreateScale(new Vector3(mZoom, mZoom, 1)) *
                 Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, graphicsDevice.Viewport.Height * 0.5f, 0));
-                //Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, 150, 0));
+            //Matrix.CreateTranslation(new Vector3(graphicsDevice.Viewport.Width * 0.5f, 150, 0));
 
+            mViewPortWidth = graphicsDevice.Viewport.Width;
+            mViewPortHeight = graphicsDevice.Viewport.Height;
             return mTransform;
         }
         /// <summary>
@@ -185,6 +203,9 @@ namespace GMTB
             //    mVelocity.Y = 0;
 
             //mPosition += mVelocity;
+
+            Console.WriteLine("Camera Position: " + mPosition);
+            Console.WriteLine("Camera Top Left Position: " + TLPosition);
         }
         #endregion
     }

@@ -44,11 +44,11 @@ namespace GMTB.CollisionSystem
         /// </summary>
         /// <param name="_em">Reference to Entity Manager</param>
         /// <param name="_screenSize">Size of game viewport</param>
-        public Collision_Manager(IEntity_Manager _em, Point _screenSize)
+        public Collision_Manager(IEntity_Manager _em)
         {
             mCollidables = new Dictionary<int, ICollidable>();
             mEntityManager = _em;
-            mQuadtree = new Quadtree(0, new Rectangle(new Point(0, 0), _screenSize));
+            mQuadtree = new Quadtree(0, new Rectangle(Global.Camera.Position.ToPoint(), new Point(Global.Camera.ViewPortWidth, Global.Camera.ViewPortHeight)));
         }
         #endregion
 
@@ -61,6 +61,7 @@ namespace GMTB.CollisionSystem
         /// </summary>
         public void CollisionDetec()
         {
+            mQuadtree.UpdatePosition(new Rectangle(Global.Camera.TLPosition.ToPoint(), new Point(Global.Camera.ViewPortWidth, Global.Camera.ViewPortHeight)));
             // Iterate through all the current Entities
             foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
             {
@@ -117,7 +118,11 @@ namespace GMTB.CollisionSystem
                             // debug if statement
                             IPhysicalEntity objAEnt = objA as IPhysicalEntity;
                             IPhysicalEntity objBEnt = objB as IPhysicalEntity;
-                            if (objAEnt.Texturename == "Characters/Player/standR" && objBEnt.Texturename == "Objects/bed")
+                            if (objAEnt.Texturename == "Characters/Player/standR" && objBEnt.Texturename == "floor")
+                            {
+                                //breakpoint
+                            }
+                            if (objBEnt.Texturename == "Characters/Player/standR" && objAEnt.Texturename == "floor")
                             {
                                 //breakpoint
                             }
@@ -246,8 +251,8 @@ namespace GMTB.CollisionSystem
                 //float max1 = Math.Max(obj1Min, obj2Min);
                 float max1 = Math.Min(obj1Max, obj2Max);
                 float min1 = Math.Max(obj1Min, obj2Min);
-               // float diff = min1 - max1;
-                float diff = max1 - min1;
+                float diff = min1 - max1;
+                //float diff = max1 - min1;
                 float currentOverlap = Math.Max(0, diff);
                 if (currentOverlap == 0)
                 {

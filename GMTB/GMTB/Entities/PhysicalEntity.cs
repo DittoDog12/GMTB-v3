@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GMTB.CollisionSystem;
 using GMTB.InputSystem;
 using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using GMTB.CollisionSystem;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GMTB.Entities
 {
@@ -74,6 +74,16 @@ namespace GMTB.Entities
         {
             get { return mTexture; }
             set { mTexture = value; }
+        }
+        /// Current Texture Height
+        public int CurrentTextureHeight
+        {
+            get { return mCurrentTextureHeight; }
+        }
+        /// Current Texture Width
+        public int CurrentTextureWidth
+        {
+            get { return mCurrentTextureWidth; }
         }
         /// Current Position
         public Vector2 Position

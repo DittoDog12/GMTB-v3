@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,11 @@ namespace GMTB.CollisionSystem
     /// </summary>
     public interface IQuadtree
     {
+        /// <summary>
+        /// Allows Collision Manager to update the quadtrees position
+        /// </summary>
+        /// <param name="_bounds"></param>
+        void UpdatePosition(Rectangle _bounds);
         /// <summary>
         /// Clears the Quadtree and all subquadtrees
         /// </summary>

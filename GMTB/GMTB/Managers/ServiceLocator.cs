@@ -33,7 +33,7 @@ namespace GMTB.Managers
         /// <param name="_levels">Pass dictionary of all Levels here</param>
         /// <param name="_menus">Pass dictionary of all Menus here</param>
         /// <param name="_viewport">Size of current viewport</param>
-        internal ServiceLocator(ContentManager _content, string _contentRoot, IDictionary<string, ILevel> _levels, IDictionary<string, IMenu> _menus, Point _viewport)
+        internal ServiceLocator(ContentManager _content, string _contentRoot, IDictionary<string, ILevel> _levels, IDictionary<string, IMenu> _menus)
         {
             mServices = new Dictionary<object, object>();
             // Create Managers
@@ -48,7 +48,7 @@ namespace GMTB.Managers
             // Scene Manager - Requires Entity Manager and Background Manager
             mServices.Add(typeof(IScene_Manager), new Scene_Manager(GetService<IEntity_Manager>(), GetService<IBackground_Manager>()));
             // Collision Manager - Requires Entity Manager and Viewport
-            mServices.Add(typeof(ICollision_Manager), new Collision_Manager(GetService<IEntity_Manager>(), _viewport));
+            mServices.Add(typeof(ICollision_Manager), new Collision_Manager(GetService<IEntity_Manager>()));
             // AI Manager - Requires Entity Manager
             mServices.Add(typeof(IAI_Manager), new AI_Manager(GetService<IEntity_Manager>()));
             // Menu Manager - Requires Service Locator and List of Menus

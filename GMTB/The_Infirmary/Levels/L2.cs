@@ -38,7 +38,7 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 10, 2260);
+                mSceneManager.newEntity(createdEntity, 120, 2200);
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left
@@ -64,7 +64,7 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bed");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1850), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
@@ -73,13 +73,13 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bedsidetable");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(100, 1850), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2260); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
                 //Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, -40, 2400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 0, 2400); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Background sound

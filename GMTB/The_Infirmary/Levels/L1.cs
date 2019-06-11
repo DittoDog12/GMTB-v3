@@ -25,7 +25,7 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 10, 280);
+                mSceneManager.newEntity(createdEntity, 100, 280);
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Old Man
@@ -80,7 +80,7 @@ namespace The_Infirmary.Levels
 
                 // Floor 2
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, 2400, 400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 2400, 410); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left

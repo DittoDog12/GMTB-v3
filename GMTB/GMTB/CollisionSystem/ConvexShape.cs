@@ -61,7 +61,7 @@ namespace GMTB.CollisionSystem
         public override void setDefaultPos(Vector2 _pos)
         {
             base.setDefaultPos(_pos);
-            mHitbox = new Rectangle((int)mPosition.X, (int)mPosition.Y, mTexture.Width, mTexture.Height);
+            mHitbox = new Rectangle((int)mPosition.X, (int)mPosition.Y, mCurrentTextureWidth, mCurrentTextureHeight);
         }
         /// <summary>
         /// Main Update loop
@@ -132,10 +132,15 @@ namespace GMTB.CollisionSystem
             //            Vector2.Subtract(RectangleVertices[i + 1], RectangleVertices[i]));
             //    }
             //}
-            for (int i = 0; i < mAxes; i++)
+            for (int i = 0; i < RectangleVertices.Count; i++)
             {
-                Vector2 v1 = RectangleVertices[i];
-                Vector2 v2 = RectangleVertices[i + 1];
+                Vector2 v1;
+                Vector2 v2;
+                v1 = RectangleVertices[i];
+                if (i == RectangleVertices.Count - 1)
+                    v2 = RectangleVertices[0];
+                else
+                    v2 = RectangleVertices[i + 1];
                 _rtnLst.Add(
                     Vector2.Subtract(v1, v2));
             }
@@ -150,7 +155,7 @@ namespace GMTB.CollisionSystem
         {
             List<Vector2> _rtnLst = new List<Vector2>();
 
-            for (int i = 0; i < mAxes; i++)
+            for (int i = 0; i < _subtractedVectors.Count; i++)
             {
                 _rtnLst.Add(new Vector2(_subtractedVectors[i].Y,
                                         _subtractedVectors[i].X * -1));
