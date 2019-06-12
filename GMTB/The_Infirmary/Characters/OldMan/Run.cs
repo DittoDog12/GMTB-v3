@@ -28,6 +28,8 @@ namespace The_Infirmary.Characters.OldMan
         public override void Reactivate()
         {
             base.Reactivate();
+            mAnimation.Frames = 8;
+            mAnimation.Columns = 8;
             mMind.MySelf.Texturename = "Characters/OldMan/walkR";
             // Find the nurse object
             foreach (KeyValuePair<int, IEntity> _keyPair in mMind.MySelf.ServiceLocator.GetService<IEntity_Manager>().AllEntities)

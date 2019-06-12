@@ -20,12 +20,14 @@ namespace The_Infirmary.Characters.Nurse
         public Idle(IAIMind _mind) : base(_mind)
         {
         }
-        public override void Reactivate()
+        /// <summary>
+        /// Initializes the Behaviour, sets up all variables required from the start
+        /// </summary>
+        public override void Initialize()
         {
-            base.Reactivate();
-            IAnimation _animation = mMind.MySelf as IAnimation;
-            _animation.Frames = 1;
-            _animation.Columns = 1;
+            base.Initialize();
+            mAnimation.Frames = 1;
+            mAnimation.Columns = 1;
         }
         /// <summary>
         /// Main Draw Loop

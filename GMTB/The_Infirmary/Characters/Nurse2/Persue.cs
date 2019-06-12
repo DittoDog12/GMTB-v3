@@ -26,6 +26,12 @@ namespace The_Infirmary.Characters.Nurse2
             mPath = new Queue<Point>();
             
         }
+        public override void Reactivate()
+        {
+            base.Reactivate();
+            mAnimation.Frames = 8;
+            mAnimation.Columns = 8;
+        }
         /// <summary>
         /// Main Draw Loop
         /// </summary>

@@ -21,6 +21,15 @@ namespace The_Infirmary.Characters.Nurse2
         {
         }
         /// <summary>
+        /// Initializes the Behaviour, sets up all variables required from the start
+        /// </summary>
+        public override void Initialize()
+        {
+            base.Initialize();
+            mAnimation.Frames = 1;
+            mAnimation.Columns = 1;
+        }
+        /// <summary>
         /// Main Draw Loop
         /// </summary>
         /// <param name="_spriteBatch">Reference to the SpriteBatch</param>

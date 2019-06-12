@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using GMTB.Interfaces;
 
 namespace The_Infirmary.Characters.Nurse
 {
@@ -23,6 +24,14 @@ namespace The_Infirmary.Characters.Nurse
             mFrames = 8;
             mColumns = 8;
             mInterval = 75f;
+        }
+        public override void setVars(string _path, IContent_Manager _cm)
+        {
+            base.setVars(_path, _cm);
+            if (_path == "Characters/Nurse1/standR")
+                mCurrDir = GMTB.Entities.FacingDirection.Right;
+            else if (_path == "Characters/Nurse1/standL")
+                mCurrDir = GMTB.Entities.FacingDirection.Left;
         }
         /// <summary>
         /// Main Draw Loop
