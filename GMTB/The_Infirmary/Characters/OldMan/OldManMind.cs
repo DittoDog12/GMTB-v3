@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GMTB.CollisionSystem;
 using GMTB.Entities.AI;
 using GMTB.Interfaces;
 namespace The_Infirmary.Characters.OldMan

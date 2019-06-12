@@ -87,9 +87,12 @@ namespace The_Infirmary.Characters.OldMan
             if (asInterface != null)
             {
                 if (asInterface.Frame >= 2 && !mMaxReached)
+                {
                     asInterface.Frame = 2;
+                    mAnimation.Moving = false;
+                }                   
                 else if (asInterface.Frame <= 2 && mMaxReached)
-                    asInterface.Frame = 3;
+                    asInterface.Frame = 4;
             }
         }
         /// <summary>
@@ -101,7 +104,7 @@ namespace The_Infirmary.Characters.OldMan
         {
             //IStaticObject asInterface = _obj as IStaticObject;
             //if (asInterface.TextureName == "floor" && !mJumping)
-            mMind.ChangeState("walk");
+            mMind.ChangeState("run");
         }
     }
 }

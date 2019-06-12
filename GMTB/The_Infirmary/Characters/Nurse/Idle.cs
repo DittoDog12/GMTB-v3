@@ -15,7 +15,7 @@ namespace The_Infirmary.Characters.Nurse
     /// </summary>
     class Idle : State
     {
-        private float mTriggerDistance = 300f;
+        private float mTriggerDistance = 150f;
 
         public Idle(IAIMind _mind) : base(_mind)
         {
@@ -26,6 +26,15 @@ namespace The_Infirmary.Characters.Nurse
         public override void Initialize()
         {
             base.Initialize();
+            mAnimation.Frames = 1;
+            mAnimation.Columns = 1;
+        }
+        /// <summary>
+        /// Resests any settings that may have been changed by other behaviours
+        /// </summary>
+        public override void Reactivate()
+        {
+            base.Reactivate();
             mAnimation.Frames = 1;
             mAnimation.Columns = 1;
         }
@@ -53,9 +62,10 @@ namespace The_Infirmary.Characters.Nurse
             mMind.MySelf.Moving = false;
             if (mMind.Target != null)
             {
-                Vector2 _dist = mMind.Target.Position - mMind.MySelf.Position;
-                float _distance = _dist.Length();
-                if (_distance < mTriggerDistance)
+                Vector2 v1 = new Vector2(mMind.Target.Position.X, 0);
+                Vector2 v2 = new Vector2(mMind.MySelf.Position.X, 0);
+                float _distance = Vector2.Distance(v1, v2);
+                if (_distance <= mTriggerDistance)
                     ChangeState("persue");
             }           
         }

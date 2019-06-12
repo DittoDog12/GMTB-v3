@@ -26,7 +26,7 @@ namespace The_Infirmary.Characters.Player
         /// Max height reached
         private bool mMaxReached = false;
         /// Max Height of jump
-        private float mJumpHeight = 160f;
+        private float mJumpHeight = 240f;
         /// Max Height of current Jump
         private float mJumpMax;
         /// Horizontal move speed

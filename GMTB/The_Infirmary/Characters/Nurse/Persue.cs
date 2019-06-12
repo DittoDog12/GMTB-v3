@@ -16,7 +16,7 @@ namespace The_Infirmary.Characters.Nurse
     public class Persue : State
     {
         ///
-        private float mPersueDistance = 150f;
+        private float mPersueDistance = 160f;
         /// <summary>
         /// Main Constructor
         /// </summary>
@@ -58,7 +58,10 @@ namespace The_Infirmary.Characters.Nurse
             mMind.MySelf.ApplyForce(PlotPath());
 
             // If player too far away, give up
-            if (mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X > mPersueDistance || mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X < -mPersueDistance)
+            Vector2 v1 = new Vector2(mMind.Target.Position.X, 0);
+            Vector2 v2 = new Vector2(mMind.MySelf.Position.X, 0);
+            float _distance = Vector2.Distance(v1, v2);
+            if (_distance > mPersueDistance)
                 mMind.ChangeState("idle");
         }
         /// <summary>

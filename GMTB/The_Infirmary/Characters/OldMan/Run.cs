@@ -13,7 +13,7 @@ namespace The_Infirmary.Characters.OldMan
     class Run : State
     {
         private IPhysicalEntity mNurse;
-        private int mJumpActivation = 125;
+        private float mJumpActivation = 100f;
         private float mSpeed = 7f;
 
         public Run(IAIMind _mind) : base(_mind)
@@ -41,17 +41,12 @@ namespace The_Infirmary.Characters.OldMan
             mMind.MySelf.Moving = true;
             mMind.MySelf.ApplyForce(PlotPath());
 
-            // If Close to Nurse then Jump, only if distance is positive, if negative then assume Old Man has already jumped over the nurse
-            if (mNurse.Position.X - mMind.MySelf.Position.X < mJumpActivation && mNurse.Position.X - mMind.MySelf.Position.X > 0)
+            // If Close to Nurse then Jump
+            Vector2 v1 = new Vector2(mNurse.Position.X, 0);
+            Vector2 v2 = new Vector2(mMind.MySelf.Position.X, 0);
+            float _distance = Vector2.Distance(v1, v2);
+            if (_distance <= mJumpActivation)
                 mMind.ChangeState("yeet");
-
-            // If way off screen, despawn
-            if (mMind.MySelf.Position.X > 2000)
-            {
-                var asInterface = mMind.MySelf as IEntity;
-                mMind.MySelf.ServiceLocator.GetService<IEntity_Manager>().DestroyEntity(asInterface.UID);
-
-            }
         }
         /// <summary>
         /// Plot a path
@@ -62,7 +57,7 @@ namespace The_Infirmary.Characters.OldMan
             Vector2 _rtnval;
 
             // Calcualte the vector to get to the current destination
-            _rtnval = new Vector2(1000, mMind.MySelf.Position.Y) - mMind.MySelf.Position;
+            _rtnval = new Vector2(3000, mMind.MySelf.Position.Y) - mMind.MySelf.Position;
             _rtnval.Normalize();
 
             return _rtnval * mSpeed;

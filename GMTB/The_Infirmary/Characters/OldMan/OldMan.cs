@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GMTB.CollisionSystem;
 using GMTB.Entities.AI;
+using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -43,6 +45,16 @@ namespace The_Infirmary.Characters.OldMan
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
+            // If way off screen, despawn
+            if (Position.X > 2000)
+                mMind.MySelf.ServiceLocator.GetService<IEntity_Manager>().DestroyEntity(UID);
+
+        }
+
+        public override void Collision(ICollidable _obj)
+        {
+            base.Collision(_obj);
+            mMind.Collision(_obj);
         }
     }
 }
