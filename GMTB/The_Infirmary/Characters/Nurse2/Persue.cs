@@ -24,13 +24,14 @@ namespace The_Infirmary.Characters.Nurse2
         public Persue(IAIMind _mind) : base(_mind)
         {
             mPath = new Queue<Point>();
-            
+
         }
         public override void Reactivate()
         {
             base.Reactivate();
-            mAnimation.Frames = 8;
-            mAnimation.Columns = 8;
+            IAnimation _animation = mMind.MySelf as IAnimation;
+            _animation.Frames = 8;
+            _animation.Columns = 8;
         }
         /// <summary>
         /// Main Draw Loop
@@ -39,7 +40,7 @@ namespace The_Infirmary.Characters.Nurse2
         /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-            
+
         }
 
         /// <summary>
@@ -48,11 +49,19 @@ namespace The_Infirmary.Characters.Nurse2
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Nurse2/walkR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Nurse2/walkL";
+
             mMind.MySelf.Moving = true;
             mMind.MySelf.ApplyForce(PlotPath());
 
             // If player too far away, give up
-            if (mMind.MySelf.Target.Position.X - mMind.MySelf.Position.X > mPersueDistance)
+            Vector2 v1 = new Vector2(mMind.Target.Position.X, 0);
+            Vector2 v2 = new Vector2(mMind.MySelf.Position.X, 0);
+            float _distance = Vector2.Distance(v1, v2);
+            if (_distance > mPersueDistance)
                 mMind.ChangeState("idle");
         }
         /// <summary>

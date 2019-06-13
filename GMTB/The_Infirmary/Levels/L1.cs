@@ -62,7 +62,7 @@ namespace The_Infirmary.Levels
 				asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L2", true);
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 2485, 280); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 3940, 280); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Stairs
@@ -75,12 +75,12 @@ namespace The_Infirmary.Levels
 
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, 0, 400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 0, 380); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Floor 2
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, 2400, 410); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 2400, 380); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left

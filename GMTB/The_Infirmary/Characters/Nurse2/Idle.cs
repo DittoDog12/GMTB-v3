@@ -15,7 +15,7 @@ namespace The_Infirmary.Characters.Nurse2
     /// </summary>
     class Idle : State
     {
-        private float mTriggerDistance = 500f;
+        private float mTriggerDistance = 150f;
 
         public Idle(IAIMind _mind) : base(_mind)
         {
@@ -30,13 +30,31 @@ namespace The_Infirmary.Characters.Nurse2
             mAnimation.Columns = 1;
         }
         /// <summary>
+        /// Resests any settings that may have been changed by other behaviours
+        /// </summary>
+        public override void Reactivate()
+        {
+            mMind.MySelf.Moving = false;
+
+            mAnimation.Frames = 1;
+            mAnimation.Columns = 1;
+            mAnimation.Frame = 0;
+
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Nurse2/standR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Nurse2/standL";
+
+            base.Reactivate();
+        }
+        /// <summary>
         /// Main Draw Loop
         /// </summary>
         /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
         /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-           
+
         }
         /// <summary>
         /// Main Update Loop
@@ -44,15 +62,14 @@ namespace The_Infirmary.Characters.Nurse2
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            mMind.MySelf.Moving = false;
-
             if (mMind.Target != null)
             {
-                Vector2 _dist = mMind.Target.Position - mMind.MySelf.Position;
-                float _distance = _dist.Length();
-                if (_distance < mTriggerDistance)
+                Vector2 v1 = new Vector2(mMind.Target.Position.X, 0);
+                Vector2 v2 = new Vector2(mMind.MySelf.Position.X, 0);
+                float _distance = Vector2.Distance(v1, v2);
+                if (_distance <= mTriggerDistance)
                     ChangeState("persue");
-            }           
+            }
         }
     }
 }

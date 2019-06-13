@@ -34,9 +34,18 @@ namespace The_Infirmary.Characters.Nurse
         /// </summary>
         public override void Reactivate()
         {
-            base.Reactivate();
+            mMind.MySelf.Moving = false;
+
             mAnimation.Frames = 1;
             mAnimation.Columns = 1;
+            mAnimation.Frame = 0;
+
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Nurse1/standR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Nurse1/standL";
+
+            base.Reactivate();
         }
         /// <summary>
         /// Main Draw Loop
@@ -45,7 +54,7 @@ namespace The_Infirmary.Characters.Nurse
         /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-           
+
         }
         /// <summary>
         /// Main Update Loop
@@ -53,13 +62,6 @@ namespace The_Infirmary.Characters.Nurse
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            
-            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
-                mMind.MySelf.Texturename = "Characters/Nurse1/standR";
-            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
-                mMind.MySelf.Texturename = "Characters/Nurse1/standL";
-
-            mMind.MySelf.Moving = false;
             if (mMind.Target != null)
             {
                 Vector2 v1 = new Vector2(mMind.Target.Position.X, 0);
@@ -67,7 +69,7 @@ namespace The_Infirmary.Characters.Nurse
                 float _distance = Vector2.Distance(v1, v2);
                 if (_distance <= mTriggerDistance)
                     ChangeState("persue");
-            }           
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace The_Infirmary.Characters.Nurse
     public class Persue : State
     {
         ///
-        private float mPersueDistance = 160f;
+        private float mPersueDistance = 280f;
         /// <summary>
         /// Main Constructor
         /// </summary>

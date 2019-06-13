@@ -41,7 +41,7 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 10, 2200);
+                mSceneManager.newEntity(createdEntity, 10, 2100);
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left
@@ -59,7 +59,7 @@ namespace The_Infirmary.Levels
 				var asInterface = createdEntity as IDoor;
 				asInterface.Initialize("L1", true); //coordinates of players previous location
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 10, 2260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 10, 2230); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Beds
@@ -67,7 +67,7 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bed");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2100); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
@@ -76,13 +76,13 @@ namespace The_Infirmary.Levels
                 {
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bedsidetable");
                     // X, Y coordinates
-                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2260); //Change coordinates
+                    mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2100); //Change coordinates
                     Removables.Add(createdEntity.UID, createdEntity);
                 }
 
                 //Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, 0, 2400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 0, 2330); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Background sound
