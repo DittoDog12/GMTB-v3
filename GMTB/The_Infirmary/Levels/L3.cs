@@ -27,7 +27,7 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 100, 4260);
+                mSceneManager.newEntity(createdEntity, 100, 4220);
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //// Exit Door
@@ -35,26 +35,26 @@ namespace The_Infirmary.Levels
                 var asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L1", true); 
                 // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 10, 4260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 10, 4220); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Bed
                 createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bed");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 880, 4260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 880, 4220); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				
 				// Table
 				createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/table");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 850, 4260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 850, 4220); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Bedside Table
                 createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bedsidetable");
                 // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 1000, 4260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 1000, 4220); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 //Collectable Object
@@ -70,12 +70,12 @@ namespace The_Infirmary.Levels
                     }
                 }
                 // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 300, 4270); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 300, 4220); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
-                mSceneManager.newEntity(createdEntity, -40, 4400); //Change coordinates
+                mSceneManager.newEntity(createdEntity, -40, 4320); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left

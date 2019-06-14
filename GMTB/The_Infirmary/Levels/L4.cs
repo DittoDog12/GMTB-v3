@@ -29,39 +29,39 @@ namespace The_Infirmary.Levels
                 Removables.Add(createdEntity.UID, createdEntity);
 
 
-				//// Nurse
-				//createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 3400, 260); //Change coordinates
-    //            Removables.Add(createdEntity.UID, createdEntity);
-				
-				//// Nurse
-				//createdEntity = mEntityManager.newEntity<Characters.Nurse2.Nurse>("Characters/Nurse2/walkR");
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 2500, 260); //Change coordinates
-    //            Removables.Add(createdEntity.UID, createdEntity);
-				
-				//// Doctor
-				//createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkL");
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 2200, 260); //Change coordinates
-    //            Removables.Add(createdEntity.UID, createdEntity);
-				
-				//// Door - Medicine
-				//createdEntity = mEntityManager.newEntity<Door>("blank");
-				//var asInterface = createdEntity as IDoor;
-    //            asInterface.Initialize("L5", true);
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 1180, 260); //Change coordinates
-    //            Removables.Add(createdEntity.UID, createdEntity);
-				
-				// Door - Ward
-				createdEntity = mEntityManager.newEntity<Door>("blank");
+                // Nurse
+                createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/standR");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 3400, 260); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Nurse
+                createdEntity = mEntityManager.newEntity<Characters.Nurse2.Nurse>("Characters/Nurse2/standR");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 2500, 260); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                // Doctor
+                createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/standL");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 2200, 260); //Change coordinates
+                Removables.Add(createdEntity.UID, createdEntity);
+
+                //// Door - Medicine
+                //createdEntity = mEntityManager.newEntity<Door>("blank");
+                //var asInterface = createdEntity as IDoor;
+                //            asInterface.Initialize("L5", true);
+                //           // X, Y coordinates
+                //            mSceneManager.newEntity(createdEntity, 1180, 260); //Change coordinates
+                //            Removables.Add(createdEntity.UID, createdEntity);
+
+                // Door - Ward
+                createdEntity = mEntityManager.newEntity<Door>("blank");
                 var asInterface = createdEntity as IDoor;
                 asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L10", true);
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 2380, 260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 2380, 280); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Door - Surgary
@@ -69,7 +69,7 @@ namespace The_Infirmary.Levels
 				asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L5", true);
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 3085, 260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 3085, 280); //Change coordinates
                 Removables.Add(createdEntity.UID, createdEntity);
 				
 				// Stairs

@@ -107,7 +107,9 @@ namespace GMTB.Entities
         public override void Cleanup()
         {
             base.Cleanup();
+            mSoundInstance.Pause();
             mSoundInstance.Stop();
+            mSoundInstance.Dispose();
         }
         #endregion
     }
