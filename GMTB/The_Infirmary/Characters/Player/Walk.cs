@@ -169,5 +169,13 @@ namespace The_Infirmary.Characters.Player
         {
             
         }
+        /// <summary>
+        /// Stop lsitening for jump commands while suspended
+        /// </summary>
+        public override void Suspend()
+        {
+            mInputManager.Un_Space(OnSpace);
+            mInputManager.Un_Move(OnMoveInput);
+        }
     }
 }

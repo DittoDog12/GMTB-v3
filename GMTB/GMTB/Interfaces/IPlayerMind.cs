@@ -39,5 +39,14 @@ namespace GMTB.Interfaces
         /// </summary>
         /// <param name="_otherObj">Other object collided with</param>
         void Collision(ICollidable _otherObj);
+        /// <summary>
+        /// Allows the Entity to suspend any logic in the mind and behaviour states
+        /// </summary>
+        void Suspend();
+        /// <summary>
+        /// Allows the Entity to resume any Logic in the mind and behaviour states
+        /// </summary>
+        void Resume();
+        
     }
 }

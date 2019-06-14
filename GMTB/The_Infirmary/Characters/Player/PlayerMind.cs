@@ -114,6 +114,20 @@ namespace The_Infirmary.Characters.Player
                 _keypair.Value.Initialize();
             }
         }
+        /// <summary>
+        /// Allows the Entity to suspend any logic in the mind and behaviour states
+        /// </summary>
+        public virtual void Suspend()
+        {
+            mCurrentState.Suspend();
+        }
+        /// <summary>
+        /// Allows the Entity to resume any Logic in the mind and behaviour states
+        /// </summary>
+        public virtual void Resume()
+        {
+            mCurrentState.Reactivate();
+        }
         #endregion
     }
 }

@@ -94,6 +94,22 @@ namespace The_Infirmary.Characters.Player
             base.Collision(_obj);
             mMind.Collision(_obj);
         }
+        /// <summary>
+        /// Suspends the Mind as well as the entity
+        /// </summary>
+        public override void Suspend()
+        {
+            base.Suspend();
+            mMind.Suspend();
+        }
+        /// <summary>
+        /// Resumes the Mind as well as the entity
+        /// </summary>
+        public override void Resume()
+        {
+            base.Resume();
+            mMind.Resume();
+        }
         #endregion
     }
 }

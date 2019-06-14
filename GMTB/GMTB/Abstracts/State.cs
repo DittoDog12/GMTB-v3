@@ -86,6 +86,10 @@ namespace GMTB.Abstracts
         /// </summary>
         /// <param name="_obj">Reference to the other object collided with</param>
         public virtual void Collision(ICollidable _obj) { }
+        /// <summary>
+        /// Allows the Entity to suspend any logic in the mind and behaviour states
+        /// </summary>
+        public virtual void Suspend() { }
         #endregion
     }
 

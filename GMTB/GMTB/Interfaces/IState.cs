@@ -38,5 +38,9 @@ namespace GMTB.Interfaces
         /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
         /// <param name="_gameTime">Reference to the current GameTime</param>
         void Draw(SpriteBatch spriteBatch, GameTime gameTime);
+        /// <summary>
+        /// Allows the Entity to suspend any logic in the mind and behaviour states
+        /// </summary>
+        void Suspend();
     }
 }
