@@ -16,7 +16,7 @@ namespace GMTB.Interfaces
         /// Level Identifier
         string LvlID { get; }
         /// Level first run or not
-        bool FirstRun { set; }
+        bool FirstRun { set; get; }
 
         /// <summary>
         /// Main Initialize Routine
@@ -33,5 +33,9 @@ namespace GMTB.Interfaces
         /// Suspends the level and all entities.
         /// </summary>
         void Suspend();
+        /// <summary>
+        /// Allows the level manager to remove all entities created by a level
+        /// </summary>
+        void Exit();
     }
 }

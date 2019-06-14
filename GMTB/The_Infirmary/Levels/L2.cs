@@ -42,17 +42,17 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 2100);
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, -200, 1890); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Wall Right
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, 1919, 1890); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Exit Door
                 createdEntity = mEntityManager.newEntity<Door>("blank");
@@ -60,7 +60,7 @@ namespace The_Infirmary.Levels
 				asInterface.Initialize("L1", true); //coordinates of players previous location
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 2230); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 //// Beds
                 for (int i = 1; i <= mBeds; i++)
@@ -68,7 +68,7 @@ namespace The_Infirmary.Levels
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bed");
                     // X, Y coordinates
                     mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2100); //Change coordinates
-                    //Removables.Add(createdEntity.UID, createdEntity);
+                    mLevelEntities.Add(createdEntity.UID, createdEntity);
                 }
 
                 //Tables
@@ -77,23 +77,23 @@ namespace The_Infirmary.Levels
                     createdEntity = mEntityManager.newEntity<SolidObject>("Objects/bedsidetable");
                     // X, Y coordinates
                     mSceneManager.newEntity(createdEntity, rand.Next(200, 1850), 2100); //Change coordinates
-                    //Removables.Add(createdEntity.UID, createdEntity);
+                    mLevelEntities.Add(createdEntity.UID, createdEntity);
                 }
 
                 //Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
                 mSceneManager.newEntity(createdEntity, 0, 2330); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 //Background sound
                 createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
                 mSceneManager.newEntity(createdEntity, 0, 0);
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 //Footsteps
                 createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/footsteps", 3f, true, false, 1f);
                 mSceneManager.newEntity(createdEntity, 0, 0);
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 firstRun = false;
             }

@@ -20,7 +20,7 @@ namespace GMTB.Abstracts
         /// IEntity variable for object creation process
         protected IEntity createdEntity;
         /// All objects in this level
-        protected IDictionary<int, IEntity> Removables;
+        protected IDictionary<int, IEntity> mLevelEntities;
         /// First time the level has run
         protected bool firstRun = true;
 
@@ -48,6 +48,7 @@ namespace GMTB.Abstracts
         /// First Run control
         public bool FirstRun
         {
+            get { return firstRun; }
             set { firstRun = value; }
         }
         #endregion
@@ -55,7 +56,7 @@ namespace GMTB.Abstracts
         #region Constructor
         public Level()
         {
-            Removables = new Dictionary<int, IEntity>();
+            mLevelEntities = new Dictionary<int, IEntity>();
             lvlID = GetType().Name.ToString();
         }
         #endregion
@@ -91,7 +92,7 @@ namespace GMTB.Abstracts
         /// </summary>
         public virtual void Suspend()
         {
-            foreach (KeyValuePair<int, IEntity> _keypair in Removables)
+            foreach (KeyValuePair<int, IEntity> _keypair in mLevelEntities)
             {
                 _keypair.Value.Suspend();
             }
@@ -101,7 +102,7 @@ namespace GMTB.Abstracts
         /// </summary>
         public virtual void Resume()
         {
-            foreach (KeyValuePair<int, IEntity> _keypair in Removables)
+            foreach (KeyValuePair<int, IEntity> _keypair in mLevelEntities)
             {
                 _keypair.Value.Resume();
                 // Cast all entities to IDoor and resubscribe them to the Input Manager when resuming a level
@@ -109,6 +110,14 @@ namespace GMTB.Abstracts
                 if (asInterface != null)
                     asInterface.Subscribe();
             }
+        }
+        /// <summary>
+        /// Allows the level manager to remove all entities created by a level
+        /// </summary>
+        public void Exit()
+        {
+            mLevelEntities.Clear();
+            firstRun = true;
         }
         #endregion
     }

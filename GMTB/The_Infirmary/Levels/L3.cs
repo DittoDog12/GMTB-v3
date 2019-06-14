@@ -28,7 +28,7 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 100, 4220);
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 //// Exit Door
                 createdEntity = mEntityManager.newEntity<Door>("blank");
@@ -36,26 +36,26 @@ namespace The_Infirmary.Levels
                 asInterface.Initialize("L1", true); 
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 10, 4220); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Bed
                 createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bed");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 880, 4220); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 				
 				
 				// Table
 				createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/table");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 850, 4220); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Bedside Table
                 createdEntity = mEntityManager.newEntity<RectangleShape>("Objects/bedsidetable");
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 1000, 4220); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 //Collectable Object
                 createdEntity = mEntityManager.newEntity<CollectableItem>("Objects/key");
@@ -71,30 +71,30 @@ namespace The_Infirmary.Levels
                 }
                 // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 300, 4220); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");
                 mSceneManager.newEntity(createdEntity, -40, 4320); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Wall Left
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, -200, 3910); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
                 //Background sound
                 createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/rain-and-thunder-heart-beat", 0f, true, true, 0.1f);
                 mSceneManager.newEntity(createdEntity, 0, 0);
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Wall Right
                 createdEntity = mEntityManager.newEntity<StaticObject>("wall");
                 mSceneManager.newEntity(createdEntity, 1919, 3910); //Change coordinates
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
                 //Footsteps
                 createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/footsteps", 3f, true, false, 1f);
                 mSceneManager.newEntity(createdEntity, 0, 0);
-                //Removables.Add(createdEntity.UID, createdEntity);
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
 
 
             }

@@ -21,6 +21,8 @@ namespace GMTB.Managers
         private IEntity_Manager mEntityManager;
         /// Current Loaded level
         private ILevel mCurrentLevel;
+        /// List of Loaded Levels
+        private IDictionary<string, ILevel> mLoadedLevels;
         #endregion
 
         #region Accessors
@@ -42,6 +44,7 @@ namespace GMTB.Managers
             mServiceLocator = _sl;
             mEntityManager = _em;
             mLevels = _levels;
+            mLoadedLevels = new Dictionary<string, ILevel>();
         }
         #endregion
 
@@ -57,10 +60,13 @@ namespace GMTB.Managers
             if (_suspend)
                 mCurrentLevel.Suspend();
             else
-                mEntityManager.ClearAll();
+                ExitLevel();
 
-            mCurrentLevel = mLevels[_target];
-            mLevels[_target].Initialise(mServiceLocator);           
+                mCurrentLevel = mLevels[_target];
+            if (mCurrentLevel.FirstRun)
+                mLoadedLevels.Add(mCurrentLevel.LvlID, mCurrentLevel);
+            mLevels[_target].Initialise(mServiceLocator);
+                
         }
         /// <summary>
         /// Restarts the current level
@@ -68,10 +74,22 @@ namespace GMTB.Managers
         /// </summary>
         public void RestartLevel()
         {
-            mEntityManager.ClearAll();
+            ExitLevel();
 
             mCurrentLevel = mLevels[mCurrentLevel.LvlID];
             mLevels[mCurrentLevel.LvlID].Initialise(mServiceLocator, true);
+        }
+        /// <summary>
+        /// Destory all Entities in all loaded levels
+        /// </summary>
+        public void ExitLevel()
+        {
+            foreach (KeyValuePair<string, ILevel> _Level in mLoadedLevels)
+                _Level.Value.Exit();
+
+            mLoadedLevels.Clear();
+
+            mEntityManager.ClearAll();
         }
         #endregion
     }
