@@ -109,7 +109,7 @@ namespace GMTB.Entities
             base.Cleanup();
             mSoundInstance.Pause();
             mSoundInstance.Stop();
-            mSoundInstance.Dispose();
+            //mSoundInstance.Dispose();
         }
         #endregion
     }

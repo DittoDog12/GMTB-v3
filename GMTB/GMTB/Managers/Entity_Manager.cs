@@ -210,6 +210,7 @@ namespace GMTB.Managers
             foreach (KeyValuePair<int, IEntity> _keyPair in mEntities)
                 _keyPair.Value.Cleanup();
             mEntities.Clear();
+            GC.Collect();
         }
         #endregion
     }
