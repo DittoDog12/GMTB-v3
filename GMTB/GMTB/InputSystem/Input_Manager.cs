@@ -399,7 +399,14 @@ namespace GMTB.InputSystem
         {
             Esc -= handler;
         }
-        
+        public void Clear()
+        {
+            Use = null;
+            Movement = null;
+            Esc = null;
+            MouseUsers = null;
+            Space = null;
+        }
         #endregion
     }
 }

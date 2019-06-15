@@ -90,6 +90,10 @@ namespace GMTB.Abstracts
         /// Allows the Entity to suspend any logic in the mind and behaviour states
         /// </summary>
         public virtual void Suspend() { }
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        public virtual void Cleanup() { }
         #endregion
     }
 

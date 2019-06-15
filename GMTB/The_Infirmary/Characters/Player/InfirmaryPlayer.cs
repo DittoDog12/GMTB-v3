@@ -110,6 +110,14 @@ namespace The_Infirmary.Characters.Player
             base.Resume();
             mMind.Resume();
         }
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        public override void Cleanup()
+        {
+            base.Cleanup();
+            mMind.Cleanup();
+        }
         #endregion
     }
 }

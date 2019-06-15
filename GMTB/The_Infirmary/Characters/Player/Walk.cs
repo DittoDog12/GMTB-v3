@@ -177,5 +177,14 @@ namespace The_Infirmary.Characters.Player
             mInputManager.Un_Space(OnSpace);
             mInputManager.Un_Move(OnMoveInput);
         }
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        public override void Cleanup()
+        {
+            base.Cleanup();
+            mInputManager.Un_Space(OnSpace);
+            mInputManager.Un_Move(OnMoveInput);
+        }
     }
 }

@@ -47,6 +47,11 @@ namespace GMTB.Interfaces
         /// Allows the Entity to resume any Logic in the mind and behaviour states
         /// </summary>
         void Resume();
-        
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        void Cleanup();
+
+
     }
 }

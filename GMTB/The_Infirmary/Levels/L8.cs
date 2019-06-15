@@ -71,6 +71,8 @@ namespace The_Infirmary.Levels
                 createdEntity = mEntityManager.newEntity<SoundEntity>("Audio/footsteps", 3f, true, false, 1f);
                 mSceneManager.newEntity(createdEntity, 0, 0);
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
+
+                firstRun = false;
             }
         }
         #endregion

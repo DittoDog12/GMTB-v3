@@ -36,6 +36,8 @@ namespace GMTB.CollisionSystem
         /// Quadtree object for broadphase detection
         private IQuadtree mQuadtree;
 
+        /// Boolean to allow level mananger to abort all collision detection in preparation for a level reset
+        private bool mAbort;
         #endregion
 
         #region Constructor
@@ -54,7 +56,13 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// Allows the Level manager to stop collision detection if restarting a level
+        /// </summary>
+        public void AbortCollisionDetection()
+        {
+            mAbort = true;
+        }
         /// <summary>
         /// Collision Detection - Setup subroutine
         /// First compile a list of all normalized Normals of each object to test
@@ -62,6 +70,7 @@ namespace GMTB.CollisionSystem
         /// </summary>
         public void CollisionDetec()
         {
+            mAbort = false;
             // Update the quad tree to line up with the camera's current position
             mQuadtree.UpdatePosition(new Rectangle(Global.Camera.TLPosition.ToPoint(), new Point(Global.Camera.ViewPortWidth, Global.Camera.ViewPortHeight)));
             // Iterate through all the current Entities
@@ -132,35 +141,15 @@ namespace GMTB.CollisionSystem
                             // If collision returns true, call the MTV calculation, pass Object A as the target
                             if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
                                 DetermineCollisionType(objA, objB);
+                            // if an object has triggered a level reset then abort the current collision detetion
+                            if (mAbort)
+                                break;
                         }
                     }
 
                 }
-                #region OLD
-                //// Second iterate, ie compare all objects against all other objects
-                //for (int j = 1; j <= mCollidables.Count; j++)
-                //{
-                //    // Skip if current list entry is same object
-                //    if (mCollidables[i].UID != mCollidables[j].UID)
-                //    {
-                //        ICollidable objA = mCollidables[i];
-                //        ICollidable objB = mCollidables[j];
-                //        ObjectABNormals.Clear();
-                //        foreach (Vector2 vec in objA.RectangleNormalize)
-                //        {
-                //            ObjectABNormals.Add(vec);
-                //        }
-                //        foreach (Vector2 vec in objB.RectangleNormalize)
-                //        {
-                //            ObjectABNormals.Add(vec);
-                //        }
-                //        // Call the main collision test method, pass the reference to the objects Vertices lists
-                //        // If collision returns true, call the MTV calculation, pass Object A as the target
-                //        if (CalculateDot(objA.RectangleVertices, objB.RectangleVertices))
-                //            MTVCalc(objA, objB);
-                //    } 
-                //}
-                #endregion
+                if (mAbort)
+                    break;
             }
             // Clear all Collidables and Quadtree for next update
             mCollidables.Clear();

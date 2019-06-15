@@ -73,6 +73,9 @@ namespace GMTB.CollisionSystem
             // Reset Colliding Switch
             mColliding = false;
             base.Update(_gameTime);
+            // Unsubscribe from keyboards
+            mInputManager.Un_Use(OnUse);
+
             //List<Vector2> perpendicularRectangles = GetPerpendicularRectangles(subtractedVectors);
             //Normalize(perpendicularRectangles);
         }
@@ -102,7 +105,7 @@ namespace GMTB.CollisionSystem
         {
             mTargetLevel = _target;
             mSuspendPrevLvl = _suspend;
-            Subscribe();
+            //Subscribe();
         }
         /// <summary>
         /// Subscribe to Keyboard Events
@@ -128,7 +131,11 @@ namespace GMTB.CollisionSystem
             // VALIDATION: Cast the object to an IPlayer, if it casts succesfully, allow level switching
             var asInterface = _obj as IPlayer;
             if (asInterface != null)
+            {
                 mColliding = true;
+                // Only subscribe to keyboard events if colliding with player
+                Subscribe();
+            }
         }
         /// <summary>
         /// Keyboard Event Listener
@@ -180,6 +187,14 @@ namespace GMTB.CollisionSystem
         {
             base.Resume();
             mTriggered = false;
+        }
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        public override void Cleanup()
+        {
+            base.Cleanup();
+            mInputManager.Un_Use(OnUse);
         }
         #endregion
     }

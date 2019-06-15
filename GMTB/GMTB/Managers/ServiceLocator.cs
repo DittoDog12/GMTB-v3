@@ -21,6 +21,14 @@ namespace GMTB.Managers
         #region Data Members
         /// Dictionary of Managers and their Interfaces
         private IDictionary<object, object> mServices;
+        /// Reference to the Monogame Content Manager
+        private ContentManager mContent;
+        /// Content Root directory
+        private string mContentRoot;
+        /// Dictionary of Levels
+        private IDictionary<string, ILevel> mLevels;
+        ///Dictionary of Menus
+        private IDictionary<string, IMenu> mMenus;
         #endregion
 
         #region Constructor
@@ -35,12 +43,29 @@ namespace GMTB.Managers
         /// <param name="_viewport">Size of current viewport</param>
         internal ServiceLocator(ContentManager _content, string _contentRoot, IDictionary<string, ILevel> _levels, IDictionary<string, IMenu> _menus)
         {
+            // Create New Dictionary
             mServices = new Dictionary<object, object>();
+            // Store game variables
+            mContent = _content;
+            mContentRoot = _contentRoot;
+            mLevels = _levels;
+            mMenus = _menus;
+            // Create Managers
+            CreateAll();            
+        }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Creates all managers
+        /// </summary>
+        private void CreateAll()
+        {
             // Create Managers
             // Input Manager - No Dependencies
             mServices.Add(typeof(IInput_Manager), new Input_Manager());
             // Content Manager - Requires Monogame Content Manager and Game Content Root Directory
-            mServices.Add(typeof(IContent_Manager), new Content_Manager(_content, _contentRoot));
+            mServices.Add(typeof(IContent_Manager), new Content_Manager(mContent, mContentRoot));
             // Background Manager - Requires Content Manager
             mServices.Add(typeof(IBackground_Manager), new Background_Manager(GetService<IContent_Manager>()));
             // Entity Manager - Requires Service Locator and Content Manager
@@ -52,13 +77,10 @@ namespace GMTB.Managers
             // AI Manager - Requires Entity Manager
             mServices.Add(typeof(IAI_Manager), new AI_Manager(GetService<IEntity_Manager>()));
             // Menu Manager - Requires Service Locator and List of Menus
-            mServices.Add(typeof(IMenu_Manager), new Menu_Manager(this, _menus));
+            mServices.Add(typeof(IMenu_Manager), new Menu_Manager(this, mMenus));
             // Level Manager - Requires Service Locator and Entity Manager
-            mServices.Add(typeof(ILevel_Manager), new Level_Manager(this, GetService<IEntity_Manager>(), _levels));
+            mServices.Add(typeof(ILevel_Manager), new Level_Manager(this, GetService<IEntity_Manager>(), mLevels));
         }
-        #endregion
-
-        #region Methods
         /// <summary>
         /// Get a service/manager of the specified type
         /// </summary>

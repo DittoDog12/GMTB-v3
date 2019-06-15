@@ -12,6 +12,11 @@ namespace GMTB.CollisionSystem
     interface ICollision_Manager
     {
         /// <summary>
+        /// Allows the Level manager to stop collision detection if restarting a level
+        /// </summary>
+        void AbortCollisionDetection();
+
+        /// <summary>
         /// Collision Detection - Setup subroutine
         /// First compile a list of all normalized Normals of each object to test
         /// Runs through all entities in the list

@@ -1,4 +1,6 @@
-﻿using GMTB.Interfaces;
+﻿using GMTB.InputSystem;
+using GMTB.Interfaces;
+using GMTB.CollisionSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,7 +64,7 @@ namespace GMTB.Managers
             else
                 ExitLevel();
 
-                mCurrentLevel = mLevels[_target];
+            mCurrentLevel = mLevels[_target];
             if (mCurrentLevel.FirstRun)
                 mLoadedLevels.Add(mCurrentLevel.LvlID, mCurrentLevel);
             mLevels[_target].Initialise(mServiceLocator);
@@ -74,9 +76,11 @@ namespace GMTB.Managers
         /// </summary>
         public void RestartLevel()
         {
+            mServiceLocator.GetService<ICollision_Manager>().AbortCollisionDetection();
             ExitLevel();
 
             mCurrentLevel = mLevels[mCurrentLevel.LvlID];
+            mLoadedLevels.Add(mCurrentLevel.LvlID, mCurrentLevel);
             mLevels[mCurrentLevel.LvlID].Initialise(mServiceLocator, true);
         }
         /// <summary>
@@ -88,7 +92,8 @@ namespace GMTB.Managers
                 _Level.Value.Exit();
 
             mLoadedLevels.Clear();
-
+            mServiceLocator.GetService<IInput_Manager>().Clear();
+           // mServiceLocator.ResetInput();
             mEntityManager.ClearAll();
         }
         #endregion

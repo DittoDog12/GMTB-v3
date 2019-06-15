@@ -97,6 +97,7 @@ namespace The_Infirmary.Levels
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 
 
+                firstRun = false;
             }
         }
         #endregion

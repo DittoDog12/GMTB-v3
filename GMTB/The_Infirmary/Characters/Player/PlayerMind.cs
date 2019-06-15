@@ -128,6 +128,14 @@ namespace The_Infirmary.Characters.Player
         {
             mCurrentState.Reactivate();
         }
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        public virtual void Cleanup()
+        {
+            foreach (KeyValuePair<string, IState> _state in mStates)
+                _state.Value.Cleanup();
+        }
         #endregion
     }
 }

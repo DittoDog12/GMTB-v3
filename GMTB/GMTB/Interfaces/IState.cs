@@ -42,5 +42,9 @@ namespace GMTB.Interfaces
         /// Allows the Entity to suspend any logic in the mind and behaviour states
         /// </summary>
         void Suspend();
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        void Cleanup();
     }
 }

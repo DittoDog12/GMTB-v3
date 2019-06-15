@@ -204,8 +204,8 @@ namespace GMTB
 
             //mPosition += mVelocity;
 
-            Console.WriteLine("Camera Position: " + mPosition);
-            Console.WriteLine("Camera Top Left Position: " + TLPosition);
+            //Console.WriteLine("Camera Position: " + mPosition);
+            //Console.WriteLine("Camera Top Left Position: " + TLPosition);
         }
         #endregion
     }

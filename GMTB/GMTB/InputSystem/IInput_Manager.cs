@@ -29,6 +29,7 @@ namespace GMTB.InputSystem
 
     public interface IInput_Manager
     {
+        void Clear();
         /// <summary>
         /// Controller checking method
         /// </summary>

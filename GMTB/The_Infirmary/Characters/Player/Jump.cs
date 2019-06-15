@@ -162,5 +162,13 @@ namespace The_Infirmary.Characters.Player
         {
 
         }
+        /// <summary>
+        /// Cleans up the entity before destruction
+        /// </summary>
+        public override void Cleanup()
+        {
+            base.Cleanup();
+            mPMind.ServiceLocator.GetService<IInput_Manager>().Un_Move(OnMoveInput);
+        }
     }
 }
