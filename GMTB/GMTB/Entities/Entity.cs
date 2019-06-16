@@ -59,6 +59,7 @@ namespace GMTB.Entities
         /// Set UID
         /// </summary>
         /// <param name="_uid"> Unique ID </param>
+        /// <param name="_sl"> Reference to the Service Locator </param>
         public virtual void setVars(int _uid, IServiceLocator _sl)
         {
             mUID = _uid;

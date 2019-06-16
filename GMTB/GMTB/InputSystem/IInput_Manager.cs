@@ -23,7 +23,12 @@ namespace GMTB.InputSystem
         Pause,
         Released,
         Click,
-        AltClick
+        AltClick,
+        Cheat1,
+        Cheat2,
+        Cheat3,
+        Cheat4,
+        Cheat5
     }
     #endregion
 
@@ -89,6 +94,16 @@ namespace GMTB.InputSystem
         /// </summary>
         /// <param name="handler"> Entity to stop receiving escapse events</param>
         void Un_Esc(EventHandler<InputEvent> handler);
+        /// <summary>
+        /// Cheat Key subscriber
+        /// </summary>
+        /// <param name="handler"> Entity to receive cheat key events</param>
+        void SubCheats(EventHandler<InputEvent> handler);
+        /// <summary>
+        /// Cheat Key unsubscribers
+        /// </summary>
+        /// <param name="handler"> Entity to stop receiving cheat key events</param>
+        void UnCheats(EventHandler<InputEvent> handler);
 
     }
 }

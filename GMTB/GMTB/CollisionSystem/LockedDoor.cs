@@ -1,12 +1,12 @@
-﻿using System;
+﻿using GMTB.InputSystem;
+using GMTB.Interfaces;
+using GMTB.Managers;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GMTB.Interfaces;
-using GMTB.Managers;
-using Microsoft.Xna.Framework;
-using GMTB.InputSystem;
 
 namespace GMTB.CollisionSystem
 {
@@ -21,14 +21,23 @@ namespace GMTB.CollisionSystem
         #endregion
 
         #region Constructor
-        public LockedDoor() 
+        public LockedDoor()
         {
             mLocked = true;
         }
-
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Set UID, Override to let the door access the service locator
+        /// </summary>
+        /// <param name="_uid"> Unique ID </param>
+        /// <param name="_sl"> Reference to the Service Locator </param>
+        public override void setVars(int _uid, IServiceLocator _sl)
+        {
+            base.setVars(_uid, _sl);
+            mServiceLocator.GetService<IInput_Manager>().SubCheats(CheatUnlock);
+        }
         /// <summary>
         /// Trigger to Unlock door
         /// </summary>
@@ -48,6 +57,12 @@ namespace GMTB.CollisionSystem
             if (!mLocked)
                 base.OnUse(source, args);
         }
+        public void CheatUnlock(object _source, InputEvent _args)
+        {
+            if (_args.currentKey == Keybindings.Cheat5)
+                Unlock();
+        }
+
         #endregion
     }
 }

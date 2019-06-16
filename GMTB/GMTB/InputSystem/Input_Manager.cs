@@ -58,6 +58,8 @@ namespace GMTB.InputSystem
         public event EventHandler<InputEvent> Use;
         /// Mouse Input subscribers
         public event EventHandler<MouseEvent> MouseUsers;
+        /// FunctionKey Subcribers
+        public event EventHandler<InputEvent> Cheats;
 
         /// Detection Update interval
         private float mInterval;
@@ -109,8 +111,8 @@ namespace GMTB.InputSystem
                 MovementRelease(Keybindings.Released);
 
             // Check if a controller is connected, detect input from that if true
-                if (CheckController())
-                    GamePadInput();
+            if (CheckController())
+                GamePadInput();
 
             // Only check for other input if not on cool down.
             mTimer -= _gameTime.ElapsedGameTime.Milliseconds;
@@ -118,12 +120,12 @@ namespace GMTB.InputSystem
             {
                 // Get Mouse Input
                 MouseInput();
-                
+
                 // else //Enable this top stop keyboard detection if controller detected
                 // Get Keyboard Input
                 KeyboardInput();
-           }
-            
+            }
+
 
         }
         /// <summary>
@@ -182,6 +184,21 @@ namespace GMTB.InputSystem
             if (_oldKState.IsKeyUp(Keys.Escape) && _newKState.IsKeyDown(Keys.Escape))
                 EscapeInput(Keybindings.Pause);
 
+            if (_oldKState.IsKeyUp(Keys.F1) && _newKState.IsKeyDown(Keys.F1))
+                CheatInput(Keybindings.Cheat1);
+
+            if (_oldKState.IsKeyUp(Keys.F2) && _newKState.IsKeyDown(Keys.F2))
+                CheatInput(Keybindings.Cheat2);
+
+            if (_oldKState.IsKeyUp(Keys.F3) && _newKState.IsKeyDown(Keys.F3))
+                CheatInput(Keybindings.Cheat3);
+
+            if (_oldKState.IsKeyUp(Keys.F4) && _newKState.IsKeyDown(Keys.F4))
+                CheatInput(Keybindings.Cheat4);
+
+            if (_oldKState.IsKeyUp(Keys.F5) && _newKState.IsKeyDown(Keys.F5))
+                CheatInput(Keybindings.Cheat5);
+
             _oldKState = _newKState;
         }
         /// <summary>
@@ -233,6 +250,17 @@ namespace GMTB.InputSystem
         private void SingleInputTriggered()
         {
             mTimer = mInterval;
+        }
+        /// <summary>
+        /// Clears all Subscribers
+        /// </summary>
+        public void Clear()
+        {
+            Use = null;
+            Movement = null;
+            Esc = null;
+            MouseUsers = null;
+            Space = null;
         }
         #endregion
 
@@ -314,6 +342,15 @@ namespace GMTB.InputSystem
                 Esc(this, args);
                 SingleInputTriggered();
 
+            }
+        }
+        protected virtual void CheatInput(Keybindings key)
+        {
+            if (Cheats != null)
+            {
+                InputEvent args = new InputEvent(key);
+                Cheats(this, args);
+                SingleInputTriggered();
             }
         }
         #endregion
@@ -399,13 +436,21 @@ namespace GMTB.InputSystem
         {
             Esc -= handler;
         }
-        public void Clear()
+        /// <summary>
+        /// Cheat Key subscriber
+        /// </summary>
+        /// <param name="handler"> Entity to receive cheat key events</param>
+        public void SubCheats(EventHandler<InputEvent> handler)
         {
-            Use = null;
-            Movement = null;
-            Esc = null;
-            MouseUsers = null;
-            Space = null;
+            Cheats += handler;
+        }
+        /// <summary>
+        /// Cheat Key unsubscribers
+        /// </summary>
+        /// <param name="handler"> Entity to stop receiving cheat key events</param>
+        public void UnCheats(EventHandler<InputEvent> handler)
+        {
+            Cheats -= handler;
         }
         #endregion
     }
