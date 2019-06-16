@@ -17,6 +17,8 @@ namespace GMTB.Interfaces
         string LvlID { get; }
         /// Level first run or not
         bool FirstRun { set; get; }
+        /// Accessor for level entities
+        IDictionary<int, IEntity> LevelEntities { get; }
 
         /// <summary>
         /// Main Initialize Routine

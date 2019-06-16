@@ -51,6 +51,11 @@ namespace GMTB.Abstracts
             get { return firstRun; }
             set { firstRun = value; }
         }
+        /// Accessor for level entities
+        public IDictionary<int, IEntity> LevelEntities
+        {
+            get { return mLevelEntities; }
+        }
         #endregion
 
         #region Constructor

@@ -20,6 +20,8 @@ namespace GMTB.Entities.AI
         protected IAIMind mMind;
         /// Reference to Target
         protected AITarget mTarget;
+        /// Target Destination
+        protected Vector2 mDestination;
         #endregion
 
         #region Accessors
@@ -42,6 +44,11 @@ namespace GMTB.Entities.AI
         public FacingDirection CurrentDirection
         {
             get { return mCurrDir; }
+        }
+        /// Let's Behaviours set a target destination
+        public Vector2 Destination
+        {
+            set { mDestination = value; }
         }
         #endregion
 

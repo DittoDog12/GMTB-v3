@@ -22,5 +22,9 @@ namespace GMTB.Interfaces
         /// <param name="_target">New Level to open</param>
         /// <param name="_suspend">Default suspend option</param>
         void LoadLevel(string _target, bool _suspend);
+        /// Accessor for current Level ID
+        string CurrentLevelID { get; }
+        /// Accessor for current Level 
+        ILevel CurrentLevel { get; }
     }
 }

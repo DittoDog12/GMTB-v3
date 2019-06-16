@@ -1,6 +1,6 @@
-﻿using GMTB.InputSystem;
+﻿using GMTB.CollisionSystem;
+using GMTB.InputSystem;
 using GMTB.Interfaces;
-using GMTB.CollisionSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +28,15 @@ namespace GMTB.Managers
         #endregion
 
         #region Accessors
-        /// Accessor for current Level
-        public string CurrentLevel
+        /// Accessor for current Level ID
+        public string CurrentLevelID
         {
             get { return mCurrentLevel.LvlID; }
+        }
+        /// Accessor for current level
+        public ILevel CurrentLevel
+        {
+            get { return mCurrentLevel; }
         }
         #endregion
         #region Constructor
@@ -47,6 +52,7 @@ namespace GMTB.Managers
             mEntityManager = _em;
             mLevels = _levels;
             mLoadedLevels = new Dictionary<string, ILevel>();
+            mServiceLocator.GetService<IInput_Manager>().SubCheats(LevelSkip);
         }
         #endregion
 
@@ -68,7 +74,7 @@ namespace GMTB.Managers
             if (mCurrentLevel.FirstRun)
                 mLoadedLevels.Add(mCurrentLevel.LvlID, mCurrentLevel);
             mLevels[_target].Initialise(mServiceLocator);
-                
+
         }
         /// <summary>
         /// Restarts the current level
@@ -93,8 +99,33 @@ namespace GMTB.Managers
 
             mLoadedLevels.Clear();
             mServiceLocator.GetService<IInput_Manager>().Clear();
-           // mServiceLocator.ResetInput();
+            // mServiceLocator.ResetInput();
             mEntityManager.ClearAll();
+        }
+        /// <summary>
+        /// Allows the player to skip levels using F1-4
+        /// </summary>
+        /// <param name="_source">Event Source</param>
+        /// <param name="_args">Event Arguments</param>
+        public void LevelSkip(object _source, InputEvent _args)
+        {
+            switch (_args.currentKey)
+            {
+                case Keybindings.Cheat1:
+                    LoadLevel("L1", false);
+                    break;
+                case Keybindings.Cheat2:
+                    LoadLevel("L4", false);
+                    break;
+                case Keybindings.Cheat3:
+                    LoadLevel("L6", false);
+                    break;
+                case Keybindings.Cheat4:
+                    LoadLevel("L9", false);
+                    break;
+                default:
+                    break;
+            }
         }
         #endregion
     }

@@ -74,12 +74,12 @@ namespace GMTB.Managers
             mServices.Add(typeof(IScene_Manager), new Scene_Manager(GetService<IEntity_Manager>(), GetService<IBackground_Manager>()));
             // Collision Manager - Requires Entity Manager and Viewport
             mServices.Add(typeof(ICollision_Manager), new Collision_Manager(GetService<IEntity_Manager>()));
-            // AI Manager - Requires Entity Manager
-            mServices.Add(typeof(IAI_Manager), new AI_Manager(GetService<IEntity_Manager>()));
             // Menu Manager - Requires Service Locator and List of Menus
             mServices.Add(typeof(IMenu_Manager), new Menu_Manager(this, mMenus));
             // Level Manager - Requires Service Locator and Entity Manager
             mServices.Add(typeof(ILevel_Manager), new Level_Manager(this, GetService<IEntity_Manager>(), mLevels));
+            // AI Manager - Requires Entity Manager
+            mServices.Add(typeof(IAI_Manager), new AI_Manager(GetService<IEntity_Manager>(), GetService<ILevel_Manager>()));
         }
         /// <summary>
         /// Get a service/manager of the specified type

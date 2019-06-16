@@ -19,6 +19,8 @@ namespace GMTB.Managers
         private IDictionary<int, IBasicAI> mAllAI;
         /// Reference to the Entity Manager
         private IEntity_Manager mEntityManager;
+        /// Reference to the Level Manager
+        private ILevel_Manager mLevelManager;
         /// Reference to the AI Target
         private AITarget mTarget;
         #endregion
@@ -28,9 +30,10 @@ namespace GMTB.Managers
         /// Main Constructor
         /// </summary>
         /// <param name="_em">Reference to the Entity Manager</param>
-        public AI_Manager(IEntity_Manager _em)
+        public AI_Manager(IEntity_Manager _em, ILevel_Manager _lm)
         {
             mEntityManager = _em;
+            mLevelManager = _lm;
             mAllAI = new Dictionary<int, IBasicAI>();
         }
         #endregion
@@ -38,13 +41,13 @@ namespace GMTB.Managers
         #region Methods
         /// <summary>
         /// Main Update Loop
-        /// Finds all the AIs from the Entity Managers master list and informs them of the current AT target
+        /// Finds all the AIs from the Current levels list of entities and informs them of the current AT target
         /// </summary>
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public void Update(GameTime _gameTime)
         {
             mAllAI.Clear();
-            foreach (KeyValuePair<int, IEntity> _keyPair in mEntityManager.AllEntities)
+            foreach (KeyValuePair<int, IEntity> _keyPair in mLevelManager.CurrentLevel.LevelEntities)
             {
                 var asInterface = _keyPair.Value as IBasicAI;
                 if (asInterface != null)
