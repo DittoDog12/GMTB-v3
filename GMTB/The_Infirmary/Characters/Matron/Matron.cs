@@ -21,6 +21,8 @@ namespace The_Infirmary.Characters.Matron
         public Matron()
         {
             mMind = new MatronMind(this);
+            mInterval = 75f;
+            mSpeed = 5f;
         }
         /// <summary>
         /// Main Draw Loop
@@ -44,10 +46,6 @@ namespace The_Infirmary.Characters.Matron
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
-            if (mVelocity.X > 0)
-                mTexturename = "Characters/Matron/walkLR";
-            else if (mVelocity.X < 0)
-                mTexturename = "Characters/Matron/walkL";
         }
     }
 }
