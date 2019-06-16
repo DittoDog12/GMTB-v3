@@ -1,4 +1,5 @@
 ﻿using GMTB.Entities.AI;
+using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -24,6 +25,7 @@ namespace The_Infirmary.Characters.Doctor
             mFrames = 8;
             mColumns = 8;
             mInterval = 75f;
+            mSpeed = 5f;
         }
         /// <summary>
         /// Main Draw Loop
@@ -47,10 +49,11 @@ namespace The_Infirmary.Characters.Doctor
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
-            if (mCurrDir == GMTB.Entities.FacingDirection.Right)
-                mTexture = mContentManager.ApplyTexture("Characters/Doctor/walkR");
-            else if (mCurrDir == GMTB.Entities.FacingDirection.Left)
-                mTexture = mContentManager.ApplyTexture("Characters/Doctor/walkL");
+
+
+            // Destroy if reached Destination
+            if (mMind.MySelf.Position == mDestination)
+               ServiceLocator.GetService<IEntity_Manager>().DestroyEntity(UID);
         }
     }
 }

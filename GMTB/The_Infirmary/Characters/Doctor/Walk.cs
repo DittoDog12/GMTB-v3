@@ -21,7 +21,13 @@ namespace The_Infirmary.Characters.Doctor
         /// <param name="_mind">Reference to the Mind</param>
         public Walk(IAIMind _mind) : base(_mind)
         {
-
+        }
+        public override void Reactivate()
+        {
+            base.Reactivate();
+            IAnimation _animation = mMind.MySelf as IAnimation;
+            _animation.Frames = 8;
+            _animation.Columns = 8;
         }
         /// <summary>
         /// Main Draw Loop
@@ -39,19 +45,35 @@ namespace The_Infirmary.Characters.Doctor
         /// <param name="_gameTime">Reference to the GameTime</param>
         public override void Update(GameTime _gameTime)
         {
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Doctor/walkR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Doctor/walkL";
             mMind.MySelf.Moving = true;
-            mMind.MySelf.ApplyForce(PlotPath());
+
+            Vector2 _dest = Vector2.Zero;
+            mMind.MySelf.Moving = true;
+            // Check current level and set target destination appropriately
+            if (mMind.MySelf.ServiceLocator.GetService<ILevel_Manager>().CurrentLevelID == "L4")
+                _dest = new Vector2(80, 260);
+            else if (mMind.MySelf.ServiceLocator.GetService<ILevel_Manager>().CurrentLevelID == "L6")
+                _dest = new Vector2();
+
+            // Update Physical Body destination
+            mMind.MySelf.Destination = _dest;
+            // Move to destination
+            mMind.MySelf.ApplyForce(PlotPath(_dest));            
         }
         /// <summary>
         /// Path plotting
         /// </summary>
         /// <returns>Direction to the destination</returns>
-        private Vector2 PlotPath()
+        private Vector2 PlotPath(Vector2 _dest)
         {
             Vector2 _rtnval;
 
             // Calcualte the vector to get to the current destination
-            _rtnval = new Vector2(80, 260) - mMind.MySelf.Position;
+            _rtnval = _dest - mMind.MySelf.Position;
             _rtnval.Normalize();
             return _rtnval;
         }

@@ -28,11 +28,11 @@ namespace The_Infirmary.Levels
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 
 
-				// Nurse
-				createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-                mLevelEntities.Add(createdEntity.UID, createdEntity);
+				//// Nurse
+				//createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
+    //           // X, Y coordinates
+    //            mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
+    //            mLevelEntities.Add(createdEntity.UID, createdEntity);
 				
 				// Doctor
 				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkR");
@@ -40,11 +40,11 @@ namespace The_Infirmary.Levels
                 mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 				
-				// Matron
-				createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/walkR");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
-                mLevelEntities.Add(createdEntity.UID, createdEntity);
+				//// Matron
+				//createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/walkR");
+    //           // X, Y coordinates
+    //            mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
+    //            mLevelEntities.Add(createdEntity.UID, createdEntity);
 				
 				// Door - Boardroom
 				createdEntity = mEntityManager.newEntity<Door>("blank");

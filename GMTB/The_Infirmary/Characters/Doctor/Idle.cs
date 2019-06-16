@@ -25,6 +25,33 @@ namespace The_Infirmary.Characters.Doctor
         {
         }
         /// <summary>
+        /// Initializes the Behaviour, sets up all variables required from the start
+        /// </summary>
+        public override void Initialize()
+        {
+            base.Initialize();
+            mAnimation.Frames = 1;
+            mAnimation.Columns = 1;
+        }
+        /// <summary>
+        /// Resests any settings that may have been changed by other behaviours
+        /// </summary>
+        public override void Reactivate()
+        {
+            mMind.MySelf.Moving = false;
+
+            mAnimation.Frames = 1;
+            mAnimation.Columns = 1;
+            mAnimation.Frame = 0;
+
+            if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Right)
+                mMind.MySelf.Texturename = "Characters/Doctor/standR";
+            else if (mMind.MySelf.CurrentDirection == GMTB.Entities.FacingDirection.Left)
+                mMind.MySelf.Texturename = "Characters/Doctor/standL";
+
+            base.Reactivate();
+        }
+        /// <summary>
         /// Main Draw Loop
         /// </summary>
         /// <param name="_spriteBatch">Reference to the SpriteBatch</param>
