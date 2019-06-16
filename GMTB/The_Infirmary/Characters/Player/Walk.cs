@@ -92,26 +92,6 @@ namespace The_Infirmary.Characters.Player
                     mPMind.MySelf.Texturename = "Characters/Player/standL";
                     break;
             }
-            //if (mPMind.Moving)
-            //{
-            //    mAnimation.Frames = 8;
-            //    mAnimation.Columns = 8;
-            //    if (mPMind.MySelf.FacingDirection == "right")
-            //        mPMind.MySelf.Texturename = "Characters/Player/walkR";
-            //    else if (mPMind.MySelf.FacingDirection == "left")
-            //        mPMind.MySelf.Texturename = "Characters/Player/walkL";
-            //}
-            //else
-            //{
-            //    mAnimation.Frames = 1;
-            //    mAnimation.Columns = 1;
-            //    mAnimation.Frame = 0;
-            //    if (mPMind.MySelf.FacingDirection == "standR")
-            //        mPMind.MySelf.Texturename = "Characters/Player/standR";
-            //    else if (mPMind.MySelf.FacingDirection == "standL")
-            //        mPMind.MySelf.Texturename = "Characters/Player/standL";
-            //}
-
         }
         /// <summary>
         /// Move input trigger
