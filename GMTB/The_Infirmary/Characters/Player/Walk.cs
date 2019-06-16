@@ -22,7 +22,7 @@ namespace The_Infirmary.Characters.Player
         /// Reference to the Input Manager
         private IInput_Manager mInputManager;
         private float mSpeed;
-        
+
         #endregion
         /// <summary>
         /// Main Constructor
@@ -57,7 +57,7 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_gameTime">Reference to the current GameTime</param>
         public override void Update(GameTime _gameTime)
         {
-            
+
         }
         /// <summary>
         /// Reset settings when swithcing back to this state
@@ -66,26 +66,52 @@ namespace The_Infirmary.Characters.Player
         {
             mInputManager.Sub_Space(OnSpace);
             mInputManager.Sub_Move(OnMoveInput);
-            if (mPMind.Moving)
+
+            switch (mPMind.MySelf.FacingDirection)
             {
-                mAnimation.Frames = 8;
-                mAnimation.Columns = 8;
-                if (mPMind.MySelf.FacingDirection == "right")
+                case "right":
+                    mAnimation.Frames = 8;
+                    mAnimation.Columns = 8;
                     mPMind.MySelf.Texturename = "Characters/Player/walkR";
-                else if (mPMind.MySelf.FacingDirection == "left")
+                    break;
+                case "left":
+                    mAnimation.Frames = 8;
+                    mAnimation.Columns = 8;
                     mPMind.MySelf.Texturename = "Characters/Player/walkL";
-            }
-            else
-            {
-                mAnimation.Frames = 1;
-                mAnimation.Columns = 1;
-                mAnimation.Frame = 0;
-                if (mPMind.MySelf.FacingDirection == "standR")
+                    break;
+                case "standR":
+                    mAnimation.Frames = 1;
+                    mAnimation.Columns = 1;
+                    mAnimation.Frame = 0;
                     mPMind.MySelf.Texturename = "Characters/Player/standR";
-                else if (mPMind.MySelf.FacingDirection == "standL")
+                    break;
+                case "standL":
+                    mAnimation.Frames = 1;
+                    mAnimation.Columns = 1;
+                    mAnimation.Frame = 0;
                     mPMind.MySelf.Texturename = "Characters/Player/standL";
+                    break;
             }
-            
+            //if (mPMind.Moving)
+            //{
+            //    mAnimation.Frames = 8;
+            //    mAnimation.Columns = 8;
+            //    if (mPMind.MySelf.FacingDirection == "right")
+            //        mPMind.MySelf.Texturename = "Characters/Player/walkR";
+            //    else if (mPMind.MySelf.FacingDirection == "left")
+            //        mPMind.MySelf.Texturename = "Characters/Player/walkL";
+            //}
+            //else
+            //{
+            //    mAnimation.Frames = 1;
+            //    mAnimation.Columns = 1;
+            //    mAnimation.Frame = 0;
+            //    if (mPMind.MySelf.FacingDirection == "standR")
+            //        mPMind.MySelf.Texturename = "Characters/Player/standR";
+            //    else if (mPMind.MySelf.FacingDirection == "standL")
+            //        mPMind.MySelf.Texturename = "Characters/Player/standL";
+            //}
+
         }
         /// <summary>
         /// Move input trigger
@@ -158,7 +184,7 @@ namespace The_Infirmary.Characters.Player
                 mInputManager.Un_Space(OnSpace);
                 mInputManager.Un_Move(OnMoveInput);
             }
-                
+
         }
         /// <summary>
         /// Main Draw Loop
@@ -167,7 +193,7 @@ namespace The_Infirmary.Characters.Player
         /// <param name="_gameTime">Reference to current GameTime</param>
         public override void Draw(SpriteBatch _spriteBatch, GameTime _gameTime)
         {
-            
+
         }
         /// <summary>
         /// Stop lsitening for jump commands while suspended
