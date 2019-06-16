@@ -28,39 +28,39 @@ namespace The_Infirmary.Levels
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 
 
-				//// Nurse
-				//createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/walkR");
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 700, 150); //Change coordinates
-    //            mLevelEntities.Add(createdEntity.UID, createdEntity);
-				
-				// Doctor
-				createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/walkR");
+                // Nurse
+                createdEntity = mEntityManager.newEntity<Characters.Nurse.Nurse>("Characters/Nurse1/standL");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 2000, 260); //Change coordinates
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
+
+                // Doctor
+                createdEntity = mEntityManager.newEntity<Characters.Doctor.Doctor>("Characters/Doctor/standR");
                // X, Y coordinates
                 mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
-				
-				//// Matron
-				//createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/walkR");
-    //           // X, Y coordinates
-    //            mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
-    //            mLevelEntities.Add(createdEntity.UID, createdEntity);
-				
-				// Door - Boardroom
-				createdEntity = mEntityManager.newEntity<Door>("blank");
+
+                // Matron
+                createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/standR");
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 2200, 260); //Change coordinates
+                mLevelEntities.Add(createdEntity.UID, createdEntity);
+
+                // Door - Boardroom
+                createdEntity = mEntityManager.newEntity<Door>("blank");
 				var asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L7", true);
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 2400, 260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 2280, 260); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 
-                //// Door - Matrons office
-                createdEntity = mEntityManager.newEntity<Door>("blank");
-                asInterface = createdEntity as IDoor;
-                asInterface.Initialize("L8", true);
-                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 1680, 260); //Change coordinates
-                mLevelEntities.Add(createdEntity.UID, createdEntity);
+                ////// Door - Matrons office
+                //createdEntity = mEntityManager.newEntity<Door>("blank");
+                //asInterface = createdEntity as IDoor;
+                //asInterface.Initialize("L8", true);
+                //// X, Y coordinates
+                //mSceneManager.newEntity(createdEntity, 1680, 260); //Change coordinates
+                //mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 // Stairs
                 createdEntity = mEntityManager.newEntity<LockedDoor>("Objects/lock_closed");

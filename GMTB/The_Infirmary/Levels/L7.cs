@@ -3,6 +3,7 @@ using GMTB.Entities;
 using GMTB.Interfaces;
 using GMTB.CollisionSystem;
 using System;
+using System.Collections.Generic;
 
 namespace The_Infirmary.Levels
 {
@@ -26,7 +27,7 @@ namespace The_Infirmary.Levels
         {
             base.Initialise(_sl);
             mBackgroundManager.BlankBackgrounds();
-            mBackgroundManager.ChangeBackground("BoardRoom");
+            mBackgroundManager.ChangeBackground("Levels/Boardroom");
             mBackgroundManager.ChangePosition(0, 2000);
 
 
@@ -36,35 +37,32 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standR", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 2260);
+                mSceneManager.newEntity(createdEntity, 20, 2260);
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 				
 				// Exit Door
 				createdEntity = mEntityManager.newEntity<Door>("blank");
 				var asInterface = createdEntity as IDoor;
-				//asInterface.Initialize("L9", vector 2); //coordinates of players previous location
+				asInterface.Initialize("L6", true);
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 2260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 20, 2260); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
-				
-				// 
-				for (int i = 1; i <= mChair; i++){
-				createdEntity = mEntityManager.newEntity<RectangleShape>("Chair");
-               // X, Y coordinates
-                //mSceneManager.newEntity(createdEntity, rand.Next(min, max), 150); //Change coordinates
+			
+                //Collectable Object
+                createdEntity = mEntityManager.newEntity<CollectableItem>("Objects/key");
+                ICollectableItem _item = createdEntity as ICollectableItem;
+                foreach (KeyValuePair<int, IEntity> _keyPair in mEntityManager.AllEntities)
+                {
+                    ILockedDoor _door = _keyPair.Value as ILockedDoor;
+                    if (_door != null)
+                    {
+                        _item.SetTarget(_door);
+                        break;
+                    }
+                }
+                // X, Y coordinates
+                mSceneManager.newEntity(createdEntity, 700, 2360); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
-				}
-
-				createdEntity = mEntityManager.newEntity<RectangleShape>("Table");
-               // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 150, 2260); //Change coordinates
-                mLevelEntities.Add(createdEntity.UID, createdEntity);
-
-                ////Collectable Object
-                //createdEntity = mEntityManager.newEntity<Collectable>("Item");
-                //           // X, Y coordinates
-                //            mSceneManager.newEntity(createdEntity, 170, 150); //Change coordinates
-                //            Removables.Add(createdEntity.UID, createdEntity);
 
                 // Floor
                 createdEntity = mEntityManager.newEntity<StaticObject>("floor");

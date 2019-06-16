@@ -19,7 +19,7 @@ namespace The_Infirmary.Levels
         {
             base.Initialise(_sl);
             mBackgroundManager.BlankBackgrounds();
-            mBackgroundManager.ChangeBackground("Basement");
+            mBackgroundManager.ChangeBackground("Levels/BasementL", "Levels/BasementR");
             mBackgroundManager.ChangePosition(0, 0);
 
             if (firstRun == true)
@@ -28,13 +28,13 @@ namespace The_Infirmary.Levels
 				// <Entity Type>("Texture", needs input?)
                 createdEntity = mEntityManager.newEntity<Characters.Player.InfirmaryPlayer>("Characters/Player/standL", true);
 				// X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 4700, 260);
+                mSceneManager.newEntity(createdEntity, 4600, 260);
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 				
 				// Matron
-				createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/walkR");
+				createdEntity = mEntityManager.newEntity<Characters.Matron.Matron>("Characters/Matron/standR");
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 700, 260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 4700, 260); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 //// Door - Freezer
