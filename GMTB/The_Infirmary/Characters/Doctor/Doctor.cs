@@ -25,7 +25,6 @@ namespace The_Infirmary.Characters.Doctor
             mFrames = 8;
             mColumns = 8;
             mInterval = 75f;
-            mSpeed = 5f;
         }
         /// <summary>
         /// Main Draw Loop
@@ -50,9 +49,8 @@ namespace The_Infirmary.Characters.Doctor
         {
             base.Update(_gameTime);
 
-
             // Destroy if reached Destination
-            if (mMind.MySelf.Position == mDestination)
+            if (mMind.MySelf.Position.X >= mDestination.X - 4 && mMind.MySelf.Position.X <= mDestination.X + 4)
                ServiceLocator.GetService<IEntity_Manager>().DestroyEntity(UID);
         }
     }

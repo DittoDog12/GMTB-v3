@@ -15,6 +15,7 @@ namespace The_Infirmary.Characters.Doctor
     /// </summary>
     public class Walk : State
     {
+        private float mSpeed = 3f;
         /// <summary>
         /// Main Constructor
         /// </summary>
@@ -57,7 +58,7 @@ namespace The_Infirmary.Characters.Doctor
             if (mMind.MySelf.ServiceLocator.GetService<ILevel_Manager>().CurrentLevelID == "L4")
                 _dest = new Vector2(80, 260);
             else if (mMind.MySelf.ServiceLocator.GetService<ILevel_Manager>().CurrentLevelID == "L6")
-                _dest = new Vector2();
+                _dest = new Vector2(1672, 310);
 
             // Update Physical Body destination
             mMind.MySelf.Destination = _dest;
@@ -75,7 +76,7 @@ namespace The_Infirmary.Characters.Doctor
             // Calcualte the vector to get to the current destination
             _rtnval = _dest - mMind.MySelf.Position;
             _rtnval.Normalize();
-            return _rtnval;
+            return _rtnval * mSpeed;
         }
     }
 }
