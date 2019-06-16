@@ -1,11 +1,11 @@
-﻿using System;
+﻿using GMTB.Interfaces;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using GMTB.Interfaces;
 
 namespace GMTB.Interfaces
 {
@@ -30,6 +30,8 @@ namespace GMTB.Interfaces
         AITarget Target { get; }
         /// Let's Behaviours set a target destination
         Vector2 Destination { set; }
+        /// Let's behaviours set active state
+        bool Active { set; }
         /// Lets behaviours see current direction
         GMTB.Entities.FacingDirection CurrentDirection { get; }
         /// <summary>

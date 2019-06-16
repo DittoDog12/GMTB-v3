@@ -127,7 +127,7 @@ namespace GMTB.Managers
             foreach (KeyValuePair<int, IEntity> _keypair in mEntityManager.AllEntities)
             {
                 var _entity = _keypair.Value as IPhysicalEntity;
-                if (_entity != null)
+                if (_entity != null && _keypair.Value.GetState())
                     mSceneGraph.Add(_keypair.Key, _entity);
             }
 

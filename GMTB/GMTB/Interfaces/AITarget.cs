@@ -14,5 +14,7 @@ namespace GMTB.Interfaces
     {
         /// Location of Target
         Vector2 Position { get; }
+        /// Target Moving or not
+        bool Moving { get; }
     }
 }

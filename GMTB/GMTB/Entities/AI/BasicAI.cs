@@ -50,6 +50,11 @@ namespace GMTB.Entities.AI
         {
             set { mDestination = value; }
         }
+        /// Let's behaviours set active state
+        public bool Active
+        {
+            set { mActive = value; }
+        }
         #endregion
 
         #region Constructor
