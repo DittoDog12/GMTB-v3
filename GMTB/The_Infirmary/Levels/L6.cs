@@ -51,7 +51,7 @@ namespace The_Infirmary.Levels
 				var asInterface = createdEntity as IDoor;
                 asInterface.Initialize("L7", true);
                // X, Y coordinates
-                mSceneManager.newEntity(createdEntity, 2280, 260); //Change coordinates
+                mSceneManager.newEntity(createdEntity, 2380, 300); //Change coordinates
                 mLevelEntities.Add(createdEntity.UID, createdEntity);
 
                 ////// Door - Matrons office

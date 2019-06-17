@@ -1,4 +1,6 @@
-﻿using GMTB.Entities.AI;
+﻿using GMTB.CollisionSystem;
+using GMTB.Entities.AI;
+using GMTB.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GMTB;
 
 namespace The_Infirmary.Characters.Matron
 {
@@ -46,6 +49,13 @@ namespace The_Infirmary.Characters.Matron
         public override void Update(GameTime _gameTime)
         {
             base.Update(_gameTime);
+        }
+        public override void Collision(ICollidable _obj)
+        {
+            base.Collision(_obj);
+            var asInterface = _obj as IPlayer;
+            if (asInterface != null)
+                Global.GameState = Global.availGameStates.GameOver;
         }
     }
 }
